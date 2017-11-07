@@ -1,0 +1,46 @@
+# Use Code 010 for UB.
+#045
+#010 ulaanbaatar
+#010 
+#021 suhbaatar
+#021 
+#022 dornod
+#022 
+#023 hentii
+#023
+#041 tuv
+#041 
+#042 govisumber
+#042 
+#043 selenge
+#043 
+#044 dornogovi
+#044 
+#045 darhan-uul
+#045 
+#046 umnugovi
+#046 
+#048 dundgovi
+#048 
+#061 orhon
+#061 
+#062 uvurhangai
+062
+#063 bulgan
+#063
+#064 bayanhongor
+#064
+#065 arhangai
+#065 
+#067 huvsgul
+#067
+#081 zavhan
+#081
+#082 govialtai
+#082
+#083 bayanulgii
+#083
+#084 hovd
+#084 
+#085 uvs
+#085      

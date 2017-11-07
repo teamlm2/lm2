@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SentToGovernorDialog</class>
+ <widget class="QDialog" name="SentToGovernorDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>840</width>
+    <height>582</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>840</width>
+    <height>582</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>840</width>
+    <height>700</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="Line" name="line">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>20</y>
+     <width>856</width>
+     <height>3</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="Line" name="line_2">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>578</y>
+     <width>833</width>
+     <height>3</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="close_button">
+   <property name="geometry">
+    <rect>
+     <x>760</x>
+     <y>550</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_12">
+   <property name="geometry">
+    <rect>
+     <x>7</x>
+     <y>2</y>
+     <width>161</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Sent To Governor</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="help_button">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>551</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>?</string>
+   </property>
+  </widget>
+  <widget class="QTabWidget" name="tabWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>30</y>
+     <width>834</width>
+     <height>271</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="tab">
+    <attribute name="title">
+     <string>Decision Draft</string>
+    </attribute>
+    <widget class="QLabel" name="label_20">
+     <property name="geometry">
+      <rect>
+       <x>11</x>
+       <y>1</y>
+       <width>321</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Drafts path</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="drafts_edit">
+     <property name="geometry">
+      <rect>
+       <x>6</x>
+       <y>21</y>
+       <width>231</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QTableWidget" name="drafts_twidget">
+     <property name="geometry">
+      <rect>
+       <x>6</x>
+       <y>50</y>
+       <width>329</width>
+       <height>190</height>
+      </rect>
+     </property>
+     <attribute name="horizontalHeaderDefaultSectionSize">
+      <number>328</number>
+     </attribute>
+     <column>
+      <property name="text">
+       <string>File Name</string>
+      </property>
+     </column>
+    </widget>
+    <widget class="QLabel" name="select_app_count">
+     <property name="geometry">
+      <rect>
+       <x>697</x>
+       <y>-1</y>
+       <width>31</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="app_count_lbl">
+     <property name="geometry">
+      <rect>
+       <x>731</x>
+       <y>-1</y>
+       <width>31</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="geometry">
+      <rect>
+       <x>342</x>
+       <y>138</y>
+       <width>481</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Draft Value</string>
+     </property>
+     <widget class="QLabel" name="label_15">
+      <property name="geometry">
+       <rect>
+        <x>221</x>
+        <y>17</y>
+        <width>191</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Decision Level</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="draft_no_edit">
+      <property name="geometry">
+       <rect>
+        <x>19</x>
+        <y>35</y>
+        <width>90</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="doc_print_button">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>70</y>
+        <width>92</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Doc Print</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="decision_level_cbox">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>35</y>
+        <width>251</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="sent_to_governor_button">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>70</y>
+        <width>141</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Sent to governor</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_14">
+      <property name="geometry">
+       <rect>
+        <x>115</x>
+        <y>17</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Draft Date</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="draft_print_button">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>70</y>
+        <width>101</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Draft Print</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_13">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>17</y>
+        <width>101</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Draft No</string>
+      </property>
+     </widget>
+     <widget class="QDateEdit" name="draft_date">
+      <property name="geometry">
+       <rect>
+        <x>115</x>
+        <y>35</y>
+        <width>90</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="displayFormat">
+       <string>yyyy-MM-dd</string>
+      </property>
+      <property name="calendarPopup">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="new_group_box">
+     <property name="geometry">
+      <rect>
+       <x>343</x>
+       <y>16</y>
+       <width>480</width>
+       <height>122</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Application Search</string>
+     </property>
+     <widget class="QPushButton" name="search_button">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>78</y>
+        <width>132</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Search</string>
+      </property>
+     </widget>
+     <widget class="QDateEdit" name="begin_date">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>35</y>
+        <width>90</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="displayFormat">
+       <string>yyyy-MM-dd</string>
+      </property>
+      <property name="calendarPopup">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QDateEdit" name="end_date">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>78</y>
+        <width>90</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="displayFormat">
+       <string>yyyy-MM-dd</string>
+      </property>
+      <property name="calendarPopup">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="app_type_cbox">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>35</y>
+        <width>341</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>17</y>
+        <width>96</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Begin Date</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>60</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>End Date</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>17</y>
+        <width>226</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Application Type</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="officer_cbox">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>78</y>
+        <width>195</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_17">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>60</y>
+        <width>226</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Officer name</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QLabel" name="label_16">
+     <property name="geometry">
+      <rect>
+       <x>561</x>
+       <y>1</y>
+       <width>131</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Application Count:</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="drafts_path_button">
+     <property name="geometry">
+      <rect>
+       <x>245</x>
+       <y>20</y>
+       <width>91</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Path</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_2">
+    <attribute name="title">
+     <string>Recieved Decision</string>
+    </attribute>
+    <widget class="QTableWidget" name="drafts_twidget_2">
+     <property name="geometry">
+      <rect>
+       <x>6</x>
+       <y>50</y>
+       <width>329</width>
+       <height>190</height>
+      </rect>
+     </property>
+     <attribute name="horizontalHeaderDefaultSectionSize">
+      <number>328</number>
+     </attribute>
+     <column>
+      <property name="text">
+       <string>File Name</string>
+      </property>
+     </column>
+    </widget>
+    <widget class="QGroupBox" name="draft_group_box_2">
+     <property name="geometry">
+      <rect>
+       <x>345</x>
+       <y>47</y>
+       <width>477</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Decision Value</string>
+     </property>
+     <widget class="QLineEdit" name="decision_number_edit">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>37</y>
+        <width>195</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_30">
+      <property name="geometry">
+       <rect>
+        <x>7</x>
+        <y>17</y>
+        <width>201</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Decision Number</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_31">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>17</y>
+        <width>151</width>
+        <height>15</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Decision Date</string>
+      </property>
+     </widget>
+     <widget class="QDateEdit" name="decision_date">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>37</y>
+        <width>90</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="displayFormat">
+       <string>yyyy-MM-dd</string>
+      </property>
+      <property name="calendarPopup">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="change_button">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>36</y>
+        <width>141</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>change</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="geometry">
+      <rect>
+       <x>345</x>
+       <y>126</y>
+       <width>475</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Save Decision</string>
+     </property>
+     <widget class="QLabel" name="label_29">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>16</y>
+        <width>321</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Decision save path:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="decision_save_edit">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>299</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="decision_save_button">
+      <property name="geometry">
+       <rect>
+        <x>328</x>
+        <y>39</y>
+        <width>140</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Decision Save</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QLabel" name="label_18">
+   <property name="geometry">
+    <rect>
+     <x>16</x>
+     <y>298</y>
+     <width>251</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Application List</string>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="draft_detail_twidget">
+   <property name="geometry">
+    <rect>
+     <x>7</x>
+     <y>320</y>
+     <width>824</width>
+     <height>216</height>
+    </rect>
+   </property>
+   <property name="dragEnabled">
+    <bool>true</bool>
+   </property>
+   <property name="alternatingRowColors">
+    <bool>true</bool>
+   </property>
+   <attribute name="verticalHeaderCascadingSectionResizes">
+    <bool>true</bool>
+   </attribute>
+   <attribute name="verticalHeaderDefaultSectionSize">
+    <number>30</number>
+   </attribute>
+   <attribute name="verticalHeaderMinimumSectionSize">
+    <number>19</number>
+   </attribute>
+   <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+    <bool>true</bool>
+   </attribute>
+   <attribute name="verticalHeaderStretchLastSection">
+    <bool>false</bool>
+   </attribute>
+   <column>
+    <property name="text">
+     <string>Surname/Company Name</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>First Name</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Person Id</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Application No</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Parcel No</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Address</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Area [m2]</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Land Use Type</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Decision No</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Decision Date</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Decision Level</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Decision Result</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Duration</string>
+    </property>
+   </column>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

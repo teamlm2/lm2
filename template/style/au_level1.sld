@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StyledLayerDescriptor xmlns="http://www.opengis.net/sld" xmlns:ogc="http://www.opengis.net/ogc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd" xmlns:se="http://www.opengis.net/se">
+  <NamedLayer>
+    <se:Name>au_level1</se:Name>
+    <UserStyle>
+      <se:Name>au_level1</se:Name>
+      <se:FeatureTypeStyle>
+        <se:Rule>
+          <se:Name>Single symbol</se:Name>
+          <se:LineSymbolizer>
+            <se:Stroke>
+              <se:GraphicStroke>
+                <se:Graphic>
+                  <se:Mark>
+                    <se:WellKnownName>line</se:WellKnownName>
+                    <se:Fill>
+                      <se:SvgParameter name="fill">#000000</se:SvgParameter>
+                      <se:SvgParameter name="fill-opacity">0.00</se:SvgParameter>
+                    </se:Fill>
+                    <se:Stroke>
+                      <se:SvgParameter name="stroke">#000000</se:SvgParameter>
+                    </se:Stroke>
+                  </se:Mark>
+                  <se:Size>1.5</se:Size>
+                </se:Graphic>
+                <se:Gap>
+                  <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
+                    <ogc:Literal>8</ogc:Literal>
+                  </ogc:Filter>
+                </se:Gap>
+              </se:GraphicStroke>
+            </se:Stroke>
+          </se:LineSymbolizer>
+          <se:PolygonSymbolizer>
+            <se:Stroke>
+              <se:SvgParameter name="stroke">#fb9a99</se:SvgParameter>
+              <se:SvgParameter name="stroke-width">1.5</se:SvgParameter>
+              <se:SvgParameter name="stroke-linejoin">bevel</se:SvgParameter>
+              <se:SvgParameter name="stroke-dasharray">4 2 1 2</se:SvgParameter>
+            </se:Stroke>
+          </se:PolygonSymbolizer>
+          <se:PolygonSymbolizer>
+            <se:Stroke>
+              <se:SvgParameter name="stroke">#000000</se:SvgParameter>
+              <se:SvgParameter name="stroke-width">0.26</se:SvgParameter>
+              <se:SvgParameter name="stroke-linejoin">bevel</se:SvgParameter>
+            </se:Stroke>
+          </se:PolygonSymbolizer>
+          <se:PolygonSymbolizer>
+            <se:Fill>
+              <se:GraphicFill>
+                <se:Graphic>
+                  <se:Mark>
+                    <se:WellKnownName>horline</se:WellKnownName>
+                    <se:Stroke>
+                      <se:SvgParameter name="stroke">#000000</se:SvgParameter>
+                      <se:SvgParameter name="stroke-width">0.26</se:SvgParameter>
+                    </se:Stroke>
+                  </se:Mark>
+                  <se:Size>2</se:Size>
+                  <se:Rotation>
+                    <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
+                      <ogc:Literal>45</ogc:Literal>
+                    </ogc:Filter>
+                  </se:Rotation>
+                  <se:Displacement>
+                    <se:DisplacementX>0.850904</se:DisplacementX>
+                    <se:DisplacementY>0.525322</se:DisplacementY>
+                  </se:Displacement>
+                </se:Graphic>
+              </se:GraphicFill>
+            </se:Fill>
+          </se:PolygonSymbolizer>
+        </se:Rule>
+      </se:FeatureTypeStyle>
+    </UserStyle>
+  </NamedLayer>
+</StyledLayerDescriptor>

@@ -1,0 +1,1737 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>OwnRecordDialog</class>
+ <widget class="QDialog" name="OwnRecordDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>470</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>400</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Ownership Record</string>
+   </property>
+  </widget>
+  <widget class="Line" name="line">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>20</y>
+     <width>800</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="Line" name="line_2">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>440</y>
+     <width>800</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="help_button">
+   <property name="geometry">
+    <rect>
+     <x>489</x>
+     <y>417</y>
+     <width>91</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>?</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="apply_button">
+   <property name="geometry">
+    <rect>
+     <x>600</x>
+     <y>417</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Apply</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="close_button">
+   <property name="geometry">
+    <rect>
+     <x>690</x>
+     <y>417</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </widget>
+  <widget class="QTabWidget" name="tabWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>30</y>
+     <width>781</width>
+     <height>381</height>
+    </rect>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="application_tab">
+    <attribute name="title">
+     <string>Application</string>
+    </attribute>
+    <widget class="QGroupBox" name="application_groupbox">
+     <property name="geometry">
+      <rect>
+       <x>7</x>
+       <y>4</y>
+       <width>761</width>
+       <height>170</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Search</string>
+     </property>
+     <widget class="QLabel" name="label_27">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>35</y>
+        <width>200</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Enter Application Number</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="enter_application_edit">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>50</y>
+        <width>200</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="found_edit">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>100</y>
+        <width>200</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_30">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>85</y>
+        <width>200</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Found</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="search_button">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>48</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Search</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="accept_button">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>98</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Accept</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_12">
+     <property name="geometry">
+      <rect>
+       <x>7</x>
+       <y>176</y>
+       <width>761</width>
+       <height>170</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Assigned Application</string>
+     </property>
+     <widget class="QLabel" name="label_32">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>35</y>
+        <width>330</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Application this ownership record is based on</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="application_based_edit">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>50</y>
+        <width>300</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="application_type_edit">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>100</y>
+        <width>551</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_33">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>85</y>
+        <width>330</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Application Type</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="unassign_button">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>48</y>
+        <width>200</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Unassign</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="parcel_tab">
+    <attribute name="title">
+     <string>Parcel</string>
+    </attribute>
+    <widget class="QGroupBox" name="groupBox_4">
+     <property name="geometry">
+      <rect>
+       <x>7</x>
+       <y>4</y>
+       <width>761</width>
+       <height>341</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Parcel Details</string>
+     </property>
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>35</y>
+        <width>220</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>ID (Main ID)</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="id_main_edit">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>50</y>
+        <width>200</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="calculated_area_edit">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>50</y>
+        <width>200</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_12">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>35</y>
+        <width>220</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Calculated Area [m2]</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="aimag_edit">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>50</y>
+        <width>200</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_13">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>35</y>
+        <width>220</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Aimag</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="old_id_edit">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>100</y>
+        <width>200</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_14">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>85</y>
+        <width>220</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Old ID</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="geo_id_edit">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>150</y>
+        <width>200</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_15">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>135</y>
+        <width>220</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Geo ID</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="land_use_type_edit">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>200</y>
+        <width>400</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_16">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>185</y>
+        <width>444</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Land Use Type</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="documented_area_edit">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>100</y>
+        <width>200</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_17">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>85</y>
+        <width>220</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Documented Area [m2]</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_18">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>85</y>
+        <width>220</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Soum / Duureg</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="soum_edit">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>100</y>
+        <width>200</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_19">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>135</y>
+        <width>220</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Bag / Khoroo</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="bag_edit">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>150</y>
+        <width>200</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_20">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>185</y>
+        <width>220</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Street Name</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="street_name_edit">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>200</y>
+        <width>200</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_21">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>235</y>
+        <width>220</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Khashaa</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="khashaa_edit">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>250</y>
+        <width>200</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="record_details_tab">
+    <attribute name="title">
+     <string>Record Details</string>
+    </attribute>
+    <widget class="QGroupBox" name="groupBox_7">
+     <property name="geometry">
+      <rect>
+       <x>7</x>
+       <y>4</y>
+       <width>761</width>
+       <height>341</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Record Details</string>
+     </property>
+     <widget class="QLabel" name="label_22">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>35</y>
+        <width>180</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Record Number</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="record_number_edit">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>50</y>
+        <width>180</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QDateEdit" name="record_date_date">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>50</y>
+        <width>180</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="displayFormat">
+       <string>yyyy-MM-dd</string>
+      </property>
+      <property name="calendarPopup">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_23">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>85</y>
+        <width>180</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Ownership Begin</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="record_status_groupbox">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>140</y>
+        <width>165</width>
+        <height>93</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Record Status</string>
+      </property>
+      <widget class="QRadioButton" name="draft_rbutton">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>146</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Draft</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup</string>
+       </attribute>
+      </widget>
+      <widget class="QRadioButton" name="active_rbutton">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>45</y>
+         <width>151</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Active</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup</string>
+       </attribute>
+      </widget>
+      <widget class="QRadioButton" name="cancelled_rbutton">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>65</y>
+         <width>146</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Cancelled</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup</string>
+       </attribute>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="right_groupbox">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>230</y>
+        <width>165</width>
+        <height>83</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Right</string>
+      </property>
+      <widget class="QRadioButton" name="standard_right_rbutton">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>131</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Standard Right</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup_2</string>
+       </attribute>
+      </widget>
+      <widget class="QRadioButton" name="advanced_right_rbutton">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>55</y>
+         <width>136</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Advanced Right</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup_2</string>
+       </attribute>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="ownership_end_groupbox">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>140</y>
+        <width>551</width>
+        <height>171</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Ownership End (Cancellation)</string>
+      </property>
+      <widget class="QLabel" name="label_24">
+       <property name="geometry">
+        <rect>
+         <x>15</x>
+         <y>30</y>
+         <width>161</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Ownership End</string>
+       </property>
+      </widget>
+      <widget class="QDateEdit" name="ownership_end_date">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>53</y>
+         <width>96</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="displayFormat">
+        <string>yyyy-MM-dd</string>
+       </property>
+       <property name="calendarPopup">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="cancellation_date_check_box">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>57</y>
+         <width>21</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="application_based_rbutton">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>175</x>
+         <y>27</y>
+         <width>180</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Application Based</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup_3</string>
+       </attribute>
+      </widget>
+      <widget class="QLabel" name="label_25">
+       <property name="geometry">
+        <rect>
+         <x>155</x>
+         <y>55</y>
+         <width>88</width>
+         <height>13</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Number</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_26">
+       <property name="geometry">
+        <rect>
+         <x>13</x>
+         <y>88</y>
+         <width>88</width>
+         <height>13</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Type</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="app_number_cbox">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>52</y>
+         <width>157</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="type_edit">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>85</y>
+         <width>471</width>
+         <height>20</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="other_reason_rbutton">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>107</y>
+         <width>266</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Other Reason</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup_3</string>
+       </attribute>
+      </widget>
+      <widget class="QComboBox" name="other_reason_cbox">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>135</y>
+         <width>531</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="person_id_edit">
+       <property name="geometry">
+        <rect>
+         <x>390</x>
+         <y>52</y>
+         <width>151</width>
+         <height>20</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_31">
+       <property name="geometry">
+        <rect>
+         <x>391</x>
+         <y>31</y>
+         <width>149</width>
+         <height>13</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Person/Company ID</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="messages_label">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>318</y>
+        <width>721</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_28">
+      <property name="geometry">
+       <rect>
+        <x>255</x>
+        <y>34</y>
+        <width>180</width>
+        <height>15</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Record Date</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="certificate_number_edit">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>50</y>
+        <width>180</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_29">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>35</y>
+        <width>180</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Certificate Number</string>
+      </property>
+     </widget>
+     <widget class="QDateEdit" name="ownership_begin_edit">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>100</y>
+        <width>181</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="displayFormat">
+       <string>yyyy-MM-dd</string>
+      </property>
+      <property name="calendarPopup">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="price_and_land_tax_tab">
+    <attribute name="title">
+     <string>Price And Land Tax</string>
+    </attribute>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="geometry">
+      <rect>
+       <x>7</x>
+       <y>4</y>
+       <width>761</width>
+       <height>116</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Base Figures</string>
+     </property>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>35</y>
+        <width>150</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Base Value Per m2 [₮]</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="base_value_edit">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>50</y>
+        <width>150</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>35</y>
+        <width>150</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Base Tax Rate [%]</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="base_tax_rate_edit">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>50</y>
+        <width>150</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>35</y>
+        <width>150</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Subsidized Area [m2]</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="subsidized_area_edit">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>50</y>
+        <width>150</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="subsidized_tax_rate_edit">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>590</x>
+        <y>50</y>
+        <width>150</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>590</x>
+        <y>35</y>
+        <width>150</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Subsidized Tax Rate [%]</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="landtax_message_label1">
+      <property name="geometry">
+       <rect>
+        <x>15</x>
+        <y>85</y>
+        <width>726</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>XXX</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QTableWidget" name="land_tax_twidget">
+     <property name="geometry">
+      <rect>
+       <x>7</x>
+       <y>144</y>
+       <width>760</width>
+       <height>181</height>
+      </rect>
+     </property>
+     <attribute name="horizontalHeaderDefaultSectionSize">
+      <number>95</number>
+     </attribute>
+     <column>
+      <property name="text">
+       <string>Owner</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>ID</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Share</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Area [m2]</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Value Calculated [₮]</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Price Paid [₮]</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Land Tax [₮]</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Grace Priod [days]</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Payment</string>
+      </property>
+     </column>
+    </widget>
+    <widget class="QLabel" name="landtax_message_label2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>330</y>
+       <width>746</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>XXX</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="land_tax_hisotry_tab">
+    <attribute name="title">
+     <string>Land Tax History</string>
+    </attribute>
+    <widget class="QTableWidget" name="archive_land_tax_twidget">
+     <property name="geometry">
+      <rect>
+       <x>7</x>
+       <y>160</y>
+       <width>760</width>
+       <height>180</height>
+      </rect>
+     </property>
+     <attribute name="horizontalHeaderDefaultSectionSize">
+      <number>125</number>
+     </attribute>
+     <column>
+      <property name="text">
+       <string>Owner</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>ID</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Share</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Area [m2]</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Value Calculated [₮] </string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Price Paid [₮]</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Land Tax [₮]</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Grace Period [days]</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Payment Frequency</string>
+      </property>
+     </column>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="geometry">
+      <rect>
+       <x>7</x>
+       <y>80</y>
+       <width>761</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Base Figures</string>
+     </property>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>25</y>
+        <width>150</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Base Value Per m2 [₮]</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="archive_base_value_edit">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>40</y>
+        <width>150</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>25</y>
+        <width>150</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Base Tax Rate [%]</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="archive_base_tax_rate_edit">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>40</y>
+        <width>150</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>25</y>
+        <width>150</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Subsidized Area [m2]</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="archive_subsidized_area_edit">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>40</y>
+        <width>150</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="archive_subsidized_tax_rate_edit">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>580</x>
+        <y>40</y>
+        <width>150</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>580</x>
+        <y>25</y>
+        <width>150</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Subsidized Tax Rate [%]</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="geometry">
+      <rect>
+       <x>7</x>
+       <y>5</y>
+       <width>761</width>
+       <height>76</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Land Tax History</string>
+     </property>
+     <widget class="QLabel" name="label_10">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>30</y>
+        <width>200</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Time Period</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="time_period_cbox">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>40</y>
+        <width>200</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="documents_tab">
+    <attribute name="title">
+     <string>Documents</string>
+    </attribute>
+    <widget class="QGroupBox" name="documents_groupbox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>0</y>
+       <width>756</width>
+       <height>341</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Ownership Record Documents</string>
+     </property>
+     <widget class="QTableWidget" name="doc_twidget">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>69</y>
+        <width>700</width>
+        <height>261</height>
+       </rect>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <attribute name="horizontalHeaderCascadingSectionResizes">
+       <bool>false</bool>
+      </attribute>
+      <attribute name="horizontalHeaderDefaultSectionSize">
+       <number>120</number>
+      </attribute>
+      <attribute name="horizontalHeaderHighlightSections">
+       <bool>false</bool>
+      </attribute>
+      <attribute name="verticalHeaderCascadingSectionResizes">
+       <bool>false</bool>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>Provided</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Type</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Name</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Open</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Remove</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>View</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QLineEdit" name="document_path_edit">
+      <property name="geometry">
+       <rect>
+        <x>19</x>
+        <y>36</y>
+        <width>261</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_34">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>261</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Document Path</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="load_doc_button">
+      <property name="geometry">
+       <rect>
+        <x>302</x>
+        <y>35</y>
+        <width>171</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Load Document</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="app_doc_tab">
+    <attribute name="title">
+     <string>Application Documents</string>
+    </attribute>
+    <widget class="QGroupBox" name="documents_groupbox_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>0</y>
+       <width>756</width>
+       <height>341</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Application Documents</string>
+     </property>
+     <widget class="QComboBox" name="applicant_documents_cbox">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>30</y>
+        <width>311</width>
+        <height>26</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="app_doc_twidget">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>69</y>
+        <width>681</width>
+        <height>251</height>
+       </rect>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <attribute name="horizontalHeaderCascadingSectionResizes">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="horizontalHeaderDefaultSectionSize">
+       <number>100</number>
+      </attribute>
+      <attribute name="verticalHeaderCascadingSectionResizes">
+       <bool>false</bool>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>Provided</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Type</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Name</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>View</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QPushButton" name="load_app_doc_button">
+      <property name="geometry">
+       <rect>
+        <x>425</x>
+        <y>33</y>
+        <width>171</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Load Document</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="print_tab">
+    <attribute name="title">
+     <string>Print</string>
+    </attribute>
+    <widget class="QGroupBox" name="groupBox_5">
+     <property name="geometry">
+      <rect>
+       <x>7</x>
+       <y>4</y>
+       <width>761</width>
+       <height>341</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Print</string>
+     </property>
+     <widget class="QPushButton" name="land_tax_summary_button">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>40</y>
+        <width>250</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Land Tax Summary</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QLabel" name="status_label">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>420</y>
+     <width>441</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Century Gothic</family>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+ <buttongroups>
+  <buttongroup name="buttonGroup_2"/>
+  <buttongroup name="buttonGroup_3"/>
+  <buttongroup name="buttonGroup"/>
+ </buttongroups>
+</ui>

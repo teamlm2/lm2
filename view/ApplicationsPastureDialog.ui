@@ -1,0 +1,1543 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ApplicationsPastureDialog</class>
+ <widget class="QDialog" name="ApplicationsPastureDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>810</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>810</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>810</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Applications Pasture Dialog</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resources_pasture.qrc">
+    <normaloff>:/plugins/lm2_pasture/crops.png</normaloff>:/plugins/lm2_pasture/crops.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QTabWidget" name="application_tab_widget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>30</y>
+     <width>796</width>
+     <height>431</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>200</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="baseSize">
+    <size>
+     <width>200</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QTabBar::tab { width: 150px; }</string>
+   </property>
+   <property name="currentIndex">
+    <number>4</number>
+   </property>
+   <property name="usesScrollButtons">
+    <bool>true</bool>
+   </property>
+   <widget class="QWidget" name="application_detail_tab">
+    <attribute name="title">
+     <string>Application Details</string>
+    </attribute>
+    <widget class="QGroupBox" name="registration_group_box">
+     <property name="geometry">
+      <rect>
+       <x>3</x>
+       <y>10</y>
+       <width>351</width>
+       <height>391</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Registration</string>
+     </property>
+     <widget class="QDateTimeEdit" name="date_time_date">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>241</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="buttonSymbols">
+       <enum>QAbstractSpinBox::NoButtons</enum>
+      </property>
+      <property name="displayFormat">
+       <string>yyyy-MM-dd, hh:mm</string>
+      </property>
+      <property name="calendarPopup">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="application_type_cbox">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>87</y>
+        <width>336</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="application_num_first_edit">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>11</x>
+        <y>133</y>
+        <width>71</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="application_num_middle_edit">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>137</x>
+        <y>133</y>
+        <width>71</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="application_num_last_edit">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>221</x>
+        <y>133</y>
+        <width>81</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>25</y>
+        <width>271</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Date,Time</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>11</x>
+        <y>70</y>
+        <width>291</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Application Type</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>11</x>
+        <y>115</y>
+        <width>281</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Application Number</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="duration_request_label">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>250</y>
+        <width>161</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Requested duration [year]</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="duration_approved_label">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>250</y>
+        <width>151</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Approved duration [year]</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>294</y>
+        <width>171</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Remarks</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="requested_land_use_type_cbox">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>175</y>
+        <width>336</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>160</y>
+        <width>271</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Requested Land Use Type</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="approved_year_spin_box">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>268</y>
+        <width>141</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="maximum">
+       <number>2900</number>
+      </property>
+      <property name="value">
+       <number>0</number>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="requested_year_spin_box">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>268</y>
+        <width>141</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="maximum">
+       <number>500</number>
+      </property>
+      <property name="value">
+       <number>15</number>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="remarks_text_edit">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>311</y>
+        <width>301</width>
+        <height>71</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="application_num_type_edit">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>94</x>
+        <y>133</y>
+        <width>31</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_43">
+      <property name="geometry">
+       <rect>
+        <x>84</x>
+        <y>134</y>
+        <width>16</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>-</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_44">
+      <property name="geometry">
+       <rect>
+        <x>127</x>
+        <y>135</y>
+        <width>16</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>-</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_45">
+      <property name="geometry">
+       <rect>
+        <x>212</x>
+        <y>135</y>
+        <width>16</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>-</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="approved_land_use_type_cbox">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>9</x>
+        <y>219</y>
+        <width>336</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_16">
+      <property name="geometry">
+       <rect>
+        <x>9</x>
+        <y>204</y>
+        <width>271</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Approved Land Use Type</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="application_status_group_box">
+     <property name="geometry">
+      <rect>
+       <x>358</x>
+       <y>10</y>
+       <width>430</width>
+       <height>391</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Application Status</string>
+     </property>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>25</y>
+        <width>161</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Status</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_10">
+      <property name="geometry">
+       <rect>
+        <x>215</x>
+        <y>75</y>
+        <width>201</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Next Officer In Charge</string>
+      </property>
+     </widget>
+     <widget class="QDateEdit" name="status_date_date">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>90</y>
+        <width>171</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="displayFormat">
+       <string>yyyy-MM-dd</string>
+      </property>
+      <property name="calendarPopup">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>75</y>
+        <width>171</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Status Date</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="add_button">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>140</y>
+        <width>93</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Add</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="update_button">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>140</y>
+        <width>93</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Update</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="delete_button">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>140</y>
+        <width>93</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Delete</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="application_status_twidget">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>190</y>
+        <width>420</width>
+        <height>141</height>
+       </rect>
+      </property>
+      <attribute name="horizontalHeaderDefaultSectionSize">
+       <number>105</number>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>Status</string>
+       </property>
+       <property name="textAlignment">
+        <set>AlignLeft|AlignVCenter</set>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Date</string>
+       </property>
+       <property name="textAlignment">
+        <set>AlignLeft|AlignVCenter</set>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Officer in Charge</string>
+       </property>
+       <property name="textAlignment">
+        <set>AlignLeft|AlignVCenter</set>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Next Officer in Charge</string>
+       </property>
+       <property name="textAlignment">
+        <set>AlignLeft|AlignVCenter</set>
+       </property>
+      </column>
+     </widget>
+     <widget class="QComboBox" name="status_cbox">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>376</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="next_officer_in_charge_cbox">
+      <property name="geometry">
+       <rect>
+        <x>215</x>
+        <y>90</y>
+        <width>171</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="applicants_tab">
+    <attribute name="title">
+     <string>Applicants</string>
+    </attribute>
+    <widget class="QGroupBox" name="applicants_group_box">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>2</y>
+       <width>761</width>
+       <height>391</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Applicants</string>
+     </property>
+     <widget class="QPushButton" name="appliciants_remove_button">
+      <property name="geometry">
+       <rect>
+        <x>610</x>
+        <y>360</y>
+        <width>141</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Remove</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="person_group_gbox">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>13</y>
+        <width>271</width>
+        <height>184</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Person Group</string>
+      </property>
+      <widget class="QLineEdit" name="leader_id_edit">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>77</y>
+         <width>211</width>
+         <height>20</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_35">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>99</y>
+         <width>121</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Leader Name</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="leader_name_edit">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>116</y>
+         <width>211</width>
+         <height>20</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="pasture_group_cbox">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>33</y>
+         <width>211</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="is_group_checkbox">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>13</y>
+         <width>171</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Is Find Group</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_32">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>60</y>
+         <width>121</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Leader ID</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="group_connect_button">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>157</y>
+         <width>75</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Connect</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="person_gbox">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>13</y>
+        <width>411</width>
+        <height>184</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Person</string>
+      </property>
+      <widget class="QTableWidget" name="person_twidget">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>57</y>
+         <width>341</width>
+         <height>81</height>
+        </rect>
+       </property>
+       <attribute name="horizontalHeaderDefaultSectionSize">
+        <number>100</number>
+       </attribute>
+       <attribute name="verticalHeaderDefaultSectionSize">
+        <number>30</number>
+       </attribute>
+       <attribute name="verticalHeaderMinimumSectionSize">
+        <number>19</number>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="person_find_button">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>280</x>
+         <y>31</y>
+         <width>91</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Find</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="person_id_edit">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>32</y>
+         <width>113</width>
+         <height>20</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="firstname_edit">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>32</y>
+         <width>121</width>
+         <height>20</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_36">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>14</y>
+         <width>113</width>
+         <height>13</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Firstname</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="is_person_checkbox">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>13</y>
+         <width>121</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Person ID</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="person_connect_button">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>157</y>
+         <width>75</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Connect</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="document_tab">
+    <attribute name="title">
+     <string>Documents</string>
+    </attribute>
+    <widget class="QGroupBox" name="documents_group_box">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>751</width>
+       <height>341</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Documents</string>
+     </property>
+     <widget class="QComboBox" name="applicant_documents_cbox">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>50</y>
+        <width>261</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_12">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>30</y>
+        <width>251</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Select Applicants</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="load_doc_button">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>50</y>
+        <width>141</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Load Document</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="document_path_edit">
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>50</y>
+        <width>261</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>471</x>
+        <y>30</y>
+        <width>261</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Document Path</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="boundary_tab">
+    <attribute name="title">
+     <string>PUG Boundary</string>
+    </attribute>
+    <widget class="QGroupBox" name="search_group_box_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>-1</y>
+       <width>751</width>
+       <height>64</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Search</string>
+     </property>
+     <widget class="QLineEdit" name="search_boundary_num_edit">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>31</y>
+        <width>191</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="find_boundary_number_button">
+      <property name="geometry">
+       <rect>
+        <x>441</x>
+        <y>30</y>
+        <width>101</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Find</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_15">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>16</y>
+        <width>241</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Enter Parcel Number</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="bag_boundary_cbox">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>31</y>
+        <width>191</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_17">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>15</y>
+        <width>181</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Bag</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="boundary_remove_button">
+     <property name="geometry">
+      <rect>
+       <x>380</x>
+       <y>219</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Cancel</string>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="assigned_group_box_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>64</y>
+       <width>751</width>
+       <height>151</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Result Parcel</string>
+     </property>
+     <widget class="QTableWidget" name="result_boundary_twidget">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>731</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <column>
+       <property name="text">
+        <string>Parcel ID</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Group Name</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Area(ga)</string>
+       </property>
+      </column>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="boundary_add_button">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>219</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="baseSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Connect</string>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="assigned_group_box_4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>250</y>
+       <width>751</width>
+       <height>151</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Assigned Parcel</string>
+     </property>
+     <widget class="QTableWidget" name="assigned_boundary_twidget">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>731</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <column>
+       <property name="text">
+        <string>Boundary ID</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Group Name</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Area(ga)</string>
+       </property>
+      </column>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="parcel_tab">
+    <attribute name="title">
+     <string>Parcel</string>
+    </attribute>
+    <widget class="QGroupBox" name="search_group_box">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>0</y>
+       <width>771</width>
+       <height>64</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Search</string>
+     </property>
+     <widget class="QLineEdit" name="search_parcel_num_edit">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>31</y>
+        <width>191</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="find_parcel_number_button">
+      <property name="geometry">
+       <rect>
+        <x>441</x>
+        <y>30</y>
+        <width>101</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Find</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_13">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>16</y>
+        <width>241</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Enter Parcel Number</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="bag_parcel_cbox">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>31</y>
+        <width>191</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_14">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>15</y>
+        <width>181</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Bag</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="assigned_group_box">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>65</y>
+       <width>771</width>
+       <height>151</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Result Parcel</string>
+     </property>
+     <widget class="QTableWidget" name="result_parcel_twidget">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>751</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <column>
+       <property name="text">
+        <string>Parcel ID</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Land Use Type</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Area(ga)</string>
+       </property>
+      </column>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="parcel_add_button">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>220</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="baseSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Connect</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="parcel_remove_button">
+     <property name="geometry">
+      <rect>
+       <x>380</x>
+       <y>220</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Cancel</string>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="assigned_group_box_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>251</y>
+       <width>771</width>
+       <height>151</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Assigned Parcel</string>
+     </property>
+     <widget class="QTableWidget" name="assigned_parcel_twidget">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>311</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <column>
+       <property name="text">
+        <string>Parcel ID</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Neighbourhood</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Area(ga)</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QPushButton" name="pasture_remove_button">
+      <property name="geometry">
+       <rect>
+        <x>465</x>
+        <y>57</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="resources_pasture.qrc">
+        <normaloff>:/plugins/lm2_pasture/double_angle_left.png</normaloff>:/plugins/lm2_pasture/double_angle_left.png</iconset>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="pasture_type_twidget">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>20</y>
+        <width>261</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <column>
+       <property name="text">
+        <string>Pasture Type</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Begin Month</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>End Month</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Days</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QPushButton" name="pasture_add_button">
+      <property name="geometry">
+       <rect>
+        <x>465</x>
+        <y>19</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="baseSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="resources_pasture.qrc">
+        <normaloff>:/plugins/lm2_pasture/double_angle_right.png</normaloff>:/plugins/lm2_pasture/double_angle_right.png</iconset>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="pasture_type_cbox">
+      <property name="geometry">
+       <rect>
+        <x>327</x>
+        <y>20</y>
+        <width>131</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_print">
+    <attribute name="title">
+     <string>Print</string>
+    </attribute>
+    <widget class="QGroupBox" name="groupBox_14">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>751</width>
+       <height>331</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Registration Receipt</string>
+     </property>
+     <widget class="QPushButton" name="reg_receipt_print_button">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>80</y>
+        <width>101</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Print</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="app_return_button">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>115</y>
+        <width>176</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Response by governor</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="Line" name="line">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>20</y>
+     <width>800</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="Line" name="line_2">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>481</y>
+     <width>801</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>236</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Application</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="help_button">
+   <property name="geometry">
+    <rect>
+     <x>489</x>
+     <y>460</y>
+     <width>111</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>?</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="apply_button">
+   <property name="geometry">
+    <rect>
+     <x>620</x>
+     <y>460</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Apply</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="close_button">
+   <property name="geometry">
+    <rect>
+     <x>710</x>
+     <y>460</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="error_label">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>463</y>
+     <width>461</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="status_label">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>466</y>
+     <width>361</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>application_tab_widget</tabstop>
+  <tabstop>date_time_date</tabstop>
+  <tabstop>application_type_cbox</tabstop>
+  <tabstop>application_num_first_edit</tabstop>
+  <tabstop>application_num_middle_edit</tabstop>
+  <tabstop>application_num_last_edit</tabstop>
+  <tabstop>requested_land_use_type_cbox</tabstop>
+  <tabstop>status_cbox</tabstop>
+  <tabstop>status_date_date</tabstop>
+  <tabstop>next_officer_in_charge_cbox</tabstop>
+  <tabstop>add_button</tabstop>
+  <tabstop>update_button</tabstop>
+  <tabstop>delete_button</tabstop>
+  <tabstop>application_status_twidget</tabstop>
+  <tabstop>help_button</tabstop>
+  <tabstop>apply_button</tabstop>
+  <tabstop>close_button</tabstop>
+  <tabstop>appliciants_remove_button</tabstop>
+  <tabstop>applicant_documents_cbox</tabstop>
+  <tabstop>search_parcel_num_edit</tabstop>
+  <tabstop>find_parcel_number_button</tabstop>
+  <tabstop>reg_receipt_print_button</tabstop>
+ </tabstops>
+ <resources>
+  <include location="resources.qrc"/>
+  <include location="resources_pasture.qrc"/>
+ </resources>
+ <connections/>
+</ui>

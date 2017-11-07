@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DraftDecisionPrintDialog</class>
+ <widget class="QDialog" name="DraftDecisionPrintDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>731</width>
+    <height>560</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="Line" name="line">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>540</y>
+     <width>730</width>
+     <height>3</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="Line" name="line_2">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>20</y>
+     <width>730</width>
+     <height>3</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="close_button">
+   <property name="geometry">
+    <rect>
+     <x>650</x>
+     <y>510</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="doc_print_button">
+   <property name="geometry">
+    <rect>
+     <x>560</x>
+     <y>510</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Print</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="drafts_edit">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>42</y>
+     <width>401</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="drafts_path_button">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>40</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Path</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>22</y>
+     <width>431</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Drafts and Decisions Path</string>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="drafts_twidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>70</y>
+     <width>401</width>
+     <height>171</height>
+    </rect>
+   </property>
+   <attribute name="horizontalHeaderDefaultSectionSize">
+    <number>400</number>
+   </attribute>
+   <column>
+    <property name="text">
+     <string>File Name</string>
+    </property>
+   </column>
+  </widget>
+  <widget class="QTableWidget" name="draft_detail_twidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>250</y>
+     <width>731</width>
+     <height>251</height>
+    </rect>
+   </property>
+   <column>
+    <property name="text">
+     <string>Surname/Company Name</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>First Name</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Person Id</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Application No</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Parcel No</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Address</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Area [m2]</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Land Use Type</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Draft/Decision No</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Draft/Decision Date</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Level</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Result</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Duration</string>
+    </property>
+   </column>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

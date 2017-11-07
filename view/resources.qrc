@@ -1,0 +1,37 @@
+<RCC>
+  <qresource prefix="/plugins/lm2">
+    <file alias="about.png">icons/about.png</file>
+    <file alias="down_button.png">icons/down_button.png</file>
+    <file alias="up_button.png">icons/up_button.png</file>
+    <file alias="help_button.png">icons/help_button.png</file>
+    <file alias="person.png">icons/person.png</file>
+    <file alias="navigator.png">icons/navigator.png</file>
+    <file alias="application.png">icons/applications.png</file>
+    <file alias="connection_to_main.png">icons/connection_to_main.png</file>
+    <file alias="contract.png">icons/contract.png</file>
+    <file alias="decision.png">icons/decision.png</file>
+    <file alias="import_decision.png">icons/import_decision.png</file>
+    <file alias="land_office_admin.png">icons/land_office_admin.png</file>
+    <file alias="landfeepayment.png">icons/landfeepayment.png</file>
+    <file alias="landtaxpayment.png">icons/landtaxpayment.png</file>
+    <file alias="logon.png">icons/logon.png</file>
+    <file alias="user_role_management.png">icons/user_role_management.png</file>
+    <file alias="webgis.png">icons/webgis.png</file>
+    <file alias="land_ownership.png">icons/land_ownership.png</file>
+    <file alias="open.png">icons/open.png</file>
+    <file alias="remove.png">icons/remove.png</file>
+    <file alias="file.png">icons/file.png</file>
+    <file alias="parcel.png">icons/parcel.png</file>
+    <file alias="parcel_grey.png">icons/parcel_grey.png</file>
+    <file alias="parcel_red.png">icons/parcel_red.png</file>
+    <file alias="drag_drop.png">icons/drag_drop.png</file>
+    <file alias="parcel.gif">icons/parcel.gif</file>
+    <file alias="building.gif">icons/building.gif</file>
+    <file alias="case.png">icons/case.png</file>
+    <file alias="zoom.png">icons/zoom.png</file>
+    <file alias="extract.png">icons/extract.png</file>
+    <file alias="documents.png">icons/documents.png</file>
+    <file alias="send_to_governor.png">icons/send_to_governor.png</file>
+    <file alias="copy.png">icons/copy.png</file>
+  </qresource>
+</RCC>

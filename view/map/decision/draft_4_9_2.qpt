@@ -1,0 +1,107 @@
+<Composer title="draft_4_9_2" visible="1">
+ <Composition gridVisible="0" printResolution="300" paperWidth="210" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" snapTolerancePixels="5" numPages="1" paperHeight="297" smartGuides="1" printAsRaster="0" generateWorldFile="0">
+  <symbol alpha="1" type="fill" name="">
+   <layer pass="0" class="SimpleFill" locked="0">
+    <prop k="border_width_map_unit_scale" v="0,0"/>
+    <prop k="color" v="255,255,255,255"/>
+    <prop k="joinstyle" v="miter"/>
+    <prop k="offset" v="0,0"/>
+    <prop k="offset_map_unit_scale" v="0,0"/>
+    <prop k="offset_unit" v="MM"/>
+    <prop k="outline_color" v="0,0,0,255"/>
+    <prop k="outline_style" v="no"/>
+    <prop k="outline_width" v="0.26"/>
+    <prop k="outline_width_unit" v="MM"/>
+    <prop k="style" v="solid"/>
+   </layer>
+  </symbol>
+  <ComposerLabel valign="32" labelText="officer_name" htmlState="0" halign="4" margin="1">
+   <LabelFont description="Arial,12,-1,5,50,0,0,0,0,0"/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="107.821" page="1" id="officer_name" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="124.572" y="107.821" visibility="1" zValue="18" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="51.0575" outlineWidth="0.3" excludeFromExports="0" uuid="{c4965179-13fc-44a5-9d73-9f9eed411e6f}" height="6.2" itemRotation="0" frame="false" pagex="124.572">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" labelText="area_sum" htmlState="0" halign="4" margin="1">
+   <LabelFont description="Arial,12,-1,5,50,0,0,0,0,0"/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="92.1975" page="1" id="area_sum" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="130.914" y="92.1975" visibility="1" zValue="16" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="22.4363" outlineWidth="0.3" excludeFromExports="0" uuid="{70d8c231-e4fb-4b07-885f-cc425c1fb34a}" height="6.2" itemRotation="0" frame="false" pagex="130.914">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" labelText="p_count" htmlState="0" halign="4" margin="1">
+   <LabelFont description="Arial,12,-1,5,50,0,0,0,0,0"/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="91.547" page="1" id="p_count" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="89.2005" y="91.547" visibility="1" zValue="14" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="14.4985" outlineWidth="0.3" excludeFromExports="0" uuid="{81772c5a-0ba8-4c08-b558-a7c2eaebf623}" height="6.2" itemRotation="0" frame="false" pagex="89.2005">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" labelText="transfer_count" htmlState="0" halign="4" margin="1">
+   <LabelFont description="Arial,12,-1,5,50,0,0,0,0,0"/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="96.6" page="1" id="transfer_count" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="35.2086" y="96.6" visibility="1" zValue="11" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="15.3283" outlineWidth="0.3" excludeFromExports="0" uuid="{eeb45cba-c9e4-4f53-ac94-72e43e8af788}" height="6.2" itemRotation="0" frame="false" pagex="35.2086">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" labelText="&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;4. Энэхүү захирамж гарсантай холбогдуулан сумын Засаг даргын ......оны ........ дугаар захирамжийн .... хэсэг болон газар эзэмших эрхийн …….. дугаартай гэрчилгээг тус тус хүчингүйд тооцсугай." htmlState="0" halign="1" margin="1">
+   <LabelFont description="Arial,12,-1,5,50,0,0,0,0,0"/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="137.287" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="22.495" y="137.287" visibility="1" zValue="7" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="176.122" outlineWidth="0.3" excludeFromExports="0" uuid="{1d13c361-97e5-4889-85ae-8e84ef09481a}" height="20.402" itemRotation="0" frame="false" pagex="22.495">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" labelText="ЗАСАГ ДАРГА" htmlState="0" halign="4" margin="1">
+   <LabelFont description="Arial,12,-1,5,50,0,0,0,0,0"/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="170.219" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="19.6605" y="170.219" visibility="1" zValue="6" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="181.791" outlineWidth="0.3" excludeFromExports="0" uuid="{9dff672b-1a37-4c1b-8dfb-ddc7f9d08b02}" height="11.6383" itemRotation="0" frame="false" pagex="19.6605">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" labelText="&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;3. Газар эзэмшигч гэрээгээр хүлээсэн үүргээ биелүүлж буй байдалд хяналт тавьж ажиллахыг байгаль орчны улсын байцаагч, мэргэжлийн хяналтын газар /................../-д даалгасугай." htmlState="0" halign="1" margin="1">
+   <LabelFont description="Arial,12,-1,5,50,0,0,0,0,0"/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="120.522" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="22.1084" y="120.522" visibility="1" zValue="5" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="181.791" outlineWidth="0.3" excludeFromExports="0" uuid="{94d69914-107a-4069-b24e-8baf8aae7d52}" height="17.7055" itemRotation="0" frame="false" pagex="22.1084">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" labelText="&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;2. Газар эзэмшигчдэд газар эзэмших эрхийн гэрчилгээ олгож, гэрээ байгуулж, улсын бүртгэлд бүртгэхийг газрын даамал /ГХБХБГ//........................................./-д зөвшөөрсүгэй. " htmlState="0" halign="1" margin="1">
+   <LabelFont description="Arial,12,-1,5,50,0,0,0,0,0"/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="104.159" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="22.1084" y="104.159" visibility="1" zValue="4" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="176.122" outlineWidth="0.3" excludeFromExports="0" uuid="{be4da54f-bf16-488e-86c6-4d0839acac30}" height="18.3632" itemRotation="0" frame="false" pagex="22.1084">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" labelText="&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;1. Хавсралтанд дурьдагдсан ......... иргэний , нийт ............... га /м2/ газар эзэмших эрхийг .......... иргэнд шилжүүлэн эзэмшүүлсүгэй." htmlState="0" halign="1" margin="1">
+   <LabelFont description="Arial,12,-1,5,50,0,0,0,0,0"/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="92.6688" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="22.033" y="92.6688" visibility="1" zValue="3" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="179.419" outlineWidth="0.3" excludeFromExports="0" uuid="{7fff4a75-8559-4fe2-b8e7-1f58c2ff4d98}" height="12.3334" itemRotation="0" frame="false" pagex="22.033">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" labelText="&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Монгол Улсын Засаг захиргаа, нутаг дэвсгэрийн нэгж, түүний удирдлагын тухай хуулийн 29 дүгээр зүйлийн 29.2 дахь хэсэг, Газрын тухай хуулийн 38 дугаар зүйлийн 38.4 дэх хэсгийг тус тус үндэслэн ЗАХИРАМЖЛАХ нь:" htmlState="0" halign="1" margin="1">
+   <LabelFont description="Arial,12,-1,5,50,0,0,0,0,0"/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="75.4397" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="22.033" y="75.4397" visibility="1" zValue="2" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="176.197" outlineWidth="0.3" excludeFromExports="0" uuid="{39bfcdb2-7ad3-4db7-b651-394e438e1c8b}" height="16.7578" itemRotation="0" frame="false" pagex="22.033">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" labelText="Газар эзэмших эрхийн гэрчилгээг бусдад &#xa;шилжүүлэх тухай&#xa;" htmlState="0" halign="4" margin="1">
+   <LabelFont description="MS Shell Dlg 2,12,-1,5,50,0,0,0,0,0"/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="58.4969" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="49.8123" y="58.4969" visibility="1" zValue="1" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="120.638" outlineWidth="0.3" excludeFromExports="0" uuid="{043abdaf-d6cf-4227-a905-21b3c6db933b}" height="13.629" itemRotation="0" frame="false" pagex="49.8123">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+   </ComposerItem>
+  </ComposerLabel>
+ </Composition>
+</Composer>

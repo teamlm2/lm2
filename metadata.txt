@@ -1,0 +1,13 @@
+[general]
+name= LM2
+description=Land management tools for ALAGaC
+category=LM Tools
+version=1.0.0
+qgisMinimumVersion=2.0
+
+author=Topmap LLC
+email=topmapinfo@yahoo.com
+
+icon=view/icons/application.png
+
+class_name=LM2Plugin

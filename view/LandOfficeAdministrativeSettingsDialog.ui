@@ -1,0 +1,3604 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LandOfficeAdministrativeSettingsDialog</class>
+ <widget class="QDialog" name="LandOfficeAdministrativeSettingsDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>470</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>470</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>800</width>
+    <height>470</height>
+   </size>
+  </property>
+  <property name="baseSize">
+   <size>
+    <width>800</width>
+    <height>470</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Administrative Settings</string>
+  </property>
+  <widget class="QPushButton" name="close_button">
+   <property name="geometry">
+    <rect>
+     <x>720</x>
+     <y>430</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="help_button">
+   <property name="geometry">
+    <rect>
+     <x>540</x>
+     <y>430</y>
+     <width>91</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>?</string>
+   </property>
+  </widget>
+  <widget class="QTabWidget" name="tabWidget">
+   <property name="geometry">
+    <rect>
+     <x>6</x>
+     <y>8</y>
+     <width>786</width>
+     <height>416</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="widget">
+    <attribute name="title">
+     <string>Report Parameters</string>
+    </attribute>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="geometry">
+      <rect>
+       <x>7</x>
+       <y>4</y>
+       <width>766</width>
+       <height>376</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Land Office</string>
+     </property>
+     <widget class="QLineEdit" name="land_office_name_edit">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>210</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>210</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Land Office Name</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>11</x>
+        <y>70</y>
+        <width>210</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Address</string>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="address_edit">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>90</y>
+        <width>210</width>
+        <height>110</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>12</x>
+        <y>200</y>
+        <width>210</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Bank</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="bank_cbox">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>220</y>
+        <width>211</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>250</y>
+        <width>210</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Bank Account Number</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="bank_account_num_edit">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>270</y>
+        <width>210</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>20</y>
+        <width>210</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Phone</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="phone_edit">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>40</y>
+        <width>210</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>70</y>
+        <width>210</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Fax</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="fax_edit">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>90</y>
+        <width>210</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>120</y>
+        <width>210</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Email Address</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="email_address_edit">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>140</y>
+        <width>210</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="web_site_label">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>170</y>
+        <width>210</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Website</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="web_site_edit">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>190</y>
+        <width>210</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="webgis_ip_edit">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>272</y>
+        <width>176</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_50">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>252</y>
+        <width>181</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Webgis IP Address</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="ref_webgis_button">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>271</y>
+        <width>171</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Update IP Address</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_11">
+      <property name="geometry">
+       <rect>
+        <x>480</x>
+        <y>20</y>
+        <width>281</width>
+        <height>196</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Archive connection</string>
+      </property>
+      <widget class="QLineEdit" name="host_user_edit">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>11</x>
+         <y>66</y>
+         <width>113</width>
+         <height>20</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="host_connect_button">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>146</x>
+         <y>93</y>
+         <width>75</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Connect</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="is_user_checkbox">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>11</x>
+         <y>42</y>
+         <width>186</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>is username and password</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="host_pass_edit">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>11</x>
+         <y>94</y>
+         <width>113</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="doc_path_checkbox">
+       <property name="geometry">
+        <rect>
+         <x>11</x>
+         <y>20</y>
+         <width>251</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Is Aimag Document path</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="doc_path_edit">
+       <property name="geometry">
+        <rect>
+         <x>11</x>
+         <y>120</y>
+         <width>251</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_2">
+    <attribute name="title">
+     <string>Land Fee Base Values</string>
+    </attribute>
+    <widget class="QLabel" name="label_17">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>90</y>
+       <width>210</width>
+       <height>13</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Zones</string>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="geometry">
+      <rect>
+       <x>95</x>
+       <y>85</y>
+       <width>116</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Copy Fee Entries</string>
+     </property>
+     <widget class="QLabel" name="label_18">
+      <property name="geometry">
+       <rect>
+        <x>15</x>
+        <y>15</y>
+        <width>130</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>From Zone</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_19">
+      <property name="geometry">
+       <rect>
+        <x>15</x>
+        <y>55</y>
+        <width>130</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>To Zone</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="from_zone_cbox">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>96</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="to_zone_cbox">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>70</y>
+        <width>96</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="copy_fees_button">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>100</y>
+        <width>96</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Copy</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="geometry">
+      <rect>
+       <x>215</x>
+       <y>99</y>
+       <width>332</width>
+       <height>111</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>New Decision Or Change Of Zone Boundary</string>
+     </property>
+     <widget class="QPushButton" name="update_contracts_button">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>70</y>
+        <width>140</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Update Contracts</string>
+      </property>
+     </widget>
+     <widget class="QDateEdit" name="update_date">
+      <property name="geometry">
+       <rect>
+        <x>13</x>
+        <y>71</y>
+        <width>136</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="keyboardTracking">
+       <bool>true</bool>
+      </property>
+      <property name="displayFormat">
+       <string>yyyy-MM-dd</string>
+      </property>
+      <property name="calendarPopup">
+       <bool>true</bool>
+      </property>
+      <property name="timeSpec">
+       <enum>Qt::LocalTime</enum>
+      </property>
+     </widget>
+     <widget class="QDateEdit" name="change_begin_date">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>13</x>
+        <y>41</y>
+        <width>83</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="keyboardTracking">
+       <bool>true</bool>
+      </property>
+      <property name="displayFormat">
+       <string>yyyy-MM-dd</string>
+      </property>
+      <property name="calendarPopup">
+       <bool>true</bool>
+      </property>
+      <property name="timeSpec">
+       <enum>Qt::LocalTime</enum>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="change_date_button">
+      <property name="geometry">
+       <rect>
+        <x>205</x>
+        <y>40</y>
+        <width>93</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Change Date</string>
+      </property>
+     </widget>
+     <widget class="QDateEdit" name="change_end_date">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>41</y>
+        <width>83</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="keyboardTracking">
+       <bool>true</bool>
+      </property>
+      <property name="displayFormat">
+       <string>yyyy-MM-dd</string>
+      </property>
+      <property name="calendarPopup">
+       <bool>true</bool>
+      </property>
+      <property name="timeSpec">
+       <enum>Qt::LocalTime</enum>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="begin_date_checkbox">
+      <property name="geometry">
+       <rect>
+        <x>13</x>
+        <y>15</y>
+        <width>91</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Begin Date</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="end_date_checkbox">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>15</y>
+        <width>86</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>End Date</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="cancel_end_date_checkbox">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>15</y>
+        <width>121</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Cancel End Date</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QListWidget" name="zones_lwidget">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>109</y>
+       <width>66</width>
+       <height>101</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QTableWidget" name="land_fee_twidget">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>220</y>
+       <width>706</width>
+       <height>161</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>441</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="autoFillBackground">
+      <bool>true</bool>
+     </property>
+     <attribute name="horizontalHeaderCascadingSectionResizes">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="horizontalHeaderDefaultSectionSize">
+      <number>200</number>
+     </attribute>
+     <attribute name="horizontalHeaderHighlightSections">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="horizontalHeaderMinimumSectionSize">
+      <number>30</number>
+     </attribute>
+     <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="horizontalHeaderStretchLastSection">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderCascadingSectionResizes">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="verticalHeaderHighlightSections">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="verticalHeaderMinimumSectionSize">
+      <number>25</number>
+     </attribute>
+     <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderStretchLastSection">
+      <bool>false</bool>
+     </attribute>
+     <column>
+      <property name="text">
+       <string>Land Use Category</string>
+      </property>
+      <property name="font">
+       <font>
+        <family>Lucida Grande</family>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="textAlignment">
+       <set>AlignJustify|AlignVCenter</set>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Fee Per m2 (₮)</string>
+      </property>
+      <property name="font">
+       <font>
+        <family>Lucida Grande</family>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="textAlignment">
+       <set>AlignJustify|AlignVCenter</set>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Subsidized Area (m2)</string>
+      </property>
+      <property name="font">
+       <font>
+        <family>Lucida Grande</family>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="textAlignment">
+       <set>AlignJustify|AlignVCenter</set>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Subsidized Fee Rate (%)</string>
+      </property>
+      <property name="font">
+       <font>
+        <family>Lucida Grande</family>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="textAlignment">
+       <set>AlignJustify|AlignVCenter</set>
+      </property>
+     </column>
+    </widget>
+    <widget class="QPushButton" name="add_fee_button">
+     <property name="geometry">
+      <rect>
+       <x>740</x>
+       <y>275</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Add Row</string>
+     </property>
+     <property name="text">
+      <string>+</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="delete_fee_button">
+     <property name="geometry">
+      <rect>
+       <x>740</x>
+       <y>315</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Delete Row</string>
+     </property>
+     <property name="text">
+      <string>-</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_45">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>25</x>
+       <y>62</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Zone Begin Date</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_46">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>62</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Zone End Date</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="zone_begin_date">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>60</y>
+       <width>101</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="zone_end_date">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>60</y>
+       <width>101</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="is_find_date_checkbox">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>40</y>
+       <width>381</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>is find date</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="zone_find_button">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>425</x>
+       <y>59</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Zone Find</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_16">
+     <property name="geometry">
+      <rect>
+       <x>26</x>
+       <y>0</y>
+       <width>210</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Zone Location</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="zone_location_cbox">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>15</y>
+       <width>216</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="doc_view_button">
+     <property name="geometry">
+      <rect>
+       <x>710</x>
+       <y>90</y>
+       <width>66</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>view</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="doc_add_button">
+     <property name="geometry">
+      <rect>
+       <x>710</x>
+       <y>65</y>
+       <width>66</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>add</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="doc_delete_button">
+     <property name="geometry">
+      <rect>
+       <x>710</x>
+       <y>115</y>
+       <width>66</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>delete</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_47">
+     <property name="geometry">
+      <rect>
+       <x>550</x>
+       <y>15</y>
+       <width>226</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Approved Land Fee Zone Documents</string>
+     </property>
+    </widget>
+    <widget class="QListWidget" name="document_twidget">
+     <property name="geometry">
+      <rect>
+       <x>550</x>
+       <y>36</y>
+       <width>155</width>
+       <height>173</height>
+      </rect>
+     </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="load_document_button">
+     <property name="geometry">
+      <rect>
+       <x>710</x>
+       <y>40</y>
+       <width>66</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>load</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_3">
+    <attribute name="title">
+     <string>Land Base Values And Land Tax</string>
+    </attribute>
+    <widget class="QGroupBox" name="groupBox_4">
+     <property name="geometry">
+      <rect>
+       <x>460</x>
+       <y>70</y>
+       <width>310</width>
+       <height>140</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>New Decision Or Change Of Zone Boundary</string>
+     </property>
+     <widget class="QPushButton" name="update_records_button">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>65</y>
+        <width>140</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Update Records</string>
+      </property>
+     </widget>
+     <widget class="QDateEdit" name="update_tax_date">
+      <property name="geometry">
+       <rect>
+        <x>19</x>
+        <y>66</y>
+        <width>130</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="keyboardTracking">
+       <bool>true</bool>
+      </property>
+      <property name="displayFormat">
+       <string>yyyy-MM-dd</string>
+      </property>
+      <property name="calendarPopup">
+       <bool>true</bool>
+      </property>
+      <property name="timeSpec">
+       <enum>Qt::LocalTime</enum>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_5">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>70</y>
+       <width>150</width>
+       <height>140</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Copy Zone Entries</string>
+     </property>
+     <widget class="QLabel" name="label_21">
+      <property name="geometry">
+       <rect>
+        <x>15</x>
+        <y>25</y>
+        <width>130</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>From Zone</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_22">
+      <property name="geometry">
+       <rect>
+        <x>15</x>
+        <y>64</y>
+        <width>130</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>To Zone</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="from_zone_tax_cbox">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>130</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="to_zone_tax_cbox">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>80</y>
+        <width>130</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="copy_taxes_button">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>110</y>
+        <width>131</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Copy</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QComboBox" name="zone_location_tax_cbox">
+     <property name="geometry">
+      <rect>
+       <x>15</x>
+       <y>30</y>
+       <width>216</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_23">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>15</y>
+       <width>210</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Zone Location</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_24">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>65</y>
+       <width>210</width>
+       <height>13</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Zones</string>
+     </property>
+    </widget>
+    <widget class="QTableWidget" name="land_tax_twidget">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>220</y>
+       <width>706</width>
+       <height>161</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>440</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="autoFillBackground">
+      <bool>true</bool>
+     </property>
+     <attribute name="horizontalHeaderCascadingSectionResizes">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="horizontalHeaderDefaultSectionSize">
+      <number>200</number>
+     </attribute>
+     <attribute name="horizontalHeaderHighlightSections">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="horizontalHeaderMinimumSectionSize">
+      <number>30</number>
+     </attribute>
+     <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="horizontalHeaderStretchLastSection">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderCascadingSectionResizes">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="verticalHeaderHighlightSections">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="verticalHeaderMinimumSectionSize">
+      <number>25</number>
+     </attribute>
+     <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderStretchLastSection">
+      <bool>false</bool>
+     </attribute>
+     <column>
+      <property name="text">
+       <string>Land Use Category</string>
+      </property>
+      <property name="font">
+       <font>
+        <family>Lucida Grande</family>
+        <pointsize>8</pointsize>
+        <italic>false</italic>
+       </font>
+      </property>
+      <property name="textAlignment">
+       <set>AlignJustify|AlignVCenter</set>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Base Value Per m2 (₮)</string>
+      </property>
+      <property name="font">
+       <font>
+        <family>Lucida Grande</family>
+        <pointsize>8</pointsize>
+        <italic>false</italic>
+       </font>
+      </property>
+      <property name="textAlignment">
+       <set>AlignLeft|AlignVCenter</set>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Base Tax Rate (%)</string>
+      </property>
+      <property name="font">
+       <font>
+        <family>Lucida Grande</family>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="textAlignment">
+       <set>AlignJustify|AlignVCenter</set>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Subsidized Area (m2)</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Subsidized Tax Rate (%)</string>
+      </property>
+      <property name="font">
+       <font>
+        <family>Lucida Grande</family>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="textAlignment">
+       <set>AlignJustify|AlignVCenter</set>
+      </property>
+     </column>
+    </widget>
+    <widget class="QListWidget" name="zones_tax_lwidget">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>80</y>
+       <width>210</width>
+       <height>130</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="delete_tax_button">
+     <property name="geometry">
+      <rect>
+       <x>740</x>
+       <y>315</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Delete Row</string>
+     </property>
+     <property name="text">
+      <string>-</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="add_tax_button">
+     <property name="geometry">
+      <rect>
+       <x>740</x>
+       <y>275</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Add Row</string>
+     </property>
+     <property name="text">
+      <string>+</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_4">
+    <attribute name="title">
+     <string>Certificates Numbers</string>
+    </attribute>
+    <widget class="QGroupBox" name="groupBox_6">
+     <property name="geometry">
+      <rect>
+       <x>7</x>
+       <y>5</y>
+       <width>766</width>
+       <height>366</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Range Of Certificate Numbers</string>
+     </property>
+     <widget class="QComboBox" name="certificate_type_cbox">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>40</y>
+        <width>411</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="certificate_range_twidget">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>75</y>
+        <width>676</width>
+        <height>276</height>
+       </rect>
+      </property>
+      <column>
+       <property name="text">
+        <string>ID</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Begin Date</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>End Date</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>First Range</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Last Range</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Current No</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Description</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QPushButton" name="add_range_button">
+      <property name="geometry">
+       <rect>
+        <x>710</x>
+        <y>90</y>
+        <width>36</width>
+        <height>36</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>+</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="remove_range_button">
+      <property name="geometry">
+       <rect>
+        <x>710</x>
+        <y>130</y>
+        <width>36</width>
+        <height>36</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>-</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_8">
+    <attribute name="title">
+     <string>Cadastre Page</string>
+    </attribute>
+    <widget class="QComboBox" name="cpage_aimag_cbox">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>35</y>
+       <width>166</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_25">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>15</y>
+       <width>151</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Aimag</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_26">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>15</y>
+       <width>151</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Soum</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="cpage_soum_cbox">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>35</y>
+       <width>166</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QDateEdit" name="cpage_register_date">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>85</y>
+       <width>110</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_27">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>65</y>
+       <width>111</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Begin Date</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_29">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>65</y>
+       <width>116</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>End Date</string>
+     </property>
+    </widget>
+    <widget class="QDateEdit" name="cpage_end_date">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>85</y>
+       <width>110</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="cpage_first_number_edit">
+     <property name="geometry">
+      <rect>
+       <x>275</x>
+       <y>85</y>
+       <width>121</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="maximum">
+      <number>999999999</number>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="cpage_last_number_edit">
+     <property name="geometry">
+      <rect>
+       <x>405</x>
+       <y>85</y>
+       <width>121</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="maximum">
+      <number>999999999</number>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="cpage_current_number_edit">
+     <property name="geometry">
+      <rect>
+       <x>535</x>
+       <y>85</y>
+       <width>121</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="maximum">
+      <number>999999999</number>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_30">
+     <property name="geometry">
+      <rect>
+       <x>275</x>
+       <y>65</y>
+       <width>126</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>First Number</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_31">
+     <property name="geometry">
+      <rect>
+       <x>405</x>
+       <y>65</y>
+       <width>126</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Last Number</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_32">
+     <property name="geometry">
+      <rect>
+       <x>535</x>
+       <y>65</y>
+       <width>126</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Current Number</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="cpage_add_button">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>130</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Add</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="cpage_edit_button">
+     <property name="geometry">
+      <rect>
+       <x>245</x>
+       <y>130</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Update</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="cpage_delete_button">
+     <property name="geometry">
+      <rect>
+       <x>355</x>
+       <y>130</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Delete</string>
+     </property>
+    </widget>
+    <widget class="QTableWidget" name="cpage_twidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>165</y>
+       <width>756</width>
+       <height>211</height>
+      </rect>
+     </property>
+     <column>
+      <property name="text">
+       <string>ID</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Register Date</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>End Date</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>First Number</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Last Number</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Current Number</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Aimag</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Soum</string>
+      </property>
+     </column>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="documents_tab">
+    <attribute name="title">
+     <string>Official Documents</string>
+    </attribute>
+    <widget class="QGroupBox" name="groupBox_12">
+     <property name="geometry">
+      <rect>
+       <x>5</x>
+       <y>10</y>
+       <width>766</width>
+       <height>356</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Official documents</string>
+     </property>
+     <widget class="QTableWidget" name="doc_twidget">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>40</y>
+        <width>701</width>
+        <height>301</height>
+       </rect>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::DoubleClicked</set>
+      </property>
+      <attribute name="horizontalHeaderCascadingSectionResizes">
+       <bool>false</bool>
+      </attribute>
+      <attribute name="horizontalHeaderDefaultSectionSize">
+       <number>120</number>
+      </attribute>
+      <attribute name="horizontalHeaderHighlightSections">
+       <bool>false</bool>
+      </attribute>
+      <attribute name="verticalHeaderCascadingSectionResizes">
+       <bool>false</bool>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>Visible</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Name</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Description</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Open</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>View</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QPushButton" name="add_document_button">
+      <property name="geometry">
+       <rect>
+        <x>730</x>
+        <y>150</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Add Row</string>
+      </property>
+      <property name="text">
+       <string>+</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="remove_document_button">
+      <property name="geometry">
+       <rect>
+        <x>730</x>
+        <y>190</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Delete Row</string>
+      </property>
+      <property name="text">
+       <string>-</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="load_off_document_button">
+      <property name="geometry">
+       <rect>
+        <x>730</x>
+        <y>110</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Add Row</string>
+      </property>
+      <property name="text">
+       <string>Load</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_5">
+    <attribute name="title">
+     <string>Payments</string>
+    </attribute>
+    <widget class="QGroupBox" name="groupBox_7">
+     <property name="geometry">
+      <rect>
+       <x>7</x>
+       <y>3</y>
+       <width>766</width>
+       <height>321</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Interest Rates For Delayed Payments</string>
+     </property>
+     <widget class="QGroupBox" name="groupBox_8">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>50</y>
+        <width>250</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Land Fee</string>
+      </property>
+      <widget class="QLabel" name="label_8">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>25</y>
+         <width>210</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Rate Per Day (%)</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="fee_finerate_spinbox">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>40</y>
+         <width>221</width>
+         <height>24</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_9">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>50</y>
+        <width>250</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Land Tax</string>
+      </property>
+      <widget class="QLabel" name="label_10">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>25</y>
+         <width>210</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Rate Per Day (%)</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="tax_finerate_spinbox">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>40</y>
+         <width>221</width>
+         <height>24</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_6">
+    <attribute name="title">
+     <string>Codelists</string>
+    </attribute>
+    <widget class="QGroupBox" name="groupBox_10">
+     <property name="geometry">
+      <rect>
+       <x>6</x>
+       <y>3</y>
+       <width>766</width>
+       <height>376</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Codelists</string>
+     </property>
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>25</x>
+        <y>25</y>
+        <width>300</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Select Codelist</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="select_codelist_cbox">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>40</y>
+        <width>686</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_12">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>70</y>
+        <width>300</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Entries</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_13">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>400</y>
+        <width>101</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Messages</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="delete_button">
+      <property name="geometry">
+       <rect>
+        <x>725</x>
+        <y>230</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Delete Row</string>
+      </property>
+      <property name="text">
+       <string>-</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="add_button">
+      <property name="geometry">
+       <rect>
+        <x>725</x>
+        <y>190</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Add Row</string>
+      </property>
+      <property name="text">
+       <string>+</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="table_widget">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>85</y>
+        <width>691</width>
+        <height>281</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <attribute name="horizontalHeaderDefaultSectionSize">
+       <number>80</number>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>Code</string>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+        </font>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Description</string>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+        </font>
+       </property>
+      </column>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab">
+    <attribute name="title">
+     <string>Survey Company</string>
+    </attribute>
+    <widget class="QTableWidget" name="company_twidget">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>45</y>
+       <width>706</width>
+       <height>161</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>441</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="autoFillBackground">
+      <bool>true</bool>
+     </property>
+     <attribute name="horizontalHeaderCascadingSectionResizes">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="horizontalHeaderDefaultSectionSize">
+      <number>200</number>
+     </attribute>
+     <attribute name="horizontalHeaderHighlightSections">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="horizontalHeaderMinimumSectionSize">
+      <number>30</number>
+     </attribute>
+     <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="horizontalHeaderStretchLastSection">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderCascadingSectionResizes">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="verticalHeaderHighlightSections">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="verticalHeaderMinimumSectionSize">
+      <number>25</number>
+     </attribute>
+     <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderStretchLastSection">
+      <bool>false</bool>
+     </attribute>
+     <column>
+      <property name="text">
+       <string>Name</string>
+      </property>
+      <property name="font">
+       <font>
+        <family>Lucida Grande</family>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="textAlignment">
+       <set>AlignJustify|AlignVCenter</set>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Address</string>
+      </property>
+      <property name="font">
+       <font>
+        <family>Lucida Grande</family>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="textAlignment">
+       <set>AlignJustify|AlignVCenter</set>
+      </property>
+     </column>
+    </widget>
+    <widget class="QTableWidget" name="surveyor_twidget">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>225</y>
+       <width>706</width>
+       <height>161</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>441</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="autoFillBackground">
+      <bool>true</bool>
+     </property>
+     <attribute name="horizontalHeaderCascadingSectionResizes">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="horizontalHeaderDefaultSectionSize">
+      <number>200</number>
+     </attribute>
+     <attribute name="horizontalHeaderHighlightSections">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="horizontalHeaderMinimumSectionSize">
+      <number>30</number>
+     </attribute>
+     <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="horizontalHeaderStretchLastSection">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderCascadingSectionResizes">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="verticalHeaderHighlightSections">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="verticalHeaderMinimumSectionSize">
+      <number>25</number>
+     </attribute>
+     <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderStretchLastSection">
+      <bool>false</bool>
+     </attribute>
+     <column>
+      <property name="text">
+       <string>Surname</string>
+      </property>
+      <property name="font">
+       <font>
+        <family>Lucida Grande</family>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="textAlignment">
+       <set>AlignJustify|AlignVCenter</set>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>First Name</string>
+      </property>
+      <property name="font">
+       <font>
+        <family>Lucida Grande</family>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="textAlignment">
+       <set>AlignJustify|AlignVCenter</set>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Phone</string>
+      </property>
+      <property name="font">
+       <font>
+        <family>Lucida Grande</family>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="textAlignment">
+       <set>AlignJustify|AlignVCenter</set>
+      </property>
+     </column>
+    </widget>
+    <widget class="QPushButton" name="add_company_button">
+     <property name="geometry">
+      <rect>
+       <x>740</x>
+       <y>75</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Add Row</string>
+     </property>
+     <property name="text">
+      <string>+</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="delete_company_button">
+     <property name="geometry">
+      <rect>
+       <x>740</x>
+       <y>115</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Delete Row</string>
+     </property>
+     <property name="text">
+      <string>-</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="add_surveyor_button">
+     <property name="geometry">
+      <rect>
+       <x>740</x>
+       <y>270</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Add Row</string>
+     </property>
+     <property name="text">
+      <string>+</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="delete_surveyor_button">
+     <property name="geometry">
+      <rect>
+       <x>740</x>
+       <y>310</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Delete Row</string>
+     </property>
+     <property name="text">
+      <string>-</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_20">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>706</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Companies</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_28">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>210</y>
+       <width>210</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Surveyors</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="find_company_button">
+     <property name="geometry">
+      <rect>
+       <x>590</x>
+       <y>5</y>
+       <width>114</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Find</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="company_ledit">
+     <property name="geometry">
+      <rect>
+       <x>350</x>
+       <y>6</y>
+       <width>226</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_9">
+     <property name="geometry">
+      <rect>
+       <x>185</x>
+       <y>9</y>
+       <width>156</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Company Name/Address</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="Other">
+    <attribute name="title">
+     <string>Miscellaneous</string>
+    </attribute>
+    <widget class="QGroupBox" name="logging_chk_box">
+     <property name="geometry">
+      <rect>
+       <x>6</x>
+       <y>4</y>
+       <width>766</width>
+       <height>271</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Miscellaneous</string>
+     </property>
+     <widget class="QCheckBox" name="checkBox">
+      <property name="geometry">
+       <rect>
+        <x>95</x>
+        <y>85</y>
+        <width>196</width>
+        <height>18</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Log errors and messages</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="Equipmentlist">
+    <attribute name="title">
+     <string>Equipment List</string>
+    </attribute>
+    <widget class="QTableWidget" name="equipment_twidget">
+     <property name="geometry">
+      <rect>
+       <x>5</x>
+       <y>250</y>
+       <width>666</width>
+       <height>139</height>
+      </rect>
+     </property>
+     <column>
+      <property name="text">
+       <string>ID</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Equipment Name</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>UserName</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Purchase Date</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Given Date</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Duration Date</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Description</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Mac Address</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Seller Name</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Aimag</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Soum</string>
+      </property>
+     </column>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_15">
+     <property name="geometry">
+      <rect>
+       <x>5</x>
+       <y>1</y>
+       <width>771</width>
+       <height>246</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Register Information and Find</string>
+     </property>
+     <widget class="QLabel" name="label_40">
+      <property name="geometry">
+       <rect>
+        <x>235</x>
+        <y>13</y>
+        <width>200</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Users List</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="id_equipment_edit">
+      <property name="geometry">
+       <rect>
+        <x>545</x>
+        <y>73</y>
+        <width>81</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_15">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>131</y>
+        <width>106</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Given to LO Date</string>
+      </property>
+     </widget>
+     <widget class="QDateEdit" name="given_date">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>146</y>
+        <width>80</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QDateEdit" name="duration_date">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>184</y>
+        <width>80</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="documents_groupbox">
+      <property name="geometry">
+       <rect>
+        <x>440</x>
+        <y>94</y>
+        <width>321</width>
+        <height>146</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Attached Document(s)</string>
+      </property>
+      <widget class="QListWidget" name="equipment_doc_twidget">
+       <property name="geometry">
+        <rect>
+         <x>6</x>
+         <y>16</y>
+         <width>220</width>
+         <height>125</height>
+        </rect>
+       </property>
+       <property name="editTriggers">
+        <set>QAbstractItemView::NoEditTriggers</set>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="add_equip_doc_button">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>232</x>
+         <y>45</y>
+         <width>81</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Add</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="delete_equip_doc_button">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>232</x>
+         <y>98</y>
+         <width>81</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Delete</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="view_equip_doc_button">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>232</x>
+         <y>70</y>
+         <width>81</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>View</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="load_equip_doc_button">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>232</x>
+         <y>20</y>
+         <width>81</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>load</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="label_41">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>55</y>
+        <width>200</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Seller Name</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="equipment_list_cbox">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>211</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QDateEdit" name="initial_date">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>110</y>
+        <width>80</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="seller_name_edit">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>73</y>
+        <width>211</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="add_equipment_button">
+      <property name="geometry">
+       <rect>
+        <x>185</x>
+        <y>215</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Add</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="mac_address_edit">
+      <property name="geometry">
+       <rect>
+        <x>235</x>
+        <y>73</y>
+        <width>296</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="delete_equipment_button">
+      <property name="geometry">
+       <rect>
+        <x>361</x>
+        <y>215</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Delete</string>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="equipment_desc_text">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>109</y>
+        <width>316</width>
+        <height>98</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_39">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>13</y>
+        <width>200</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Equipment List</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="edit_equipment_button">
+      <property name="geometry">
+       <rect>
+        <x>273</x>
+        <y>215</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Edit</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_38">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>169</y>
+        <width>116</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Valid Duration Date</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_44">
+      <property name="geometry">
+       <rect>
+        <x>545</x>
+        <y>55</y>
+        <width>46</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>ID</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="users_list_cbox">
+      <property name="geometry">
+       <rect>
+        <x>235</x>
+        <y>30</y>
+        <width>200</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_43">
+      <property name="geometry">
+       <rect>
+        <x>235</x>
+        <y>56</y>
+        <width>296</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Mac Address /XX-XX-XX-XX-XX-XX/</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_42">
+      <property name="geometry">
+       <rect>
+        <x>121</x>
+        <y>93</y>
+        <width>161</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Description</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_14">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>93</y>
+        <width>111</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Initial Purchase Date</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="clear_button">
+      <property name="geometry">
+       <rect>
+        <x>9</x>
+        <y>215</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Clear</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="find_button">
+      <property name="geometry">
+       <rect>
+        <x>97</x>
+        <y>215</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Find</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_48">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>10</y>
+        <width>146</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Aimags</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="aimags_cbox">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>30</y>
+        <width>145</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_49">
+      <property name="geometry">
+       <rect>
+        <x>610</x>
+        <y>10</y>
+        <width>146</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Soums</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="soums_cbox">
+      <property name="geometry">
+       <rect>
+        <x>610</x>
+        <y>30</y>
+        <width>145</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="layer_view_button">
+     <property name="geometry">
+      <rect>
+       <x>675</x>
+       <y>270</y>
+       <width>104</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Layer view</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="print_button">
+     <property name="geometry">
+      <rect>
+       <x>675</x>
+       <y>300</y>
+       <width>104</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Print report</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_7">
+    <attribute name="title">
+     <string>Certificate Registeration</string>
+    </attribute>
+    <widget class="QPushButton" name="training_add_button">
+     <property name="geometry">
+      <rect>
+       <x>680</x>
+       <y>6</y>
+       <width>70</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>add</string>
+     </property>
+    </widget>
+    <widget class="QTableWidget" name="training_twidget">
+     <property name="geometry">
+      <rect>
+       <x>17</x>
+       <y>7</y>
+       <width>651</width>
+       <height>84</height>
+      </rect>
+     </property>
+     <attribute name="horizontalHeaderDefaultSectionSize">
+      <number>125</number>
+     </attribute>
+     <attribute name="horizontalHeaderMinimumSectionSize">
+      <number>40</number>
+     </attribute>
+     <attribute name="horizontalHeaderStretchLastSection">
+      <bool>true</bool>
+     </attribute>
+     <column>
+      <property name="text">
+       <string>ID</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Location Name</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Begin Date</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>End Date</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Description</string>
+      </property>
+     </column>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_16">
+     <property name="geometry">
+      <rect>
+       <x>17</x>
+       <y>90</y>
+       <width>758</width>
+       <height>117</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Set Role</string>
+     </property>
+     <widget class="QLabel" name="label_59">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>13</y>
+        <width>101</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Person Id</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="set_role_twidget">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>10</y>
+        <width>594</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <column>
+       <property name="text">
+        <string>ID</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Person id</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Surname</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Firstname</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>User real name</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Aimag/soum</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Is active</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QLineEdit" name="search_person_name">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>64</y>
+        <width>131</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="search_person_id">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>28</y>
+        <width>131</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_60">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>48</y>
+        <width>101</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Person name</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_17">
+     <property name="geometry">
+      <rect>
+       <x>404</x>
+       <y>207</y>
+       <width>371</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Certificate Registration</string>
+     </property>
+     <widget class="QLabel" name="label_61">
+      <property name="geometry">
+       <rect>
+        <x>102</x>
+        <y>13</y>
+        <width>76</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Begin</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_62">
+      <property name="geometry">
+       <rect>
+        <x>185</x>
+        <y>13</y>
+        <width>76</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>End</string>
+      </property>
+     </widget>
+     <widget class="QDateEdit" name="begin_date">
+      <property name="geometry">
+       <rect>
+        <x>101</x>
+        <y>29</y>
+        <width>75</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QDateEdit" name="end_date">
+      <property name="geometry">
+       <rect>
+        <x>185</x>
+        <y>29</y>
+        <width>75</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="certificate_no_edit">
+      <property name="geometry">
+       <rect>
+        <x>9</x>
+        <y>29</y>
+        <width>86</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_63">
+      <property name="geometry">
+       <rect>
+        <x>9</x>
+        <y>14</y>
+        <width>86</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>No</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="connect_cert_button">
+      <property name="geometry">
+       <rect>
+        <x>76</x>
+        <y>55</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Connect</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="cancel_cert_button">
+      <property name="geometry">
+       <rect>
+        <x>161</x>
+        <y>55</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Cancel</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="level_cbox">
+      <property name="geometry">
+       <rect>
+        <x>265</x>
+        <y>29</y>
+        <width>102</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_51">
+      <property name="geometry">
+       <rect>
+        <x>265</x>
+        <y>13</y>
+        <width>101</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Level</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="training_delete_button">
+     <property name="geometry">
+      <rect>
+       <x>680</x>
+       <y>30</y>
+       <width>70</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Delete</string>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_18">
+     <property name="geometry">
+      <rect>
+       <x>17</x>
+       <y>207</y>
+       <width>386</width>
+       <height>181</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Person Information</string>
+     </property>
+     <widget class="QTableWidget" name="person_twidget">
+      <property name="geometry">
+       <rect>
+        <x>7</x>
+        <y>83</y>
+        <width>374</width>
+        <height>94</height>
+       </rect>
+      </property>
+      <column>
+       <property name="text">
+        <string>ID</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Register</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Surname</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Firstname</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QLineEdit" name="person_id_edit">
+      <property name="geometry">
+       <rect>
+        <x>9</x>
+        <y>29</y>
+        <width>91</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="firstname_edit">
+      <property name="geometry">
+       <rect>
+        <x>249</x>
+        <y>29</y>
+        <width>131</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_64">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>13</y>
+        <width>131</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Firstname</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_65">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>13</y>
+        <width>131</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Person Id</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="surname_edit">
+      <property name="geometry">
+       <rect>
+        <x>109</x>
+        <y>29</y>
+        <width>131</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_66">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>13</y>
+        <width>131</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Surname</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="add_person_button">
+      <property name="geometry">
+       <rect>
+        <x>105</x>
+        <y>53</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>add</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="update_person_button">
+      <property name="geometry">
+       <rect>
+        <x>193</x>
+        <y>53</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Update</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="delete_person_button">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>53</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Delete</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="clear_person_button">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>53</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>clear</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QTableWidget" name="certificate_twidget">
+     <property name="geometry">
+      <rect>
+       <x>406</x>
+       <y>290</y>
+       <width>366</width>
+       <height>96</height>
+      </rect>
+     </property>
+     <column>
+      <property name="text">
+       <string>ID</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>CertificateNo</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Location</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Person</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Begin</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>End</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>level</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Cert Name</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Open</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Remove</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>View</string>
+      </property>
+     </column>
+    </widget>
+    <widget class="QPushButton" name="training_print_button">
+     <property name="geometry">
+      <rect>
+       <x>680</x>
+       <y>54</y>
+       <width>71</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Print</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QLabel" name="status_label">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>435</y>
+     <width>486</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Century Gothic</family>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Messages</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="apply_button">
+   <property name="geometry">
+    <rect>
+     <x>640</x>
+     <y>430</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Apply</string>
+   </property>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>land_office_name_edit</tabstop>
+  <tabstop>address_edit</tabstop>
+  <tabstop>bank_cbox</tabstop>
+  <tabstop>bank_account_num_edit</tabstop>
+  <tabstop>phone_edit</tabstop>
+  <tabstop>fax_edit</tabstop>
+  <tabstop>email_address_edit</tabstop>
+  <tabstop>web_site_edit</tabstop>
+  <tabstop>doc_path_checkbox</tabstop>
+  <tabstop>is_user_checkbox</tabstop>
+  <tabstop>host_user_edit</tabstop>
+  <tabstop>host_pass_edit</tabstop>
+  <tabstop>host_connect_button</tabstop>
+  <tabstop>doc_path_edit</tabstop>
+  <tabstop>webgis_ip_edit</tabstop>
+  <tabstop>ref_webgis_button</tabstop>
+  <tabstop>apply_button</tabstop>
+  <tabstop>help_button</tabstop>
+  <tabstop>close_button</tabstop>
+  <tabstop>delete_fee_button</tabstop>
+  <tabstop>zone_location_tax_cbox</tabstop>
+  <tabstop>zones_tax_lwidget</tabstop>
+  <tabstop>from_zone_tax_cbox</tabstop>
+  <tabstop>to_zone_tax_cbox</tabstop>
+  <tabstop>copy_taxes_button</tabstop>
+  <tabstop>update_tax_date</tabstop>
+  <tabstop>update_records_button</tabstop>
+  <tabstop>land_tax_twidget</tabstop>
+  <tabstop>add_tax_button</tabstop>
+  <tabstop>delete_tax_button</tabstop>
+  <tabstop>doc_twidget</tabstop>
+  <tabstop>add_document_button</tabstop>
+  <tabstop>remove_document_button</tabstop>
+  <tabstop>fee_finerate_spinbox</tabstop>
+  <tabstop>tax_finerate_spinbox</tabstop>
+  <tabstop>select_codelist_cbox</tabstop>
+  <tabstop>table_widget</tabstop>
+  <tabstop>add_button</tabstop>
+  <tabstop>delete_button</tabstop>
+  <tabstop>company_ledit</tabstop>
+  <tabstop>find_company_button</tabstop>
+  <tabstop>company_twidget</tabstop>
+  <tabstop>add_company_button</tabstop>
+  <tabstop>delete_company_button</tabstop>
+  <tabstop>surveyor_twidget</tabstop>
+  <tabstop>add_surveyor_button</tabstop>
+  <tabstop>delete_surveyor_button</tabstop>
+  <tabstop>checkBox</tabstop>
+  <tabstop>copy_fees_button</tabstop>
+  <tabstop>update_date</tabstop>
+  <tabstop>land_fee_twidget</tabstop>
+  <tabstop>from_zone_cbox</tabstop>
+  <tabstop>add_fee_button</tabstop>
+  <tabstop>zones_lwidget</tabstop>
+  <tabstop>update_contracts_button</tabstop>
+  <tabstop>to_zone_cbox</tabstop>
+  <tabstop>change_begin_date</tabstop>
+  <tabstop>change_date_button</tabstop>
+  <tabstop>change_end_date</tabstop>
+  <tabstop>begin_date_checkbox</tabstop>
+  <tabstop>end_date_checkbox</tabstop>
+  <tabstop>cancel_end_date_checkbox</tabstop>
+  <tabstop>zone_begin_date</tabstop>
+  <tabstop>zone_end_date</tabstop>
+  <tabstop>is_find_date_checkbox</tabstop>
+  <tabstop>zone_find_button</tabstop>
+  <tabstop>zone_location_cbox</tabstop>
+  <tabstop>doc_view_button</tabstop>
+  <tabstop>doc_add_button</tabstop>
+  <tabstop>doc_delete_button</tabstop>
+  <tabstop>document_twidget</tabstop>
+  <tabstop>load_document_button</tabstop>
+  <tabstop>certificate_type_cbox</tabstop>
+  <tabstop>certificate_range_twidget</tabstop>
+  <tabstop>add_range_button</tabstop>
+  <tabstop>remove_range_button</tabstop>
+  <tabstop>load_off_document_button</tabstop>
+  <tabstop>equipment_twidget</tabstop>
+  <tabstop>id_equipment_edit</tabstop>
+  <tabstop>given_date</tabstop>
+  <tabstop>duration_date</tabstop>
+  <tabstop>equipment_doc_twidget</tabstop>
+  <tabstop>add_equip_doc_button</tabstop>
+  <tabstop>delete_equip_doc_button</tabstop>
+  <tabstop>view_equip_doc_button</tabstop>
+  <tabstop>load_equip_doc_button</tabstop>
+  <tabstop>equipment_list_cbox</tabstop>
+  <tabstop>initial_date</tabstop>
+  <tabstop>seller_name_edit</tabstop>
+  <tabstop>add_equipment_button</tabstop>
+  <tabstop>mac_address_edit</tabstop>
+  <tabstop>delete_equipment_button</tabstop>
+  <tabstop>equipment_desc_text</tabstop>
+  <tabstop>edit_equipment_button</tabstop>
+  <tabstop>users_list_cbox</tabstop>
+  <tabstop>clear_button</tabstop>
+  <tabstop>find_button</tabstop>
+  <tabstop>aimags_cbox</tabstop>
+  <tabstop>soums_cbox</tabstop>
+  <tabstop>layer_view_button</tabstop>
+  <tabstop>print_button</tabstop>
+  <tabstop>training_add_button</tabstop>
+  <tabstop>training_twidget</tabstop>
+  <tabstop>set_role_twidget</tabstop>
+  <tabstop>search_person_name</tabstop>
+  <tabstop>search_person_id</tabstop>
+  <tabstop>begin_date</tabstop>
+  <tabstop>end_date</tabstop>
+  <tabstop>certificate_no_edit</tabstop>
+  <tabstop>connect_cert_button</tabstop>
+  <tabstop>cancel_cert_button</tabstop>
+  <tabstop>level_cbox</tabstop>
+  <tabstop>training_delete_button</tabstop>
+  <tabstop>person_twidget</tabstop>
+  <tabstop>person_id_edit</tabstop>
+  <tabstop>firstname_edit</tabstop>
+  <tabstop>surname_edit</tabstop>
+  <tabstop>add_person_button</tabstop>
+  <tabstop>update_person_button</tabstop>
+  <tabstop>delete_person_button</tabstop>
+  <tabstop>clear_person_button</tabstop>
+  <tabstop>certificate_twidget</tabstop>
+  <tabstop>training_print_button</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+ <designerdata>
+  <property name="gridDeltaX">
+   <number>5</number>
+  </property>
+  <property name="gridDeltaY">
+   <number>5</number>
+  </property>
+  <property name="gridSnapX">
+   <bool>true</bool>
+  </property>
+  <property name="gridSnapY">
+   <bool>true</bool>
+  </property>
+  <property name="gridVisible">
+   <bool>true</bool>
+  </property>
+ </designerdata>
+</ui>

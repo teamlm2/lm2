@@ -1,0 +1,83 @@
+<Composer title="draft_5_16_1" visible="1">
+ <Composition gridVisible="0" printResolution="300" paperWidth="210" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" snapTolerancePixels="5" numPages="1" paperHeight="297" smartGuides="1" printAsRaster="0" generateWorldFile="0">
+  <symbol alpha="1" type="fill" name="">
+   <layer pass="0" class="SimpleFill" locked="0">
+    <prop k="border_width_map_unit_scale" v="0,0"/>
+    <prop k="color" v="255,255,255,255"/>
+    <prop k="joinstyle" v="miter"/>
+    <prop k="offset" v="0,0"/>
+    <prop k="offset_map_unit_scale" v="0,0"/>
+    <prop k="offset_unit" v="MM"/>
+    <prop k="outline_color" v="0,0,0,255"/>
+    <prop k="outline_style" v="no"/>
+    <prop k="outline_width" v="0.26"/>
+    <prop k="outline_width_unit" v="MM"/>
+    <prop k="style" v="solid"/>
+   </layer>
+  </symbol>
+  <ComposerLabel valign="32" labelText="officer_name" htmlState="0" halign="4" margin="1">
+   <LabelFont description="Arial,12,-1,5,50,0,0,0,0,0"/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="142.014" page="1" id="officer_name" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="145.529" y="142.014" visibility="1" zValue="15" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="45.9833" outlineWidth="0.3" excludeFromExports="0" uuid="{a1441145-a144-4ab2-8365-e81f74e9659d}" height="6.2" itemRotation="0" frame="false" pagex="145.529">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" labelText="company_name" htmlState="0" halign="4" margin="1">
+   <LabelFont description="Arial,12,-1,5,50,0,0,0,0,0"/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="137.114" page="1" id="company_name" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="68.5936" y="137.114" visibility="1" zValue="13" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="40.3653" outlineWidth="0.3" excludeFromExports="0" uuid="{e4cec904-41fe-44fe-b383-87ffd9cf65ad}" height="6.2" itemRotation="0" frame="false" pagex="68.5936">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" labelText="full_name&#xa;&#xa;&#xa;&#xa;" htmlState="0" halign="1" margin="1">
+   <LabelFont description="Arial,12,-1,5,50,0,0,0,0,0"/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="103.096" page="1" id="full_name" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="22.033" y="103.096" visibility="1" zValue="12" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="176.122" outlineWidth="0.3" excludeFromExports="0" uuid="{fb3df5b1-afdd-4291-b102-dc421331f748}" height="32.2341" itemRotation="0" frame="false" pagex="22.033">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" labelText="ЗАСАГ ДАРГА" htmlState="0" halign="4" margin="1">
+   <LabelFont description="Arial,12,-1,5,50,0,0,0,0,0"/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="190.219" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="19.6605" y="190.219" visibility="1" zValue="6" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="181.791" outlineWidth="0.3" excludeFromExports="0" uuid="{e6152a4a-945b-4143-b539-a3d8ae94a0a8}" height="11.6383" itemRotation="0" frame="false" pagex="19.6605">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" labelText="&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;3. Газар ашиглагч гэрээгээр хүлээсэн үүргээ биелүүлж буй байдалд хяналт тавьж ажиллахыг байгаль орчны улсын байцаагч, мэргэжлийн хяналтын газар /................../-д даалгасугай." htmlState="0" halign="1" margin="1">
+   <LabelFont description="Arial,12,-1,5,50,0,0,0,0,0"/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="155.466" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="22.1084" y="155.466" visibility="1" zValue="5" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="173.701" outlineWidth="0.3" excludeFromExports="0" uuid="{ee7cd0d3-fe98-4a9b-8d05-734af91f344c}" height="17.7055" itemRotation="0" frame="false" pagex="22.1084">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" labelText="&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;2. Газар ашиглагч ............................-д газар ашиглах эрхийн гэрчилгээ олгож, гэрээ байгуулж, улсын бүртгэлд бүртгэхийг газрын даамал /ГХБХБГ//...................................../-д зөвшөөрсүгэй. " htmlState="0" halign="1" margin="1">
+   <LabelFont description="Arial,12,-1,5,50,0,0,0,0,0"/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="138.114" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="22.1084" y="138.114" visibility="1" zValue="4" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="176.122" outlineWidth="0.3" excludeFromExports="0" uuid="{6652c381-dd00-46c3-9e5d-32b6b0943190}" height="22.7448" itemRotation="0" frame="false" pagex="22.1084">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" labelText="&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Монгол Улсын Засаг захиргаа, нутаг дэвсгэрийн нэгж, түүний удирдлагын тухай хуулийн 29 дүгээр зүйлийн 29.2, Газрын тухай хуулийн 21 дүгээр зүйлийн 21.4.3 /21,3,2/, 44 дүгээр зүйлийн 44.4 дэх хэсэг, аймаг /сум/-ийн Иргэдийн Төлөөлөгчдийн Хурлын ...........оны ........... тоот тогтоолоор баталсан  “Газар зохион байгуулалтын тухайн жилийн төлөвлөгөө”-г тус тус үндэслэн ЗАХИРАМЖЛАХ нь:&#xa;" htmlState="0" halign="1" margin="1">
+   <LabelFont description="Arial,12,-1,5,50,0,0,0,0,0"/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="75.4397" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="22.033" y="75.4397" visibility="1" zValue="2" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="176.197" outlineWidth="0.3" excludeFromExports="0" uuid="{2c67f801-eab9-4118-bc9f-fcdbb0907e99}" height="28.656" itemRotation="0" frame="false" pagex="22.033">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" labelText="Газар ашиглуулах тухай&#xa;&#xa;" htmlState="0" halign="4" margin="1">
+   <LabelFont description="MS Shell Dlg 2,12,-1,5,50,0,0,0,0,0"/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="57.1486" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="51.4235" y="57.1486" visibility="1" zValue="1" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="120.638" outlineWidth="0.3" excludeFromExports="0" uuid="{62795dc7-ba0f-40fd-9114-bfc9cea5b198}" height="13.629" itemRotation="0" frame="false" pagex="51.4235">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+   </ComposerItem>
+  </ComposerLabel>
+ </Composition>
+</Composer>

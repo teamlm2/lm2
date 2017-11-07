@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ReportDialog</class>
+ <widget class="QDialog" name="ReportDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>378</width>
+    <height>476</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QListWidget" name="listWidget">
+   <property name="geometry">
+    <rect>
+     <x>4</x>
+     <y>90</y>
+     <width>371</width>
+     <height>160</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>01.GT-1 Land unified report</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>02.GT-2 Report on the legal status of the unified</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>03.GT-3 Land registry report</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>04.GT-4 Land for state special need report</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>05.GT-5 Change of land transaction report</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>06.GT-6 Land pollution report</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>07.GT-7 Land conservation report</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>08.GT-8 Land fee yearly report</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>09.GT-9 Land privatization report</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="Line" name="line">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>20</y>
+     <width>378</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>46</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Report </string>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="begin_year_sbox">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>276</y>
+     <width>91</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>256</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Report Year</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>306</y>
+     <width>46</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Aimag</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="aimag_cbox">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>326</y>
+     <width>201</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="Line" name="line_2">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>450</y>
+     <width>378</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="print_button">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>420</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Print</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="close_button">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>420</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </widget>
+  <widget class="QProgressBar" name="progressBar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>420</y>
+     <width>181</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="value">
+    <number>0</number>
+   </property>
+   <property name="textVisible">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>40</y>
+     <width>91</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Work level:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="work_level_lbl">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>40</y>
+     <width>241</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="layer_view_button">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>370</y>
+     <width>201</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Layer view</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

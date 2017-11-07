@@ -1,0 +1,1544 @@
+<Composer title="contract_poss" visible="1">
+ <Composition resizeToContentsMarginLeft="0" snapping="0" showPages="1" guidesVisible="1" resizeToContentsMarginTop="0" alignmentSnap="1" printResolution="300" paperWidth="210" gridVisible="0" snapGridOffsetX="0" smartGuides="1" snapGridOffsetY="0" resizeToContentsMarginRight="0" snapTolerancePixels="5" printAsRaster="0" generateWorldFile="0" paperHeight="297" numPages="4" snapGridResolution="10" resizeToContentsMarginBottom="0">
+  <symbol alpha="1" clip_to_extent="1" type="fill" name="">
+   <layer pass="0" class="SimpleFill" locked="0">
+    <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
+    <prop k="color" v="255,255,255,255"/>
+    <prop k="joinstyle" v="miter"/>
+    <prop k="offset" v="0,0"/>
+    <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+    <prop k="offset_unit" v="MM"/>
+    <prop k="outline_color" v="0,0,0,255"/>
+    <prop k="outline_style" v="no"/>
+    <prop k="outline_width" v="0.26"/>
+    <prop k="outline_width_unit" v="MM"/>
+    <prop k="style" v="solid"/>
+   </layer>
+  </symbol>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="197.676" page="3" id="contract_year" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="145.29" y="811.676" visibility="1" zValue="167" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="11.5598" outlineWidth="0.3" excludeFromExports="0" uuid="{6e7d3ec9-326a-49ac-abc2-a9159d05f865}" height="6.2" itemRotation="0" frame="false" pagex="145.29">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="" htmlState="0" halign="1">
+   <LabelFont description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="63.8975" page="4" id="head_name" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="17.5627" y="984.898" visibility="1" zValue="166" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="71.5234" outlineWidth="0.3" excludeFromExports="0" uuid="{f5c49121-10b3-4705-9f47-0687ed7ffe46}" height="6.2" itemRotation="0" frame="false" pagex="17.5627">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="" htmlState="0" halign="1">
+   <LabelFont description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="58.9311" page="4" id="head_position" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="17.3316" y="979.931" visibility="1" zValue="165" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="71.5234" outlineWidth="0.3" excludeFromExports="0" uuid="{22296107-f1ac-4f81-92e4-1b29033c9454}" height="6.2" itemRotation="0" frame="false" pagex="17.3316">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="" htmlState="0" halign="1">
+   <LabelFont description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="26.652" page="4" id="person_signature" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="116.419" y="947.652" visibility="1" zValue="164" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="50.9387" outlineWidth="0.3" excludeFromExports="0" uuid="{6831eb02-0129-455e-9eb4-9753733f94fa}" height="7.60703" itemRotation="0" frame="false" pagex="116.419">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="bank_and_account&#xa;" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="255.439" page="1" id="bank_and_account" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="28.3316" y="255.439" visibility="1" zValue="163" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="75.8844" outlineWidth="0.3" excludeFromExports="0" uuid="{28ea04d4-7d84-42b4-ab16-e1621ffd2017}" height="6.2" itemRotation="0" frame="false" pagex="28.3316">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="тоот дансанд төлсөн байна." htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="255.734" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="118.029" y="255.734" visibility="1" zValue="162" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="90.5166" outlineWidth="0.3" excludeFromExports="0" uuid="{938a42eb-08a3-42cb-b27e-3f0a9cc9e468}" height="6.2" itemRotation="0" frame="false" pagex="118.029">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="contract_officer_surname" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="38.6574" page="4" id="contract_officer_surname" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="16.8444" y="959.657" visibility="1" zValue="161" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="72.2344" outlineWidth="0.3" excludeFromExports="0" uuid="{ccd0d2c9-3cb0-4d30-a6b4-85525d3e48ce}" height="6.2" itemRotation="0" frame="false" pagex="16.8444">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="officer_aimag" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="27.2591" page="4" id="officer_aimag" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="16.8444" y="948.259" visibility="1" zValue="160" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="91.5382" outlineWidth="0.3" excludeFromExports="0" uuid="{eca264a7-faaa-4ac3-ba3b-e6aca447f40e}" height="6.2" itemRotation="0" frame="false" pagex="16.8444">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="parcel_no" htmlState="0" halign="4">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="74.029" page="4" id="parcel_no" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="61.0468" y="995.029" visibility="1" zValue="159" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="28.4951" outlineWidth="0.3" excludeFromExports="0" uuid="{7a60d509-d992-4d59-ac63-20d8d0332996}" height="6.2" itemRotation="0" frame="false" pagex="61.0468">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="person_address&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="275.246" page="3" id="person_address" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="130.192" y="889.246" visibility="1" zValue="158" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="74.8167" outlineWidth="0.3" excludeFromExports="0" uuid="{7e7ff5fa-6b48-4ff3-8d94-f0b9dac9b8bf}" height="18.5723" itemRotation="0" frame="false" pagex="130.192">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="person_email" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="269.239" page="3" id="person_email" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="130.192" y="883.239" visibility="1" zValue="157" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="72.8187" outlineWidth="0.3" excludeFromExports="0" uuid="{46105589-fd44-4646-a315-e2d3655f3827}" height="6.2" itemRotation="0" frame="false" pagex="130.192">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="person_phone" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="263.616" page="3" id="person_phone" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="130.192" y="877.616" visibility="1" zValue="156" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="72.5436" outlineWidth="0.3" excludeFromExports="0" uuid="{30733944-d248-4d5c-92f8-909933b9f58e}" height="6.2" itemRotation="0" frame="false" pagex="130.192">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="person_bank_name" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="257.609" page="3" id="person_bank_name" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="130.192" y="871.609" visibility="1" zValue="155" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="72.8187" outlineWidth="0.3" excludeFromExports="0" uuid="{72a8efe6-ab8d-489c-806b-76fd1641784b}" height="6.2" itemRotation="0" frame="false" pagex="130.192">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="person_account_no" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="251.811" page="3" id="person_account_no" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="130.192" y="865.811" visibility="1" zValue="154" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="71.4212" outlineWidth="0.3" excludeFromExports="0" uuid="{2596e146-09e8-4962-b8e2-1ab3911771ca}" height="6.2" itemRotation="0" frame="false" pagex="130.192">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="person_id" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="246.5" page="3" id="person_id" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="130.192" y="860.5" visibility="1" zValue="153" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="71.8563" outlineWidth="0.3" excludeFromExports="0" uuid="{cfa4d21f-7507-4c0a-b893-2febff2a8ec5}" height="6.2" itemRotation="0" frame="false" pagex="130.192">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="state_reg_no" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="236.783" page="3" id="state_reg_no" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="130.467" y="850.783" visibility="1" zValue="152" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="69.6866" outlineWidth="0.3" excludeFromExports="0" uuid="{559e3ba0-888e-4057-95ee-9f7719b8fa91}" height="6.2" itemRotation="0" frame="false" pagex="130.467">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="officer_phone" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="225.482" page="3" id="officer_phone" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="93.8111" y="839.482" visibility="1" zValue="151" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="75.5567" outlineWidth="0.3" excludeFromExports="0" uuid="{5554600a-363c-4c62-a539-b3f46b18da34}" height="6.2" itemRotation="0" frame="false" pagex="93.8111">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="officer_address" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="219.242" page="3" id="officer_address" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="93.9999" y="833.242" visibility="1" zValue="150" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="113.078" outlineWidth="0.3" excludeFromExports="0" uuid="{c367c0ab-64fc-4a39-a83b-46442749556b}" height="6.2" itemRotation="0" frame="false" pagex="93.9999">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="&#xa;&#xa;" htmlState="0" halign="4">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="226.056" page="1" id="Quarterly3" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="148.299" y="226.056" visibility="1" zValue="149" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="21.9238" outlineWidth="0.3" excludeFromExports="0" uuid="{14c9b49d-d4a8-4990-b860-a1af202060f7}" height="6.2" itemRotation="0" frame="false" pagex="148.299">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="&#xa;" htmlState="0" halign="4">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="226.065" page="1" id="Quarterly4" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="171.512" y="226.065" visibility="1" zValue="148" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="21.9238" outlineWidth="0.3" excludeFromExports="0" uuid="{9555d5c6-9f45-47a9-b610-92c3487b0749}" height="6.2" itemRotation="0" frame="false" pagex="171.512">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="&#xa;" htmlState="0" halign="4">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="226.065" page="1" id="Quarterly2" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="125.78" y="226.065" visibility="1" zValue="147" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="21.9238" outlineWidth="0.3" excludeFromExports="0" uuid="{a1b8b2b5-4eb5-4e57-b388-d0db203183a1}" height="6.2" itemRotation="0" frame="false" pagex="125.78">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="" htmlState="0" halign="1">
+   <LabelFont description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="226.056" page="1" id="person_name" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="26.4897" y="226.056" visibility="1" zValue="146" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="63.1742" outlineWidth="0.3" excludeFromExports="0" uuid="{5b8d2c25-764b-489a-9334-ca84f28ed4bd}" height="6.2" itemRotation="0" frame="false" pagex="26.4897">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="" htmlState="0" halign="4">
+   <LabelFont description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="226.065" page="1" id="share" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="90.988" y="226.065" visibility="1" zValue="145" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="11.1" outlineWidth="0.3" excludeFromExports="0" uuid="{cc80903b-ba06-40c2-b0a6-870f29dd6f9d}" height="6.2" itemRotation="0" frame="false" pagex="90.988">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="&#xa;" htmlState="0" halign="4">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="226.056" page="1" id="Quarterly1" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="103.085" y="226.056" visibility="1" zValue="144" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="21.9238" outlineWidth="0.3" excludeFromExports="0" uuid="{6eb2115f-3383-46e0-80d5-f1eb15015535}" height="6.2" itemRotation="0" frame="false" pagex="103.085">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="parcel_id" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="148.14" page="1" id="parcel_id" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="67.8216" y="148.14" visibility="1" zValue="143" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="43.6846" outlineWidth="0.3" excludeFromExports="0" uuid="{6e3aee54-ae05-4ec2-8043-5b6a54adb0ee}" height="6.2" itemRotation="0" frame="false" pagex="67.8216">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="all_year_fee" htmlState="0" halign="4">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="169.033" page="1" id="all_year_fee" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="158.505" y="169.033" visibility="1" zValue="142" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="34.0508" outlineWidth="0.3" excludeFromExports="0" uuid="{c5c7220b-e382-4a60-af56-17ebfe8285ac}" height="6.2" itemRotation="0" frame="false" pagex="158.505">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="fee_year" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="215.679" page="1" id="fee_year" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="57.2495" y="215.679" visibility="1" zValue="141" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="25.3115" outlineWidth="0.3" excludeFromExports="0" uuid="{85d474a0-fe94-4088-aac7-8d3c3cd1178d}" height="6.2" itemRotation="0" frame="false" pagex="57.2495">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="base_fee_per_m2" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="210.268" page="1" id="base_fee_per_m2" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="50.765" y="210.268" visibility="1" zValue="140" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="27.4622" outlineWidth="0.3" excludeFromExports="0" uuid="{d20a5d1b-9680-4c5e-9e9f-091913b80a74}" height="6.2" itemRotation="0" frame="false" pagex="50.765">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="contract_end_date" htmlState="0" halign="4">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="192.475" page="1" id="contract_end_date" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="75.6534" y="192.475" visibility="1" zValue="139" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="34.5039" outlineWidth="0.3" excludeFromExports="0" uuid="{9c615736-26cd-48d9-b6e1-59364ed3329e}" height="6.2" itemRotation="0" frame="false" pagex="75.6534">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="contract_begin_date&#xa;" htmlState="0" halign="4">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="192.475" page="1" id="contract_begin_date" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="31.2716" y="192.475" visibility="1" zValue="138" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="32.8343" outlineWidth="0.3" excludeFromExports="0" uuid="{27735a25-72ef-44c2-8e93-19c90e5def7d}" height="6.2" itemRotation="0" frame="false" pagex="31.2716">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="landuse_area&#xa;" htmlState="0" halign="4">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="168.866" page="1" id="landuse_area" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="95.9999" y="168.866" visibility="1" zValue="137" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="53.035" outlineWidth="0.3" excludeFromExports="0" uuid="{486474f0-c22e-47ab-8479-4620f6d4ffdc}" height="6.53439" itemRotation="0" frame="false" pagex="95.9999">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="area_m2" htmlState="0" halign="2">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="141.14" page="1" id="area_m2" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="113.204" y="141.14" visibility="1" zValue="136" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="19.2943" outlineWidth="0.3" excludeFromExports="0" uuid="{ab05dd64-dc59-4980-83f7-ac114c60eea8}" height="6.2" itemRotation="0" frame="false" pagex="113.204">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="landuse_type&#xa;" htmlState="0" halign="4">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="169.2" page="1" id="landuse_type" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="30.0994" y="169.2" visibility="1" zValue="135" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="61.0545" outlineWidth="0.3" excludeFromExports="0" uuid="{535ce19a-0bc0-4d8b-905b-53336f01bc0c}" height="15.0613" itemRotation="0" frame="false" pagex="30.0994">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="төлөөлж" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="79.8102" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.7119" y="79.8102" visibility="1" zValue="134" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="16.7751" outlineWidth="0.3" excludeFromExports="0" uuid="{ff83b2c5-cf4c-46ee-8b84-f80139c44eb5}" height="6.2" itemRotation="0" frame="false" pagex="21.7119">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="decision_no" htmlState="0" halign="4">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="74.5889" page="1" id="decision_no" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="98.676" y="74.5889" visibility="1" zValue="133" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="24.0361" outlineWidth="0.3" excludeFromExports="0" uuid="{7aeaa1d6-58aa-4ae8-ac8b-ecfa60832550}" height="6.2" itemRotation="0" frame="false" pagex="98.676">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="decision_date" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="74.5889" page="1" id="decision_date" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="43.3902" y="74.5889" visibility="1" zValue="132" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="43.6187" outlineWidth="0.3" excludeFromExports="0" uuid="{823ce3bd-0f67-4cd0-9485-82e9650862fc}" height="6.2" itemRotation="0" frame="false" pagex="43.3902">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="soum" htmlState="0" halign="4">
+   <LabelFont description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="78.3566" page="1" id="soum_name2" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="38.4367" y="78.3566" visibility="1" zValue="131" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="35.6513" outlineWidth="0.3" excludeFromExports="0" uuid="{9211c94e-0856-4bf7-bf9a-bb6e9d3cd51a}" height="6.2" itemRotation="0" frame="false" pagex="38.4367">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="/тэмдэг/" htmlState="0" halign="4">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="53.116" page="4" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="167.972" y="974.116" visibility="1" zValue="130" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="24.6306" outlineWidth="0.3" excludeFromExports="0" uuid="{292e2b92-1826-4bd7-af2c-a2564263d92c}" height="5.81511" itemRotation="0" frame="false" pagex="167.972">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="/гарын үсэг/" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="49.577" page="4" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="145.435" y="970.577" visibility="1" zValue="129" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="24.6306" outlineWidth="0.3" excludeFromExports="0" uuid="{ed7755d2-15ea-40e7-acaf-8ec87b40dd88}" height="5.81511" itemRotation="0" frame="false" pagex="145.435">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="/тэмдэг/" htmlState="0" halign="4">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="47.411" page="4" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="42.7228" y="968.411" visibility="1" zValue="128" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="24.6306" outlineWidth="0.3" excludeFromExports="0" uuid="{953ade42-ae92-4c3f-bfd8-58ebfb8cb885}" height="5.98115" itemRotation="0" frame="false" pagex="42.7228">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="" htmlState="0" halign="4">
+   <LabelFont description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="68.1527" page="1" id="soum_name1" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="138.702" y="68.1527" visibility="1" zValue="127" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="35.6513" outlineWidth="0.3" excludeFromExports="0" uuid="{1c1b0dd9-2c02-4a02-96e9-245013c9c8a5}" height="6.2" itemRotation="0" frame="false" pagex="138.702">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="aimag" htmlState="0" halign="4">
+   <LabelFont description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="68.1527" page="1" id="aimag_name1" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="83.5694" y="68.1527" visibility="1" zValue="126" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="37.7092" outlineWidth="0.3" excludeFromExports="0" uuid="{675022fd-2520-4402-b437-7eb103bf9a4f}" height="6.2" itemRotation="0" frame="false" pagex="83.5694">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="4.5. Холбогдох хууль тогтоомжоор олгогдсон бусад эрх, үүрэг, хариуцлага хүлээх;" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="164.716" page="2" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.3426" y="471.716" visibility="1" zValue="125" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="179.117" outlineWidth="0.3" excludeFromExports="0" uuid="{8248803e-591e-4ff0-80c9-3c7d0436cc9e}" height="4.52019" itemRotation="0" frame="false" pagex="21.3426">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="Гэрээний талуудын албан ёсны хаяг, харилцах утас:" htmlState="0" halign="4">
+   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="210.977" page="3" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="45.9871" y="824.977" visibility="1" zValue="124" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="130.458" outlineWidth="0.3" excludeFromExports="0" uuid="{56edf3f2-d556-4883-874c-5658cd614c47}" height="5.81511" itemRotation="0" frame="false" pagex="45.9871">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="4.4. Газар эзэмших гэрээг жил бүр дүгнэх;" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="159.195" page="2" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.3426" y="466.195" visibility="1" zValue="123" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="69.8114" outlineWidth="0.3" excludeFromExports="0" uuid="{228e949d-c9a7-404e-b09b-510364846e39}" height="4.52019" itemRotation="0" frame="false" pagex="21.3426">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="4.2. Уг газрыг эзэмшүүлэхийн зэрэгцээ дараах шаардлагыг газар эзэмшигчид тавих эрхтэй. Үүнд:" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="100.906" page="2" id="contract_condition_4_2" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.4686" y="407.906" visibility="1" zValue="122" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="178.347" outlineWidth="0.3" excludeFromExports="0" uuid="{1efe10d1-7223-4a51-9ce5-1f936813e6c6}" height="4.52019" itemRotation="0" frame="false" pagex="21.4686">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="7.2. Энэхүү гэрээтэй холбоотой бусад асуудлыг Монгол Улсын холбогдох хууль тогтоомжийн дагуу шийдвэрлэнэ." htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="192.394" page="3" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.6036" y="806.394" visibility="1" zValue="121" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="181.407" outlineWidth="0.3" excludeFromExports="0" uuid="{3424d272-5347-4f6f-9196-3b91db8418c5}" height="4.52019" itemRotation="0" frame="false" pagex="21.6036">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="3.9. Холбогдох хууль тогтоомжоор тогтоосон бусад эрх, үүрэг, хариуцлага хүлээх;" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="78.4371" page="2" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.3286" y="385.437" visibility="1" zValue="120" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="132.359" outlineWidth="0.3" excludeFromExports="0" uuid="{ba5adfac-6221-4bd9-9603-ec42047d887a}" height="4.52019" itemRotation="0" frame="false" pagex="21.3286">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="биелүүлэх;" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="73.9169" page="2" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.5962" y="380.917" visibility="1" zValue="119" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="19.7778" outlineWidth="0.3" excludeFromExports="0" uuid="{cec99442-2c6f-4c33-a0d8-530590315f99}" height="4.52019" itemRotation="0" frame="false" pagex="21.5962">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="7.1. Хүлээлгэн өгсөн тухай акт&quot;-аар хүлээлгэн өгч, эрх бүхий Засаг дарга нар газар эзэмших эрхийн гэрчилгээ " htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="181.606" page="3" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.9726" y="795.606" visibility="1" zValue="118" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="178.487" outlineWidth="0.3" excludeFromExports="0" uuid="{f355842f-caa8-46bc-9715-83b96c9c058a}" height="4.52019" itemRotation="0" frame="false" pagex="21.9726">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="байна." htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="155.901" page="3" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.4321" y="769.901" visibility="1" zValue="117" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="11.5465" outlineWidth="0.3" excludeFromExports="0" uuid="{d00c34fd-3804-4f28-8eb2-6fde5f65f34b}" height="4.52019" itemRotation="0" frame="false" pagex="21.4321">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="3.2. Газрын төлөв байдал, чанарын хянан баталгааг газар өмчлөгөөс гаргуулж авах;" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="22.4827" page="2" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.9726" y="329.483" visibility="1" zValue="116" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="179.393" outlineWidth="0.3" excludeFromExports="0" uuid="{d48b1fa4-ff0f-41fe-bc67-5ea2b6f5f5a2}" height="4.52019" itemRotation="0" frame="false" pagex="21.9726">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="хязгаарлагдмал эрхийн хэрэгжих хугацаа, хэрэв нөхөн олговор, төлбөртэй бол түүний хэмжээ зэргийг заасан " htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="150.38" page="3" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.4321" y="764.38" visibility="1" zValue="115" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="178.651" outlineWidth="0.3" excludeFromExports="0" uuid="{609853d6-db11-4d7b-a4fa-fb3cf241efde}" height="4.52019" itemRotation="0" frame="false" pagex="21.4321">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="хязгаарлагдмал эрхтэйгээр ашиглах хувийн эрхийг холбогдогч талуудын хоорондын гэрээгээр тогтооно." htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="139.34" page="3" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.5962" y="753.34" visibility="1" zValue="114" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="178.487" outlineWidth="0.3" excludeFromExports="0" uuid="{41e7c9c9-99ed-46f2-aa1f-5bafaa9f9958}" height="4.52019" itemRotation="0" frame="false" pagex="21.5962">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="3.6. Төлбөрийг хугацаанд нь гүйцэтгээгүй тохиолдолд гүйцэтгээгүй үүргийн үнийн дүнгийн 0.5 хувиар хоног " htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="48.4243" page="2" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.7119" y="355.424" visibility="1" zValue="113" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="178.739" outlineWidth="0.3" excludeFromExports="0" uuid="{4cd236e2-b464-48d0-b246-7dcbc6d01390}" height="4.7805" itemRotation="0" frame="false" pagex="21.7119">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="4-р улиралд" htmlState="0" halign="4">
+   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="221.879" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="169.89" y="221.879" visibility="1" zValue="112" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="22.6658" outlineWidth="0.3" excludeFromExports="0" uuid="{29c3523a-5240-4691-a794-f01a192bb937}" height="4.52019" itemRotation="0" frame="false" pagex="169.89">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="болон харилцаа холбооны, нийтийн шугам ашиглах боломжгүй бол хөршийн газраар дамжин өнгөрөх дээрх" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="49.9484" page="3" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.9501" y="663.948" visibility="1" zValue="111" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="178.991" outlineWidth="0.3" excludeFromExports="0" uuid="{5a3c140a-d375-4785-ad62-b3ee148425f3}" height="4.52019" itemRotation="0" frame="false" pagex="21.9501">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="6.1. Эзэмшил газар нь бусдын газраар хүрээлэгдсэн, нийтийн ашиглалтын замд хүрэх гарцгүй буюу инженерийн" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="45.5539" page="3" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.5246" y="659.554" visibility="1" zValue="110" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="181.09" outlineWidth="0.3" excludeFromExports="0" uuid="{90536147-a4bc-4d93-95e1-8051dcaa1dc6}" height="4.52019" itemRotation="0" frame="false" pagex="21.5246">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="5.5. Гэрээний талууд шаардлагатай гэж үзсэн бусад нөхцөл:" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="21.502" page="3" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="20.5822" y="635.502" visibility="1" zValue="109" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="178.487" outlineWidth="0.3" excludeFromExports="0" uuid="{af8eaa78-d7b3-44a9-89cc-db795fd3d6a2}" height="4.24735" itemRotation="0" frame="false" pagex="20.5822">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="6.2. &quot;Иргэний хууль&quot;-ийн 150 дугаар зүйл, &quot;Газрын тухай хууль&quot;-ийн 48 дугаар зүйлийн дагуу газар өмчлөгч,  " htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="70.2234" page="3" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.5962" y="684.223" visibility="1" zValue="108" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="179.316" outlineWidth="0.3" excludeFromExports="0" uuid="{79bb095e-8a5d-4f3d-9ec7-2d76450ba5fd}" height="4.52019" itemRotation="0" frame="false" pagex="21.5962">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="уг шийдвэрийн үндэслэл болсон талуудын урьдчилсан тохиролцоо болон бусад эрхийн актаар зохицуулна." htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="16.284" page="3" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.1326" y="630.284" visibility="1" zValue="107" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="178.487" outlineWidth="0.3" excludeFromExports="0" uuid="{be96076f-619d-472c-88cc-1ff3a0111c9f}" height="4.89249" itemRotation="0" frame="false" pagex="21.1326">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="байгууллага улсын тусгай хэрэгцээнд нөхөн олговортойгоор солих буюу эргүүлэн авах тухай шийдвэр гаргавал" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="11.764" page="3" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="20.9138" y="625.764" visibility="1" zValue="106" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="178.487" outlineWidth="0.3" excludeFromExports="0" uuid="{1c907668-b3a0-47c5-bf4d-ca7c4415c3e4}" height="4.52019" itemRotation="0" frame="false" pagex="20.9138">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="тус тус болно. шаардлагатай гэж үзвэл энэ гэрээнд хавсаргаж болно." htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="282.251" page="2" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.5822" y="589.251" visibility="1" zValue="105" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="178.487" outlineWidth="0.3" excludeFromExports="0" uuid="{04cdac91-e9b0-4a93-9e01-8f934ea0e9ab}" height="4.52019" itemRotation="0" frame="false" pagex="21.5822">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="5.4.  Газар эзэмшигчийн газрыг бүхэлд нь буюу зарим хэсгийг гэрээний хугацаа дуусахаас өмнө эрх бүхий " htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="7.244" page="3" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.1459" y="621.244" visibility="1" zValue="104" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="178.487" outlineWidth="0.3" excludeFromExports="0" uuid="{acd2294e-fd9f-40fa-8635-472500b71af8}" height="4.52019" itemRotation="0" frame="false" pagex="21.1459">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="5.3. Энэхүү гэрээгээр эзэмших эзэмшил газрыг хязгаартай ашиглах эрх бүхий газар ашиглагч байгаа болон " htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="263.551" page="2" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.3392" y="570.551" visibility="1" zValue="103" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="178.487" outlineWidth="0.3" excludeFromExports="0" uuid="{8268f68e-d1ac-41e1-bbf3-bf59202838e7}" height="4.52019" itemRotation="0" frame="false" pagex="21.3392">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="ийнхүү ашиглахаар шаардсан бол түүний газар ашиглах нөхцөл, журам нь:" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="268.155" page="2" id="contract_condition_5_3" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.3426" y="575.155" visibility="1" zValue="102" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="178.487" outlineWidth="0.3" excludeFromExports="0" uuid="{f87d7544-e880-4460-b5d6-1eecf011e34e}" height="4.52019" itemRotation="0" frame="false" pagex="21.3426">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="шийдвэрлэнэ." htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="210.732" page="2" id="contract_condition_5_2" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.6506" y="517.732" visibility="1" zValue="101" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="177.75" outlineWidth="0.3" excludeFromExports="0" uuid="{3a953bc2-2847-480e-81cf-78d08bc9bcdc}" height="4.52019" itemRotation="0" frame="false" pagex="21.6506">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="хөрөнгийг хэрхэх тухай анх эрх олгосон шийдвэрт заасан бол тэр дагуу, харин заагаагүй бол дараах байдлаар " htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="205.212" page="2" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.5246" y="512.212" visibility="1" zValue="100" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="178.487" outlineWidth="0.3" excludeFromExports="0" uuid="{1e57441d-f2af-4124-a732-35ca386da8ed}" height="4.52019" itemRotation="0" frame="false" pagex="21.5246">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="5.2. Газар эзэмших эрх болон гэрээний хугацаа болоход тухайн газар дээрх барилга байгууламж, бусад эд" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="199.977" page="2" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.3392" y="506.977" visibility="1" zValue="99" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="178.487" outlineWidth="0.3" excludeFromExports="0" uuid="{ded2e9dc-b94f-41de-9354-1e52668710a8}" height="4.52019" itemRotation="0" frame="false" pagex="21.3392">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="шилжвэл дараах байдлаар газрын эрхийн харилцааг шийдвэрлэнэ." htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="180.88" page="2" id="contract_condition_5_1" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.9726" y="487.88" visibility="1" zValue="98" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="178.041" outlineWidth="0.3" excludeFromExports="0" uuid="{e28ca150-5674-4807-b136-98c4527123e1}" height="4.52019" itemRotation="0" frame="false" pagex="21.9726">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="5.1. Газар эзэмшигчийн өмчлөлд байгаа тухайн газар дээрх үл хөдлөх эд хөрөнгийн өмчлөх эрх өөр этгээдэд" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="175.884" page="2" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.3986" y="482.884" visibility="1" zValue="97" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="178.487" outlineWidth="0.3" excludeFromExports="0" uuid="{87727e5b-2907-42c0-aec1-55c89fd689bd}" height="4.52019" itemRotation="0" frame="false" pagex="21.3986">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="хуулийн 62 дугаар зүйлд зааснаар хохирлыг нөхөн төлөхийг шаардах;" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="153.675" page="2" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.6662" y="460.675" visibility="1" zValue="96" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="178.347" outlineWidth="0.3" excludeFromExports="0" uuid="{fbb69957-b492-41ac-bf8b-0464905cb81f}" height="4.52019" itemRotation="0" frame="false" pagex="21.6662">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="4.3. Газрыг гэрээний нөхцлийн дагуу эзэмшээгүй, энэ талаар тавьсан шаардлагыг биелүүлээгүй буюу &quot;Газрын" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="143.127" page="2" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.3286" y="450.127" visibility="1" zValue="95" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="178.487" outlineWidth="0.3" excludeFromExports="0" uuid="{c9519285-1886-45df-b781-de2bdfd44970}" height="4.52019" itemRotation="0" frame="false" pagex="21.3286">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="4.1. Газар эзэмшигч газрыг гэрээний дагуу эзэмшиж байгаа эсэхийг хянах;" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="95.961" page="2" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.5962" y="402.961" visibility="1" zValue="94" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="178.487" outlineWidth="0.3" excludeFromExports="0" uuid="{4da58d69-ebdd-42db-b048-d3d9205be284}" height="4.52019" itemRotation="0" frame="false" pagex="21.5962">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="Улсын бүртгэлийн дугаар:" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="237.623" page="3" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="73.3716" y="851.623" visibility="1" zValue="93" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="48.3405" outlineWidth="0.3" excludeFromExports="0" uuid="{de67f893-4878-4151-85d8-3e59ffed599c}" height="4.52019" itemRotation="0" frame="false" pagex="73.3716">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="3.1. Гэрээний нөхцөлийн дагуу газрыг эзэмших, ашиглах;" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="16.2693" page="2" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.9726" y="323.269" visibility="1" zValue="92" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="179.393" outlineWidth="0.3" excludeFromExports="0" uuid="{0cbac5fe-d0d7-435f-a592-326d91c80d34}" height="4.52019" itemRotation="0" frame="false" pagex="21.9726">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="3.8. Газар эзэмшүүлэгчээс газрын эзэмшил, ашиглалттай холбогдуулан тавьсан шаардлагыг цаг тухайд нь" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="69.3967" page="2" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.4686" y="376.397" visibility="1" zValue="91" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="178.599" outlineWidth="0.3" excludeFromExports="0" uuid="{c32a3a2e-3163-4ca1-94d0-48ea1e5be142}" height="4.52019" itemRotation="0" frame="false" pagex="21.4686">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="6.3. Газрыг хязгаарлагдмал эрхтэйгээр ашиглах нийтийн эрхийг эрх бүхий байгууллагаас тогтоох ба газрыг" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="133.82" page="3" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.3392" y="747.82" visibility="1" zValue="90" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="178.744" outlineWidth="0.3" excludeFromExports="0" uuid="{228141b2-c183-444f-9d35-79d565d8c025}" height="4.52019" itemRotation="0" frame="false" pagex="21.3392">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="3-р улиралд" htmlState="0" halign="4">
+   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="221.879" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="146.702" y="221.879" visibility="1" zValue="89" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="22.6658" outlineWidth="0.3" excludeFromExports="0" uuid="{98183417-0035-4949-af7b-b72ce706e24c}" height="4.52019" itemRotation="0" frame="false" pagex="146.702">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="Байгууллагын регистр / Иргэний &#xa;регистрийн дугаар:" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="243.282" page="3" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="73.6172" y="857.282" visibility="1" zValue="88" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="58.9507" outlineWidth="0.3" excludeFromExports="0" uuid="{4c728eb0-32f4-493b-9431-7802a96345cc}" height="8.72019" itemRotation="0" frame="false" pagex="73.6172">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="3.5. Газрын төлбөрийг газрын ашигт шинж чанарыг ашигласан эсэхээс үл хамааран хугацаанд нь төлөх;" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="44.1644" page="2" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.7206" y="351.164" visibility="1" zValue="87" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="178.095" outlineWidth="0.3" excludeFromExports="0" uuid="{eaf2cbf6-a9d0-4a18-9f49-f12cee9e8304}" height="4.25993" itemRotation="0" frame="false" pagex="21.7206">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="Газар эзэмшигч:" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="237.623" page="3" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="31.5102" y="851.623" visibility="1" zValue="86" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="28.9538" outlineWidth="0.3" excludeFromExports="0" uuid="{5acc49c3-46eb-4a51-bfcc-a7a6bb0154df}" height="4.52019" itemRotation="0" frame="false" pagex="31.5102">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="Ажлын утас:" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="226.322" page="3" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="73.7011" y="840.322" visibility="1" zValue="85" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="24.22" outlineWidth="0.3" excludeFromExports="0" uuid="{fa9101f5-c7d4-460a-ae9c-cb7390c28f34}" height="4.52019" itemRotation="0" frame="false" pagex="73.7011">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="/гарын үсэг/    ....................................." htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="44.5034" page="4" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="17.7305" y="965.503" visibility="1" zValue="84" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="69.9455" outlineWidth="0.3" excludeFromExports="0" uuid="{633e1c48-9ea4-4cb0-ba56-2b6b3303b53c}" height="5.81511" itemRotation="0" frame="false" pagex="17.7305">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="Ажлын хаяг:" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="220.082" page="3" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="73.7011" y="834.082" visibility="1" zValue="83" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="28.3078" outlineWidth="0.3" excludeFromExports="0" uuid="{9f75a8d9-d646-4cf1-a40c-35b5338a2dd7}" height="4.52019" itemRotation="0" frame="false" pagex="73.7011">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="Газар эзэмшүүлэгч:" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="220.082" page="3" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="31.4851" y="834.082" visibility="1" zValue="82" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="37.9357" outlineWidth="0.3" excludeFromExports="0" uuid="{223239b8-30da-4ae7-9456-4600ecdf3b34}" height="4.52019" itemRotation="0" frame="false" pagex="31.4851">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="газрын асуудал эрхэлсэн албан тушаалтан" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="33.0627" page="4" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="16.8709" y="954.063" visibility="1" zValue="81" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="71.8051" outlineWidth="0.3" excludeFromExports="0" uuid="{1ae48b26-ed79-4f77-b773-64e8e4b80378}" height="6.05824" itemRotation="0" frame="false" pagex="16.8709">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="Энэхүү гэрээний нэг хувийг                            тоот дугаар бүхий нэгж талбарын хувийн хэрэгт хадгалав." htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="74.029" page="4" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="15.5962" y="995.029" visibility="1" zValue="80" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="183.482" outlineWidth="0.3" excludeFromExports="0" uuid="{e3c56fba-9c05-43f9-8d23-e691af4d5f36}" height="5.81511" itemRotation="0" frame="false" pagex="15.5962">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="7.3. Энэхүү гэрээг хоёр хувь үйлдэж талууд гарын үсэг зурсан өдрөөс эхлэн                                  (үсгээр) жилийн " htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="198.5" page="3" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.4686" y="812.5" visibility="1" zValue="79" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="183.61" outlineWidth="0.3" excludeFromExports="0" uuid="{91b1716c-1f76-40fa-9b69-8b9c1533e0ef}" height="4.52019" itemRotation="0" frame="false" pagex="21.4686">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="хугацаатай байгуулав." htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="203.92" page="3" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.3986" y="817.92" visibility="1" zValue="78" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="36.1768" outlineWidth="0.3" excludeFromExports="0" uuid="{0d69782d-745d-4d0f-9dc6-bb9afb574f14}" height="4.52019" itemRotation="0" frame="false" pagex="21.3986">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="Газар эзэмшүүлэгчийг төлөөлж:" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="21.444" page="4" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="16.3316" y="942.444" visibility="1" zValue="77" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="62.3444" outlineWidth="0.3" excludeFromExports="0" uuid="{4f7298c7-a245-4ac1-a758-1bc1b0d7a1ca}" height="5.81511" itemRotation="0" frame="false" pagex="16.3316">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="Газар эзэмшигчийг төлөөлж:" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="21.444" page="4" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="124.299" y="942.444" visibility="1" zValue="76" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="61.7702" outlineWidth="0.3" excludeFromExports="0" uuid="{55979ded-b05e-4eee-9f27-263d5cc49d3f}" height="5.81511" itemRotation="0" frame="false" pagex="124.299">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="ГЭРЭЭ БАЙГУУЛСАН:" htmlState="0" halign="4">
+   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="13.452" page="4" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="43.1536" y="934.452" visibility="1" zValue="75" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="130.458" outlineWidth="0.3" excludeFromExports="0" uuid="{5388540b-f9a8-4863-838d-1fc3d0949920}" height="5.81511" itemRotation="0" frame="false" pagex="43.1536">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="officer_name" htmlState="0" halign="4">
+   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="85.3222" page="1" id="officer_name" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="34.3668" y="85.3222" visibility="1" zValue="74" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="40.712" outlineWidth="0.3" excludeFromExports="0" uuid="{315788b3-47f7-4c5e-b5eb-269083d2206a}" height="6.2" itemRotation="0" frame="false" pagex="34.3668">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="Байнгын хаяг:" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="275.246" page="3" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="72.6172" y="889.246" visibility="1" zValue="73" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="26.8347" outlineWidth="0.3" excludeFromExports="0" uuid="{b16a4870-fb45-458d-92ee-ba6fefc1da62}" height="5.81511" itemRotation="0" frame="false" pagex="72.6172">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="officer_surname&#xa;" htmlState="0" halign="4">
+   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="79.3566" page="1" id="officer_surname" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="168.184" y="79.3566" visibility="1" zValue="72" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="34.8265" outlineWidth="0.3" excludeFromExports="0" uuid="{220beaa1-16e1-48fb-9784-7fd8396c64a4}" height="6.2" itemRotation="0" frame="false" pagex="168.184">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="И-мэйл:" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="269.431" page="3" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="72.6172" y="883.431" visibility="1" zValue="71" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="18.0588" outlineWidth="0.3" excludeFromExports="0" uuid="{d84050b7-177a-4af5-8920-b54c2f77ddd5}" height="5.81511" itemRotation="0" frame="false" pagex="72.6172">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="олгосон өдрөөс эхлэн хүчин төгөлдөр болж мөрдөгдөнө." htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="186.776" page="3" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.7259" y="800.776" visibility="1" zValue="70" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="91.7488" outlineWidth="0.3" excludeFromExports="0" uuid="{ec99dfe4-8155-4c52-a7e2-a7eed78ce949}" height="4.27313" itemRotation="0" frame="false" pagex="21.7259">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="Банкны нэр:" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="257.801" page="3" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="72.6172" y="871.801" visibility="1" zValue="69" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="23.709" outlineWidth="0.3" excludeFromExports="0" uuid="{791f42d2-70cc-4908-b89b-c63eab4e8af5}" height="5.81511" itemRotation="0" frame="false" pagex="72.6172">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="Харилцах утас:" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="263.616" page="3" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="72.6172" y="877.616" visibility="1" zValue="68" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="31.5988" outlineWidth="0.3" excludeFromExports="0" uuid="{cd8df8ab-d6c2-4e7f-97dc-2a51da61f568}" height="5.81511" itemRotation="0" frame="false" pagex="72.6172">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="Харилцах дансны дугаар:" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="252.003" page="3" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="72.6172" y="866.003" visibility="1" zValue="67" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="46.7654" outlineWidth="0.3" excludeFromExports="0" uuid="{fc35f536-d844-48c9-8111-0a923354cc1c}" height="5.81511" itemRotation="0" frame="false" pagex="72.6172">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="cerificate_no" htmlState="0" halign="1">
+   <LabelFont description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="19.989" page="1" id="cerificate_no" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="171.996" y="19.989" visibility="1" zValue="66" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="30.7233" outlineWidth="0.3" excludeFromExports="0" uuid="{f423960e-183c-4d80-9d20-12b6b48be349}" height="6.4613" itemRotation="0" frame="false" pagex="171.996">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="soum" htmlState="0" halign="4">
+   <LabelFont description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="51.9563" page="1" id="soum_name" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="147.519" y="51.9563" visibility="1" zValue="65" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="32.9548" outlineWidth="0.3" excludeFromExports="0" uuid="{42b8efe3-2d14-43fe-8b8e-0f4277aea648}" height="6.2" itemRotation="0" frame="false" pagex="147.519">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="aimag" htmlState="0" halign="4">
+   <LabelFont description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="51.579" page="1" id="aimag_name" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="97.917" y="51.579" visibility="1" zValue="64" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="32.55" outlineWidth="0.3" excludeFromExports="0" uuid="{d6914207-3c79-4f07-8489-d2e60691dcbf}" height="6.2" itemRotation="0" frame="false" pagex="97.917">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="Долоо. Бусад зүйл" htmlState="0" halign="4">
+   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="174.271" page="3" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="46.1549" y="788.271" visibility="1" zValue="63" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="130.458" outlineWidth="0.3" excludeFromExports="0" uuid="{e44a0a99-6e79-4124-a10e-0ab8ba0a4a03}" height="5.81511" itemRotation="0" frame="false" pagex="46.1549">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="энэхүү гэрээнд хавсаргана." htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="167.202" page="3" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.5811" y="781.202" visibility="1" zValue="62" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="45.6183" outlineWidth="0.3" excludeFromExports="0" uuid="{b696b3fe-afaa-4755-8248-6b737ca2f08a}" height="4.52019" itemRotation="0" frame="false" pagex="21.5811">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="6.4. Газрыг хязгаарлагдмал эрхтэйгээр ашиглах эрхийг тогтоосон гэрээнд талуудын эрх, үүрэг, хариуцлага, " htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="144.86" page="3" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.4321" y="758.86" visibility="1" zValue="61" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="179.316" outlineWidth="0.3" excludeFromExports="0" uuid="{f69ff6b6-2b3b-4261-a958-788968ca4829}" height="4.52019" itemRotation="0" frame="false" pagex="21.4321">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="2-р улиралд" htmlState="0" halign="4">
+   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="221.879" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="123.917" y="221.879" visibility="1" zValue="60" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="22.6658" outlineWidth="0.3" excludeFromExports="0" uuid="{1fa21889-1c21-4428-84f9-ea573256c53d}" height="4.52019" itemRotation="0" frame="false" pagex="123.917">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="оруулна. Энэхүү газрын төлбөрийг шинэчлэн тогтоолгоогүй бол зохих зардлыг газар эзэмшигч хүлээнэ." htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="270.68" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="22.5712" y="270.68" visibility="1" zValue="59" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="178.487" outlineWidth="0.3" excludeFromExports="0" uuid="{71fa319c-3924-4bf9-aaee-9f25cecce718}" height="4.52019" itemRotation="0" frame="false" pagex="22.5712">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="тухай&quot; хуулийн 40.1.1-40.1.6 дугаарзүйлд заасан нөхцөл бий болсон тохиолдолд гэрээг хүчингүй болгож, мөн" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="148.155" page="2" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.8482" y="455.155" visibility="1" zValue="58" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="178.347" outlineWidth="0.3" excludeFromExports="0" uuid="{cdcd4667-942c-4977-8951-c40f29ce0c21}" height="4.52019" itemRotation="0" frame="false" pagex="21.8482">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="хэлэлцэн тохиролцсоны үндсэн дээр бусдын эзэмшил газрыг хязгаарлагдмал эрхтэйгээр" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="79.758" page="3" id="contract_condition_6_2" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.3986" y="693.758" visibility="1" zValue="57" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="178.755" outlineWidth="0.3" excludeFromExports="0" uuid="{287ff486-0fc6-4b28-aa1d-aa990765948d}" height="4.52019" itemRotation="0" frame="false" pagex="21.3986">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="хүсэлт шаардлагаар нь газар эзэмших эрхэд хязгаарлалт тогтоож болно." htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="64.7032" page="3" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.4686" y="678.703" visibility="1" zValue="56" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="117.233" outlineWidth="0.3" excludeFromExports="0" uuid="{10b120de-03f4-4051-ad9b-51320219f129}" height="4.52019" itemRotation="0" frame="false" pagex="21.4686">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="цэгүүдтэй холбогдох зам, шугам хоолойг тавих, байрлуулах, газар хамгаалах, нөхөн сэргээх газар зохион байгуулалтын" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="54.5869" page="3" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.5246" y="668.587" visibility="1" zValue="55" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="178.559" outlineWidth="0.3" excludeFromExports="0" uuid="{ecc743bd-541e-499d-b3b2-a3ffa4ef0dc5}" height="4.52019" itemRotation="0" frame="false" pagex="21.5246">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="зөвшөөрөл авч, энэ тухай улсын бүртгэлд бүртгүүлэх;" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="63.8765" page="2" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.8482" y="370.877" visibility="1" zValue="54" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="178.347" outlineWidth="0.3" excludeFromExports="0" uuid="{2e5a3cf6-7b22-4793-b9fe-f0aca25913a3}" height="4.52019" itemRotation="0" frame="false" pagex="21.8482">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="газрыг үргэлжлүүлэн эзэмшихээр гэрчилгээний хугацааг сунгуулах;" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="38.605" page="2" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.8482" y="345.605" visibility="1" zValue="53" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="177.771" outlineWidth="0.3" excludeFromExports="0" uuid="{dc842a14-9c9f-4255-b56b-4fc46b9b545c}" height="4.25993" itemRotation="0" frame="false" pagex="21.8482">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="1-р улиралд" htmlState="0" halign="4">
+   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="221.879" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="100.343" y="221.879" visibility="1" zValue="52" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="22.6658" outlineWidth="0.3" excludeFromExports="0" uuid="{a3723544-68b4-4596-95a3-280b80143d9b}" height="4.52019" itemRotation="0" frame="false" pagex="100.343">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="2.5. Эрх бүхий байгжжллагын шийдвэрээр газрын төлбөрийн хэмжээ өөрчлөгдөх тохиолдолд гэрээнд өөрчлөлт" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="266.159" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="22.5712" y="266.159" visibility="1" zValue="51" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="179.317" outlineWidth="0.3" excludeFromExports="0" uuid="{a356a024-75c5-419b-960a-5ab2f597b890}" height="4.52019" itemRotation="0" frame="false" pagex="22.5712">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="3.7. Эзэмшлийн газраа бүхэлд нь буюу зарим хэсгийг бусдад ашиглуулах бол эрх бүхий Засаг даргаас " htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="58.3563" page="2" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.7206" y="365.356" visibility="1" zValue="50" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="178.347" outlineWidth="0.3" excludeFromExports="0" uuid="{52701381-cf0d-43b9-91a7-6ead5529ff33}" height="4.52019" itemRotation="0" frame="false" pagex="21.7206">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="3.4. Гэрээгээр хүлээсэн үүргээ зохих ёсоор биелүүлж ирсэн бол эрхийн гэрчилгээний хугацаа дуусахад уг " htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="33.8245" page="2" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.9726" y="340.825" visibility="1" zValue="49" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="178.095" outlineWidth="0.3" excludeFromExports="0" uuid="{e7513855-7adb-4bf9-aee6-306afa6a9cbd}" height="4.7805" itemRotation="0" frame="false" pagex="21.9726">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="Хувь" htmlState="0" halign="4">
+   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="221.879" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="87.6202" y="221.879" visibility="1" zValue="48" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="13.4586" outlineWidth="0.3" excludeFromExports="0" uuid="{e760c184-01a6-46d8-84ba-3eb39043da32}" height="4.52019" itemRotation="0" frame="false" pagex="87.6202">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="6.5. Газрыг хязгаарлагдмал эрхтэйгээр ашиглах эрхийг тогтоосон акт бусад шаардлагатай холбогдох материралыг" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="161.682" page="3" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.3986" y="775.682" visibility="1" zValue="47" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="183.61" outlineWidth="0.3" excludeFromExports="0" uuid="{314e13d6-4898-4909-b260-64ae85a03873}" height="4.52019" itemRotation="0" frame="false" pagex="21.3986">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="эзэмшигч, ашиглагч болон уг газрыг хязгаарлагдмал эрхтэйгээр ашиглахаар шаардаж буй этгээдийн хооронд " htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="75.2378" page="3" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.1459" y="689.238" visibility="1" zValue="46" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="179.316" outlineWidth="0.3" excludeFromExports="0" uuid="{f369a9ba-6f35-46da-94ed-e710cf1f669f}" height="4.52019" itemRotation="0" frame="false" pagex="21.1459">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="2.4. Газар эзэмшүүлэх тухай эрх бүхий Засаг даргын шийдвэр гарсан өдрөөр газрын төлбөр хийх хугацааг тооцно." htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="261.639" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="22.5712" y="261.639" visibility="1" zValue="45" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="187.65" outlineWidth="0.3" excludeFromExports="0" uuid="{e6b02ab1-f675-4405-b5a7-46815c20a4ba}" height="4.52019" itemRotation="0" frame="false" pagex="22.5712">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="Зургаа. Газар эзэмших эрхэд хязгаарлалт тогтоох зарим зохицуулалт" htmlState="0" halign="4">
+   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="37.2918" page="3" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="50.765" y="651.292" visibility="1" zValue="44" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="130.458" outlineWidth="0.3" excludeFromExports="0" uuid="{692f9bdd-807a-4167-b01c-0fbe12b99860}" height="5.81511" itemRotation="0" frame="false" pagex="50.765">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="байгуулалтын арга хэмжээг хэрэгжүүлэх зорилгоор эрх бүхий байгууллага болон бусад газар эзэмшигчийн " htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="59.183" page="3" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.6036" y="673.183" visibility="1" zValue="43" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="179.561" outlineWidth="0.3" excludeFromExports="0" uuid="{4341b11a-9ffc-4a4b-8e4f-0ca771976bd4}" height="4.52019" itemRotation="0" frame="false" pagex="21.6036">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="Гэрээ дуусах хугацаа:" htmlState="0" halign="4">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="187.4" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="71.3495" y="187.4" visibility="1" zValue="42" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="43.1117" outlineWidth="0.3" excludeFromExports="0" uuid="{30257401-6a12-4f11-9474-a403bd263a94}" height="5.07548" itemRotation="0" frame="false" pagex="71.3495">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="Төлбөрийн хэмжээ [төг.м2/га]" htmlState="0" halign="4">
+   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="156.98" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="151.216" y="156.98" visibility="1" zValue="41" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="45.6926" outlineWidth="0.3" excludeFromExports="0" uuid="{13ff2144-2fc0-41ef-91f5-cd7677a2c5b9}" height="10.4515" itemRotation="0" frame="false" pagex="151.216">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="Эзэмшигчийн нэр" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="221.879" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="27.0744" y="221.879" visibility="1" zValue="40" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="62.5894" outlineWidth="0.3" excludeFromExports="0" uuid="{28a1b760-e8be-485f-b75d-e9982c0848f3}" height="4.52019" itemRotation="0" frame="false" pagex="27.0744">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="тутам алданги төлөх;" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="53.2048" page="2" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.9726" y="360.205" visibility="1" zValue="39" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="36.2656" outlineWidth="0.3" excludeFromExports="0" uuid="{c21a189c-1c63-4df3-9610-a6eef5976afe}" height="4.52019" itemRotation="0" frame="false" pagex="21.9726">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="3.3. Газарт учирсан хохирлыг гэм буруутай этгээдээр тогтоосон журмын дагуу нөхөн төлүүлэх;" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="28.3043" page="2" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.9726" y="335.304" visibility="1" zValue="38" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="179.902" outlineWidth="0.3" excludeFromExports="0" uuid="{a851b51d-68e4-409f-bbba-ce5ba18918ed}" height="4.52019" itemRotation="0" frame="false" pagex="21.9726">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="Гэрээ эхлэх хугацаа:" htmlState="0" halign="4">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="187.4" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="25.9351" y="187.4" visibility="1" zValue="37" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="43.1117" outlineWidth="0.3" excludeFromExports="0" uuid="{8a340809-6c75-4970-a81f-c27c960f27c4}" height="5.07548" itemRotation="0" frame="false" pagex="25.9351">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="Тухайн зориулалтаар эзэмших газрын хэмжээ [м2/га]" htmlState="0" halign="4">
+   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="156.98" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="93.3495" y="156.98" visibility="1" zValue="36" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="57.9186" outlineWidth="0.3" excludeFromExports="0" uuid="{81e808a6-79ad-4fe2-b1ed-17668a01953f}" height="10.4515" itemRotation="0" frame="false" pagex="93.3495">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="Жилийн төлбөр:" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="216.494" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="26.9351" y="216.494" visibility="1" zValue="35" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="28.8778" outlineWidth="0.3" excludeFromExports="0" uuid="{9bd9c91b-f51c-47a1-b56e-bd0587419ab3}" height="4.52019" itemRotation="0" frame="false" pagex="26.9351">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="Нэгж талбарын тодорхой хэсгийг эзэмших зориулалт" htmlState="0" halign="4">
+   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="156.98" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="30.2716" y="156.98" visibility="1" zValue="34" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="60.4044" outlineWidth="0.3" excludeFromExports="0" uuid="{b68f5486-8e93-4fac-9ba4-c4f6f4904748}" height="10.4515" itemRotation="0" frame="false" pagex="30.2716">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="Тав. Газрын талаарх эд хөрөнгийн эрхийн зарим зохицуулалт " htmlState="0" halign="4">
+   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="169.057" page="2" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="57.3227" y="476.057" visibility="1" zValue="33" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="112.304" outlineWidth="0.3" excludeFromExports="0" uuid="{9fe7aa13-fa3c-4865-93ee-5ec5f66650e6}" height="6.82638" itemRotation="0" frame="false" pagex="57.3227">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="2.3. Газрын төлбөрийг улирал бүрийн эхний сарын 25 -ны дотор газар эзэмшүүлэгчийн" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="252.641" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="22.4367" y="252.641" visibility="1" zValue="32" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="179.316" outlineWidth="0.3" excludeFromExports="0" uuid="{12ec6319-ae7e-4a0d-8692-9743d771f2d3}" height="4.52019" itemRotation="0" frame="false" pagex="22.4367">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="Нэгжийн үнэ:" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="211.108" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="27.2716" y="211.108" visibility="1" zValue="31" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="23.0477" outlineWidth="0.3" excludeFromExports="0" uuid="{59a0ceeb-cc98-41fd-a17d-c456e28fefa5}" height="4.52019" itemRotation="0" frame="false" pagex="27.2716">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="Д/д" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="155.98" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="23.2716" y="155.98" visibility="1" zValue="30" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="8.00004" outlineWidth="0.3" excludeFromExports="0" uuid="{b12aa228-6c3a-4d48-9524-c6f8b0de66c2}" height="4.52019" itemRotation="0" frame="false" pagex="23.2716">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="2.2. Газрын төлбөрийн хэмжээ:" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="204.116" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="22.3495" y="204.116" visibility="1" zValue="29" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="59.2971" outlineWidth="0.3" excludeFromExports="0" uuid="{a87b43ff-1f52-469a-aee2-8fdf35865a69}" height="4.52019" itemRotation="0" frame="false" pagex="22.3495">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="contract_no&#xa;" htmlState="0" halign="1">
+   <LabelFont description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="12.9981" page="1" id="contract_no" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="171.996" y="12.9981" visibility="1" zValue="28" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="30.3273" outlineWidth="0.3" excludeFromExports="0" uuid="{d01a804a-d0da-4a9f-b732-4ad323c074ac}" height="6.9909" itemRotation="0" frame="false" pagex="171.996">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="Нэгж талбарын дугаар:" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="148.98" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="23.7945" y="148.98" visibility="1" zValue="27" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="43.3607" outlineWidth="0.3" excludeFromExports="0" uuid="{c0781e77-9540-45ba-ad30-f62fe62e9e31}" height="4.52019" itemRotation="0" frame="false" pagex="23.7945">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="__________________ сум (дүүрэг)-ын газрын асуудал эрхэлсэн албан тушаалтан" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="80.7889" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="38.912" y="80.7889" visibility="1" zValue="26" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="131.515" outlineWidth="0.3" excludeFromExports="0" uuid="{8757d493-8680-4f3b-b1c1-db289621e8a4}" height="4.24256" itemRotation="0" frame="false" pagex="38.912">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="Дөрөв. Газар эзэмшүүлэгчийн эрх үүрэг" htmlState="0" halign="4">
+   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="88.6318" page="2" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="57.7649" y="395.632" visibility="1" zValue="25" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="112.304" outlineWidth="0.3" excludeFromExports="0" uuid="{fc232827-579f-4dc8-8ca8-43f2e241b5f6}" height="6.82638" itemRotation="0" frame="false" pagex="57.7649">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="person_contract" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="85.3222" page="1" id="person_contract" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.8482" y="85.3222" visibility="1" zValue="24" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="178.818" outlineWidth="0.3" excludeFromExports="0" uuid="{cf863e42-aae8-4815-b012-884b43b4f98a}" height="15.1838" itemRotation="0" frame="false" pagex="21.8482">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="2.1. Газар эзэмшигчид олгосон газрын нийт хэмжээ:" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="141.98" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="22.3495" y="141.98" visibility="1" zValue="23" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="84.0744" outlineWidth="0.3" excludeFromExports="0" uuid="{7e541ede-45a8-46e0-be1c-769b1f187ec9}" height="4.52019" itemRotation="0" frame="false" pagex="22.3495">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerArrow arrowHeadFillColor="0,0,0,255" arrowHeadOutlineColor="0,0,0,255" startMarkerFile="" boundsBehaviourVersion="24" arrowHeadWidth="0" endMarkerFile="" outlineWidth="0" markerMode="0">
+   <lineStyle>
+    <symbol alpha="1" clip_to_extent="1" type="line" name="">
+     <layer pass="0" class="SimpleLine" locked="0">
+      <prop k="capstyle" v="square"/>
+      <prop k="customdash" v="5;2"/>
+      <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
+      <prop k="customdash_unit" v="MM"/>
+      <prop k="draw_inside_polygon" v="0"/>
+      <prop k="joinstyle" v="bevel"/>
+      <prop k="line_color" v="0,0,0,255"/>
+      <prop k="line_style" v="solid"/>
+      <prop k="line_width" v="1"/>
+      <prop k="line_width_unit" v="MM"/>
+      <prop k="offset" v="0"/>
+      <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+      <prop k="offset_unit" v="MM"/>
+      <prop k="use_custom_dash" v="0"/>
+      <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
+     </layer>
+    </symbol>
+   </lineStyle>
+   <StartPoint x="25.9351" y="2625.2"/>
+   <StopPoint x="194.676" y="2625.2"/>
+   <ComposerItem pagey="169.2" page="9" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="25.9351" y="2625.2" visibility="1" zValue="22" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="168.741" outlineWidth="0.3" excludeFromExports="0" uuid="{17527000-2cc2-44ed-bf7c-9247981baef0}" height="0" itemRotation="0" frame="false" pagex="25.9351">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerArrow>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="тогтоолооор баталсан журмын дагуу хийлгүүлж баталгаажуулсан баримт;" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="126.651" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="30.0995" y="126.651" visibility="1" zValue="21" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="122.109" outlineWidth="0.3" excludeFromExports="0" uuid="{c23824f5-4fbd-4592-ae2c-4fa8d75050de}" height="4.52019" itemRotation="0" frame="false" pagex="30.0995">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="3. Газрын төлөв байдал, чанарын улсын хянан баталгааг Монгол Улсын Засгийн газрын 2003 оны 28 дугаар" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="122.131" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="26.4897" y="122.131" visibility="1" zValue="20" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="173.97" outlineWidth="0.3" excludeFromExports="0" uuid="{5857cf37-a553-4c2a-923b-d12e84a5ffa3}" height="4.52019" itemRotation="0" frame="false" pagex="26.4897">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="Гурав. Газар эзэмшигчийн эрх үүрэг" htmlState="0" halign="4">
+   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="9.443" page="2" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="62.5838" y="316.443" visibility="1" zValue="19" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="97.8447" outlineWidth="0.3" excludeFromExports="0" uuid="{6394a63e-197f-41db-9638-be291a8900ce}" height="6.82638" itemRotation="0" frame="false" pagex="62.5838">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="2. Газар эзэмшүүлэгчээс  газар эзэмшигчид тус газрыг хүлээлгэн өгсөн тухай акт;" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="116.611" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="26.49" y="116.611" visibility="1" zValue="18" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="151.038" outlineWidth="0.3" excludeFromExports="0" uuid="{0355ecb9-84e7-4dea-8938-6cbd0c58277b}" height="4.52019" itemRotation="0" frame="false" pagex="26.49">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="1. Газрын байршил, хэмжээ, хил хязгаар, заагийг тодорхой харуулсан кадастрын зураг;" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="111.091" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="26.49" y="111.091" visibility="1" zValue="17" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="151.038" outlineWidth="0.3" excludeFromExports="0" uuid="{0276f02f-ae9f-4696-90fa-391286ea0269}" height="4.52019" itemRotation="0" frame="false" pagex="26.49">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="Хоёр. Гэрээний нөхцөл" htmlState="0" halign="4">
+   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="132.875" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="60.6603" y="132.875" visibility="1" zValue="16" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="97.8447" outlineWidth="0.3" excludeFromExports="0" uuid="{04147d6a-048b-42d3-b8a5-02fa0ad9c771}" height="6.82638" itemRotation="0" frame="false" pagex="60.6603">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="гэрээг хүчингүйд тооцох үндэслэл болно. Үүнд:" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="105.57" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="23.7525" y="105.57" visibility="1" zValue="15" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="79.2475" outlineWidth="0.3" excludeFromExports="0" uuid="{275f3d81-1f1c-47e1-8c4b-e62d4e3a5e5f}" height="4.52019" itemRotation="0" frame="false" pagex="23.7525">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="овогтой" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="86.3009" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="22.4367" y="86.3009" visibility="1" zValue="14" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="13.674" outlineWidth="0.3" excludeFromExports="0" uuid="{6c6f6957-5766-41e3-86b5-e8367737d302}" height="4.24256" itemRotation="0" frame="false" pagex="22.4367">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="эзэмшигчийг төлөөлж" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="86.3009" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="75.0637" y="86.3009" visibility="1" zValue="13" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="37.4948" outlineWidth="0.3" excludeFromExports="0" uuid="{9eac6f48-940c-4841-9265-00a70561a54f}" height="5.22128" itemRotation="0" frame="false" pagex="75.0637">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="  тоот шийдвэрийг үндэслэн газар эзэмшүүлэгчийг " htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="75.514" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="119.755" y="75.514" visibility="1" zValue="12" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="85.2536" outlineWidth="0.3" excludeFromExports="0" uuid="{3cb6e436-e404-46d4-82f9-22a16554f840}" height="4.24256" itemRotation="0" frame="false" pagex="119.755">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="Засаг даргын" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="75.514" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="22.3495" y="75.514" visibility="1" zValue="11" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="22.9247" outlineWidth="0.3" excludeFromExports="0" uuid="{6603d990-5b58-47e4-bc9b-97b0dfb4602f}" height="4.24256" itemRotation="0" frame="false" pagex="22.3495">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="__________________ аймаг (хот) __________________ сум (дүүрэг)-ын" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="69.8845" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="85.956" y="69.8845" visibility="1" zValue="10" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="114.504" outlineWidth="0.3" excludeFromExports="0" uuid="{9825a1a2-4f69-4175-b420-3ee3507f670c}" height="4.24256" itemRotation="0" frame="false" pagex="85.956">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="Гэрчилгээний дугаар: " htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="19.989" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="135.326" y="19.989" visibility="1" zValue="9" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="38.2019" outlineWidth="0.3" excludeFromExports="0" uuid="{3106a4bb-0898-4cd4-b722-5af6cfbb3713}" height="6.4613" itemRotation="0" frame="false" pagex="135.326">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="Монгол улсын газрын тухай хууль" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="69.8845" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="30.2716" y="69.8845" visibility="1" zValue="8" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="55.6844" outlineWidth="0.3" excludeFromExports="0" uuid="{94fcccbc-c399-4dc0-9e77-690ceaeace81}" height="4.24256" itemRotation="0" frame="false" pagex="30.2716">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="________________ аймаг (хот) ________________ сум (дүүрэг)" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="51.9563" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="97.9211" y="51.9563" visibility="1" zValue="7" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="104.694" outlineWidth="0.3" excludeFromExports="0" uuid="{82c9a99e-847b-4cdb-b0c9-487d5ab5bc17}" height="7.58487" itemRotation="0" frame="false" pagex="97.9211">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="Нэг. Нийтлэг үндэслэл " htmlState="0" halign="4">
+   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="61.0581" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="62.5233" y="61.0581" visibility="1" zValue="6" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="97.8447" outlineWidth="0.3" excludeFromExports="0" uuid="{10594795-2ea6-48d8-a25d-cc8919e7af27}" height="6.82638" itemRotation="0" frame="false" pagex="62.5233">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="contract_date" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="50.579" page="1" id="contract_date" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.7206" y="50.579" visibility="1" zValue="5" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="65.2883" outlineWidth="0.3" excludeFromExports="0" uuid="{a22f5107-df1e-421d-87b6-07dcf4e302e1}" height="7.58487" itemRotation="0" frame="false" pagex="21.7206">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="ИРГЭН, ХУУЛИЙН ЭТГЭЭДЭД ГАЗАР ЭЗЭМШҮҮЛЭХ ГЭРЭЭ" htmlState="0" halign="4">
+   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="35.2696" page="1" id="contract_header" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="65.7103" y="35.2696" visibility="1" zValue="4" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="87.7448" outlineWidth="0.3" excludeFromExports="0" uuid="{717cb127-4d33-4761-8e2a-4623283a2a6d}" height="16.6867" itemRotation="0" frame="false" pagex="65.7103">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="Гэрээний дугаар: " htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="12.9981" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="135.326" y="12.9981" visibility="1" zValue="3" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="36.2585" outlineWidth="0.3" excludeFromExports="0" uuid="{f21ff141-fed7-476c-9599-66fe7577fbd9}" height="6.9909" itemRotation="0" frame="false" pagex="135.326">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="0" marginY="0" labelText="Энэхүү гэрээнд гэрээний салшгүй болох дараах зүйлийг заавал тусгах бөгөөд эдгээрийн бүрдэл дутуу бол " htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="100.506" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="29.3495" y="100.506" visibility="1" zValue="2" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="175.659" outlineWidth="0.3" excludeFromExports="0" uuid="{f13a944f-cab4-4dd9-a054-00abd13b08bf}" height="8.12931" itemRotation="0" frame="false" pagex="29.3495">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="QGIS" htmlState="0" halign="4">
+   <LabelFont description="MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="81.1581" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="102.206" y="81.1581" visibility="0" zValue="1" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="42.5771" outlineWidth="0.3" excludeFromExports="0" uuid="{f9c752be-604c-4307-b038-ec24c67757e0}" height="5.25189" itemRotation="0" frame="false" pagex="102.206">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <customproperties/>
+ </Composition>
+</Composer>

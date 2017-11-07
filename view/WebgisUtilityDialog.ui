@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>WebgisUtilityDialog</class>
+ <widget class="QDialog" name="WebgisUtilityDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>686</width>
+    <height>434</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>686</width>
+    <height>434</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>686</width>
+    <height>434</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QLineEdit" name="webgis_ip_edit">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>89</y>
+     <width>176</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_50">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>71</y>
+     <width>181</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Webgis IP Address</string>
+   </property>
+  </widget>
+  <widget class="Line" name="line">
+   <property name="geometry">
+    <rect>
+     <x>3</x>
+     <y>18</y>
+     <width>681</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="person_id">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>133</y>
+     <width>176</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>116</y>
+     <width>171</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Person id</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="refresh_webgis_button">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>88</y>
+     <width>91</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Refresh WebGIS</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="find_ownership_button">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>133</y>
+     <width>91</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Find Ownership</string>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>155</y>
+     <width>651</width>
+     <height>161</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Parcel information</string>
+   </property>
+   <widget class="QTableWidget" name="owner_twidget">
+    <property name="geometry">
+     <rect>
+      <x>6</x>
+      <y>16</y>
+      <width>641</width>
+      <height>137</height>
+     </rect>
+    </property>
+    <column>
+     <property name="text">
+      <string>Parcel Id(area m2)</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Aimag/Soum</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Street name/Khashaa</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>App Type</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Name</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Valid from</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Valid Till</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Decision No</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Decision Date</string>
+     </property>
+    </column>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="print_button">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>596</x>
+     <y>321</y>
+     <width>76</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Print</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="close_button">
+   <property name="geometry">
+    <rect>
+     <x>597</x>
+     <y>399</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </widget>
+  <widget class="Line" name="line_2">
+   <property name="geometry">
+    <rect>
+     <x>1</x>
+     <y>386</y>
+     <width>681</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="open_webgis_button">
+   <property name="geometry">
+    <rect>
+     <x>324</x>
+     <y>365</y>
+     <width>111</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Open WebGIS</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="webgis_url_edit">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>366</y>
+     <width>290</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>345</y>
+     <width>291</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>WebGIS Address</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="error_label">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>400</y>
+     <width>481</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>6</y>
+     <width>211</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>WebGIS Utility</string>
+   </property>
+  </widget>
+  <widget class="QProgressBar" name="progressBar">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>7</y>
+     <width>291</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="value">
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="check_connect_button">
+   <property name="geometry">
+    <rect>
+     <x>19</x>
+     <y>40</y>
+     <width>176</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Connect to WebGIS</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>6</y>
+     <width>143</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Find ownership progress:</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="soum_cbox">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>321</y>
+     <width>191</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="aimag_cbox">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>321</y>
+     <width>191</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>323</y>
+     <width>171</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>To whom to may concern:</string>
+   </property>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>person_id</tabstop>
+  <tabstop>find_ownership_button</tabstop>
+  <tabstop>open_webgis_button</tabstop>
+  <tabstop>owner_twidget</tabstop>
+  <tabstop>webgis_ip_edit</tabstop>
+  <tabstop>refresh_webgis_button</tabstop>
+  <tabstop>webgis_url_edit</tabstop>
+  <tabstop>print_button</tabstop>
+  <tabstop>close_button</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
