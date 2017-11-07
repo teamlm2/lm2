@@ -2960,6 +2960,7 @@ class ApplicationsDialog(QDialog, Ui_ApplicationsDialog, DatabaseHelper):
         map_composition.render(pdfPainter, paperRectPixel, paperRectMM)
         pdfPainter.end()
 
+        self.__add_person_address(map_composition)
         self.__add_aimag_name(map_composition)
         self.__add_soum_name(map_composition)
         self.__add_app_no(map_composition)
@@ -3042,6 +3043,7 @@ class ApplicationsDialog(QDialog, Ui_ApplicationsDialog, DatabaseHelper):
         self.__add_person_name(map_composition)
         self.__add_officer_name(map_composition)
         self.__add_app_remarks(map_composition)
+        self.__add_card_person_name(map_composition)
 
         map_composition.exportAsPDF(path + "app_response.pdf")
         map_composition.exportAsPDF(default_path + "/"+app_no+".pdf")
@@ -3075,6 +3077,16 @@ class ApplicationsDialog(QDialog, Ui_ApplicationsDialog, DatabaseHelper):
                      + self.application_num_middle_edit.text() + "-" + self.application_num_last_edit.text()
         item = map_composition.getComposerItemById("app_no")
         item.setText(app_no)
+        item.adjustSizeToText()
+
+        item = map_composition.getComposerItemById("card_app_no")
+        item.setText(app_no)
+        item.adjustSizeToText()
+
+        app_type = self.application_type_cbox.currentText()
+        app_type = app_type.split(':')[1]
+        item = map_composition.getComposerItemById("card_app_type")
+        item.setText(app_type)
         item.adjustSizeToText()
 
     def __wrap(self,text, width):
@@ -3136,6 +3148,16 @@ class ApplicationsDialog(QDialog, Ui_ApplicationsDialog, DatabaseHelper):
         item.setText(str(app.app_timestamp)[14:-3])
         item.adjustSizeToText()
 
+        long_date = str(app.app_timestamp)[:4]+'.'+ str(app.app_timestamp)[5:-12] +'.'+ str(app.app_timestamp)[8:-9]
+        item = map_composition.getComposerItemById("card_app_date")
+        item.setText(long_date)
+        item.adjustSizeToText()
+
+        long_date = str(app.app_timestamp)[:4]+'.'+ str(app.app_timestamp)[5:-12] +'.'+ str(app.app_timestamp)[8:-9]
+        item = map_composition.getComposerItemById("card_date")
+        item.setText(long_date)
+        item.adjustSizeToText()
+
     def __add_app_status_date(self,map_composition):
 
         app_no = self.application_num_first_edit.text() + "-" + self.application_num_type_edit.text() + "-" \
@@ -3170,6 +3192,51 @@ class ApplicationsDialog(QDialog, Ui_ApplicationsDialog, DatabaseHelper):
         item.setText(str(app.app_timestamp)[10:])
         item.adjustSizeToText()
 
+    def __add_person_address(self,map_composition):
+
+        app_no = self.application_num_first_edit.text() + "-" + self.application_num_type_edit.text() + "-" \
+                 + self.application_num_middle_edit.text() + "-" + self.application_num_last_edit.text()
+        try:
+            if self.application.app_type == 7 or self.application.app_type == 15:
+                app_person = self.session.query(CtApplicationPersonRole). \
+                    filter(CtApplicationPersonRole.application == app_no). \
+                    filter(CtApplicationPersonRole.role == Constants.NEW_RIGHT_HOLDER_CODE).all()
+            elif self.application.app_type == 2:
+                app_person = self.session.query(CtApplicationPersonRole). \
+                    filter(CtApplicationPersonRole.application == app_no). \
+                    filter(CtApplicationPersonRole.role == Constants.REMAINING_OWNER_CODE).all()
+            else:
+                app_person = self.session.query(CtApplicationPersonRole). \
+                    filter(CtApplicationPersonRole.application == app_no).all()
+            for p in app_person:
+                if p.main_applicant == True:
+                    person = self.session.query(BsPerson).filter(BsPerson.person_id == p.person).one()
+        except SQLAlchemyError, e:
+            raise LM2Exception(self.tr("Database Query Error"), self.tr("aCould not execute: {0}").format(e.message))
+        item = map_composition.getComposerItemById("person_address")
+
+        aimag = ''
+        if person.au_level1_ref:
+            aimag = person.au_level1_ref.name
+
+        soum = ''
+        if person.au_level2_ref:
+            soum = person.au_level2_ref.name
+        bag = ''
+        if person.au_level3_ref:
+            bag = person.au_level3_ref.name
+        street = ''
+        if person.address_street_name:
+            street = person.address_street_name
+        khashaa = ''
+        if person.address_khaskhaa:
+            khashaa = person.address_khaskhaa
+
+        person_address = aimag +' '+ soum + ' '+ bag +' ' + street + ' '+ khashaa
+
+        item.setText(person_address)
+        item.adjustSizeToText()
+
     def __add_person_name(self,map_composition):
 
         app_no = self.application_num_first_edit.text() + "-" + self.application_num_type_edit.text() + "-" \
@@ -3192,6 +3259,37 @@ class ApplicationsDialog(QDialog, Ui_ApplicationsDialog, DatabaseHelper):
         except SQLAlchemyError, e:
             raise LM2Exception(self.tr("Database Query Error"), self.tr("aCould not execute: {0}").format(e.message))
         item = map_composition.getComposerItemById("person_name")
+        first_name = ''
+        if person.first_name == None:
+            first_name = u' '
+        else:
+            first_name = person.first_name
+        name = person.name +u", "+ first_name
+        item.setText(name)
+        item.adjustSizeToText()
+
+    def __add_card_person_name(self,map_composition):
+
+        app_no = self.application_num_first_edit.text() + "-" + self.application_num_type_edit.text() + "-" \
+                     + self.application_num_middle_edit.text() + "-" + self.application_num_last_edit.text()
+        try:
+            if self.application.app_type == 7 or self.application.app_type == 15:
+                app_person = self.session.query(CtApplicationPersonRole).\
+                    filter(CtApplicationPersonRole.application == app_no).\
+                    filter(CtApplicationPersonRole.role == Constants.NEW_RIGHT_HOLDER_CODE).all()
+            elif self.application.app_type == 2:
+                app_person = self.session.query(CtApplicationPersonRole). \
+                    filter(CtApplicationPersonRole.application == app_no). \
+                    filter(CtApplicationPersonRole.role == Constants.REMAINING_OWNER_CODE).all()
+            else:
+                app_person = self.session.query(CtApplicationPersonRole). \
+                    filter(CtApplicationPersonRole.application == app_no).all()
+            for p in app_person:
+                if p.main_applicant == True:
+                    person = self.session.query(BsPerson).filter(BsPerson.person_id == p.person).one()
+        except SQLAlchemyError, e:
+            raise LM2Exception(self.tr("Database Query Error"), self.tr("aCould not execute: {0}").format(e.message))
+        item = map_composition.getComposerItemById("card_person_name")
         first_name = ''
         if person.first_name == None:
             first_name = u' '
@@ -3261,6 +3359,12 @@ class ApplicationsDialog(QDialog, Ui_ApplicationsDialog, DatabaseHelper):
         officer_full = '                          ' + position + u' албан тушаалтан '+ officer.surname + u' овогтой ' + officer.first_name + ' ___________________ '+ u' хүлээн авав.'
         item = map_composition.getComposerItemById("officer_full")
         item.setText(self.__wrap(officer_full, 200))
+        # item.adjustSizeToText()
+
+
+        card_officer_full = position + ' ' + officer.surname[:1] + '.' + officer.first_name
+        item = map_composition.getComposerItemById("card_officer_full")
+        item.setText(self.__wrap(card_officer_full, 200))
         # item.adjustSizeToText()
 
     def __duplicate_new_applicant(self, new_person_id):
