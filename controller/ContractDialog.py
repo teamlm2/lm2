@@ -4,6 +4,7 @@ __author__ = 'Topmap'
 import os
 import re
 import math
+import time
 import locale
 import win32api
 import win32net
@@ -1058,10 +1059,10 @@ class ContractDialog(QDialog, Ui_ContractDialog, DatabaseHelper):
         fee_base = contractor_area * float(base_fee_per_m2)*float((100-subsidized_fee_rate)/100)
         fee_calculated = int(round(fee_base if fee_standard <= 0 else fee_subsidized + fee_standard))
 
-        # if parcel_area > subsidized_area:pg_cursors
-        #     fee_calculated = float(contractor.share) * ((parcel_area - subsidized_area) * base_fee_per_m2 + float(subsidized_area * base_fee_per_m2 * subsidized_fee_rate / 100))
-        # elif parcel_area <= subsidized_area:
-        #     fee_calculated = float(contractor.share) * (parcel_area * base_fee_per_m2 * subsidized_fee_rate / 100)
+        #if parcel_area > subsidized_area:pg_cursors
+        #fee_calculated = float(contractor.share) * ((parcel_area - subsidized_area) * base_fee_per_m2 + float(subsidized_area * base_fee_per_m2 * subsidized_fee_rate / 100))
+        #elif parcel_area <= subsidized_area:
+        #fee_calculated = float(contractor.share) * (parcel_area * base_fee_per_m2 * subsidized_fee_rate / 100)
 
         item = QTableWidgetItem('{0}'.format(fee_calculated))
         self.__lock_item(item)
@@ -1951,6 +1952,17 @@ class ContractDialog(QDialog, Ui_ContractDialog, DatabaseHelper):
         bank_name = report_settings[Constants.REPORT_BANK]
         account_no = report_settings[Constants.REPORT_BANK_ACCOUNT]
         office_address = report_settings[Constants.REPORT_ADDRESS]
+
+        aimag_name = self.aimag_edit.text()
+        soum_name = self.soum_edit.text()
+        bag_name = self.bag_edit.text()
+        street_name = self.street_name_edit.text()
+        khashaa_name = self.khashaa_edit.text()
+
+        fee_area = self.subsidized_area_edit.text()
+        fee_rate = self.subsidized_fee_rate_edit.text()
+
+
         person_bank_name = person_bank_name
         person_account = person.bank_account_no
         person_phone = person.phone
@@ -1961,8 +1973,8 @@ class ContractDialog(QDialog, Ui_ContractDialog, DatabaseHelper):
         sum_officer = ''
 
         if decision_level == 20 or decision_level == 40:
-            sum_name_dec = soum.name + u'cум /дүүрэг/-ийн '
-            sum_officer = soum.name + u'cум /дүүрэг/-ийн газрын алба '
+            sum_name_dec = soum.name + u' дүүрэг /сум/-ийн '
+            sum_officer = soum.name + u' дүүрэг /сум/-ийн Газрын албаны '
         elif decision_level == 10 or decision_level == 30:
             sum_officer = u'ГХБХБГазрын газрын асуудал эрхэлсэн албан тушаалтан '
         if contact_position is None:
@@ -1980,8 +1992,8 @@ class ContractDialog(QDialog, Ui_ContractDialog, DatabaseHelper):
             company_name = company_name + u'-н ' + contact_position + u' ' + person_surname + u' овогтой ' + person_firstname
 
         if self.is_sign_checkbox.isChecked():
-            darga_signature = self.print_officer_cbox.currentText() + u'/......................./'
-            darga_position = u'Газрын албаны дарга '
+            darga_signature = self.print_officer_cbox.currentText() + u'/.............................../'
+            darga_position = u'Дарга '
         else:
             darga_signature = ''
             darga_position = ''
@@ -1991,9 +2003,9 @@ class ContractDialog(QDialog, Ui_ContractDialog, DatabaseHelper):
             'aimag_name': aimag_name,
             'contract_no': contract_no,
             'cert_no': cerificate_no,
-            'c_year': contract_date_year,
-            'c_month': contract_date_month,
-            'c_day': contract_date_day,
+            'c_year': time.strftime("%Y"),
+            'c_month': time.strftime("%m"),
+            'c_day': time.strftime("%d"),
             'sum_name': soum_name,
             'sum_name_dec': sum_name_dec,
             'sum_officer': sum_officer,
@@ -2018,6 +2030,13 @@ class ContractDialog(QDialog, Ui_ContractDialog, DatabaseHelper):
             'bank_name': bank_name,
             'account_no': account_no,
             'office_address': office_address,
+            'aimag': aimag_name,
+            'soum': soum_name,
+            'bag': bag_name,
+            'street': street_name,
+            'khashaa': khashaa_name,
+            'fee_area': fee_area,
+            'fee_rate': fee_rate,
             'person_address': person_address,
             'person_bank_name': person_bank_name,
             'person_account': person_account,
@@ -2381,8 +2400,12 @@ class ContractDialog(QDialog, Ui_ContractDialog, DatabaseHelper):
         item.setText(app_duration)
         item.adjustSizeToText()
 
-        contract_date = self.contract_date.text()
-        contract_date = contract_date[1:-6]+u"           " + contract_date[5:-3]+u"              " + contract_date[-2:]
+        print_date = QDate().currentDate()
+        year = print_date.year()
+        month = print_date.month()
+        day = print_date.day()
+
+        contract_date = str(year)[-3:] + "           " + str(month) +"              " + str(day)
         item = map_composition.getComposerItemById("contract_date")
         item.setText(contract_date)
         item.adjustSizeToText()
@@ -3074,6 +3097,7 @@ class ContractDialog(QDialog, Ui_ContractDialog, DatabaseHelper):
         app_no = self.application_this_contract_based_edit.text()
         contract_no = self.contract_num_edit.text()
         parcel_id  = self.id_main_edit.text()[1:-9] + self.id_main_edit.text()[4:]
+
         landuse = self.land_use_type_edit.text()
         area_m2 = self.calculated_area_edit.text()
         area_m2 = str((area_m2)) + " /"+str(float(area_m2)/10000)+"/"
