@@ -1,12 +1,12 @@
-<Composer title="app_reciept" visible="1">
- <Composition gridVisible="0" printResolution="300" paperWidth="210" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" snapTolerancePixels="5" numPages="1" paperHeight="297" smartGuides="1" printAsRaster="0" generateWorldFile="0">
-  <symbol alpha="1" type="fill" name="">
+<Composer title="Composer 1" visible="1">
+ <Composition resizeToContentsMarginLeft="0" snapping="0" showPages="1" guidesVisible="1" resizeToContentsMarginTop="0" worldFileMap="" alignmentSnap="1" printResolution="300" paperWidth="210" gridVisible="0" snapGridOffsetX="0" smartGuides="1" snapGridOffsetY="0" resizeToContentsMarginRight="0" snapTolerancePixels="5" printAsRaster="0" generateWorldFile="0" paperHeight="297" numPages="1" snapGridResolution="10" resizeToContentsMarginBottom="0">
+  <symbol alpha="1" clip_to_extent="1" type="fill" name="">
    <layer pass="0" class="SimpleFill" locked="0">
-    <prop k="border_width_map_unit_scale" v="0,0"/>
+    <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
     <prop k="color" v="255,255,255,255"/>
     <prop k="joinstyle" v="miter"/>
     <prop k="offset" v="0,0"/>
-    <prop k="offset_map_unit_scale" v="0,0"/>
+    <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
     <prop k="offset_unit" v="MM"/>
     <prop k="outline_color" v="0,0,0,255"/>
     <prop k="outline_style" v="no"/>
@@ -15,205 +15,405 @@
     <prop k="style" v="solid"/>
    </layer>
   </symbol>
-  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="app_no&#xa;" htmlState="0" halign="4">
-   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0"/>
+  <ComposerLabel valign="128" marginX="1" marginY="1" labelText="card_app_no" htmlState="0" halign="4">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
    <FontColor red="0" blue="0" green="0"/>
-   <ComposerItem pagey="39.7515" page="1" id="app_no" lastValidViewScaleFactor="6.04778" positionMode="0" positionLock="false" x="45.5859" y="39.7515" visibility="1" zValue="35" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="40.1952" outlineWidth="0.3" excludeFromExports="0" uuid="{70a579e0-e07b-4eea-a44f-ddfef7aa1919}" height="6.12031" itemRotation="0" frame="false" pagex="45.5859">
+   <ComposerItem pagey="167.927" page="1" id="card_app_no" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="42.2748" y="167.927" visibility="1" zValue="151" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="54.4185" outlineWidth="0.3" excludeFromExports="0" uuid="{e6812ac9-d9fa-4418-8fd3-c4928847cb7a}" height="10.6431" itemRotation="0" frame="false" pagex="42.2748">
     <FrameColor alpha="255" red="0" blue="0" green="0"/>
     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="&#xa;Удирдлагын заалт&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;Гарын үсэг: /................................................../  Огноо:" htmlState="0" halign="4">
+   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="178.495" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="13.4189" y="178.495" visibility="1" zValue="149" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="194.024" outlineWidth="0.3" excludeFromExports="0" uuid="{48d85412-6773-498b-a2c7-8c158b9a68b9}" height="87.9011" itemRotation="0" frame="true" pagex="13.4189">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="128" marginX="1" marginY="1" labelText="card_app_date" htmlState="0" halign="4">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="167.702" page="1" id="card_app_date" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="13.719" y="167.702" visibility="1" zValue="119" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="28.1807" outlineWidth="0.3" excludeFromExports="0" uuid="{85acc1b8-8e0f-46df-84e0-f83271a45954}" height="10.6431" itemRotation="0" frame="false" pagex="13.719">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="128" marginX="1" marginY="1" labelText="Бүртгэлийн дугаар" htmlState="0" halign="4">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="157.059" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="42.0497" y="157.059" visibility="1" zValue="118" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="54.8686" outlineWidth="0.3" excludeFromExports="0" uuid="{be2bb27a-6104-4574-b28e-91bbc4e0a0c7}" height="10.6431" itemRotation="0" frame="true" pagex="42.0497">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="Товч утга:&#xa;&#xa;Хэнд: " htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="157.059" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="97.2183" y="157.059" visibility="1" zValue="114" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="110.225" outlineWidth="0.3" excludeFromExports="0" uuid="{5eadd94a-25fd-42a7-a951-9d0e96744a58}" height="21.5863" itemRotation="0" frame="true" pagex="97.2183">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="128" marginX="1" marginY="1" labelText="Бүртгэсэн огноо" htmlState="0" halign="4">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="157.059" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="13.4189" y="157.059" visibility="1" zValue="86" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="28.7059" outlineWidth="0.3" excludeFromExports="0" uuid="{befa313c-3a8c-43ca-87ba-5275d75779ec}" height="10.6431" itemRotation="0" frame="true" pagex="13.4189">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="Нэр:&#xa;&#xa;Байршил:" htmlState="0" halign="1">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="141.116" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="97.218" y="141.116" visibility="1" zValue="84" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="110.225" outlineWidth="0.3" excludeFromExports="0" uuid="{165438f9-8359-4e45-92fb-cf9a03b5b363}" height="15.643" itemRotation="0" frame="true" pagex="97.218">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="128" marginX="1" marginY="1" labelText="Өргөдөл" htmlState="0" halign="4">
+   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="141.116" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="13.4189" y="141.116" visibility="1" zValue="56" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="83.499" outlineWidth="0.3" excludeFromExports="0" uuid="{648f3203-d8c9-48cf-a364-668dcfec3181}" height="15.643" itemRotation="0" frame="true" pagex="13.4189">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="Өргөдөл, гомдлын зохиогч" htmlState="0" halign="4">
+   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="133.448" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="97.2183" y="133.448" visibility="1" zValue="56" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="110.225" outlineWidth="0.3" excludeFromExports="0" uuid="{a8fd62bc-4fa6-437c-97f8-1b1d17affe32}" height="7.36831" itemRotation="0" frame="true" pagex="97.2183">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="card_person_name" htmlState="0" halign="1">
+   <LabelFont description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="140.966" page="1" id="card_person_name" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="106.124" y="140.966" visibility="1" zValue="44" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="101.007" outlineWidth="0.3" excludeFromExports="0" uuid="{55c5c900-b24f-4481-9afb-a905a2a5494d}" height="6.28994" itemRotation="0" frame="false" pagex="106.124">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="card_date" htmlState="0" halign="1">
+   <LabelFont description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="258.232" page="1" id="card_date" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="153.916" y="258.232" visibility="1" zValue="44" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="52.3969" outlineWidth="0.3" excludeFromExports="0" uuid="{f57a8895-a9c1-4395-a037-4f0894a2b11b}" height="6.48138" itemRotation="0" frame="false" pagex="153.916">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="" htmlState="0" halign="1">
+   <LabelFont description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="167.922" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="42.0497" y="167.922" visibility="1" zValue="42" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="54.8686" outlineWidth="0.3" excludeFromExports="0" uuid="{a91c83db-2f86-4c53-8605-7b3f751bd9de}" height="10.7235" itemRotation="0" frame="true" pagex="42.0497">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="card_officer_full" htmlState="0" halign="1">
+   <LabelFont description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="165.192" page="1" id="card_officer_full" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="107.796" y="165.192" visibility="1" zValue="41" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="97.9712" outlineWidth="0.3" excludeFromExports="0" uuid="{ac32b188-f2c8-4d8b-9651-0e43d6f498d4}" height="8.71797" itemRotation="0" frame="false" pagex="107.796">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="person_address" htmlState="0" halign="1">
+   <LabelFont description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="148.938" page="1" id="person_address" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="114.687" y="148.938" visibility="1" zValue="40" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="90.8074" outlineWidth="0.3" excludeFromExports="0" uuid="{514f6ff0-9538-421a-be4b-8265202e1613}" height="7.04036" itemRotation="0" frame="false" pagex="114.687">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="card_app_type" htmlState="0" halign="1">
+   <LabelFont description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="156.909" page="1" id="card_app_type" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="113.731" y="156.909" visibility="1" zValue="39" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="93.4001" outlineWidth="0.3" excludeFromExports="0" uuid="{9e53a563-9041-4b46-bb44-0c016af9831f}" height="7.11519" itemRotation="0" frame="false" pagex="113.731">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="" htmlState="0" halign="1">
+   <LabelFont description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="167.852" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="13.4189" y="167.852" visibility="1" zValue="38" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="28.7809" outlineWidth="0.3" excludeFromExports="0" uuid="{7dfe7dab-9c8a-4039-9d34-cc1c67519a9c}" height="10.7932" itemRotation="0" frame="true" pagex="13.4189">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="Өргөдөл, гомдлын бүртгэл-хяналтын картын маягт" htmlState="0" halign="4">
+   <LabelFont description="Arial,14,-1,5,75,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="114.072" page="1" id="qgis" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="6.43827" y="114.072" visibility="1" zValue="37" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="199.592" outlineWidth="0.3" excludeFromExports="0" uuid="{926aaafc-d42d-4f25-aa23-b0b5710d8201}" height="8.66647" itemRotation="0" frame="false" pagex="6.43827">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="app_no&#xa;" htmlState="0" halign="4">
+   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="39.7515" page="1" id="app_no" lastValidViewScaleFactor="6.04778" positionMode="0" positionLock="false" x="45.5859" y="39.7515" visibility="1" zValue="35" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="40.1952" outlineWidth="0.3" excludeFromExports="0" uuid="{1a75ca20-86fd-4c81-8c89-8a374eedc84e}" height="6.12031" itemRotation="0" frame="false" pagex="45.5859">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
    </ComposerItem>
   </ComposerLabel>
   <ComposerLabel valign="32" marginX="1" marginY="1" labelText="soum_name" htmlState="0" halign="4">
-   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0"/>
+   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0" style=""/>
    <FontColor red="0" blue="0" green="0"/>
-   <ComposerItem pagey="46.1906" page="1" id="soum_name" lastValidViewScaleFactor="6.04778" positionMode="0" positionLock="false" x="144.996" y="46.1906" visibility="1" zValue="34" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="49.0416" outlineWidth="0.3" excludeFromExports="0" uuid="{c63e2d67-b088-43bc-bea6-2f4de7d9ccc5}" height="6.12031" itemRotation="0" frame="false" pagex="144.996">
+   <ComposerItem pagey="46.1906" page="1" id="soum_name" lastValidViewScaleFactor="6.04778" positionMode="0" positionLock="false" x="144.996" y="46.1906" visibility="1" zValue="34" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="49.0416" outlineWidth="0.3" excludeFromExports="0" uuid="{65145a5b-5098-4fdd-99ce-695510748294}" height="6.12031" itemRotation="0" frame="false" pagex="144.996">
     <FrameColor alpha="255" red="0" blue="0" green="0"/>
     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
    </ComposerItem>
   </ComposerLabel>
   <ComposerLabel valign="32" marginX="1" marginY="1" labelText="aimag_name" htmlState="0" halign="4">
-   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0"/>
+   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0" style=""/>
    <FontColor red="0" blue="0" green="0"/>
-   <ComposerItem pagey="46.1109" page="1" id="aimag_name" lastValidViewScaleFactor="6.04778" positionMode="0" positionLock="false" x="76.1611" y="46.1109" visibility="1" zValue="33" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="34.7679" outlineWidth="0.3" excludeFromExports="0" uuid="{86627824-a19f-446e-af78-2948e59c04bf}" height="6.12031" itemRotation="0" frame="false" pagex="76.1611">
+   <ComposerItem pagey="46.1109" page="1" id="aimag_name" lastValidViewScaleFactor="6.04778" positionMode="0" positionLock="false" x="76.1611" y="46.1109" visibility="1" zValue="33" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="34.7679" outlineWidth="0.3" excludeFromExports="0" uuid="{e8933810-8099-408c-8dc6-2356dfe0e909}" height="6.12031" itemRotation="0" frame="false" pagex="76.1611">
     <FrameColor alpha="255" red="0" blue="0" green="0"/>
     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
    </ComposerItem>
   </ComposerLabel>
   <ComposerLabel valign="32" marginX="1" marginY="1" labelText="минутанд" htmlState="0" halign="1">
-   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0"/>
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
    <FontColor red="0" blue="0" green="0"/>
-   <ComposerItem pagey="45.9913" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="60.2362" y="45.9913" visibility="1" zValue="31" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="19.5833" outlineWidth="0.3" excludeFromExports="0" uuid="{9853644f-9179-49da-bbca-2cd76e980fc6}" height="6.0406" itemRotation="0" frame="false" pagex="60.2362">
+   <ComposerItem pagey="45.9913" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="60.2362" y="45.9913" visibility="1" zValue="31" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="19.5833" outlineWidth="0.3" excludeFromExports="0" uuid="{844b2c18-47aa-4b8d-a5c4-93781edd5a33}" height="6.0406" itemRotation="0" frame="false" pagex="60.2362">
     <FrameColor alpha="255" red="0" blue="0" green="0"/>
     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="1   2   3   4   5   6   7   8   9   10   11   12   13   14   15   16   17   18   19   20   21   22   23   24   25   26   27   28 29   30   31" htmlState="0" halign="4">
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="126.353" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="13.4189" y="126.353" visibility="1" zValue="29" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="194.024" outlineWidth="0.3" excludeFromExports="0" uuid="{aeff4477-30e8-4d5c-b336-b8830aa2935a}" height="7.09541" itemRotation="0" frame="true" pagex="13.4189">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
    </ComposerItem>
   </ComposerLabel>
   <ComposerLabel valign="32" marginX="1" marginY="1" labelText="day&#xa;&#xa;" htmlState="0" halign="4">
-   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0"/>
+   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0" style=""/>
    <FontColor red="0" blue="0" green="0"/>
-   <ComposerItem pagey="39.4726" page="1" id="day" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="183.095" y="39.4726" visibility="1" zValue="29" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="9.22838" outlineWidth="0.3" excludeFromExports="0" uuid="{52b4ef67-6dc4-44de-9200-f3285a1427d9}" height="6.27969" itemRotation="0" frame="false" pagex="183.095">
+   <ComposerItem pagey="39.4726" page="1" id="day" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="183.095" y="39.4726" visibility="1" zValue="29" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="9.22838" outlineWidth="0.3" excludeFromExports="0" uuid="{05bd192d-67c4-4034-8437-2128fca3fc81}" height="6.27969" itemRotation="0" frame="false" pagex="183.095">
     <FrameColor alpha="255" red="0" blue="0" green="0"/>
     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
+   </ComposerItem>
+  </ComposerLabel>
+  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="Өргөдлийн төрөл" htmlState="0" halign="4">
+   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0" style=""/>
+   <FontColor red="0" blue="0" green="0"/>
+   <ComposerItem pagey="133.448" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="13.4189" y="133.448" visibility="1" zValue="28" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="83.4993" outlineWidth="0.3" excludeFromExports="0" uuid="{0b9c7025-077f-453c-acfa-af9294b62ce9}" height="7.36831" itemRotation="0" frame="true" pagex="13.4189">
+    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
    </ComposerItem>
   </ComposerLabel>
   <ComposerLabel valign="32" marginX="1" marginY="1" labelText="minute&#xa;&#xa;" htmlState="0" halign="4">
-   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0"/>
+   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0" style=""/>
    <FontColor red="0" blue="0" green="0"/>
-   <ComposerItem pagey="45.9914" page="1" id="minute" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="50.1037" y="45.9914" visibility="1" zValue="25" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="10.0659" outlineWidth="0.3" excludeFromExports="0" uuid="{2fef96c4-5272-4cfb-96ff-0276ab3871cc}" height="6.2" itemRotation="0" frame="false" pagex="50.1037">
+   <ComposerItem pagey="45.9914" page="1" id="minute" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="50.1703" y="45.9914" visibility="1" zValue="25" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="10.0659" outlineWidth="0.3" excludeFromExports="0" uuid="{22fe1bb6-e4b1-40ca-8ce5-e7e07051327c}" height="6.2" itemRotation="0" frame="false" pagex="50.1703">
     <FrameColor alpha="255" red="0" blue="0" green="0"/>
     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
    </ComposerItem>
   </ComposerLabel>
   <ComposerLabel valign="32" marginX="1" marginY="1" labelText="цаг" htmlState="0" halign="1">
-   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0"/>
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
    <FontColor red="0" blue="0" green="0"/>
-   <ComposerItem pagey="46.0711" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="43.8572" y="46.0711" visibility="1" zValue="24" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="8.89455" outlineWidth="0.3" excludeFromExports="0" uuid="{c55449ca-5972-493a-aca9-431c5aaa7543}" height="6.0406" itemRotation="0" frame="false" pagex="43.8572">
+   <ComposerItem pagey="46.0711" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="43.8572" y="46.0711" visibility="1" zValue="24" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="8.89455" outlineWidth="0.3" excludeFromExports="0" uuid="{8d655b8a-ac99-46f5-b22c-dd2f37531763}" height="6.0406" itemRotation="0" frame="false" pagex="43.8572">
     <FrameColor alpha="255" red="0" blue="0" green="0"/>
     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
    </ComposerItem>
   </ComposerLabel>
   <ComposerLabel valign="32" marginX="1" marginY="1" labelText="сарын" htmlState="0" halign="1">
-   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0"/>
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
    <FontColor red="0" blue="0" green="0"/>
-   <ComposerItem pagey="39.5523" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="173.317" y="39.5523" visibility="1" zValue="23" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="11.7772" outlineWidth="0.3" excludeFromExports="0" uuid="{6feb4b19-ab83-41ab-b7cf-88b09f0ab3fa}" height="6.2" itemRotation="0" frame="false" pagex="173.317">
+   <ComposerItem pagey="39.5523" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="173.317" y="39.5523" visibility="1" zValue="23" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="11.7772" outlineWidth="0.3" excludeFromExports="0" uuid="{23f7f052-1e02-4484-9669-9804ee215d86}" height="6.2" itemRotation="0" frame="false" pagex="173.317">
     <FrameColor alpha="255" red="0" blue="0" green="0"/>
     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
    </ComposerItem>
   </ComposerLabel>
   <ComposerLabel valign="32" marginX="1" marginY="1" labelText="month&#xa;&#xa;" htmlState="0" halign="4">
-   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0"/>
+   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0" style=""/>
    <FontColor red="0" blue="0" green="0"/>
-   <ComposerItem pagey="39.5124" page="1" id="month" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="165.3" y="39.5124" visibility="1" zValue="21" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="9.22838" outlineWidth="0.3" excludeFromExports="0" uuid="{8ac4ae5f-8f68-4ee9-b8ac-7d52d95110e2}" height="6.27969" itemRotation="0" frame="false" pagex="165.3">
+   <ComposerItem pagey="39.5124" page="1" id="month" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="165.3" y="39.5124" visibility="1" zValue="21" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="9.22838" outlineWidth="0.3" excludeFromExports="0" uuid="{5a5bf62a-f28b-4ea1-80cf-80d0afaed913}" height="6.27969" itemRotation="0" frame="false" pagex="165.3">
     <FrameColor alpha="255" red="0" blue="0" green="0"/>
     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
    </ComposerItem>
   </ComposerLabel>
   <ComposerLabel valign="32" marginX="1" marginY="1" labelText="officer_full&#xa;" htmlState="0" halign="1">
-   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0"/>
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
    <FontColor red="0" blue="0" green="0"/>
-   <ComposerItem pagey="52.3109" page="1" id="officer_full" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.7076" y="52.3109" visibility="1" zValue="20" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="170.616" outlineWidth="0.3" excludeFromExports="0" uuid="{458b2432-bde2-48d2-8284-3b6b719dfacd}" height="30.5939" itemRotation="0" frame="false" pagex="21.7076">
+   <ComposerItem pagey="52.3109" page="1" id="officer_full" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.7076" y="52.3109" visibility="1" zValue="20" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="170.616" outlineWidth="0.3" excludeFromExports="0" uuid="{c96f0153-999c-43b2-a76f-f2843be29e17}" height="30.5939" itemRotation="0" frame="false" pagex="21.7076">
     <FrameColor alpha="255" red="0" blue="0" green="0"/>
     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
    </ComposerItem>
   </ComposerLabel>
   <ComposerLabel valign="32" marginX="1" marginY="1" labelText="--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------&#xa;&#xa;" htmlState="0" halign="4">
-   <LabelFont description="MS Shell Dlg 2,5,-1,5,50,0,0,0,0,0"/>
+   <LabelFont description="MS Shell Dlg 2,5,-1,5,50,0,0,0,0,0" style=""/>
    <FontColor red="0" blue="0" green="0"/>
-   <ComposerItem pagey="33.6363" page="1" id="line" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.7076" y="33.6363" visibility="1" zValue="19" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="163.387" outlineWidth="0.3" excludeFromExports="0" uuid="{d7ccff96-fa9e-4b80-b349-9e9fbe02b1dc}" height="3.97317" itemRotation="0" frame="false" pagex="21.7076">
+   <ComposerItem pagey="33.6363" page="1" id="line" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.7076" y="33.6363" visibility="1" zValue="19" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="163.387" outlineWidth="0.3" excludeFromExports="0" uuid="{0d65233d-e0ed-45a4-8b6c-d77168ebaed6}" height="3.97317" itemRotation="0" frame="false" pagex="21.7076">
     <FrameColor alpha="255" red="0" blue="0" green="0"/>
     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
    </ComposerItem>
   </ComposerLabel>
   <ComposerLabel valign="32" marginX="1" marginY="1" labelText="сум(дүүрэг)-ын&#xa;" htmlState="0" halign="1">
-   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0"/>
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
    <FontColor red="0" blue="0" green="0"/>
-   <ComposerItem pagey="52.2312" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.7076" y="52.2312" visibility="1" zValue="16" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="27.5901" outlineWidth="0.3" excludeFromExports="0" uuid="{c6a1aae0-b868-4f3d-b620-fd121f7c48ac}" height="6.2" itemRotation="0" frame="false" pagex="21.7076">
+   <ComposerItem pagey="52.2312" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.7076" y="52.2312" visibility="1" zValue="16" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="27.5901" outlineWidth="0.3" excludeFromExports="0" uuid="{09173876-b35d-4ae4-a9b8-b2feb6986e73}" height="6.2" itemRotation="0" frame="false" pagex="21.7076">
     <FrameColor alpha="255" red="0" blue="0" green="0"/>
     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
    </ComposerItem>
   </ComposerLabel>
   <ComposerLabel valign="32" marginX="1" marginY="1" labelText="өдрийн" htmlState="0" halign="1">
-   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0"/>
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
    <FontColor red="0" blue="0" green="0"/>
-   <ComposerItem pagey="45.9515" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.7076" y="45.9515" visibility="1" zValue="15" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="14.907" outlineWidth="0.3" excludeFromExports="0" uuid="{7e657ddb-8c5f-4125-ad23-84c29197669a}" height="6.0406" itemRotation="0" frame="false" pagex="21.7076">
+   <ComposerItem pagey="45.9515" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.7076" y="45.9515" visibility="1" zValue="15" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="14.907" outlineWidth="0.3" excludeFromExports="0" uuid="{2268806b-81d1-40d3-bf8a-903ff6dfe65a}" height="6.0406" itemRotation="0" frame="false" pagex="21.7076">
     <FrameColor alpha="255" red="0" blue="0" green="0"/>
     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
    </ComposerItem>
   </ComposerLabel>
   <ComposerLabel valign="32" marginX="1" marginY="1" labelText="(иргэний эцэг/эх/-йин нэр,нэр,хуулийн этгээдийн оноосон нэр)" htmlState="0" halign="1">
-   <LabelFont description="Arial,8,-1,5,50,0,0,0,0,0"/>
+   <LabelFont description="Arial,8,-1,5,50,0,0,0,0,0" style=""/>
    <FontColor red="0" blue="0" green="0"/>
-   <ComposerItem pagey="35.6229" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="57.4136" y="35.6229" visibility="1" zValue="14" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="77.1943" outlineWidth="0.3" excludeFromExports="0" uuid="{064a472a-bff7-42ad-a60f-2a4da774a7f8}" height="5.1888" itemRotation="0" frame="false" pagex="57.4136">
+   <ComposerItem pagey="35.6229" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="57.4136" y="35.6229" visibility="1" zValue="14" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="77.1943" outlineWidth="0.3" excludeFromExports="0" uuid="{95937b59-932f-4e3a-8a51-06b107f44d7e}" height="5.1888" itemRotation="0" frame="false" pagex="57.4136">
     <FrameColor alpha="255" red="0" blue="0" green="0"/>
     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
    </ComposerItem>
   </ComposerLabel>
   <ComposerLabel valign="32" marginX="1" marginY="1" labelText="hour&#xa;" htmlState="0" halign="4">
-   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0"/>
+   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0" style=""/>
    <FontColor red="0" blue="0" green="0"/>
-   <ComposerItem pagey="46.0312" page="1" id="hour" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="33.8519" y="46.0312" visibility="1" zValue="13" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="10.7339" outlineWidth="0.3" excludeFromExports="0" uuid="{e62b75dd-1c65-4fd9-a65e-e4fe21da2260}" height="6.2" itemRotation="0" frame="false" pagex="33.8519">
+   <ComposerItem pagey="46.0312" page="1" id="hour" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="33.8519" y="46.0312" visibility="1" zValue="13" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="10.7339" outlineWidth="0.3" excludeFromExports="0" uuid="{bd066c39-75ea-4c92-9e38-7a31c0d0a097}" height="6.2" itemRotation="0" frame="false" pagex="33.8519">
     <FrameColor alpha="255" red="0" blue="0" green="0"/>
     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
    </ComposerItem>
   </ComposerLabel>
   <ComposerLabel valign="32" marginX="1" marginY="1" labelText="оны" htmlState="0" halign="1">
-   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0"/>
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
    <FontColor red="0" blue="0" green="0"/>
-   <ComposerItem pagey="39.5921" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="157.688" y="39.5921" visibility="1" zValue="12" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="9.74086" outlineWidth="0.3" excludeFromExports="0" uuid="{487c1a1a-9670-4c3d-a21c-58caddcc80e2}" height="6.2" itemRotation="0" frame="false" pagex="157.688">
+   <ComposerItem pagey="39.5921" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="157.688" y="39.5921" visibility="1" zValue="12" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="9.74086" outlineWidth="0.3" excludeFromExports="0" uuid="{ae8ed469-c1a4-4190-9a0e-4e1679bdb516}" height="6.2" itemRotation="0" frame="false" pagex="157.688">
     <FrameColor alpha="255" red="0" blue="0" green="0"/>
     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
    </ComposerItem>
   </ComposerLabel>
   <ComposerLabel valign="32" marginX="1" marginY="1" labelText="аймаг(нийслэл)-ийн" htmlState="0" halign="1">
-   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0"/>
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
    <FontColor red="0" blue="0" green="0"/>
-   <ComposerItem pagey="46.1109" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="110.929" y="46.1109" visibility="1" zValue="9" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="36.0709" outlineWidth="0.3" excludeFromExports="0" uuid="{fa9df571-13a4-4ea3-8575-a7fc74edfce9}" height="6.2" itemRotation="0" frame="false" pagex="110.929">
+   <ComposerItem pagey="46.1109" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="110.929" y="46.1109" visibility="1" zValue="9" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="36.0709" outlineWidth="0.3" excludeFromExports="0" uuid="{66ab1cb3-8243-40fc-91c0-2427345df50b}" height="6.2" itemRotation="0" frame="false" pagex="110.929">
     <FrameColor alpha="255" red="0" blue="0" green="0"/>
     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
    </ComposerItem>
   </ComposerLabel>
   <ComposerLabel valign="32" marginX="1" marginY="1" labelText="year&#xa;" htmlState="0" halign="4">
-   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0"/>
+   <LabelFont description="Arial,10,-1,5,75,0,0,0,0,0" style=""/>
    <FontColor red="0" blue="0" green="0"/>
-   <ComposerItem pagey="39.5921" page="1" id="year" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="148.574" y="39.5921" visibility="1" zValue="8" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="9.1141" outlineWidth="0.3" excludeFromExports="0" uuid="{d6c71b14-a3ec-4312-a44e-2fb6de3b1645}" height="6.27969" itemRotation="0" frame="false" pagex="148.574">
+   <ComposerItem pagey="39.5921" page="1" id="year" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="148.574" y="39.5921" visibility="1" zValue="8" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="9.1141" outlineWidth="0.3" excludeFromExports="0" uuid="{7013867e-6c38-499c-b530-0193cc135e77}" height="6.27969" itemRotation="0" frame="false" pagex="148.574">
     <FrameColor alpha="255" red="0" blue="0" green="0"/>
     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
    </ComposerItem>
   </ComposerLabel>
   <ComposerLabel valign="32" marginX="1" marginY="1" labelText="хуудас өргөдлийг" htmlState="0" halign="1">
-   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0"/>
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
    <FontColor red="0" blue="0" green="0"/>
-   <ComposerItem pagey="39.5921" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="117.958" y="39.5921" visibility="1" zValue="7" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="31.3005" outlineWidth="0.3" excludeFromExports="0" uuid="{ff3810e3-38c8-4348-a54e-179f0998c085}" height="6.2" itemRotation="0" frame="false" pagex="117.958">
+   <ComposerItem pagey="39.5921" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="117.958" y="39.5921" visibility="1" zValue="7" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="31.3005" outlineWidth="0.3" excludeFromExports="0" uuid="{aaf8eab6-144e-46ce-a6f5-093642f0ef89}" height="6.2" itemRotation="0" frame="false" pagex="117.958">
     <FrameColor alpha="255" red="0" blue="0" green="0"/>
     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
    </ComposerItem>
   </ComposerLabel>
   <ComposerLabel valign="32" marginX="1" marginY="1" labelText="___&#xa;" htmlState="0" halign="4">
-   <LabelFont description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0"/>
+   <LabelFont description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0" style=""/>
    <FontColor red="0" blue="0" green="0"/>
-   <ComposerItem pagey="39.7515" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="109.094" y="39.7515" visibility="1" zValue="6" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="12.131" outlineWidth="0.3" excludeFromExports="0" uuid="{e4d869f1-8a31-49ba-b897-a6af3d4ced6a}" height="6.2" itemRotation="0" frame="false" pagex="109.094">
+   <ComposerItem pagey="39.7515" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="109.094" y="39.7515" visibility="1" zValue="6" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="12.131" outlineWidth="0.3" excludeFromExports="0" uuid="{e66a481e-4c92-4617-9dc4-fc393e3cad9a}" height="6.2" itemRotation="0" frame="false" pagex="109.094">
     <FrameColor alpha="255" red="0" blue="0" green="0"/>
     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
    </ComposerItem>
   </ComposerLabel>
   <ComposerLabel valign="32" marginX="1" marginY="1" labelText="-д бүртгэгдсэн" htmlState="0" halign="1">
-   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0"/>
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
    <FontColor red="0" blue="0" green="0"/>
-   <ComposerItem pagey="39.7515" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="85.7811" y="39.7515" visibility="1" zValue="5" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="26.7233" outlineWidth="0.3" excludeFromExports="0" uuid="{9e0e6929-9082-40c3-b2a4-b84b6948b6d6}" height="6.2" itemRotation="0" frame="false" pagex="85.7811">
+   <ComposerItem pagey="39.7515" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="85.7811" y="39.7515" visibility="1" zValue="5" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="26.7233" outlineWidth="0.3" excludeFromExports="0" uuid="{ac19c08d-0d19-42a0-9740-3d5626c6e77a}" height="6.2" itemRotation="0" frame="false" pagex="85.7811">
     <FrameColor alpha="255" red="0" blue="0" green="0"/>
     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
    </ComposerItem>
   </ComposerLabel>
   <ComposerLabel valign="32" marginX="1" marginY="1" labelText="бүртгэлийн №" htmlState="0" halign="1">
-   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0"/>
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
    <FontColor red="0" blue="0" green="0"/>
-   <ComposerItem pagey="39.5921" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.7076" y="39.5921" visibility="1" zValue="4" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="26.5969" outlineWidth="0.3" excludeFromExports="0" uuid="{5768eb16-cada-403a-af27-59114963f6fb}" height="6.2" itemRotation="0" frame="false" pagex="21.7076">
+   <ComposerItem pagey="39.5921" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="21.7076" y="39.5921" visibility="1" zValue="4" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="26.5969" outlineWidth="0.3" excludeFromExports="0" uuid="{3253470b-cf7a-4e45-b8a8-f92d72097140}" height="6.2" itemRotation="0" frame="false" pagex="21.7076">
     <FrameColor alpha="255" red="0" blue="0" green="0"/>
     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
    </ComposerItem>
   </ComposerLabel>
   <ComposerLabel valign="32" marginX="1" marginY="1" labelText="-ны&#xa;" htmlState="0" halign="2">
-   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0"/>
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
    <FontColor red="0" blue="0" green="0"/>
-   <ComposerItem pagey="31.048" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="181.058" y="31.048" visibility="1" zValue="3" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="11.1" outlineWidth="0.3" excludeFromExports="0" uuid="{2704e859-4879-45e4-9934-c83a89c10eb3}" height="6.2" itemRotation="0" frame="false" pagex="181.058">
+   <ComposerItem pagey="31.048" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="181.058" y="31.048" visibility="1" zValue="3" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="11.1" outlineWidth="0.3" excludeFromExports="0" uuid="{69374566-853c-4135-8325-2e9666ba30ef}" height="6.2" itemRotation="0" frame="false" pagex="181.058">
     <FrameColor alpha="255" red="0" blue="0" green="0"/>
     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
    </ComposerItem>
   </ComposerLabel>
   <ComposerLabel valign="32" marginX="1" marginY="1" labelText="person_name&#xa;" htmlState="0" halign="4">
-   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0"/>
+   <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0" style=""/>
    <FontColor red="0" blue="0" green="0"/>
-   <ComposerItem pagey="31.048" page="1" id="person_name" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="20.312" y="31.048" visibility="1" zValue="2" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="149.376" outlineWidth="0.3" excludeFromExports="0" uuid="{8c409d88-0f4e-46ad-a37b-ec974135684e}" height="6.2" itemRotation="0" frame="false" pagex="20.312">
+   <ComposerItem pagey="31.048" page="1" id="person_name" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="20.312" y="31.048" visibility="1" zValue="2" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="149.376" outlineWidth="0.3" excludeFromExports="0" uuid="{4bccd56e-2c06-4811-9b57-2000ed08b99c}" height="6.2" itemRotation="0" frame="false" pagex="20.312">
     <FrameColor alpha="255" red="0" blue="0" green="0"/>
     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
    </ComposerItem>
   </ComposerLabel>
   <ComposerLabel valign="32" marginX="1" marginY="1" labelText="Өргөдөл авсан тухай тодорхойлолт" htmlState="0" halign="4">
-   <LabelFont description="Arial,12,-1,5,75,0,0,0,0,0"/>
+   <LabelFont description="Arial,12,-1,5,75,0,0,0,0,0" style=""/>
    <FontColor red="0" blue="0" green="0"/>
-   <ComposerItem pagey="17.4126" page="1" id="qgis" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="63.7982" y="17.4126" visibility="1" zValue="1" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="77.0728" outlineWidth="0.3" excludeFromExports="0" uuid="{40c5c936-580c-4fdf-9e89-a6d61c3ce75d}" height="6.75617" itemRotation="0" frame="false" pagex="63.7982">
+   <ComposerItem pagey="17.4126" page="1" id="qgis" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="63.7982" y="17.4126" visibility="1" zValue="1" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="77.0728" outlineWidth="0.3" excludeFromExports="0" uuid="{f4ae37aa-be71-4d63-b420-9ddc54e08c3a}" height="6.75617" itemRotation="0" frame="false" pagex="63.7982">
     <FrameColor alpha="255" red="0" blue="0" green="0"/>
     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+    <customproperties/>
    </ComposerItem>
   </ComposerLabel>
+  <ComposerHtml maxBreakDistance="10" contentMode="0" resizeMode="0" url="" useSmartBreaks="true" evaluateExpressions="true" html="" stylesheetEnabled="false" stylesheet="">
+   <customproperties/>
+  </ComposerHtml>
+  <customproperties/>
  </Composition>
 </Composer>
