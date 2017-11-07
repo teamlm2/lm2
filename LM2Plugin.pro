@@ -33,6 +33,7 @@ SOURCES        += controller/PastureWidget.py
 SOURCES        += controller/SentToGovernorPastureDialog.py
 
 SOURCES        += controller/ParcelInfoDialog.py
+SOURCES        += controller/ParcelInfoFeeDialog.py
 SOURCES        += controller/ParcelInfoExtractMapTool.py
 SOURCES        += controller/PastureMonitoringValueDialog.py
 
@@ -81,6 +82,7 @@ FORMS        += view/PrintDialog.ui
 FORMS        += view/UserRoleManagementDialog.ui
 FORMS        += view/SentToGovernorDialog.ui
 FORMS        += view/ParcelRecordDialog.ui
+FORMS        += view/ParcelinfoDialogy.ui
 FORMS        += view/ManageParcelRecordsDialog.ui
 FORMS        += view/DraftDecisionPrintDialog.ui
 FORMS        += view/UserRoleManagementDetialDialog.ui
@@ -93,6 +95,7 @@ FORMS        += view/PastureWidget.ui
 FORMS        += view/SentToGovernorPastureDialog.ui
 
 FORMS        += view/ParcelInfoDialog.ui
+FORMS        += view/ParcelInfoFeeDialog.ui
 FORMS        += view/PastureMonitoringValueDialog.ui
 
 TRANSLATIONS += LM2Plugin_mn.ts
