@@ -2967,6 +2967,8 @@ class ApplicationsDialog(QDialog, Ui_ApplicationsDialog, DatabaseHelper):
         self.__add_app_date(map_composition)
         self.__add_person_name(map_composition)
         self.__add_officer(map_composition)
+        self.__add_card_officer_full(map_composition)
+        self.__add_card_person_name(map_composition)
         map_composition.exportAsPDF(path + "/app_reciept.pdf")
         map_composition.exportAsPDF(default_path + "/"+app_no+".pdf")
         QDesktopServices.openUrl(QUrl.fromLocalFile(default_path+"/"+app_no+".pdf"))
@@ -3042,8 +3044,8 @@ class ApplicationsDialog(QDialog, Ui_ApplicationsDialog, DatabaseHelper):
         self.__add_app_status_date(map_composition)
         self.__add_person_name(map_composition)
         self.__add_officer_name(map_composition)
+        self.__add_card_officer_full(map_composition)
         self.__add_app_remarks(map_composition)
-        self.__add_card_person_name(map_composition)
 
         map_composition.exportAsPDF(path + "app_response.pdf")
         map_composition.exportAsPDF(default_path + "/"+app_no+".pdf")
@@ -3290,13 +3292,14 @@ class ApplicationsDialog(QDialog, Ui_ApplicationsDialog, DatabaseHelper):
         except SQLAlchemyError, e:
             raise LM2Exception(self.tr("Database Query Error"), self.tr("aCould not execute: {0}").format(e.message))
         item = map_composition.getComposerItemById("card_person_name")
+
         first_name = ''
         if person.first_name == None:
             first_name = u' '
         else:
             first_name = person.first_name
-        name = person.name +u", "+ first_name
-        item.setText(name)
+        card_person_name = person.name +u", "+ first_name
+        item.setText(card_person_name)
         item.adjustSizeToText()
 
     def __wrap(self,text, width):
@@ -3356,11 +3359,30 @@ class ApplicationsDialog(QDialog, Ui_ApplicationsDialog, DatabaseHelper):
             position = self.session.query(ClPositionType).filter(ClPositionType.code == position).one()
             position = position.description
 
-        officer_full = '                          ' + position + u' албан тушаалтан '+ officer.surname + u' овогтой ' + officer.first_name + ' ___________________ '+ u' хүлээн авав.'
+        officer_full = '                          ' + position + ' ' + officer.surname[:1] + '.' + officer.first_name + ' ___________________ '+ u' хүлээн авав.'
         item = map_composition.getComposerItemById("officer_full")
         item.setText(self.__wrap(officer_full, 200))
         # item.adjustSizeToText()
 
+    def __add_card_officer_full(self, map_composition):
+
+        app_no = self.application_num_first_edit.text() + "-" + self.application_num_type_edit.text() + "-" \
+                     + self.application_num_middle_edit.text() + "-" + self.application_num_last_edit.text()
+        try:
+                app_status = self.session.query(CtApplicationStatus).filter(
+                    CtApplicationStatus.application == app_no).all()
+                for p in app_status:
+                    if p.status == 1:
+                        officer = self.session.query(SetRole).filter(
+                            SetRole.user_name_real == p.next_officer_in_charge).one()
+        except SQLAlchemyError, e:
+            raise LM2Exception(self.tr("Database Query Error"),
+                                   self.tr("aCould not execute: {0}").format(e.message))
+        position = ''
+        if officer.position != None:
+            position = officer.position
+            position = self.session.query(ClPositionType).filter(ClPositionType.code == position).one()
+            position = position.description
 
         card_officer_full = position + ' ' + officer.surname[:1] + '.' + officer.first_name
         item = map_composition.getComposerItemById("card_officer_full")
