@@ -93,7 +93,7 @@
        </size>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <property name="usesScrollButtons">
        <bool>true</bool>
@@ -3172,6 +3172,11 @@ QPushButton:disabled {
         <item>
          <property name="text">
           <string>13.Cadastre Page</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>14.Mortgage Parcel</string>
          </property>
         </item>
        </widget>

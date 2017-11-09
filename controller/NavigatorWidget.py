@@ -7619,6 +7619,14 @@ class NavigatorWidget(QDockWidget, Ui_NavigatorWidget, DatabaseHelper):
                 vlayer.loadNamedStyle(str(os.path.dirname(os.path.realpath(__file__))[:-10]) +"template\style/view_land_fee.qml")
                 vlayer.setLayerName(self.tr("Land fee list"))
                 mygroup.addLayer(vlayer)
+        elif code == '14':
+            tmp_parcel_layer = LayerUtils.layer_by_data_source("s" + restrictions, "view_mortgage_parcel")
+            if tmp_parcel_layer is None:
+                mygroup = root.findGroup(u"Тайлан")
+                vlayer = LayerUtils.load_layer_by_name_report("view_mortgage_parcel", "parcel_id", restrictions)
+                vlayer.loadNamedStyle(str(os.path.dirname(os.path.realpath(__file__))[:-10]) +"template\style/view_land_fee_payment.qml")
+                vlayer.setLayerName(self.tr("Mortgage"))
+                mygroup.addLayer(vlayer)
 
     @pyqtSlot(QTableWidgetItem)
     def on_person_results_twidget_itemClicked(self, item):
