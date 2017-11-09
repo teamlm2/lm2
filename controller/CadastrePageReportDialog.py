@@ -96,7 +96,7 @@ class CadastrePageReportDialog(QDialog, Ui_CadastrePageReportDialog, DatabaseHel
                      "cadastre.parcel_id, person.name ||' '|| person.first_name as right_holder, parcel.address_streetname ||' - '|| parcel.address_khashaa as parcel_address " \
                      "FROM s{0}.ct_cadastre_page cadastre " \
                      "left join base.bs_person person on person.person_id = cadastre.person_id " \
-                     "left join s{0}.ca_union_parcel parcel on parcel.parcel_id = cadastre.parcel_id ".format(au_level2) + "\n"
+                     "left join s{0}.ca_parcel parcel on parcel.parcel_id = cadastre.parcel_id ".format(au_level2) + "\n"
 
             sql = sql + select
 
@@ -121,6 +121,8 @@ class CadastrePageReportDialog(QDialog, Ui_CadastrePageReportDialog, DatabaseHel
     def on_find_button_clicked(self):
 
         self.cpage_twidget.setRowCount(0)
+        print self.session.query(CadastrePageSearch).count()
+
         cadastre_pages = self.session.query(CadastrePageSearch)
         filter_is_set = False
 
@@ -140,7 +142,7 @@ class CadastrePageReportDialog(QDialog, Ui_CadastrePageReportDialog, DatabaseHel
             cadastre_pages = cadastre_pages.filter(extract('year', CadastrePageSearch.print_date) == print_year)
 
         count = 0
-        for cadastre_page in cadastre_pages.distinct(CadastrePageSearch.print_date).all():
+        for cadastre_page in cadastre_pages:
             self.cpage_twidget.insertRow(count)
 
             item = QTableWidgetItem(str(cadastre_page.id))
