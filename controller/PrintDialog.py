@@ -1357,8 +1357,6 @@ class PrintDialog(QDialog, Ui_PrintDialog):
         cadastre_page_number = self.cadastre_page_sbox.value()
 
         cadastre_page_count = self.session.query(CtCadastrePage) \
-            .filter(CtCadastrePage.parcel_id == parcel_id) \
-            .filter(CtCadastrePage.person_id == person_id) \
             .filter(CtCadastrePage.cadastre_page_number == cadastre_page_number).count()
 
         if cadastre_page_count > 0:
