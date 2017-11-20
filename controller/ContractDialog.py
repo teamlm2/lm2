@@ -148,13 +148,15 @@ class ContractDialog(QDialog, Ui_ContractDialog, DatabaseHelper):
     def __end_date_change(self, new_date):
 
         end = PluginUtils.convert_qt_date_to_python(new_date).date()
-        begin = self.contract.contract_begin
+        begin_txt = self.contract_begin_edit.text()
+        begin = datetime.strptime(begin_txt, '%Y-%m-%d')
+
 
         if end and begin:
             age_in_years = end.year - begin.year - ((end.month, end.day) < (begin.month, begin.day))
             months = (end.month - begin.month - (end.day < begin.day)) % 12
-            age = end - begin
-            age_in_days = age.days
+            # age = end - begin
+            # age_in_days = age.days
             self.contract_duration_edit.setText(str(age_in_years))
 
     def __setup_validators(self):
