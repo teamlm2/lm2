@@ -127,6 +127,10 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
         self.point_detail_date.setDate(QDate.currentDate())
         self.calc_date_edit.setDate(QDate.currentDate())
 
+        # self.begin_month_date.setDisplayFormat('%m, %d')
+        self.begin_month_date.setDisplayFormat("MM-dd")
+        self.end_month_date.setDisplayFormat("MM-dd")
+
         self.zone_id = None
         self.is_cover_value_load = True
 
@@ -305,6 +309,18 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
                             address_neighbourhood = parcel.address_neighbourhood
                         self.parcel_cbox.addItem(parcel.parcel_id+' | ' + address_neighbourhood, parcel.parcel_id)
 
+    def __is_number(self, s):
+
+        try:
+            float(s)  # for int, long and float
+        except ValueError:
+            try:
+                complex(s)  # for complex
+            except ValueError:
+                return False
+
+        return True
+
     @pyqtSlot()
     def on_add_point_button_clicked(self):
 
@@ -320,6 +336,19 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
         if point_detail_point_count >= 2:
             PluginUtils.show_message(self, self.tr("Selection"), self.tr("Point limited!!!"))
             return
+        if not self.__is_number(self.x_gradus_edit.text()):
+            return
+        if not self.__is_number(self.x_minute_edit.text()):
+            return
+        if not self.__is_number(self.x_second_edit.text()):
+            return
+
+        if not self.__is_number(self.y_gradus_edit.text()):
+            return
+        if not self.__is_number(self.y_minute_edit.text()):
+            return
+        if not self.__is_number(self.y_second_edit.text()):
+            return
 
         x_gradus = float(self.x_gradus_edit.text())
         x_minute = float(self.x_minute_edit.text())
@@ -332,22 +361,22 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
         if not x_gradus:
             PluginUtils.show_message(self, self.tr("Coordinate"), self.tr("X coordinate gradus!!!"))
             return
-        if not x_minute:
-            PluginUtils.show_message(self, self.tr("Coordinate"), self.tr("X coordinate minute!!!"))
-            return
-        if not x_second:
-            PluginUtils.show_message(self, self.tr("Coordinate"), self.tr("X coordinate second!!!"))
-            return
+        # if not x_minute:
+        #     PluginUtils.show_message(self, self.tr("Coordinate"), self.tr("X coordinate minute!!!"))
+        #     return
+        # if not x_second:
+        #     PluginUtils.show_message(self, self.tr("Coordinate"), self.tr("X coordinate second!!!"))
+        #     return
 
         if not y_gradus:
             PluginUtils.show_message(self, self.tr("Coordinate"), self.tr("Y coordinate gradus!!!"))
             return
-        if not y_minute:
-            PluginUtils.show_message(self, self.tr("Coordinate"), self.tr("Y coordinate minute!!!"))
-            return
-        if not y_second:
-            PluginUtils.show_message(self, self.tr("Coordinate"), self.tr("Y coordinate second!!!"))
-            return
+        # if not y_minute:
+        #     PluginUtils.show_message(self, self.tr("Coordinate"), self.tr("Y coordinate minute!!!"))
+        #     return
+        # if not y_second:
+        #     PluginUtils.show_message(self, self.tr("Coordinate"), self.tr("Y coordinate second!!!"))
+        #     return
 
         x_coordinate = x_gradus + x_minute / 60 + x_second / 3600
         y_coordinate = y_gradus + y_minute / 60 + y_second / 3600
@@ -1021,6 +1050,23 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
         self.sheep_unit_twidget.setRowCount(0)
         self.urgats_twidget.setRowCount(0)
 
+    def __clear_calc(self):
+
+        self.calc_rc_edit.clear()
+        self.calc_rc_precent_sbox.clear()
+        self.calc_biomass_sbox.clear()
+        self.biomass_present_edit.clear()
+        self.calc_area_sbox.clear()
+        self.calc_duration_sbox.clear()
+        self.calc_sheep_unit_plant_sbox.clear()
+        self.calc_sheep_unit_sbox.clear()
+
+        self.calc_d1_edit.clear()
+        self.calc_d1_100ga_edit.clear()
+        self.calc_d2_edit.clear()
+        self.calc_d3_edit.clear()
+        self.calc_unelgee_edit.clear()
+
     @pyqtSlot(QTableWidgetItem)
     def on_point_detail_twidget_itemClicked(self, item):
 
@@ -1034,6 +1080,8 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
 
         self.point_detail_id = point_detail_id
         self.point_detail_id_edit.setText(point_detail_id)
+
+        self.__clear_calc();
 
         if self.__load_natural_zone(point_detail_id):
             zone = self.__load_natural_zone(point_detail_id)
@@ -1268,17 +1316,17 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
 
     def __save_settings(self):
 
-        try:
-            self.__save_point_detail_points()
-            self.__save_point()
-            self.__save_pasture_values()
-            self.__save_live_stock()
-            self.__daats_value_save()
-            self.__pasture_evaluation_save()
-            return True
+        # try:
+        self.__save_point_detail_points()
+        self.__save_point()
+        self.__save_pasture_values()
+        self.__save_live_stock()
+        self.__daats_value_save()
+        self.__pasture_evaluation_save()
+        return True
 
-        except LM2Exception, e:
-            PluginUtils.show_error(self, self.tr("Query Error"), self.tr("Error in line {0}: {1}").format(currentframe().f_lineno, e.message))
+        # except LM2Exception, e:
+        #     PluginUtils.show_error(self, self.tr("Query Error"), self.tr("Error in line {0}: {1}").format(currentframe().f_lineno, e.message))
 
     def __start_fade_out_timer(self):
 
@@ -1491,48 +1539,58 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
 
         point_detail_id = self.point_detail_id
         current_year = self.print_year_sbox.value()
-        soil_evaluation_code = self.soil_evaluation_cbox.itemData(self.soil_evaluation_cbox.currentIndex())
-        soil_evaluation = self.session.query(PsSoilEvaluation).filter(PsSoilEvaluation.code == soil_evaluation_code).one()
-        missed_evaluation_code = self.missed_evaluation_cbox.itemData(self.missed_evaluation_cbox.currentIndex())
-        missed_evaluation = self.session.query(PsMissedEvaluation).filter(
-            PsMissedEvaluation.code == missed_evaluation_code).one()
 
-        pasture_soil_count = self.session.query(PsPastureSoilEvaluation).\
-            filter(PsPastureSoilEvaluation.current_year == current_year).\
-            filter(PsPastureSoilEvaluation.point_detail_id == point_detail_id).count()
-        if pasture_soil_count == 1:
-            pasture_soil = self.session.query(PsPastureSoilEvaluation). \
-                filter(PsPastureSoilEvaluation.current_year == current_year). \
-                filter(PsPastureSoilEvaluation.point_detail_id == point_detail_id).one()
+        point_detail_count = self.session.query(PsPointDetail).filter(
+            PsPointDetail.point_detail_id == point_detail_id).count()
+        if point_detail_count == 1:
 
-            pasture_soil.soil_evaluation = soil_evaluation_code
-            pasture_soil.soil_evaluation_ref = soil_evaluation
-        else:
-            pasture_soil = PsPastureSoilEvaluation()
-            pasture_soil.point_detail_id = point_detail_id
-            pasture_soil.current_year = current_year
-            pasture_soil.soil_evaluation = soil_evaluation_code
-            pasture_soil.soil_evaluation_ref = soil_evaluation
-            self.session.add(pasture_soil)
+            soil_evaluation_code = self.soil_evaluation_cbox.itemData(self.soil_evaluation_cbox.currentIndex())
+            soil_evaluation_c = self.session.query(PsSoilEvaluation).filter(
+                PsSoilEvaluation.code == soil_evaluation_code).count()
 
-        pasture_missed_count = self.session.query(PsPastureMissedEvaluation). \
-            filter(PsPastureMissedEvaluation.current_year == current_year). \
-            filter(PsPastureMissedEvaluation.point_detail_id == point_detail_id).count()
-        if pasture_missed_count == 1:
-            pasture_missed = self.session.query(PsPastureMissedEvaluation). \
-                filter(PsPastureMissedEvaluation.current_year == current_year). \
-                filter(PsPastureMissedEvaluation.point_detail_id == point_detail_id).one()
+            missed_evaluation_code = self.missed_evaluation_cbox.itemData(self.missed_evaluation_cbox.currentIndex())
+            missed_evaluation = self.session.query(PsMissedEvaluation).filter(
+                PsMissedEvaluation.code == missed_evaluation_code).one()
 
-            pasture_missed.missed_evaluation = missed_evaluation_code
-            pasture_missed.missed_evaluation_ref = missed_evaluation
-        else:
-            pasture_missed = PsPastureMissedEvaluation()
-            pasture_missed.point_detail_id = point_detail_id
-            pasture_missed.current_year = current_year
-            pasture_missed.missed_evaluation = missed_evaluation_code
-            pasture_missed.missed_evaluation_ref = missed_evaluation
-            self.session.add(pasture_missed)
+            if soil_evaluation_c == 1:
+                soil_evaluation = self.session.query(PsSoilEvaluation).filter(PsSoilEvaluation.code == soil_evaluation_code).one()
 
+
+                pasture_soil_count = self.session.query(PsPastureSoilEvaluation).\
+                    filter(PsPastureSoilEvaluation.current_year == current_year).\
+                    filter(PsPastureSoilEvaluation.point_detail_id == point_detail_id).count()
+                if pasture_soil_count == 1:
+                    pasture_soil = self.session.query(PsPastureSoilEvaluation). \
+                        filter(PsPastureSoilEvaluation.current_year == current_year). \
+                        filter(PsPastureSoilEvaluation.point_detail_id == point_detail_id).one()
+
+                    pasture_soil.soil_evaluation = soil_evaluation_code
+                    # pasture_soil.soil_evaluation_ref = soil_evaluation
+                else:
+                    pasture_soil = PsPastureSoilEvaluation()
+                    pasture_soil.point_detail_id = point_detail_id
+                    pasture_soil.current_year = current_year
+                    pasture_soil.soil_evaluation = soil_evaluation_code
+                    # pasture_soil.soil_evaluation_ref = soil_evaluation
+                    self.session.add(pasture_soil)
+
+                pasture_missed_count = self.session.query(PsPastureMissedEvaluation). \
+                    filter(PsPastureMissedEvaluation.current_year == current_year). \
+                    filter(PsPastureMissedEvaluation.point_detail_id == point_detail_id).count()
+                if pasture_missed_count == 1:
+                    pasture_missed = self.session.query(PsPastureMissedEvaluation). \
+                        filter(PsPastureMissedEvaluation.current_year == current_year). \
+                        filter(PsPastureMissedEvaluation.point_detail_id == point_detail_id).one()
+
+                    pasture_missed.missed_evaluation = missed_evaluation_code
+                    # pasture_missed.missed_evaluation_ref = missed_evaluation
+                else:
+                    pasture_missed = PsPastureMissedEvaluation()
+                    pasture_missed.point_detail_id = point_detail_id
+                    pasture_missed.current_year = current_year
+                    pasture_missed.missed_evaluation = missed_evaluation_code
+                    # pasture_missed.missed_evaluation_ref = missed_evaluation
+                    self.session.add(pasture_missed)
 
     def __save_point(self):
 
@@ -1541,10 +1599,12 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
             point_id = self.point_twidget.item(row, 0).data(Qt.UserRole)
             x = self.point_twidget.item(row, 1).data(Qt.UserRole)
             y = self.point_twidget.item(row, 2).data(Qt.UserRole)
-            point = self.session.query(CaPastureMonitoring).filter(CaPastureMonitoring.point_id == point_id).one()
-            point.x_coordinate = x
-            point.y_coordinate = y
-            self.session.flush()
+            point_count = self.session.query(CaPastureMonitoring).filter(CaPastureMonitoring.point_id == point_id).count()
+            if point_count == 1:
+                point = self.session.query(CaPastureMonitoring).filter(CaPastureMonitoring.point_id == point_id).one()
+                point.x_coordinate = x
+                point.y_coordinate = y
+                self.session.flush()
 
     def __load_pasture_values(self):
 
@@ -2315,6 +2375,23 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
 
         point_detail_count = self.session.query(PsPointDetail).\
             filter(PsPointDetail.point_detail_id == point_detail_id).count()
+
+        pasture_misseds = self.session.query(PsPastureMissedEvaluation). \
+            filter(PsPastureMissedEvaluation.point_detail_id == point_detail_id).all()
+
+        for pasture_missed in pasture_misseds:
+            self.session.query(PsPastureMissedEvaluation). \
+                filter(PsPastureMissedEvaluation.missed_evaluation == pasture_missed.missed_evaluation).\
+                filter(PsPastureMissedEvaluation.point_detail_id == point_detail_id).delete()
+
+        pasture_soils = self.session.query(PsPastureSoilEvaluation). \
+            filter(PsPastureSoilEvaluation.point_detail_id == point_detail_id).all()
+
+        for pasture_soil in pasture_soils:
+            self.session.query(PsPastureSoilEvaluation). \
+                filter(PsPastureSoilEvaluation.soil_evaluation == pasture_soil.soil_evaluation).\
+                filter(PsPastureSoilEvaluation.point_detail_id == point_detail_id).delete()
+
         if point_detail_count == 1:
             self.session.query(PsPointDetail). \
                 filter(PsPointDetail.point_detail_id == point_detail_id).delete()
@@ -2348,8 +2425,12 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
             filter(PsPointDetailPoints.point_id == point_id).count()
 
         if point_detail_point_count > 0:
-            PluginUtils.show_message(self, self.tr("Selection"), self.tr("Can not delete and registered point!"))
-            return
+            point_detail_points = self.session.query(PsPointDetailPoints). \
+                filter(PsPointDetailPoints.point_id == point_id).all()
+            for point_detail_point in point_detail_points:
+                self.session.query(PsPointDetailPoints). \
+                    filter(PsPointDetailPoints.point_detail_id == point_detail_point.point_detail_id).\
+                    filter(PsPointDetailPoints.point_id == point_id).delete()
 
         point_count = self.session.query(CaPastureMonitoring).\
             filter(CaPastureMonitoring.point_id == point_id).count()
@@ -2614,7 +2695,9 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
 
         for file in os.listdir(file_path):
             os.listdir(file_path)
-            if file.endswith(".JPG"):
+
+            if file.endswith(".JPG") or file.endswith(".jpg"):
+
                 file_name_split = file.split('_')
                 photo_type = file_name_split[0] + '_' + file_name_split[1]
                 file_name = file
@@ -2623,7 +2706,9 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
                 for i in range(4):
                     photo_type_item = self.photos_twidget.item(i, DOC_TYPE_COLUMN)
                     photo_type_code = str(photo_type_item.data(Qt.UserRole))
+
                     if photo_type == photo_type_code and point_detail_id == file_point_detail_id:
+
                         item_name = self.photos_twidget.item(i, DOC_NAME_COLUMN)
                         item_name.setText(file_name)
 
@@ -2651,7 +2736,7 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
 
         for file in os.listdir(file_path):
             os.listdir(file_path)
-            if file.endswith(".JPG"):
+            if file.endswith(".JPG") or file.endswith(".jpg"):
                 file_name_split = file.split('_')
                 photo_type = file_name_split[0] + '_' + file_name_split[1]
                 file_name = file
@@ -2783,13 +2868,13 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
         worksheet.merge_range('D5:D6', u'Баг', format)
         worksheet.merge_range('E5:E6', u'БАХ', format)
         worksheet.merge_range('F5:F6', u'Улирал', format)
-        worksheet.merge_range('G5:G6', u'Код', format)
+        worksheet.merge_range('G5:G6', u'Газрын нэр', format)
 
         worksheet.merge_range('G4:P4', u'Газрын мэдээлэл', format)
         worksheet.merge_range('H5:H6', u'Цэгийн дугаар', format)
         worksheet.merge_range('I5:I6', u'Огноо', format)
         worksheet.merge_range('J5:J6', u'Байгалийн бүс, бүслүүр', format)
-        worksheet.merge_range('K5:K6', u'Газрын гадаргын хэлбэр', format)
+        worksheet.merge_range('K5:K6', u'Бэлчээрийн төлөв байдал, өөрчлөлтийн загвар', format)
         worksheet.merge_range('L5:L6', u'Өндөршил', format)
 
         worksheet.merge_range('M5:N5', u'Эхлэл', format)
@@ -2819,96 +2904,169 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
         col = 0
         row_number = 1
 
-        # for row in range(row_num):
-        point_detail_id = self.point_detail_id
-        point_detail = self.session.query(PsPointDetail).filter(PsPointDetail.point_detail_id == point_detail_id).one()
+        for row in range(row_num):
+            item = self.point_detail_twidget.item(row, 0)
+            point_detail_id = item.data(Qt.UserRole)
 
-        land_form = self.session.query(ClLandForm).filter(ClLandForm.code == point_detail.land_form).one()
-        point_id = None
-        points = self.session.query(PsPointDetailPoints).filter(
-            PsPointDetailPoints.point_detail_id == point_detail_id).all()
+            point_detail = self.session.query(PsPointDetail).filter(PsPointDetail.point_detail_id == point_detail_id).one()
 
-        first_point_x = 0
-        first_point_y = 0
+            land_form = self.session.query(ClLandForm).filter(ClLandForm.code == point_detail.land_form).one()
+            point_id = None
+            points = self.session.query(PsPointDetailPoints).filter(
+                PsPointDetailPoints.point_detail_id == point_detail_id).all()
 
-        second_point_x = 0
-        second_point_y = 0
+            first_point_x = 0
+            first_point_y = 0
 
-        point_count = 1
-        for point in points:
-            point = self.session.query(CaPastureMonitoring).filter(CaPastureMonitoring.point_id == point.point_id).one()
-            if point_count == 1:
-                first_point_x = point.x_coordinate
-                first_point_y = point.y_coordinate
-            if point_count == 2:
-                second_point_x = point.x_coordinate
-                second_point_y = point.y_coordinate
-            point_id = point.point_id
-            point_count += 1
-        point = self.session.query(CaPastureMonitoring).filter(CaPastureMonitoring.point_id == point_id).one()
-        zone = self.session.query(AuNaturalZone).filter(point.geometry.ST_Within(AuNaturalZone.geometry)).one()
-        au3 = self.session.query(AuLevel3).filter(point.geometry.ST_Within(AuLevel3.geometry)).one()
-        au2 = self.session.query(AuLevel2).filter(point.geometry.ST_Within(AuLevel2.geometry)).one()
-        au1 = self.session.query(AuLevel1).filter(point.geometry.ST_Within(AuLevel1.geometry)).one()
+            second_point_x = 0
+            second_point_y = 0
 
-        pug_name = ''
-        pasture_type = ''
-        pasture_parcel_count = self.session.query(CaPastureParcel).filter(
-            point.geometry.ST_Within(CaPastureParcel.geometry)).count()
-        if pasture_parcel_count == 1:
-            pasture_parcel = self.session.query(CaPastureParcel).filter(point.geometry.ST_Within(CaPastureParcel.geometry)).one()
-            pasture_type = pasture_parcel.pasture_type
-        pug_boundary_count = self.session.query(CaPUGBoundary).filter(
-            point.geometry.ST_Within(CaPUGBoundary.geometry)).count()
-        if pug_boundary_count == 1:
-            pug_boundary = self.session.query(CaPUGBoundary).filter(point.geometry.ST_Within(CaPUGBoundary.geometry)).one()
-            pug_name = pug_boundary.group_name
-        zone_id = zone.code
+            point_count = 1
+            for point in points:
+                point = self.session.query(CaPastureMonitoring).filter(CaPastureMonitoring.point_id == point.point_id).one()
+                if point_count == 1:
+                    first_point_x = point.x_coordinate
+                    first_point_y = point.y_coordinate
+                if point_count == 2:
+                    second_point_x = point.x_coordinate
+                    second_point_y = point.y_coordinate
+                point_id = point.point_id
+                point_count += 1
+            point = self.session.query(CaPastureMonitoring).filter(CaPastureMonitoring.point_id == point_id).one()
+            zone = self.session.query(AuNaturalZone).filter(point.geometry.ST_Within(AuNaturalZone.geometry)).one()
+            au3 = self.session.query(AuLevel3).filter(point.geometry.ST_Within(AuLevel3.geometry)).one()
+            au2 = self.session.query(AuLevel2).filter(point.geometry.ST_Within(AuLevel2.geometry)).one()
+            au1 = self.session.query(AuLevel1).filter(point.geometry.ST_Within(AuLevel1.geometry)).one()
 
-        worksheet.write(data_row, col, row_number, format)
-        worksheet.write(data_row, col + 1, au1.name, format)
-        worksheet.write(data_row, col + 2, au2.name, format)
-        worksheet.write(data_row, col + 3, au3.name, format)
-        worksheet.write(data_row, col + 4, pug_name, format)
-        worksheet.write(data_row, col + 5, pasture_type, format)
+            pug_name = ''
+            pasture_type = ''
+            pasture_parcel_count = self.session.query(CaPastureParcel).filter(
+                point.geometry.ST_Within(CaPastureParcel.geometry)).count()
+            if pasture_parcel_count == 1:
+                pasture_parcel = self.session.query(CaPastureParcel).filter(point.geometry.ST_Within(CaPastureParcel.geometry)).one()
+                pasture_type = pasture_parcel.pasture_type
+            pug_boundary_count = self.session.query(CaPUGBoundary).filter(
+                point.geometry.ST_Within(CaPUGBoundary.geometry)).count()
+            if pug_boundary_count == 1:
+                pug_boundary = self.session.query(CaPUGBoundary).filter(point.geometry.ST_Within(CaPUGBoundary.geometry)).one()
+                pug_name = pug_boundary.group_name
+            zone_id = zone.code
 
-        worksheet.write(data_row, col + 7, str(point_detail_id), format)
-        worksheet.write(data_row, col + 8, str(point_detail.register_date), format)
-        worksheet.write(data_row, col + 9, (zone.name), format)
-        worksheet.write(data_row, col + 10, (land_form.description), format)
-        worksheet.write(data_row, col + 11, str(point_detail.elevation), format)
+            worksheet.write(data_row, col, row_number, format)
+            worksheet.write(data_row, col + 1, au1.name, format)
+            worksheet.write(data_row, col + 2, au2.name, format)
+            worksheet.write(data_row, col + 3, au3.name, format)
+            worksheet.write(data_row, col + 4, pug_name, format)
+            worksheet.write(data_row, col + 5, pasture_type, format)
+            worksheet.write(data_row, col + 6, point_detail.land_name, format)
 
-        worksheet.write(data_row, col + 12, str(first_point_x), format)
-        worksheet.write(data_row, col + 13, str(first_point_y), format)
-        worksheet.write(data_row, col + 14, str(second_point_x), format)
-        worksheet.write(data_row, col + 15, str(second_point_y), format)
+            worksheet.write(data_row, col + 7, str(point_detail_id), format)
+            worksheet.write(data_row, col + 8, str(point_detail.register_date), format)
+            worksheet.write(data_row, col + 9, (zone.name), format)
+            worksheet.write(data_row, col + 10, (land_form.description), format)
+            worksheet.write(data_row, col + 11, str(point_detail.elevation), format)
 
-        print_year = self.print_year_sbox.value()
-        self.__load_cover_plants_data(point_detail_id, data_row, print_year, pasture_plants, worksheet, format)
+            worksheet.write(data_row, col + 12, str(first_point_x), format)
+            worksheet.write(data_row, col + 13, str(first_point_y), format)
+            worksheet.write(data_row, col + 14, str(second_point_x), format)
+            worksheet.write(data_row, col + 15, str(second_point_y), format)
 
-        data_row += 1
-        row_number += 1
+            print_year = self.print_year_sbox.value()
+            self.__load_cover_plants_data(zone_id, point_detail_id, data_row, print_year, pasture_plants, worksheet, format)
 
-    def __load_cover_plants_data(self, point_detail_id, data_row, print_year, pasture_plants, worksheet, format):
+            data_row += 1
+            row_number += 1
+
+    def __load_cover_plants_data(self, zone_id, point_detail_id, data_row, print_year, pasture_plants, worksheet, format):
 
         col = 16
-        count = 0
+        zone = self.session.query(AuNaturalZone).filter((AuNaturalZone.code == 1)).one()
+        pasture_plants = self.session.query(PsNaturalZonePlants).filter(
+            PsNaturalZonePlants.natural_zone == zone.code).all()
         for i in pasture_plants:
-            pasture_value_count = self.session.query(PsPointPastureValue).\
-                filter(PsPointPastureValue.point_detail_id == point_detail_id).\
-                filter(PsPointPastureValue.value_year == print_year).\
-                filter(PsPointPastureValue.pasture_value == i.plants).count()
-            cover_value = 0
-            if pasture_value_count == 1:
-                pasture_value = self.session.query(PsPointPastureValue). \
+            if zone_id == 1 or zone_id == 6 or zone_id == 7:
+                pasture_value_count = self.session.query(PsPointPastureValue). \
                     filter(PsPointPastureValue.point_detail_id == point_detail_id). \
                     filter(PsPointPastureValue.value_year == print_year). \
-                    filter(PsPointPastureValue.pasture_value == i.plants).one()
-                cover_value = pasture_value.current_value
+                    filter(PsPointPastureValue.pasture_value == i.plants).count()
+                cover_value = 0
+                if pasture_value_count == 1:
+                    pasture_value = self.session.query(PsPointPastureValue). \
+                        filter(PsPointPastureValue.point_detail_id == point_detail_id). \
+                        filter(PsPointPastureValue.value_year == print_year). \
+                        filter(PsPointPastureValue.pasture_value == i.plants).one()
+                    cover_value = pasture_value.current_value
 
-            worksheet.write(data_row, col, str(cover_value), format)
+                worksheet.write(data_row, col, str(cover_value), format)
+            else:
+                worksheet.write(data_row, col, '', format)
             col = col + 1
-            count += 1
+
+        zone = self.session.query(AuNaturalZone).filter((AuNaturalZone.code == 2)).one()
+        pasture_plants = self.session.query(PsNaturalZonePlants).filter(
+            PsNaturalZonePlants.natural_zone == zone.code).all()
+        for i in pasture_plants:
+            if zone_id == 2:
+                pasture_value_count = self.session.query(PsPointPastureValue). \
+                    filter(PsPointPastureValue.point_detail_id == point_detail_id). \
+                    filter(PsPointPastureValue.value_year == print_year). \
+                    filter(PsPointPastureValue.pasture_value == i.plants).count()
+                cover_value = 0
+                if pasture_value_count == 1:
+                    pasture_value = self.session.query(PsPointPastureValue). \
+                        filter(PsPointPastureValue.point_detail_id == point_detail_id). \
+                        filter(PsPointPastureValue.value_year == print_year). \
+                        filter(PsPointPastureValue.pasture_value == i.plants).one()
+                    cover_value = pasture_value.current_value
+
+                worksheet.write(data_row, col, str(cover_value), format)
+            else:
+                worksheet.write(data_row, col, '', format)
+            col = col + 1
+
+        zone = self.session.query(AuNaturalZone).filter((AuNaturalZone.code == 3)).one()
+        pasture_plants = self.session.query(PsNaturalZonePlants).filter(
+            PsNaturalZonePlants.natural_zone == zone.code).all()
+        for i in pasture_plants:
+            if zone_id == 3 or zone_id == 4:
+                pasture_value_count = self.session.query(PsPointPastureValue). \
+                    filter(PsPointPastureValue.point_detail_id == point_detail_id). \
+                    filter(PsPointPastureValue.value_year == print_year). \
+                    filter(PsPointPastureValue.pasture_value == i.plants).count()
+                cover_value = 0
+                if pasture_value_count == 1:
+                    pasture_value = self.session.query(PsPointPastureValue). \
+                        filter(PsPointPastureValue.point_detail_id == point_detail_id). \
+                        filter(PsPointPastureValue.value_year == print_year). \
+                        filter(PsPointPastureValue.pasture_value == i.plants).one()
+                    cover_value = pasture_value.current_value
+
+                worksheet.write(data_row, col, str(cover_value), format)
+            else:
+                worksheet.write(data_row, col, '', format)
+            col = col + 1
+
+        zone = self.session.query(AuNaturalZone).filter((AuNaturalZone.code == 5)).one()
+        pasture_plants = self.session.query(PsNaturalZonePlants).filter(
+            PsNaturalZonePlants.natural_zone == zone.code).all()
+        for i in pasture_plants:
+            if zone_id == 5:
+                pasture_value_count = self.session.query(PsPointPastureValue). \
+                    filter(PsPointPastureValue.point_detail_id == point_detail_id). \
+                    filter(PsPointPastureValue.value_year == print_year). \
+                    filter(PsPointPastureValue.pasture_value == i.plants).count()
+                cover_value = 0
+                if pasture_value_count == 1:
+                    pasture_value = self.session.query(PsPointPastureValue). \
+                        filter(PsPointPastureValue.point_detail_id == point_detail_id). \
+                        filter(PsPointPastureValue.value_year == print_year). \
+                        filter(PsPointPastureValue.pasture_value == i.plants).one()
+                    cover_value = pasture_value.current_value
+
+                worksheet.write(data_row, col, str(cover_value), format)
+            else:
+                worksheet.write(data_row, col, '', format)
+            col = col + 1
 
         live_stocks = self.session.query(ClliveStock).all()
         self.__load_live_stock_data(point_detail_id, col, data_row, print_year, worksheet, format, live_stocks, pasture_plants)
@@ -2950,220 +3108,41 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
         col = col + 1
         worksheet.write(data_row, col, str(parcel_area_ga), format)
 
-        self.__load_urgats_data(point_detail_id, col, data_row, print_year, worksheet, format, pasture_plants)
+        self.__load_d_data(point_detail_id, col, data_row, print_year, worksheet, format)
 
-    def __load_urgats_data(self, point_detail_id, col, data_row, print_year, worksheet, format, pasture_plants):
+    def __load_d_data(self, point_detail_id, col, data_row, print_year, worksheet, format):
 
-        current_value = 0
-        urgats_count = self.session.query(PsPointUrgatsValue). \
-            filter(PsPointUrgatsValue.point_detail_id == point_detail_id). \
-            filter(PsPointUrgatsValue.value_year == print_year).count()
-        if urgats_count == 1:
-            urgats = self.session.query(PsPointUrgatsValue).\
-                filter(PsPointUrgatsValue.point_detail_id == point_detail_id).\
-                filter(PsPointUrgatsValue.value_year == print_year).one()
-            current_value = urgats.biomass_kg_ga
+        data_value_count = self.session.query(PsPointDaatsValue).filter(PsPointDaatsValue.monitoring_year == print_year).\
+            filter(PsPointDaatsValue.point_detail_id == point_detail_id).count()
+        if data_value_count == 1:
+            data_value = self.session.query(PsPointDaatsValue).filter(PsPointDaatsValue.monitoring_year == print_year). \
+                filter(PsPointDaatsValue.point_detail_id == point_detail_id).one()
 
-        col = col + 1
-        worksheet.write(data_row, col, str(current_value), format)
-
-        self.__load_rc_data(point_detail_id, col, data_row, print_year, worksheet, format, pasture_plants)
-
-    def __load_rc_data(self, point_detail_id, col, data_row, print_year, worksheet, format, pasture_plants):
-
-        point_detail = self.session.query(PsPointDetail).filter(PsPointDetail.point_detail_id == point_detail_id).one()
-        land_form_code = point_detail.land_form
-
-        formula_type = self.session.query(PsFormulaTypeLandForm.formula_type). \
-            filter(PsFormulaTypeLandForm.land_form == land_form_code).group_by(PsFormulaTypeLandForm.formula_type).one()
-        rc_id = None
-        rc_code = None
-        if formula_type.formula_type == 1:
-            is_stop = False
-            is_row_rc = True
-            rcs = self.session.query(PsRecoveryClass).order_by(PsRecoveryClass.id.desc()).all()
-            for rc in rcs:
-                if is_stop:
-                    break
-
-                status_plants_count = self.session.query(PsPastureStatusFormula). \
-                    filter(PsPastureStatusFormula.natural_zone == self.zone_id). \
-                    filter(PsPastureStatusFormula.rc_id == rc.id). \
-                    filter(PsPastureStatusFormula.land_form == land_form_code).count()
-
-                if not status_plants_count == 0:
-                    status_plants = self.session.query(PsPastureStatusFormula). \
-                        filter(PsPastureStatusFormula.natural_zone == self.zone_id). \
-                        filter(PsPastureStatusFormula.rc_id == rc.id). \
-                        filter(PsPastureStatusFormula.land_form == land_form_code).all()
-                    is_row_rc = True
-                    for status_plant in status_plants:
-                        plants_year_count = self.session.query(PsPointPastureValue). \
-                            filter(PsPointPastureValue.value_year == print_year). \
-                            filter(PsPointPastureValue.point_detail_id == point_detail_id). \
-                            filter(PsPointPastureValue.pasture_value == status_plant.plants).count()
-                        if plants_year_count == 1:
-                            pasture_value = self.session.query(PsPointPastureValue). \
-                                filter(PsPointPastureValue.point_detail_id == point_detail_id). \
-                                filter(PsPointPastureValue.value_year == print_year). \
-                                filter(PsPointPastureValue.pasture_value == status_plant.plants).one()
-
-                            status_plants = self.session.query(PsPastureStatusFormula). \
-                                filter(PsPastureStatusFormula.natural_zone == self.zone_id). \
-                                filter(PsPastureStatusFormula.rc_id == rc.id). \
-                                filter(PsPastureStatusFormula.plants == pasture_value.pasture_value). \
-                                filter(PsPastureStatusFormula.land_form == land_form_code).one()
-
-                            if status_plants.symbol_id == 1:
-                                if not pasture_value.current_value > status_plants.cover_precent:
-                                    is_row_rc = False
-                            if status_plants.symbol_id == 2:
-                                if not pasture_value.current_value < status_plants.cover_precent:
-                                    is_row_rc = False
-                            if status_plants.symbol_id == 3:
-                                if not pasture_value.current_value >= status_plants.cover_precent:
-                                    is_row_rc = False
-                            if status_plants.symbol_id == 4:
-                                if not pasture_value.current_value <= status_plants.cover_precent:
-                                    is_row_rc = False
-                            if status_plants.symbol_id == 5:
-                                if not pasture_value.current_value == status_plants.cover_precent:
-                                    is_row_rc = False
-                    if is_row_rc:
-                        is_stop = True
-                        rc_id = rc.id
-                        rc_code = rc.rc_code
+            worksheet.write(data_row, col, str(round(data_value.area_ga, 2)), format)
+            worksheet.write(data_row, col + 1, str(round(data_value.biomass, 2)), format)
+            worksheet.write(data_row, col + 2, str(''), format)
+            worksheet.write(data_row, col + 3, str(data_value.rc), format)
+            worksheet.write(data_row, col + 4, str(''), format)
+            worksheet.write(data_row, col + 5, str(data_value.duration), format)
+            worksheet.write(data_row, col + 6, str(round(data_value.d1, 2)), format)
+            worksheet.write(data_row, col + 7, str(round(data_value.d1_100ga, 2)), format)
+            worksheet.write(data_row, col + 8, str(round(data_value.d2, 2)), format)
+            worksheet.write(data_row, col + 9, str(round(data_value.d3, 2)), format)
+            worksheet.write(data_row, col + 10, str((data_value.d3_rc)), format)
+            worksheet.write(data_row, col + 11, str(round(data_value.unelgee, 2)), format)
         else:
-            is_row_rc = True
-            is_stop = False
-            rcs = self.session.query(PsRecoveryClass).order_by(PsRecoveryClass.id.desc()).all()
-            for rc in rcs:
-                if is_stop:
-                    break
-                pasture_comp_formula_count = self.session.query(PsPastureComparisonFormula).\
-                    filter(PsPastureComparisonFormula.land_form == land_form_code). \
-                    filter(PsPastureComparisonFormula.natural_zone == self.zone_id). \
-                    filter(PsPastureComparisonFormula.rc_id == rc.id).count()
-                if not pasture_comp_formula_count == 0:
-                    pasture_comp_formulas = self.session.query(PsPastureComparisonFormula). \
-                        filter(PsPastureComparisonFormula.land_form == land_form_code). \
-                        filter(PsPastureComparisonFormula.natural_zone == self.zone_id). \
-                        filter(PsPastureComparisonFormula.rc_id == rc.id).all()
-                    more_value = 0
-                    less_value = 0
-                    is_row_rc = True
-                    for pasture_comp_formula in pasture_comp_formulas:
-                        plants_year_count = self.session.query(PsPointPastureValue). \
-                            filter(PsPointPastureValue.value_year == print_year). \
-                            filter(PsPointPastureValue.point_detail_id == point_detail_id). \
-                            filter(PsPointPastureValue.pasture_value == pasture_comp_formula.plants).count()
-                        if plants_year_count == 1:
-                            pasture_value = self.session.query(PsPointPastureValue). \
-                                filter(PsPointPastureValue.point_detail_id == point_detail_id). \
-                                filter(PsPointPastureValue.value_year == print_year). \
-                                filter(PsPointPastureValue.pasture_value == pasture_comp_formula.plants).one()
-                            if pasture_comp_formula.symbol_id == 1:
-                                more_value = more_value + pasture_value.current_value
-                            if pasture_comp_formula.symbol_id == 2:
-                                less_value = less_value + pasture_value.current_value
-                    if not more_value > less_value:
-                        is_row_rc = False
-
-                    if is_row_rc:
-                        is_stop = True
-                        rc_id = rc.id
-                        rc_code = rc.rc_code
-                else:
-                    evaluation_formulas_count = self.session.query(PsPastureEvaluationFormula). \
-                        filter(PsPastureEvaluationFormula.natural_zone == self.zone_id). \
-                        filter(PsPastureEvaluationFormula.land_form == land_form_code). \
-                        filter(PsPastureEvaluationFormula.rc_id == rc.id).count()
-                    if not evaluation_formulas_count == 0:
-                        evaluation_formulas = self.session.query(PsPastureEvaluationFormula).\
-                            filter(PsPastureEvaluationFormula.natural_zone == self.zone_id).\
-                            filter(PsPastureEvaluationFormula.land_form == land_form_code).\
-                            filter(PsPastureEvaluationFormula.rc_id == rc.id).all()
-
-                        point_detail_id = self.point_detail_id
-                        current_year = self.print_year_sbox.value()
-                        is_row_rc = True
-                        for evaluation_formula in evaluation_formulas:
-                            formula_ball = evaluation_formula.soil_evaluation_ref.ball
-                            pasture_soil_evaluation_count = self.session.query(PsPastureSoilEvaluation). \
-                                filter(PsPastureSoilEvaluation.point_detail_id == point_detail_id). \
-                                filter(PsPastureSoilEvaluation.current_year == current_year).count()
-                            if pasture_soil_evaluation_count == 1:
-                                pasture_soil_evaluation = self.session.query(PsPastureSoilEvaluation).\
-                                    filter(PsPastureSoilEvaluation.point_detail_id == point_detail_id). \
-                                    filter(PsPastureSoilEvaluation.current_year == current_year).one()
-                                ball = pasture_soil_evaluation.soil_evaluation_ref.ball
-                                if not ball >= formula_ball:
-                                    is_row_rc = False
-                        if is_row_rc:
-                            is_stop = True
-                            rc_id = rc.id
-                            rc_code = rc.rc_code
-        tb_code = None
-        land_form = self.session.query(ClLandForm).filter(ClLandForm.code == land_form_code).one()
-        land_form_code = land_form.description.split(".")[0]
-
-        tb_code = land_form_code+'_'+str(rc_id)
-
-        col = col + 1
-        worksheet.write(data_row, col, tb_code, format)
-
-        col = col + 1
-        worksheet.write(data_row, col, rc_code, format)
-
-        self.__load_daats_data(point_detail_id, col, data_row, print_year, worksheet, format)
-
-    def __load_daats_data(self, point_detail_id, col, data_row, print_year, worksheet, format):
-
-        if not self.__calc_validate_save():
-            return
-
-        area_ga = float(self.area_ga_edit.text())
-        biomass = self.__load_urgats()
-        rc_code = self.__load_rc().rc_code
-        rc_precent = self.__load_rc().rc_precent
-        duration = int(self.duration_days_edit.text())
-        sheep_unit_plant = self.__load_sheep_unit_biomass()
-        sheep_unit = self.__load_live_stock_convert()
-        rc_precent_d = rc_precent
-
-        rc_precent = float(rc_precent) / 100
-        biomass_present = float(biomass) * rc_precent
-        d1 = (float(biomass) / float(sheep_unit_plant)) * (rc_precent)
-        d1_100ga = d1 * 100
-        d2 = ((1 / d1))
-        d3 = float(area_ga * biomass_present) / float(sheep_unit_plant)
-        unelgee = d3 - float(sheep_unit)
-
-        self.calc_d1_edit.setText(str(round(d1, 2)))
-        self.calc_d1_100ga_edit.setText(str(round(d1_100ga, 2)))
-        self.calc_d2_edit.setText(str(round(d2, 2)))
-        self.calc_d3_edit.setText(str(round(d3, 2)))
-        self.calc_unelgee_edit.setText(str(round(unelgee, 2)))
-
-        d3_rc = 0
-        month = 0
-        duration = self.duration_days_edit.text()
-        col = col + 1
-        worksheet.write(data_row, col, str(month), format)
-        col = col + 1
-        worksheet.write(data_row, col, duration, format)
-        col = col + 1
-        worksheet.write(data_row, col, str(round(d1, 2)), format)
-        col = col + 1
-        worksheet.write(data_row, col, str(round(d1_100ga, 2)), format)
-        col = col + 1
-        worksheet.write(data_row, col, str(round(d2, 2)), format)
-        col = col + 1
-        worksheet.write(data_row, col, str(round(d3, 2)), format)
-        col = col + 1
-        worksheet.write(data_row, col, str(d3_rc), format)
-        col = col + 1
-        worksheet.write(data_row, col, str(round(unelgee, 2)), format)
+            worksheet.write(data_row, col, '', format)
+            worksheet.write(data_row, col + 1, '', format)
+            worksheet.write(data_row, col + 2, '', format)
+            worksheet.write(data_row, col + 3, '', format)
+            worksheet.write(data_row, col + 4, '', format)
+            worksheet.write(data_row, col + 5, '', format)
+            worksheet.write(data_row, col + 6, '', format)
+            worksheet.write(data_row, col + 7, '', format)
+            worksheet.write(data_row, col + 8, '', format)
+            worksheet.write(data_row, col + 9, '', format)
+            worksheet.write(data_row, col + 10, '', format)
+            worksheet.write(data_row, col + 11, '', format)
 
     def __load_zone_header(self, worksheet, pasture_plants ,format):
 
@@ -3177,58 +3156,57 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
         row_0 = 3
         row_1 = 4
         first_col = 16
+        merge_zone_col = 16
         last_col = 25
-        if zone_id == 1:
-            for i in pasture_plants:
-                plants = self.session.query(ClPastureValues).filter(ClPastureValues.code == i.plants).one()
-                col = col + 1
-                last_col = col
-                worksheet.write(row, col, plants.description, format)
-        elif zone_id == 2:
-            for i in pasture_plants:
-                plants = self.session.query(ClPastureValues).filter(ClPastureValues.code == i.plants).one()
-                col = col + 1
-                last_col = col
-                worksheet.write(row, col, plants.description, format)
-        elif zone_id == 3:
-            for i in pasture_plants:
-                plants = self.session.query(ClPastureValues).filter(ClPastureValues.code == i.plants).one()
-                col = col + 1
-                last_col = col
-                worksheet.write(row, col, plants.description, format)
-        elif zone_id == 4:
-            for i in pasture_plants:
-                plants = self.session.query(ClPastureValues).filter(ClPastureValues.code == i.plants).one()
-                col = col + 1
-                last_col = col
-                worksheet.write(row, col, plants.description, format)
-        elif zone_id == 5:
-            for i in pasture_plants:
-                plants = self.session.query(ClPastureValues).filter(ClPastureValues.code == i.plants).one()
-                col = col + 1
-                last_col = col
-                worksheet.write(row, col, plants.description, format)
-        elif zone_id == 6:
-            for i in pasture_plants:
-                plants = self.session.query(ClPastureValues).filter(ClPastureValues.code == i.plants).one()
-                col = col + 1
-                last_col = col
-                worksheet.write(row, col, plants.description, format)
-        elif zone_id == 7:
-            for i in pasture_plants:
-                plants = self.session.query(ClPastureValues).filter(ClPastureValues.code == i.plants).one()
-                col = col + 1
-                last_col = col
-                worksheet.write(row, col, plants.description, format)
-        elif zone_id == 8:
-            for i in pasture_plants:
-                plants = self.session.query(ClPastureValues).filter(ClPastureValues.code == i.plants).one()
-                col = col + 1
-                last_col = col
-                worksheet.write(row, col, plants.description, format)
 
-        worksheet.merge_range(row_0, first_col, row_0, last_col, u'Байгалийн бүс', format)
+        zone = self.session.query(AuNaturalZone).filter((AuNaturalZone.code == 1)).one()
+        pasture_plants = self.session.query(PsNaturalZonePlants).filter(
+            PsNaturalZonePlants.natural_zone == zone.code).all()
+        for i in pasture_plants:
+            plants = self.session.query(ClPastureValues).filter(ClPastureValues.code == i.plants).one()
+            col = col + 1
+            last_col = col
+            worksheet.write(row, col, plants.description, format)
+
+        worksheet.merge_range(row_1, first_col, row_1, last_col, u"Өндөр уул, Ойт хээр, Нугын хээр", format)
+
+        first_col = last_col+1
+        zone = self.session.query(AuNaturalZone).filter((AuNaturalZone.code == 2)).one()
+        pasture_plants = self.session.query(PsNaturalZonePlants).filter(
+            PsNaturalZonePlants.natural_zone == zone.code).all()
+        for i in pasture_plants:
+            plants = self.session.query(ClPastureValues).filter(ClPastureValues.code == i.plants).one()
+            col = col + 1
+            last_col = col
+            worksheet.write(row, col, plants.description, format)
+
         worksheet.merge_range(row_1, first_col, row_1, last_col, zone.name, format)
+
+        first_col = last_col + 1
+        zone = self.session.query(AuNaturalZone).filter((AuNaturalZone.code == 3)).one()
+        pasture_plants = self.session.query(PsNaturalZonePlants).filter(
+            PsNaturalZonePlants.natural_zone == zone.code).all()
+        for i in pasture_plants:
+            plants = self.session.query(ClPastureValues).filter(ClPastureValues.code == i.plants).one()
+            col = col + 1
+            last_col = col
+            worksheet.write(row, col, plants.description, format)
+
+        worksheet.merge_range(row_1, first_col, row_1, last_col, u"Цөлжүү хээр, Цөлийн хээр", format)
+
+        first_col = last_col + 1
+        zone = self.session.query(AuNaturalZone).filter((AuNaturalZone.code == 5)).one()
+        pasture_plants = self.session.query(PsNaturalZonePlants).filter(
+            PsNaturalZonePlants.natural_zone == zone.code).all()
+        for i in pasture_plants:
+            plants = self.session.query(ClPastureValues).filter(ClPastureValues.code == i.plants).one()
+            col = col + 1
+            last_col = col
+            worksheet.write(row, col, plants.description, format)
+
+        worksheet.merge_range(row_1, first_col, row_1, last_col, zone.name, format)
+
+        worksheet.merge_range(row_0, merge_zone_col, row_0, last_col, u'Байгалийн бүс', format)
 
         live_stocks = self.session.query(ClliveStock).all()
         self.__load_live_stock_header(col, worksheet, format, live_stocks)
@@ -3560,10 +3538,6 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
     def __calc_validate_save(self):
 
         is_valid = True
-        selected_items = self.point_detail_twidget.selectedItems()
-        if len(selected_items) == 0:
-            is_valid = False
-            return
 
         if float(self.area_ga_edit.text()) == 0:
             is_valid = False
@@ -3581,6 +3555,33 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
             is_valid = False
             return
         return is_valid
+
+    @pyqtSlot()
+    def on_calc_load_button_clicked(self):
+
+        monitoring_year = self.print_year_sbox.value()
+        daats_value_count = self.session.query(PsPointDaatsValue).filter(
+            PsPointDaatsValue.monitoring_year == monitoring_year). \
+            filter(PsPointDaatsValue.point_detail_id == self.point_detail_id).count()
+        if daats_value_count == 1:
+            daats_value = self.session.query(PsPointDaatsValue).filter(
+                PsPointDaatsValue.monitoring_year == monitoring_year). \
+                filter(PsPointDaatsValue.point_detail_id == self.point_detail_id).one()
+
+            self.calc_area_sbox.setValue(daats_value.area_ga)
+            self.calc_biomass_sbox.setValue(daats_value.biomass)
+            self.calc_rc_edit.setText(daats_value.rc)
+            self.calc_rc_precent_sbox.setValue(daats_value.rc_precent)
+            self.calc_duration_sbox.setValue(daats_value.duration)
+            self.calc_sheep_unit_sbox.setValue(daats_value.sheep_unit)
+            self.calc_sheep_unit_plant_sbox.setValue(daats_value.sheep_unit_plant)
+            # self.biomass_present_edit.setText(str(daats_value.biomass_present))
+
+            self.calc_d1_edit.setText(str(round(daats_value.d1, 2)))
+            self.calc_d1_100ga_edit.setText(str(round(daats_value.d1_100ga, 2)))
+            self.calc_d2_edit.setText(str(round(daats_value.d2, 2)))
+            self.calc_d3_edit.setText(str(round(daats_value.d3, 2)))
+            self.calc_unelgee_edit.setText(str(round(daats_value.unelgee, 2)))
 
     @pyqtSlot()
     def on_calc_refresh_button_clicked(self):
@@ -3661,6 +3662,9 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
 
         monitoring_date_qt = PluginUtils.convert_qt_date_to_python(self.calc_date_edit.date())
 
+        begin_month_text = self.begin_month_date.text()
+        end_month_text = self.end_month_date.text()
+
         daats_count = self.session.query(PsPointDaatsValue).\
             filter(PsPointDaatsValue.point_detail_id == self.point_detail_id).\
             filter(PsPointDaatsValue.monitoring_year == self.print_year_sbox.value()).count()
@@ -3682,6 +3686,8 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
             daats.d3 = d3
             daats.unelgee = unelgee
             daats.rc_id = rc_id
+            daats.begin_month = begin_month_text
+            daats.end_month = end_month_text
 
             self.session.add(daats)
         elif daats_count == 1:
@@ -3702,3 +3708,5 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
             daats.d3 = d3
             daats.unelgee = unelgee
             daats.rc_id = rc_id
+            daats.begin_month = begin_month_text
+            daats.end_month = end_month_text

@@ -88,14 +88,15 @@ class PasturePhotosDelegate(QStyledItemDelegate):
 
                         file_info = QFileInfo(selected_file)
 
-                        if QFileInfo(file_info).size()/(1024*1024) > 5:
-                            PluginUtils.show_error(self.parent, self.tr("File size exceeds limit!"), self.tr("The maximum size of documents to be attached is 5 MB."))
+                        if QFileInfo(file_info).size()/(1024*1024) > 15:
+                            PluginUtils.show_error(self.parent, self.tr("File size exceeds limit!"), self.tr("The maximum size of documents to be attached is 15 MB."))
                             return False
 
                         role = self.widget.item(index.row(), FILE_TYPE_COLUMN).data(Qt.UserRole)
                         try:
                             file_name =  str(role) + "_" + point_detail_id +"." + file_info.suffix()
                             self.widget.item(index.row(), FILE_NAME_COLUMN).setText(file_name)
+
                             shutil.copy2(selected_file, default_path+'/'+file_name)
 
                             check_item = self.widget.item(index.row(), PROVIDED_COLUMN)
@@ -109,8 +110,13 @@ class PasturePhotosDelegate(QStyledItemDelegate):
                     try:
                         file_name = self.widget.item(index.row(), FILE_NAME_COLUMN).text()
                         if file_name != '':
-                            shutil.copy2(default_path + '/'+file_name, PasturePath.view_photo_path())
-                            QDesktopServices.openUrl(QUrl.fromLocalFile(PasturePath.view_photo_path()))
+                            # path = os.path.join(os.path.dirname(__file__), "/pasture/view.jpg")
+                            path = os.path.dirname(__file__) + "/pasture/view.jpg"
+                            # print path
+                            # print default_path
+                            # print file_name
+                            shutil.copy2(default_path + '/'+file_name, path)
+                            QDesktopServices.openUrl(QUrl.fromLocalFile(path))
 
                     except SQLAlchemyError, e:
                             PluginUtils.show_error(self, self.tr("File Error"), self.tr("Could not execute: {0}").format(e.message))

@@ -781,3 +781,69 @@ class MemberGroupDialog(QDialog, Ui_MemberGroupDialog, DatabaseHelper):
             item_dec.setCheckState(Qt.Unchecked)
         if id_item:
             id_item.setCheckState(Qt.Checked)
+
+    @pyqtSlot()
+    def on_group_delete_button_clicked(self):
+
+        selected_items = self.group_twidget.selectedItems()
+        if len(selected_items) == 0:
+            PluginUtils.show_message(self, self.tr("Selection"), self.tr("Please select person group."))
+            return None
+
+        row = self.group_twidget.currentRow()
+        id_item = self.group_twidget.item(row, 0)
+        group_id = id_item.data(Qt.UserRole)
+
+        message_box = QMessageBox()
+        message_box.setText(self.tr("Do you want to delete person group ?"))
+
+        delete_button = message_box.addButton(self.tr("Delete"), QMessageBox.ActionRole)
+        message_box.addButton(self.tr("Cancel"), QMessageBox.ActionRole)
+        message_box.exec_()
+
+        if not message_box.clickedButton() == delete_button:
+            return
+
+        group_members = self.session.query(CtGroupMember).filter(CtGroupMember.group_no == group_id).all()
+
+        for group_member in group_members:
+            self.session.query(CtGroupMember).filter(CtGroupMember.group_no == group_id).\
+                filter(CtGroupMember.person == group_member.person).delete()
+
+        group_count = self.session.query(CtPersonGroup).filter(CtPersonGroup.group_no == group_id).count()
+        if group_count == 1:
+            self.session.query(CtPersonGroup).filter(CtPersonGroup.group_no == group_id).delete()
+
+        self.group_twidget.removeRow(row)
+
+    @pyqtSlot()
+    def on_pug_remove_person_button_clicked(self):
+
+        selected_items = self.member_twidget.selectedItems()
+        if len(selected_items) == 0:
+            PluginUtils.show_message(self, self.tr("Selection"), self.tr("Please select person."))
+            return None
+
+        row = self.group_twidget.currentRow()
+        id_item = self.group_twidget.item(row, 0)
+        group_id = id_item.data(Qt.UserRole)
+
+        row = self.member_twidget.currentRow()
+        id_item = self.member_twidget.item(row, 0)
+        person_id = id_item.data(Qt.UserRole)
+
+        message_box = QMessageBox()
+        message_box.setText(self.tr("Do you want to remove person?"))
+
+        delete_button = message_box.addButton(self.tr("Delete"), QMessageBox.ActionRole)
+        message_box.addButton(self.tr("Cancel"), QMessageBox.ActionRole)
+        message_box.exec_()
+
+        if not message_box.clickedButton() == delete_button:
+            return
+
+        self.session.query(CtGroupMember).\
+            filter(CtGroupMember.group_no == group_id).\
+            filter(CtGroupMember.person == person_id).delete()
+
+        self.member_twidget.removeRow(row)

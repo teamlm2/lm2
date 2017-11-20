@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>4</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="tab_6">
     <attribute name="title">
@@ -1121,9 +1121,9 @@
      <property name="geometry">
       <rect>
        <x>1</x>
-       <y>140</y>
+       <y>180</y>
        <width>481</width>
-       <height>201</height>
+       <height>168</height>
       </rect>
      </property>
      <property name="title">
@@ -1331,7 +1331,7 @@
        <x>1</x>
        <y>0</y>
        <width>481</width>
-       <height>111</height>
+       <height>181</height>
       </rect>
      </property>
      <property name="title">
@@ -1608,13 +1608,78 @@
       <property name="geometry">
        <rect>
         <x>389</x>
-        <y>80</y>
+        <y>150</y>
         <width>82</width>
         <height>23</height>
        </rect>
       </property>
       <property name="text">
        <string>Refresh</string>
+      </property>
+     </widget>
+     <widget class="QDateEdit" name="begin_month_date">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>125</y>
+        <width>91</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="calendarPopup">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>105</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Begin Month</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_16">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>105</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>End Month</string>
+      </property>
+     </widget>
+     <widget class="QDateEdit" name="end_month_date">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>125</y>
+        <width>91</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="calendarPopup">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="calc_load_button">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>120</y>
+        <width>82</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Load</string>
       </property>
      </widget>
     </widget>

@@ -10412,7 +10412,7 @@
     <message>
         <location filename="view/PastureMonitoringValueDialog.ui" line="1700"/>
         <source>Land Form</source>
-        <translation>Гадаргын хэлбэр</translation>
+        <translation>Бэлчээрийн төлөв байдал, өөрчлөлтийн загвар</translation>
     </message>
     <message>
         <location filename="view/PastureMonitoringValueDialog.ui" line="541"/>
@@ -10422,7 +10422,7 @@
     <message>
         <location filename="view/PastureMonitoringValueDialog.ui" line="548"/>
         <source>Photo</source>
-        <translation>Зугар</translation>
+        <translation>Зураг</translation>
     </message>
     <message>
         <location filename="view/PastureMonitoringValueDialog.ui" line="560"/>
@@ -10617,7 +10617,7 @@
     <message>
         <location filename="view/PastureMonitoringValueDialog.ui" line="1604"/>
         <source>Sheep Unit</source>
-        <translation type="unfinished">ХТ идэх өвс</translation>
+        <translation>Хонин толгой</translation>
     </message>
     <message>
         <location filename="view/PastureMonitoringValueDialog.ui" line="1617"/>
@@ -10993,17 +10993,17 @@
     <message>
         <location filename="view/PastureMonitoringValueDialog.ui" line="1338"/>
         <source>Basic Values</source>
-        <translation type="unfinished"></translation>
+        <translation>Үндсэн утга</translation>
     </message>
     <message>
         <location filename="view/PastureMonitoringValueDialog.ui" line="1540"/>
         <source>BioMass Pre</source>
-        <translation type="unfinished"></translation>
+        <translation>Ургац (%)</translation>
     </message>
     <message>
         <location filename="view/PastureMonitoringValueDialog.ui" line="1553"/>
         <source>SHU plant</source>
-        <translation type="unfinished"></translation>
+        <translation>ХТ идэх өвс</translation>
     </message>
 </context>
 <context>
@@ -11337,32 +11337,32 @@
     <message>
         <location filename="view/PastureWidget.ui" line="386"/>
         <source>Application type</source>
-        <translation type="unfinished">Өргөдлийн төрөл</translation>
+        <translation>Өргөдлийн төрөл</translation>
     </message>
     <message>
         <location filename="view/PastureWidget.ui" line="716"/>
         <source>Area</source>
-        <translation type="unfinished">Талбай</translation>
+        <translation>Талбай</translation>
     </message>
     <message>
         <location filename="view/PastureWidget.ui" line="755"/>
         <source>Bio mass</source>
-        <translation type="unfinished">Био масс</translation>
+        <translation>Био масс</translation>
     </message>
     <message>
         <location filename="view/PastureWidget.ui" line="810"/>
         <source>%</source>
-        <translation type="unfinished"></translation>
+        <translation>%</translation>
     </message>
     <message>
         <location filename="view/PastureWidget.ui" line="823"/>
         <source>Zoom Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Цэг томруулах</translation>
     </message>
     <message>
         <location filename="view/PastureWidget.ui" line="849"/>
         <source>Bio mass %</source>
-        <translation type="unfinished"></translation>
+        <translation>Био масс %</translation>
     </message>
 </context>
 <context>

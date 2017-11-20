@@ -24,6 +24,8 @@ class PsPointDaatsValue(Base):
     d3   = Column(Numeric)
     d3_rc = Column(Numeric)
     unelgee = Column(Numeric)
+    begin_month = Column(String)
+    end_month = Column(String)
 
     # foreign keys:
     rc_id = Column(Integer, ForeignKey('ps_recovery_class.id'))

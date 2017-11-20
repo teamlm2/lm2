@@ -2809,9 +2809,13 @@ class ApplicationsPastureDialog(QDialog, Ui_ApplicationsPastureDialog, DatabaseH
     @pyqtSlot()
     def on_pasture_remove_button_clicked(self):
 
-        if not len(self.pasture_type_twidget.selectedItems()) == 1:
-            PluginUtils.show_message(self, self.tr("Selection Error"), self.tr("Select one item to start editing."))
-            return
+        # if not len(self.assigned_parcel_twidget.selectedItems()) == 1:
+        #     PluginUtils.show_message(self, self.tr("Selection Error"), self.tr("Select one item to start editing."))
+        #     return
+        #
+        # if not len(self.pasture_type_twidget.selectedItems()) == 1:
+        #     PluginUtils.show_message(self, self.tr("Selection Error"), self.tr("Select one item to start editing."))
+        #     return
 
         selectedItem = self.pasture_type_twidget.selectedItems()[0]
         pasture_code = selectedItem.data(Qt.UserRole)
