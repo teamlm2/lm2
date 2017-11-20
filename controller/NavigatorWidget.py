@@ -3298,7 +3298,7 @@ class NavigatorWidget(QDockWidget, Ui_NavigatorWidget, DatabaseHelper):
 
                     self.print_button.setEnabled(True)
                     self.layer_view_button.setEnabled(True)
-            if user_right.group_role == UserRight_code.role_management:
+            if user_right.group_role == UserRight_code.cadastre_update:
                 if user_right.r_update:
                     self.till_date_edit.setEnabled(True)
                     self.infinity_check_box.setEnabled(True)
