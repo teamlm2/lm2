@@ -1029,7 +1029,7 @@ class NavigatorWidget(QDockWidget, Ui_NavigatorWidget, DatabaseHelper):
                 else:
                     sql = sql + "UNION" + "\n"
 
-                select = "SELECT contract.status contract_status, record.status record_status, parcel.parcel_id, app_pers.main_applicant ,app_pers.role as person_role, parcel.old_parcel_id, parcel.geo_id, parcel.landuse, person.person_id, person.name, person.middle_name, person.first_name,  application.app_no, decision.decision_no, contract.contract_no, record.record_no, parcel.address_streetname, parcel.address_khashaa, au2.code as au2_code " \
+                select = "SELECT parcel.parcel_id, app_pers.main_applicant ,app_pers.role as person_role, parcel.old_parcel_id, parcel.geo_id, parcel.landuse, person.person_id, person.name, person.middle_name, person.first_name,  application.app_no, decision.decision_no, contract.contract_no, record.record_no, parcel.address_streetname, parcel.address_khashaa, au2.code as au2_code " \
                          "FROM s{0}.ca_parcel parcel " \
                          "LEFT JOIN s{0}.ct_application application on application.parcel = parcel.parcel_id " \
                          "LEFT JOIN s{0}.ct_application_person_role app_pers on application.app_no = app_pers.application " \
@@ -1040,7 +1040,7 @@ class NavigatorWidget(QDockWidget, Ui_NavigatorWidget, DatabaseHelper):
                          "LEFT JOIN s{0}.ct_ownership_record record on rec_app.record = record.record_no " \
                          "LEFT JOIN s{0}.ct_decision_application dec_app on dec_app.application = application.app_no " \
                          "LEFT JOIN admin_units.au_level2 au2 on ST_Within(parcel.geometry, au2.geometry) " \
-                         "LEFT JOIN s{0}.ct_decision decision on decision.decision_no = dec_app.decision".format(au_level2)  + "\n"
+                         "LEFT JOIN s{0}.ct_decision decision on decision.decision_no = dec_app.application".format(au_level2)  + "\n"
 
                 sql = sql + select
 
@@ -1854,7 +1854,7 @@ class NavigatorWidget(QDockWidget, Ui_NavigatorWidget, DatabaseHelper):
                 if self.parcel_decision_num_edit.text():
                     filter_is_set = True
                     value = "%" + self.parcel_decision_num_edit.text() + "%"
-                    parcels = parcels.filter(ParcelSearch.decision_no.ilike(value))
+                    parcels = parcels.filter(ParcelSearch.app_no.ilike(value))
 
                 if self.parcel_contract_num_edit.text():
                     filter_is_set = True
@@ -3298,7 +3298,7 @@ class NavigatorWidget(QDockWidget, Ui_NavigatorWidget, DatabaseHelper):
 
                     self.print_button.setEnabled(True)
                     self.layer_view_button.setEnabled(True)
-            if user_right.group_role == UserRight_code.cadastre_update:
+            if user_right.group_role == UserRight_code.role_management:
                 if user_right.r_update:
                     self.till_date_edit.setEnabled(True)
                     self.infinity_check_box.setEnabled(True)
@@ -7627,7 +7627,15 @@ class NavigatorWidget(QDockWidget, Ui_NavigatorWidget, DatabaseHelper):
                 vlayer.loadNamedStyle(str(os.path.dirname(os.path.realpath(__file__))[:-10]) +"template\style/view_land_fee_payment.qml")
                 vlayer.setLayerName(self.tr("Mortgage"))
                 mygroup.addLayer(vlayer)
-
+        elif code == '15':
+            tmp_parcel_layer = LayerUtils.layer_by_data_source("s" + restrictions, "view_court_parcel")
+            if tmp_parcel_layer is None:
+                mygroup = root.findGroup(u"Тайлан")
+                vlayer = LayerUtils.load_layer_by_name_report("view_court_parcel", "parcel_id", restrictions)
+                vlayer.loadNamedStyle(str(os.path.dirname(os.path.realpath(__file__))[:-10]) +"template\style/view_land_tax.qml")
+                vlayer.setLayerName(self.tr("Court"))
+                mygroup.addLayer(vlayer)
+                
     @pyqtSlot(QTableWidgetItem)
     def on_person_results_twidget_itemClicked(self, item):
 
@@ -7641,7 +7649,6 @@ class NavigatorWidget(QDockWidget, Ui_NavigatorWidget, DatabaseHelper):
             self.mobile_num_edit.setText(person_result.phone)
             self.person_application_num_edit.setText(person_result.app_no)
             self.person_decision_num_edit.setText(person_result.decision_no)
-            self.person_parcel_num_edit.setText(person_result.parcel_id)
             if person_result.contract_no != None:
                 self.person_contract_num_edit.setText(person_result.contract_no)
             else:
@@ -7656,52 +7663,69 @@ class NavigatorWidget(QDockWidget, Ui_NavigatorWidget, DatabaseHelper):
 
         id = item.data(Qt.UserRole)
 
-        # try:
+        try:
 
-        if self.is_parcel_checkbox.isChecked():
-            parcel_result = self.session.query(ParcelSearch).filter(ParcelSearch.parcel_id == id).order_by(ParcelSearch.person_role.desc()).first()
+            if self.is_parcel_checkbox.isChecked():
+                parcel_result_count = self.session.query(ParcelSearch).filter(ParcelSearch.parcel_id == id).count()
 
-            soum_code = parcel_result.au2_code
-            aimag_code = soum_code[:3]
-            self.working_l1_cbox.setCurrentIndex(self.working_l1_cbox.findData(aimag_code))
-            self.working_l2_cbox.setCurrentIndex(self.working_l2_cbox.findData(soum_code))
+                if parcel_result_count > 1:
+                    parcel_results = self.session.query(ParcelSearch).filter(ParcelSearch.parcel_id == id).all()
+                    for parcel in parcel_results:
 
-            self.parcel_num_edit.setText(parcel_result.parcel_id)
-            self.geo_id_edit.setText(parcel_result.geo_id)
-            self.parcel_right_holder_name_edit.setText(parcel_result.first_name)
-            self.parcel_app_num_edit.setText(parcel_result.app_no)
-            self.parcel_decision_num_edit.setText(unicode(parcel_result.decision_no))
-            if parcel_result.contract_no != None:
-                self.parcel_contract_num_edit.setText(parcel_result.contract_no)
+                        if parcel.main_applicant:
+                            parcel_result = self.session.query(ParcelSearch).filter(ParcelSearch.parcel_id == id).\
+                                filter(ParcelSearch.main_applicant == True).one()
+                        # if parcel.person_role == 70:
+                        #     parcel_result = self.session.query(ParcelSearch).filter(ParcelSearch.parcel_id == id)\
+                        #         .filter(ParcelSearch.person_role == 70).filter(ParcelSearch.main_applicant == True).one()
+                        # elif parcel.person_role == 40:
+                        #     parcel_result = self.session.query(ParcelSearch).filter(ParcelSearch.parcel_id == id) \
+                        #         .filter(ParcelSearch.person_role == 40).filter(ParcelSearch.main_applicant == True).one()
+                elif parcel_result_count == 1:
+                    parcel_result = self.session.query(ParcelSearch).filter(ParcelSearch.parcel_id == id).one()
+                else:
+                    parcel_result = self.session.query(TmpParcelSearch).filter(TmpParcelSearch.parcel_id == id).one()
+
+                soum_code = parcel_result.au2_code
+                aimag_code = soum_code[:3]
+                self.working_l1_cbox.setCurrentIndex(self.working_l1_cbox.findData(aimag_code))
+                self.working_l2_cbox.setCurrentIndex(self.working_l2_cbox.findData(soum_code))
+
+                self.parcel_num_edit.setText(parcel_result.parcel_id)
+                self.geo_id_edit.setText(parcel_result.geo_id)
+                self.parcel_right_holder_name_edit.setText(parcel_result.first_name)
+                self.parcel_app_num_edit.setText(parcel_result.app_no)
+                self.parcel_decision_num_edit.setText(parcel_result.decision_no)
+                if parcel_result.contract_no != None:
+                    self.parcel_contract_num_edit.setText(parcel_result.contract_no)
+                else:
+                    self.parcel_contract_num_edit.setText(parcel_result.record_no)
+                self.personal_parcel_edit.setText(parcel_result.person_id)
+                self.land_use_type_cbox.setCurrentIndex(self.land_use_type_cbox.findData(parcel_result.landuse))
             else:
-                self.parcel_contract_num_edit.setText(parcel_result.record_no)
-            self.personal_parcel_edit.setText(parcel_result.person_id)
+                parcel_result = self.session.query(TmpParcelSearch).filter(TmpParcelSearch.parcel_id == id).one()
 
-            self.land_use_type_cbox.setCurrentIndex(self.land_use_type_cbox.findData(parcel_result.landuse))
-        else:
-            parcel_result = self.session.query(TmpParcelSearch).filter(TmpParcelSearch.parcel_id == id).order_by(ParcelSearch.person_role.desc()).first()
+                soum_code = parcel_result.au2_code
+                aimag_code = soum_code[:3]
+                self.working_l1_cbox.setCurrentIndex(self.working_l1_cbox.findData(aimag_code))
+                self.working_l2_cbox.setCurrentIndex(self.working_l2_cbox.findData(soum_code))
 
-            soum_code = parcel_result.au2_code
-            aimag_code = soum_code[:3]
-            self.working_l1_cbox.setCurrentIndex(self.working_l1_cbox.findData(aimag_code))
-            self.working_l2_cbox.setCurrentIndex(self.working_l2_cbox.findData(soum_code))
+                self.parcel_num_edit.setText(parcel_result.parcel_id)
+                self.geo_id_edit.setText(parcel_result.geo_id)
 
-            self.parcel_num_edit.setText(parcel_result.parcel_id)
-            self.geo_id_edit.setText(parcel_result.geo_id)
+                self.parcel_right_holder_name_edit.setText(parcel_result.first_name)
+                self.parcel_app_num_edit.setText(parcel_result.app_no)
+                self.parcel_decision_num_edit.setText(parcel_result.decision_no)
+                if parcel_result.contract_no != None:
+                    self.parcel_contract_num_edit.setText(parcel_result.contract_no)
+                else:
+                    self.parcel_contract_num_edit.setText(parcel_result.record_no)
+                self.personal_parcel_edit.setText(parcel_result.person_id)
+                self.land_use_type_cbox.setCurrentIndex(self.land_use_type_cbox.findData(parcel_result.landuse))
 
-            self.parcel_right_holder_name_edit.setText(parcel_result.first_name)
-            self.parcel_app_num_edit.setText(parcel_result.app_no)
-            self.parcel_decision_num_edit.setText(parcel_result.decision_no)
-            if parcel_result.contract_no != None:
-                self.parcel_contract_num_edit.setText(parcel_result.contract_no)
-            else:
-                self.parcel_contract_num_edit.setText(parcel_result.record_no)
-            self.personal_parcel_edit.setText(parcel_result.person_id)
-            self.land_use_type_cbox.setCurrentIndex(self.land_use_type_cbox.findData(parcel_result.landuse))
-
-        # except SQLAlchemyError, e:
-        #     PluginUtils.show_error(self, self.tr("File Error"), self.tr("Error in line {0}: {1}").format(currentframe().f_lineno, e.message))
-        #     return
+        except SQLAlchemyError, e:
+            PluginUtils.show_error(self, self.tr("File Error"), self.tr("Error in line {0}: {1}").format(currentframe().f_lineno, e.message))
+            return
 
     @pyqtSlot(QTableWidgetItem)
     def on_application_results_twidget_itemClicked(self, item):
