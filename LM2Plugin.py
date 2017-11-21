@@ -8,6 +8,7 @@ from controller.UserRoleManagementDialog import *
 from controller.NavigatorWidget import *
 from controller.PastureWidget import *
 from controller.ParcelInfoDialog import *
+from controller.ParcelInfoFeeDialog import *
 from controller.ApplicationsDialog import *
 from controller.ContractDialog import *
 from controller.OwnRecordDialog import *
