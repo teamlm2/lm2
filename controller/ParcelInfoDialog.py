@@ -211,7 +211,7 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
 
         if officer.position == 2:
             self.finish_button.setVisible(True)
-        elif officer.position == 1:
+        elif officer.position == 1 or 11:
             self.finish_button.setVisible(True)
         else:
             self.finish_button.setVisible(False)
