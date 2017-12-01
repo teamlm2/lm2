@@ -60,7 +60,8 @@ class UbDocumentViewDelegate(QStyledItemDelegate):
 
                 if index.column() == VIEW_COLUMN:
                     ftp_host = QSettings().value(SettingsConstants.FTP_IP)
-                    ftp = FTP(ftp_host, 'user1125', 'user1125')
+                    ftp_user = QSettings().value(SettingsConstants.FTP_USER)
+                    ftp = FTP(ftp_host, ftp_user, ftp_user)
 
                     n = self.widget.item(index.row(), NAME_COLUMN).data(Qt.UserRole + 1)
                     subdir = self.widget.item(index.row(), NAME_COLUMN).data(Qt.UserRole)

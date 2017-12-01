@@ -211,7 +211,7 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
 
         if officer.position == 2:
             self.finish_button.setVisible(True)
-        elif officer.position == 1 or 11:
+        elif officer.position == 1:
             self.finish_button.setVisible(True)
         else:
             self.finish_button.setVisible(False)
@@ -2833,13 +2833,18 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
     @pyqtSlot()
     def on_ftp_connect_button_clicked(self):
 
+        database_name = QSettings().value(SettingsConstants.DATABASE_NAME)
+        ftp_user_code = database_name.split('_')[1]
+        ftp_user = 'user'+ftp_user_code
+
         QSettings().setValue(SettingsConstants.FTP_IP, self.ftp_host_edit.text())
+        QSettings().setValue(SettingsConstants.FTP_USER, ftp_user)
 
         ftp_host = self.ftp_host_edit.text()
         retry = True
         while (retry):
             try:
-                ftp = FTP(ftp_host, 'user1125', 'user1125')
+                ftp = FTP(ftp_host, ftp_user, ftp_user)
                 ftp.connect()
                 retry = False
                 self.ftp_connect_button.setEnabled(False)
@@ -2854,7 +2859,8 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
 
         self.doc_twidget.setRowCount(0)
         ftp_host = QSettings().value(SettingsConstants.FTP_IP)
-        ftp = FTP(ftp_host, 'user1125', 'user1125')
+        ftp_user = QSettings().value(SettingsConstants.FTP_USER)
+        ftp = FTP(ftp_host, ftp_user, ftp_user)
 
         doc_id = self.documet_cbox.itemData(self.documet_cbox.currentIndex())
 

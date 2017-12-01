@@ -6,6 +6,7 @@ PASSWORD = "/lm2/settings/password"
 DOCUMENT_PATH = "/lm2/settings/document_path"
 WEBGIS_IP = "/lm2/settings/webgis_ip"
 FTP_IP = "/lm2/settings/ftp_ip"
+FTP_USER = "/lm2/settings/ftp_user"
 
 REPOSITORY_URL = "/Qgis/plugin-repos/Mongolia/url"
 REPOSITORY_ENABLED = "/Qgis/plugin-repos/Mongolia/enabled"
