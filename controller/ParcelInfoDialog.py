@@ -211,7 +211,7 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
 
         if officer.position == 2:
             self.finish_button.setVisible(True)
-        elif officer.position == 1:
+        elif officer.position == 1 or 11:
             self.finish_button.setVisible(True)
         else:
             self.finish_button.setVisible(False)
@@ -477,6 +477,8 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
         self.find_person_id_edit.setEnabled(True)
         self.find_firstname_edit.setEnabled(True)
         self.find_lastname_edit.setEnabled(True)
+        self.find_street_name_edit.setEnabled(True)
+        self.find_khashaa_number_edit.setEnabled(True)
 
         self.find_x_coordinate_edit.setEnabled(True)
         self.find_y_coordinate_edit.setEnabled(True)
@@ -523,16 +525,37 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
             for subject in subjects.all():
                 self.__add_subject(subject)
 
+        if self.tab_index == 2:
+            filter_is_set = False
+            self.right_holder_twidget.setRowCount(2)
+
+            subjects = self.session.query(UbGisSubject)
+
+            if self.find_street_name_edit.text():
+                filter_is_set = True
+                value = "%" + self.find_street_name_edit.text() + "%"
+                subjects = subjects.filter(UbGisSubject.gudamj.like(value))
+
+            if self.find_khashaa_number_edit.text():
+                filter_is_set = True
+                value = "%" + self.find_khashaa_number_edit.text() + "%"
+                subjects = subjects.filter(UbGisSubject.hashaa.like(value))
+
+            if filter_is_set is False:
+                PluginUtils.show_message(self, self.tr("None"), self.tr("Please specify a search filter."))
+                return
+
+            for subject in subjects.all():
+                self.__add_subject(subject)
+
             self.right_holder_twidget.resizeColumnsToContents()
 
             if self.right_holder_twidget.rowCount() > 0:
                 self.right_holder_twidget.selectRow(0)
         else:
             if not self.find_x_coordinate_edit.text():
-                PluginUtils.show_message(self, self.tr("None"), self.tr("Please input x coordinate!!!"))
                 return
             if not self.find_y_coordinate_edit.text():
-                PluginUtils.show_message(self, self.tr("None"), self.tr("Please input y coordinate!!!"))
                 return
             x = float(self.find_x_coordinate_edit.text())
             y = float(self.find_y_coordinate_edit.text())
@@ -1686,6 +1709,8 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
 
         self.find_firstname_edit.clear()
         self.find_lastname_edit.clear()
+        self.find_street_name_edit.clear()
+        self.find_khashaa_number_edit.clear()
 
         self.find_x_coordinate_edit.clear()
         self.find_y_coordinate_edit.clear()
@@ -1941,9 +1966,7 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
             return True
 
         for i in range(len(name)):
-
             if name[i].isdigit():
-
                 if name[i - 1] != "-":
                     self.error_label.setText(self.tr("Street name can only end with a number, if a - is in front. "))
                 return False
@@ -1952,12 +1975,13 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
                 rest = name[i + 1:]
 
                 if rest.isdigit():
-
                     return True
                 else:
-
                     self.error_label.setText(self.tr("Street name can end with a number, if a - is in front. "))
                     return False
+            # print name[i - 1]
+            # if not name[i-1].isdigit() and name[i-1] != "-":
+            #     return  True
         return True
 
     @pyqtSlot(str)
@@ -2118,13 +2142,16 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
 
         au_level2 = DatabaseUtils.current_working_soum_schema()
         right_type = self.rigth_type_cbox.itemData(self.rigth_type_cbox.currentIndex())
-        app_type = 1
-        if right_type == 1:
-            app_type = 6
-        elif right_type == 2:
-            app_type == 5
-        elif right_type == 3:
-            app_type == 1
+
+        app_type = self.application_type_cbox.itemData(self.application_type_cbox.currentIndex())
+
+        # app_type = 1
+        # if right_type == 1:
+        #     app_type = 6
+        # elif right_type == 2:
+        #     app_type == 5
+        # elif right_type == 3:
+        #     app_type == 1
 
         app_no_part_0 = au_level2
         app_no_part_1 = (str(app_type).zfill(2))
@@ -2345,6 +2372,21 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
             valid = False
 
         return valid, error_message
+
+    @pyqtSlot(int)
+    def on_rigth_type_cbox_currentIndexChanged(self, index):
+
+        self.application_type_cbox.clear()
+        rigth_code = self.rigth_type_cbox.itemData(self.rigth_type_cbox.currentIndex())
+
+        rigth_apps = self.session.query(SetRightTypeApplicationType).filter(
+            SetRightTypeApplicationType.right_type == rigth_code). \
+            order_by(SetRightTypeApplicationType.application_type).all()
+
+        for item in rigth_apps:
+            app_type = self.session.query(ClApplicationType).filter(
+                ClApplicationType.code == item.application_type).one()
+            self.application_type_cbox.addItem(app_type.description, app_type.code)
 
     @pyqtSlot()
     def on_finish_button_clicked(self):
@@ -2702,13 +2744,16 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
         status_date = self.decision_date.date().toString(Constants.DATABASE_DATE_FORMAT)
         app_no = self.__generate_application_number()
         right_type = self.rigth_type_cbox.itemData(self.rigth_type_cbox.currentIndex())
-        app_type = 1
-        if right_type == 1:
-            app_type = 6
-        elif right_type == 2:
-            app_type = 5
-        elif right_type == 3:
-            app_type = 1
+
+        app_type = self.application_type_cbox.itemData(self.application_type_cbox.currentIndex())
+
+        # app_type = 1
+        # if right_type == 1:
+        #     app_type = 6
+        # elif right_type == 2:
+        #     app_type = 5
+        # elif right_type == 3:
+        #     app_type = 1
 
         duration = self.duration_sbox.value()
         landuse = self.parcel_landuse_cbox.itemData(self.parcel_landuse_cbox.currentIndex())

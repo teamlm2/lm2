@@ -27,7 +27,6 @@ from ..model.ClPositionType import *
 from ..model.CtCadastrePage import *
 from ..model.Enumerations import ApplicationType, UserRight
 from ..model.SetCadastrePage import *
-from ..model.BsPerson import *
 import math
 import locale
 import os
@@ -911,12 +910,6 @@ class PrintDialog(QDialog, Ui_PrintDialog):
 
         twidget_item = self.right_holder_twidget.item(selected_row, self.CODEIDCARD)
         code_id_card = twidget_item.text()
-
-        person = self.session.query(BsPerson).filter(BsPerson.person_id == code_id_card).one()
-        if person.type == 50 or person.type == 60:
-            right_type = self.session.query(ClRightType).filter(ClRightType.code == 1).one()
-            right_type = right_type.description
-
         item = map_composition.getComposerItemById("right_holder_name")
         item.setText(right_holder_name)
         item = map_composition.getComposerItemById("id_card_code")
@@ -924,13 +917,12 @@ class PrintDialog(QDialog, Ui_PrintDialog):
         item = map_composition.getComposerItemById("right_type")
         item.setText(right_type)
 
-
     def __right_type_description(self, application_type, person_type):
 
         right_type_desc = None
         try:
-            set_right_types = self.session.query(SetRightTypeApplicationType)\
-                .filter(SetRightTypeApplicationType.application_type == application_type).all()
+            set_right_type = self.session.query(SetRightTypeApplicationType)\
+                .filter(SetRightTypeApplicationType.application_type == application_type).one()
 
         except SQLAlchemyError, e:
             PluginUtils.show_error(self, self.tr("Database Query Error"), self.tr("dCould not execute: {0}").format(e.message))
@@ -940,8 +932,7 @@ class PrintDialog(QDialog, Ui_PrintDialog):
             right_type = self.session.query(ClRightType).filter(ClRightType.code == 1).one()
             right_type_desc = right_type.description
         else:
-            for set_right_type in set_right_types:
-                right_type_desc = set_right_type.right_type_ref.description
+            right_type_desc = set_right_type.right_type_ref.description
         return right_type_desc
 
     def __add_parcel_size(self, map_composition):
