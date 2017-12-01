@@ -442,12 +442,17 @@ class ApplicationsPastureDialog(QDialog, Ui_ApplicationsPastureDialog, DatabaseH
         if l2_code == -1 or not l2_code:
             return
 
+        database_name = QSettings().value(SettingsConstants.DATABASE_NAME)
+        user_code = database_name.split('_')[1]
+        user_start = 'user' + user_code
+
         try:
             application_types = self.session.query(ClApplicationType).\
                 filter(or_(ClApplicationType.code == ApplicationType.pasture_use, ClApplicationType.code == ApplicationType.legitimate_rights)).\
                 order_by(ClApplicationType.code).all()
             statuses = self.session.query(ClApplicationStatus).order_by(ClApplicationStatus.code).all()
-            set_roles = self.session.query(SetRole).all()
+            set_roles = self.session.query(SetRole). \
+                filter(SetRole.user_name.startswith(user_start)).all()
             landuse_types = self.session.query(ClLanduseType).all()
             ct_member_group = self.session.query(CtPersonGroup).all()
 

@@ -163,6 +163,11 @@ class SentToGovernorPastureDialog(QDialog, Ui_SentToGovernorPastureDialog, Datab
         soum_code = ''
         au_level2 = DatabaseUtils.current_working_soum_schema()
         soum_code = str(au_level2)[3:]
+
+        database_name = QSettings().value(SettingsConstants.DATABASE_NAME)
+        user_code = database_name.split('_')[1]
+        user_start = 'user' + user_code
+
         try:
             user = DatabaseUtils.current_user()
             officers = self.session.query(SetRole) \
@@ -172,7 +177,8 @@ class SentToGovernorPastureDialog(QDialog, Ui_SentToGovernorPastureDialog, Datab
             application_types = self.session.query(ClApplicationType).\
                 filter(or_(ClApplicationType.code == ApplicationType.legitimate_rights, ClApplicationType.code == ApplicationType.pasture_use)).all()
 
-            set_roles = self.session.query(SetRole).all()
+            set_roles = self.session.query(SetRole). \
+                filter(SetRole.user_name.startswith(user_start)).all()
             set_role = self.session.query(SetRole).filter(SetRole.user_name_real == officers.user_name_real).one()
             aimag_code = set_role.working_au_level1
             aimag_code = aimag_code[:2]
@@ -1007,7 +1013,7 @@ class SentToGovernorPastureDialog(QDialog, Ui_SentToGovernorPastureDialog, Datab
             soum_code = ''
             au_level2 = DatabaseUtils.current_working_soum_schema()
             soum_code = str(au_level2)[3:]
-            set_roles = self.session.query(SetRole).all()
+
             set_role = self.session.query(SetRole).filter(
                 SetRole.user_name == DatabaseUtils.current_user().user_name).filter(SetRole.is_active == True).one()
             aimag_code = set_role.working_au_level1
