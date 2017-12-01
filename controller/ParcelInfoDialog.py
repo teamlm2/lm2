@@ -2833,9 +2833,11 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
     @pyqtSlot()
     def on_ftp_connect_button_clicked(self):
 
-        database_name = QSettings().value(SettingsConstants.DATABASE_NAME)
-        ftp_user_code = database_name.split('_')[1]
-        ftp_user = 'user'+ftp_user_code
+        # database_name = QSettings().value(SettingsConstants.DATABASE_NAME)
+        # ftp_user_code = database_name.split('_')[1]
+        # ftp_user = 'user'+ftp_user_code
+
+        ftp_user = QSettings().value(SettingsConstants.USER)[:8]
 
         QSettings().setValue(SettingsConstants.FTP_IP, self.ftp_host_edit.text())
         QSettings().setValue(SettingsConstants.FTP_USER, ftp_user)
