@@ -609,13 +609,13 @@ class ContractPastureDialog(QDialog, Ui_ContractPastureDialog, DatabaseHelper):
         delegate = PastureContractDocumentDelegate(self.doc_twidget, self)
         self.doc_twidget.setItemDelegate(delegate)
 
-        try:
-            self.__add_doc_types()
+        # try:
+        self.__add_doc_types()
             # self.__update_doc_twidget()
 
-        except SQLAlchemyError, e:
-            PluginUtils.show_error(self, self.tr("File Error"), self.tr("Error in line {0}: {1}").format(currentframe().f_lineno, e.message))
-            return
+        # except SQLAlchemyError, e:
+        #     PluginUtils.show_error(self, self.tr("File Error"), self.tr("Error in line {0}: {1}").format(currentframe().f_lineno, e.message))
+        #     return
 
     def __remove_document_items(self, twidget):
 

@@ -1862,10 +1862,11 @@ class ApplicationsDialog(QDialog, Ui_ApplicationsDialog, DatabaseHelper):
             PluginUtils.show_error(self, self.tr("Mortgagee found"),
                                             self.tr("The applicant {0} is already mortgagee.").format(person_name))
         else:
-            num_rows = self.application_status_twidget.rowCount()
-            if num_rows > 1:
-                PluginUtils.show_error(self, self.tr("add applicant error"), self.tr("it will acceptable only applicatin status one."))
-                return
+            if app_type != 1:
+                num_rows = self.application_status_twidget.rowCount()
+                if num_rows > 1:
+                    PluginUtils.show_error(self, self.tr("add applicant error"), self.tr("it will acceptable only applicatin status one."))
+                    return
             self.__copy_applicant_from_navigator()
 
         if self.application.stakeholders.count() > 0:

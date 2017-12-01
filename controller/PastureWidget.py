@@ -37,6 +37,7 @@ from ..utils.SessionHandler import SessionHandler
 from ..model.Enumerations import ApplicationType
 from ..model.PsRecoveryClass import *
 from ..model.PsParcelDuration import *
+from ..model.CtAppGroupBoundary import *
 from datetime import timedelta
 from xlsxwriter.utility import xl_rowcol_to_cell, xl_col_to_name
 import xlsxwriter
@@ -593,8 +594,11 @@ class PastureWidget(QDockWidget, Ui_PastureWidget, DatabaseHelper):
         # try:
         applications = self.session.query(ApplicationPastureSearch)
         filter_is_set = False
-        sub = self.session.query(ApplicationPastureSearch, func.row_number().over(partition_by = ApplicationPastureSearch.app_no, order_by = (desc(ApplicationPastureSearch.status_date), desc(ApplicationPastureSearch.status))).label("row_number")).subquery()
-        applications = applications.select_entity_from(sub).filter(sub.c.row_number == 1)
+        # sub = self.session.query(ApplicationPastureSearch, func.row_number().over(partition_by=ApplicationPastureSearch.app_no,
+        #                                                                    order_by=(
+        #                                                                    desc(ApplicationPastureSearch.status_date),
+        #                                                                    desc(ApplicationPastureSearch.status))).label("row_number")).subquery()
+        # applications = applications.select_entity_from(sub).filter(sub.c.row_number == 1)
         applications = applications.filter(or_(ApplicationPastureSearch.app_type == ApplicationType.right_land,
                    ApplicationPastureSearch.app_type == ApplicationType.pasture_use))
         if self.pasture_group_cbox.currentIndex() != -1:
@@ -655,9 +659,9 @@ class PastureWidget(QDockWidget, Ui_PastureWidget, DatabaseHelper):
 
         self.__remove_pasture_items()
 
-        if applications.distinct(ApplicationPastureSearch.app_no).count() == 0:
-            self.error_label.setText(self.tr("No applications found for this search filter."))
-            return
+        # if applications.distinct(ApplicationPastureSearch.app_no).count() == 0:
+        #     self.error_label.setText(self.tr("No applications found for this search filter."))
+        #     return
 
         if filter_is_set is False:
             self.error_label.setText(self.tr("Please specify a search filter."))
@@ -1595,3 +1599,83 @@ class PastureWidget(QDockWidget, Ui_PastureWidget, DatabaseHelper):
 
         unelgee = d3-int(text)
         self.avg_unelgee_edit.setText(str(unelgee))
+
+    @pyqtSignature("")
+    def on_delete_button_clicked(self):
+
+        selected_items = self.pasture_results_twidget.selectedItems()
+
+        if len(selected_items) != 1:
+            self.error_label.setText(self.tr("Only single selection allowed."))
+            return None
+
+        selected_item = selected_items[0]
+        app_no = selected_item.data(Qt.UserRole)
+
+        message_box = QMessageBox()
+        message_box.setText(self.tr("Do you want to delete the all information for application ?"))
+
+        delete_button = message_box.addButton(self.tr("Delete"), QMessageBox.ActionRole)
+        message_box.addButton(self.tr("Cancel"), QMessageBox.ActionRole)
+        message_box.exec_()
+
+        if not message_box.clickedButton() == delete_button:
+            return
+
+        app_pugs = self.session.query(CtApplicationPUG).\
+            filter(CtApplicationPUG.application == app_no).all()
+
+        for app_pug in app_pugs:
+            self.session.query(CtApplicationPUG). \
+                filter(CtApplicationPUG.group_no == app_pug.group_no).\
+                filter(CtApplicationPUG.application == app_no).delete()
+
+        app_pug_parcels = self.session.query(CtApplicationPUGParcel).\
+            filter(CtApplicationPUGParcel.application == app_no).all()
+
+        for app_pug_parcel in app_pug_parcels:
+            self.session.query(CtApplicationPUGParcel). \
+                filter(CtApplicationPUGParcel.parcel == app_pug_parcel.parcel).\
+                filter(CtApplicationPUGParcel.application == app_no).delete()
+
+        app_persons = self.session.query(CtApplicationPersonRole).\
+            filter(CtApplicationPersonRole.application == app_no).all()
+
+        for app_person in app_persons:
+            self.session.query(CtApplicationPersonRole). \
+                filter(CtApplicationPersonRole.person == app_person.person). \
+                filter(CtApplicationPersonRole.role == 10). \
+                filter(CtApplicationPersonRole.application == app_no).delete()
+
+        app_parcels = self.session.query(CtApplicationParcelPasture).\
+            filter(CtApplicationParcelPasture.application == app_no).all()
+
+        for app_parcel in app_parcels:
+            self.session.query(CtApplicationParcelPasture). \
+                filter(CtApplicationParcelPasture.pasture == app_parcel.pasture). \
+                filter(CtApplicationParcelPasture.parcel == app_parcel.parcel).\
+                filter(CtApplicationParcelPasture.application == app_no).delete()
+
+        app_statuses = self.session.query(CtApplicationStatus).\
+            filter(CtApplicationStatus.application == app_no).all()
+
+        for app_status in app_statuses:
+            self.session.query(CtApplicationStatus). \
+                filter(CtApplicationStatus.status == app_status.status).\
+                filter(CtApplicationStatus.application == app_no).delete()
+
+        app_group_boundaries = self.session.query(CtAppGroupBoundary).\
+            filter(CtAppGroupBoundary.application == app_no).all()
+
+        for app_group_boundary in app_group_boundaries:
+            self.session.query(CtAppGroupBoundary). \
+                filter(CtAppGroupBoundary.boundary_code == app_group_boundary.boundary_code). \
+                filter(CtAppGroupBoundary.group_no == app_group_boundary.group_no).\
+                filter(CtAppGroupBoundary.application == app_no).delete()
+
+        self.session.query(CtApplication).filter(CtApplication.app_no == app_no).delete()
+
+        selected_row = self.pasture_results_twidget.currentRow()
+        self.pasture_results_twidget.removeRow(selected_row)
+
+        self.session.commit()

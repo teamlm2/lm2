@@ -66,8 +66,12 @@ class LogOnDialog(QDialog, Ui_LogOnDialog):
         if not self.__validate_user_input(host, port, database, user, password):
             return
 
-        # try:
-        if not SessionHandler().create_session(user, password, host, port, database):
+        try:
+            if not SessionHandler().create_session(user, password, host, port, database):
+                return
+
+        except (DatabaseError, SQLAlchemyError), e:
+            PluginUtils.show_error(self, self.tr("Query Error"), self.tr("User name or password is not correct!!!"))
             return
         session = SessionHandler().session_instance()
         groups = self.__groupsByUser(user)
@@ -137,6 +141,12 @@ class LogOnDialog(QDialog, Ui_LogOnDialog):
             #     return
 
             # record = self.__selected_record()
+            if not has_privilege:
+                if self.__protected_dialog == Constants.ROLE_MANAGEMENT_DLG:
+                    PluginUtils.show_error(self, self.tr("No Privilege"),
+                                           self.tr("The user has no privileges to perform "
+                                                   "role management!"))
+                    return
 
             dialog = UserRoleManagementDialog(has_privilege, user)
             # dialog.rejected.connect(self.reject)
@@ -160,9 +170,6 @@ class LogOnDialog(QDialog, Ui_LogOnDialog):
 
         QDialog.accept(self)
 
-        # except (DatabaseError, SQLAlchemyError), e:
-        #     PluginUtils.show_error(self, self.tr("Query Error"), self.tr("User name or password is not correct!!!"))
-        #     return
 
     def __groupsByUser(self, user_name):
 

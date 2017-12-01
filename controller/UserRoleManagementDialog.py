@@ -295,8 +295,101 @@ class UserRoleManagementDialog(QDialog, Ui_UserRoleManagementDialog):
 
             PluginUtils.populate_au_level2_cbox(self.soum_cbox, au_level1_code, True, False, False)
 
+            # self.__populate_soums(au_level1_code)
         except DatabaseError, e:
             PluginUtils.show_error(self, self.tr("Database Query Error"), self.tr("Could not execute: {0}").format(e.message))
+
+    def __populate_soums(self, au_level1_code):
+
+        # self.soum_lwidget.clear()
+
+        self.selected_user = self.user_role_lwidget.currentItem().text()
+        user_name = self.user_role_lwidget.currentItem().text()
+
+        try:
+            user_c = self.db_session.query(SetRole). \
+                filter(SetRole.user_name == user_name).count()
+            if user_c == 1:
+                user = self.db_session.query(SetRole). \
+                    filter(SetRole.user_name == user_name).one()
+            else:
+                user = self.db_session.query(SetRole). \
+                    filter(SetRole.user_name == user_name). \
+                    filter(SetRole.is_active == True).one()
+        except NoResultFound:
+            return
+
+        restriction_au_level2 = user.restriction_au_level2
+        soum_codes = restriction_au_level2.split(',')
+
+        for code in soum_codes:
+            code = code.strip()
+            soum_count = self.db_session.query(AuLevel2). \
+                filter(AuLevel2.code == code). \
+                filter(AuLevel2.code.startswith(au_level1_code)).count()
+            if soum_count == 1:
+                soum = self.db_session.query(AuLevel2).\
+                    filter(AuLevel2.code == code). \
+                    filter(AuLevel2.code.startswith(au_level1_code)).one()
+                item = QListWidgetItem(soum.name + '_' + soum.code)
+                item.setData(Qt.UserRole, soum.code)
+                self.soum_lwidget.addItem(item)
+
+    # @pyqtSlot(int)
+    # def on_all_granted_soum_chbox_stateChanged(self, state):
+    #
+    #     self.soum_lwidget.clear()
+    #
+    #     self.selected_user = self.user_role_lwidget.currentItem().text()
+    #     user_name = self.user_role_lwidget.currentItem().text()
+    #
+    #     try:
+    #         user_c = self.db_session.query(SetRole). \
+    #             filter(SetRole.user_name == user_name).count()
+    #         if user_c == 1:
+    #             user = self.db_session.query(SetRole). \
+    #                 filter(SetRole.user_name == user_name).one()
+    #         else:
+    #             user = self.db_session.query(SetRole). \
+    #                 filter(SetRole.user_name == user_name). \
+    #                 filter(SetRole.is_active == True).one()
+    #     except NoResultFound:
+    #         return
+    #
+    #     restriction_au_level2 = user.restriction_au_level2
+    #     soum_codes = restriction_au_level2.split(',')
+    #
+    #     if state == Qt.Checked:
+    #         for code in soum_codes:
+    #             code = code.strip()
+    #             soum_count = self.db_session.query(AuLevel2). \
+    #                 filter(AuLevel2.code == code).count()
+    #             if soum_count == 1:
+    #                 soum = self.db_session.query(AuLevel2). \
+    #                     filter(AuLevel2.code == code).one()
+    #                 item = QListWidgetItem(soum.name + '_' + soum.code)
+    #                 item.setData(Qt.UserRole, soum.code)
+    #                 self.soum_lwidget.addItem(item)
+    #     else:
+    #         if self.aimag_lwidget.currentItem() is None:
+    #             return
+    #         # if self.aimag_lwidget.count() > 1:
+    #         #     return
+    #
+    #         au_level1_code = self.aimag_lwidget.currentItem().data(Qt.UserRole)
+    #
+    #         for code in soum_codes:
+    #             code = code.strip()
+    #             soum_count = self.db_session.query(AuLevel2). \
+    #                 filter(AuLevel2.code == code). \
+    #                 filter(AuLevel2.code.startswith(au_level1_code)).count()
+    #             if soum_count == 1:
+    #                 soum = self.db_session.query(AuLevel2). \
+    #                     filter(AuLevel2.code == code). \
+    #                     filter(AuLevel2.code.startswith(au_level1_code)).one()
+    #                 item = QListWidgetItem(soum.name + '_' + soum.code)
+    #                 item.setData(Qt.UserRole, soum.code)
+    #                 self.soum_lwidget.addItem(item)
 
     @pyqtSlot()
     def on_user_role_lwidget_itemSelectionChanged(self):
@@ -765,7 +858,7 @@ class UserRoleManagementDialog(QDialog, Ui_UserRoleManagementDialog):
             if len(self.aimag_lwidget.findItems("*", Qt.MatchExactly)) == 0:
                 if au_level1_name == '*':
                     self.aimag_lwidget.clear()
-                    self.soum_lwidget.clear()
+                    # self.soum_lwidget.clear()
                     item = QListWidgetItem("*")
                     item.setData(Qt.UserRole, "*")
                     self.soum_lwidget.addItem(item)
@@ -774,11 +867,11 @@ class UserRoleManagementDialog(QDialog, Ui_UserRoleManagementDialog):
                 self.aimag_lwidget.addItem(item)
                 self.aimag_lwidget.setCurrentItem(item)
 
-        if self.aimag_lwidget.count() > 1:
-            self.soum_lwidget.clear()
-            item = QListWidgetItem("*")
-            item.setData(Qt.UserRole, "*")
-            self.soum_lwidget.addItem(item)
+        # if self.aimag_lwidget.count() > 1:
+        #     self.soum_lwidget.clear()
+        #     item = QListWidgetItem("*")
+        #     item.setData(Qt.UserRole, "*")
+        #     self.soum_lwidget.addItem(item)
 
     @pyqtSlot()
     def on_up_aimag_button_clicked(self):
@@ -794,14 +887,38 @@ class UserRoleManagementDialog(QDialog, Ui_UserRoleManagementDialog):
 
         au_level2_name = self.soum_cbox.currentText()
         au_level2_code = self.soum_cbox.itemData(self.soum_cbox.currentIndex(), Qt.UserRole)
+
         itemsList = self.aimag_lwidget.selectedItems()
-        if len(self.soum_lwidget.findItems(au_level2_name +'_'+ au_level2_code, Qt.MatchExactly)) == 0:
-            if len(self.soum_lwidget.findItems("*", Qt.MatchExactly)) == 0:
-                if au_level2_name == '*':
-                    self.soum_lwidget.clear()
-                item = QListWidgetItem(au_level2_name +'_'+ au_level2_code)
-                item.setData(Qt.UserRole, au_level2_code)
-                self.soum_lwidget.addItem(item)
+        if au_level2_code == -1:
+            if self.aimag_lwidget.currentItem() is None:
+                return
+            au_level1_code = self.aimag_lwidget.currentItem().data(Qt.UserRole)
+
+            soums = self.db_session.query(AuLevel2.code, AuLevel2.name).filter(
+                        AuLevel2.code.startswith(au_level1_code)).order_by(AuLevel2.name)
+
+            for soum in soums:
+                au_level2_name = soum.name
+                au_level2_code = soum.code
+                is_register = False
+                for index in range(self.soum_lwidget.count()):
+                    granted_soum_code = str(self.soum_lwidget.item(index).data(Qt.UserRole))
+                    print granted_soum_code
+                    if granted_soum_code == au_level2_code:
+                        is_register = True
+                if not is_register:
+                    print au_level2_name + '_' + au_level2_code
+                    item = QListWidgetItem(au_level2_name + '_' + au_level2_code)
+                    item.setData(Qt.UserRole, au_level2_code)
+                    self.soum_lwidget.addItem(item)
+        else:
+            if len(self.soum_lwidget.findItems(au_level2_name +'_'+ au_level2_code, Qt.MatchExactly)) == 0:
+                if len(self.soum_lwidget.findItems("*", Qt.MatchExactly)) == 0:
+                    # if au_level2_name == '*':
+                    #     self.soum_lwidget.clear()
+                    item = QListWidgetItem(au_level2_name +'_'+ au_level2_code)
+                    item.setData(Qt.UserRole, au_level2_code)
+                    self.soum_lwidget.addItem(item)
 
     @pyqtSlot()
     def on_up_soum_button_clicked(self):

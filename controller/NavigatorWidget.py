@@ -320,12 +320,12 @@ class NavigatorWidget(QDockWidget, Ui_NavigatorWidget, DatabaseHelper):
                 display_name = surveryor.surname + ' ' + surveryor.first_name + ' (' + company.name + ')'
                 self.surveyed_by_company_cbox.addItem(display_name, surveryor.id)
         if cl_landofficer is not None:
-            try:
-                officers = self.session.query(CaMaintenanceCase.created_by).group_by(CaMaintenanceCase.created_by).all()
-            except exc.SQLAlchemyError, e:
-                self.session.rollback()
-                raise LM2Exception(QApplication.translate("LM2", "Database Query Error"),
-                                   QApplication.translate("LM2", "Could not execute: {0}").format(e.message))
+            # try:
+            officers = self.session.query(CaMaintenanceCase.created_by).group_by(CaMaintenanceCase.created_by).all()
+            # except exc.SQLAlchemyError, e:
+            #     self.session.rollback()
+            #     raise LM2Exception(QApplication.translate("LM2", "Database Query Error"),
+            #                        QApplication.translate("LM2", "Could not execute: {0}").format(e.message))
             for officer in officers:
                 self.surveyed_by_land_officer_cbox.addItem(officer.created_by, officer.created_by)
         if cl_landofficer is not None:
@@ -810,13 +810,13 @@ class NavigatorWidget(QDockWidget, Ui_NavigatorWidget, DatabaseHelper):
 
         sql = "{0} order by person_id;".format(sql)
 
-        try:
-            self.session.execute(sql)
-            self.commit()
+        # try:
+        self.session.execute(sql)
+        self.commit()
 
-        except SQLAlchemyError, e:
-            PluginUtils.show_message(self, self.tr("LM2", "Sql Error"), e.message)
-            return
+        # except SQLAlchemyError, e:
+        #     PluginUtils.show_message(self, self.tr("LM2", "Sql Error"), e.message)
+        #     return
 
     def __create_fee_unifeid_view(self):
 
@@ -851,15 +851,15 @@ class NavigatorWidget(QDockWidget, Ui_NavigatorWidget, DatabaseHelper):
                      "LEFT JOIN s{0}.ct_fee_payment payment on fee.contract = payment.contract".format(au_level2)  + "\n"
 
             sql = sql + select
-            sql = "{0} group by contract_no, payment.year_paid_for,contract.status,fee.fee_contract, person.person_id, p_paid.p_paid,decision.decision_no,parcel.parcel_id,au3.name, application.approved_duration,landuse.description,parcel.area_m2, parcel.address_streetname, parcel.address_khashaa,au3_person.name ".format(sql)
+            sql = "{0} group by contract_no, payment.year_paid_for,contract.status,fee.fee_contract, person.person_id, p_paid.p_paid,decision.decision_no, decision.decision_date, contract.certificate_no, parcel.parcel_id,au3.name, application.approved_duration,landuse.description,parcel.area_m2, parcel.address_streetname, parcel.address_khashaa,au3_person.name ".format(sql)
         sql = "{0}  order by contract_no;".format(sql)
-        try:
-            self.session.execute(sql)
-            self.commit()
+        # try:
+        self.session.execute(sql)
+        self.commit()
 
-        except SQLAlchemyError, e:
-            PluginUtils.show_message(self, self.tr("LM2", "Sql Error"), e.message)
-            return
+        # except SQLAlchemyError, e:
+        #     PluginUtils.show_message(self, self.tr("LM2", "Sql Error"), e.message)
+        #     return
 
     def __create_application_view(self):
 
@@ -894,12 +894,12 @@ class NavigatorWidget(QDockWidget, Ui_NavigatorWidget, DatabaseHelper):
 
         sql = "{0} order by app_no;".format(sql)
 
-        try:
-            self.session.execute(sql)
-            self.commit()
-        except SQLAlchemyError, e:
-            PluginUtils.show_message(self, self.tr("LM2", "Sql Error"), e.message)
-            return
+        # try:
+        self.session.execute(sql)
+        self.commit()
+        # except SQLAlchemyError, e:
+        #     PluginUtils.show_message(self, self.tr("LM2", "Sql Error"), e.message)
+        #     return
 
     def __create_decision_view(self):
 

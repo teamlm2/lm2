@@ -32,7 +32,7 @@
    <string>User Role Management</string>
   </property>
   <property name="windowIcon">
-   <iconset>
+   <iconset resource="resources.qrc">
     <normaloff>:/plugins/lm2/user_role_management.png</normaloff>:/plugins/lm2/user_role_management.png</iconset>
   </property>
   <widget class="Line" name="line">
@@ -87,7 +87,7 @@
     <string/>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="resources.qrc">
      <normaloff>:/plugins/lm2/help_button.png</normaloff>:/plugins/lm2/help_button.png</iconset>
    </property>
   </widget>
@@ -498,7 +498,7 @@
        <string/>
       </property>
       <property name="icon">
-       <iconset>
+       <iconset resource="resources.qrc">
         <normaloff>:/plugins/lm2/down_button.png</normaloff>:/plugins/lm2/down_button.png</iconset>
       </property>
      </widget>
@@ -515,7 +515,7 @@
        <string/>
       </property>
       <property name="icon">
-       <iconset>
+       <iconset resource="resources.qrc">
         <normaloff>:/plugins/lm2/up_button.png</normaloff>:/plugins/lm2/up_button.png</iconset>
       </property>
      </widget>
@@ -611,7 +611,7 @@
        <string/>
       </property>
       <property name="icon">
-       <iconset>
+       <iconset resource="resources.qrc">
         <normaloff>:/plugins/lm2/down_button.png</normaloff>:/plugins/lm2/down_button.png</iconset>
       </property>
      </widget>
@@ -628,7 +628,7 @@
        <string/>
       </property>
       <property name="icon">
-       <iconset>
+       <iconset resource="resources.qrc">
         <normaloff>:/plugins/lm2/up_button.png</normaloff>:/plugins/lm2/up_button.png</iconset>
       </property>
      </widget>
@@ -678,7 +678,7 @@
        <string/>
       </property>
       <property name="icon">
-       <iconset>
+       <iconset resource="resources.qrc">
         <normaloff>:/plugins/lm2/up_button.png</normaloff>:/plugins/lm2/up_button.png</iconset>
       </property>
      </widget>
@@ -695,7 +695,7 @@
        <string/>
       </property>
       <property name="icon">
-       <iconset>
+       <iconset resource="resources.qrc">
         <normaloff>:/plugins/lm2/down_button.png</normaloff>:/plugins/lm2/down_button.png</iconset>
       </property>
      </widget>
@@ -712,11 +712,11 @@
        <string>Granted Aimags / Duuregs</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_31">
+     <widget class="QLabel" name="label_4">
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>261</y>
+        <y>260</y>
         <width>181</width>
         <height>16</height>
        </rect>

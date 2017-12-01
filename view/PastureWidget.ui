@@ -93,7 +93,7 @@
        </size>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <property name="usesScrollButtons">
        <bool>true</bool>
@@ -254,7 +254,7 @@
         <widget class="QPushButton" name="pasture_clear_button">
          <property name="geometry">
           <rect>
-           <x>204</x>
+           <x>210</x>
            <y>245</y>
            <width>75</width>
            <height>23</height>
@@ -384,6 +384,19 @@
          </property>
          <property name="text">
           <string>Application type</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="delete_button">
+         <property name="geometry">
+          <rect>
+           <x>130</x>
+           <y>245</y>
+           <width>75</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Delete</string>
          </property>
         </widget>
        </widget>

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'D:\work\LAND_MANAGER\lm2\view\UserRoleManagementDialog.ui'
+# Form implementation generated from reading ui file '.\UserRoleManagementDialog.ui'
 #
 # Created by: PyQt4 UI code generator 4.11.4
 #
@@ -221,9 +221,9 @@ class Ui_UserRoleManagementDialog(object):
         self.label_30 = QtGui.QLabel(self.groupBox_7)
         self.label_30.setGeometry(QtCore.QRect(10, 90, 181, 16))
         self.label_30.setObjectName(_fromUtf8("label_30"))
-        self.label_31 = QtGui.QLabel(self.groupBox_7)
-        self.label_31.setGeometry(QtCore.QRect(10, 261, 181, 16))
-        self.label_31.setObjectName(_fromUtf8("label_31"))
+        self.label_4 = QtGui.QLabel(self.groupBox_7)
+        self.label_4.setGeometry(QtCore.QRect(10, 260, 181, 16))
+        self.label_4.setObjectName(_fromUtf8("label_4"))
         self.tabWidget.addTab(self.user_register_tab, _fromUtf8(""))
         self.user_management_tab = QtGui.QWidget()
         self.user_management_tab.setObjectName(_fromUtf8("user_management_tab"))
@@ -318,7 +318,7 @@ class Ui_UserRoleManagementDialog(object):
         self.status_label.setObjectName(_fromUtf8("status_label"))
 
         self.retranslateUi(UserRoleManagementDialog)
-        self.tabWidget.setCurrentIndex(1)
+        self.tabWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(UserRoleManagementDialog)
         UserRoleManagementDialog.setTabOrder(self.help_button, self.close_button)
 
@@ -349,7 +349,7 @@ class Ui_UserRoleManagementDialog(object):
         self.label_14.setText(_translate("UserRoleManagementDialog", "Aimag / Duureg", None))
         self.label_16.setText(_translate("UserRoleManagementDialog", "Soum", None))
         self.label_30.setText(_translate("UserRoleManagementDialog", "Granted Aimags / Duuregs", None))
-        self.label_31.setText(_translate("UserRoleManagementDialog", "Granted Soums", None))
+        self.label_4.setText(_translate("UserRoleManagementDialog", "Granted Soums", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.user_register_tab), _translate("UserRoleManagementDialog", "User Register", None))
         item = self.user_twidget.horizontalHeaderItem(0)
         item.setText(_translate("UserRoleManagementDialog", "Employeer", None))

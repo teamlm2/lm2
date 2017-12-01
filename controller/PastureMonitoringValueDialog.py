@@ -2069,7 +2069,7 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
             return
         land_form_code = self.land_form_cbox.itemData(self.land_form_cbox.currentIndex())
         land_form_text = self.land_form_cbox.currentText()
-        land_form = self.session.query(ClLandForm).filter(ClLandForm.code == land_form_code).one()
+        # land_form = self.session.query(ClLandForm).filter(ClLandForm.code == land_form_code).one()
 
         current_row = self.point_detail_twidget.currentRow()
         id_item = self.point_detail_twidget.item(current_row, 0)
@@ -2102,7 +2102,7 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
 
             point_detail.register_date = point_detail_date_qt
             point_detail.land_form = land_form_code
-            point_detail.land_from_ref = land_form
+            # point_detail.land_from_ref = land_form
             point_detail.land_name = self.land_name_text_edit.toPlainText()
             point_detail.elevation = self.elevation_sbox.value()
         else:
@@ -2110,7 +2110,7 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
             point_detail.point_detail_id = self.point_detail_id_edit.text()
             point_detail.register_date = point_detail_date_qt
             point_detail.land_form = land_form_code
-            point_detail.land_from_ref = land_form
+            # point_detail.land_from_ref = land_form
             point_detail.land_name = self.land_name_text_edit.toPlainText()
             point_detail.elevation = self.elevation_sbox.value()
             self.session.add(point_detail)

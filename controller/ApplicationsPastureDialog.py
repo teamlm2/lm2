@@ -2601,6 +2601,10 @@ class ApplicationsPastureDialog(QDialog, Ui_ApplicationsPastureDialog, DatabaseH
             PluginUtils.show_message(self, self.tr("Boundary Duplicate"), self.tr("This boundary already connected"))
             return
 
+        if self.assigned_boundary_twidget.rowCount() > 0:
+            PluginUtils.show_message(self, self.tr("Boundary Register"), self.tr("This application already connected PUG boundary"))
+            return
+
         boundary = self.session.query(CaPUGBoundary).filter(CaPUGBoundary.code == boundary_code).one()
         # pasture_type = self.session.query(ClPastureType).filter(ClPastureType.code == 1).one()
         item = QTableWidgetItem(str(boundary.code))
