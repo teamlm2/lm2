@@ -151,7 +151,6 @@ class ContractDialog(QDialog, Ui_ContractDialog, DatabaseHelper):
         begin_txt = self.contract_begin_edit.text()
         begin = datetime.strptime(begin_txt, '%Y-%m-%d')
 
-
         if end and begin:
             age_in_years = end.year - begin.year - ((end.month, end.day) < (begin.month, begin.day))
             months = (end.month - begin.month - (end.day < begin.day)) % 12
@@ -1932,6 +1931,7 @@ class ContractDialog(QDialog, Ui_ContractDialog, DatabaseHelper):
         dec_day = decision_date[-2:]
         o_firstname = officer.first_name
         o_surname = officer.surname
+        o_position = officer.position_ref.description
         company_name = ''
         person_surname = ''
         person_firstname = ''
@@ -2024,6 +2024,7 @@ class ContractDialog(QDialog, Ui_ContractDialog, DatabaseHelper):
             'dec_no': decision_no,
             'o_firstname': o_firstname,
             'o_surname': o_surname,
+            'o_position': o_position,
             'company_name': company_name,
             'contact_position': contact_position,
             'person_surname': person_surname,
