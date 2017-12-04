@@ -592,9 +592,9 @@ class ApplicationsDialog(QDialog, Ui_ApplicationsDialog, DatabaseHelper):
                 order_by(ClApplicationType.code).all()
             statuses = self.session.query(ClApplicationStatus).order_by(ClApplicationStatus.code).all()
             transfer_type = self.session.query(ClTransferType).all()
-            set_roles = self.session.query(SetRole). \
-                filter(SetRole.is_active == True). \
-                filter(SetRole.user_name.startswith(user)).all()
+            set_roles = self.session.query(SetRole). all()
+                # filter(SetRole.is_active == True). \
+                # filter(SetRole.user_name.startswith(user)).all()
             mortgage_list = self.session.query(ClMortgageType).all()
             landuse_types = self.session.query(ClLanduseType).all()
             mortgage_status = self.session.query(ClMortgageStatus).all()
