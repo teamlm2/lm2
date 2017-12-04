@@ -466,10 +466,10 @@ class ContractDialog(QDialog, Ui_ContractDialog, DatabaseHelper):
             currect_user = user.position
             # if restrictions[3:] == '01':
             self.print_officer_cbox.setDisabled(False)
-            print_officers = self.session.query(SetRole).\
-                filter(or_(SetRole.position == 9, SetRole.position == currect_user)). \
-                filter(SetRole.is_active == True). \
-                filter(SetRole.user_name.startswith(user_start)).all()
+            print_officers = self.session.query(SetRole).filter(or_(SetRole.position == 9, SetRole.position == currect_user)).all()
+                # filter(or_(SetRole.position == 9, SetRole.position == currect_user)). \
+                # filter(SetRole.is_active == True). \
+                # filter(SetRole.user_name.startswith(user_start)).all()
             for officer in print_officers:
                 officer_name = officer.surname[:1]+'.'+officer.first_name
                 self.print_officer_cbox.addItem(officer_name, officer.user_name)
