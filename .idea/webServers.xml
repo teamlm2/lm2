@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="da21f1b7-2e3c-411d-aff6-6b9e1497e434" name="QGIS" url="http://localhost">
+        <fileTransfer port="0" mountedRoot="C:\Users\land_cadastre\.qgis2\python\plugins" accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</project>
