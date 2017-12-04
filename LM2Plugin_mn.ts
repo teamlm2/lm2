@@ -8546,7 +8546,7 @@
     <message>
         <location filename="view/ParcelInfoDialog.ui" line="377"/>
         <source>First name/Contact firstname</source>
-        <translation>Овог</translation>
+        <translation>Овог/Төлөөлөл нэр</translation>
     </message>
     <message>
         <location filename="view/ParcelInfoDialog.ui" line="2673"/>
