@@ -2,8 +2,13 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
+<<<<<<< HEAD
       <webServer id="111ae19c-253c-4590-a0ed-b89cfa15f519" name="QGIS" url="http://localhost">
         <fileTransfer port="0" mountedRoot="C:\Users\B.Ankhbold\.qgis2\python\plugins" accessType="MOUNT" />
+=======
+      <webServer id="da21f1b7-2e3c-411d-aff6-6b9e1497e434" name="QGIS" url="http://localhost">
+        <fileTransfer port="0" mountedRoot="C:\Users\land_cadastre\.qgis2\python\plugins" accessType="MOUNT" />
+>>>>>>> origin/master
       </webServer>
     </option>
   </component>

@@ -60,6 +60,7 @@ class AboutDialog(QDialog, Ui_AboutDialog):
         self.officer_twidget.setSelectionBehavior(QAbstractItemView.SelectRows)
         self.officer_twidget.verticalHeader().setVisible(False)
 
+
     @pyqtSlot()
     def on_close_button_clicked(self):
 
