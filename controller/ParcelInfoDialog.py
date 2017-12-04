@@ -803,7 +803,6 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
 
         result = self.session.execute(sql, {'person_id': person_id})
 
-
         for item_row in result:
 
             person_id = item_row[0]
