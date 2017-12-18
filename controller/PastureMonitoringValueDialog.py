@@ -1548,14 +1548,7 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
             soil_evaluation_c = self.session.query(PsSoilEvaluation).filter(
                 PsSoilEvaluation.code == soil_evaluation_code).count()
 
-            missed_evaluation_code = self.missed_evaluation_cbox.itemData(self.missed_evaluation_cbox.currentIndex())
-            missed_evaluation = self.session.query(PsMissedEvaluation).filter(
-                PsMissedEvaluation.code == missed_evaluation_code).one()
-
             if soil_evaluation_c == 1:
-                soil_evaluation = self.session.query(PsSoilEvaluation).filter(PsSoilEvaluation.code == soil_evaluation_code).one()
-
-
                 pasture_soil_count = self.session.query(PsPastureSoilEvaluation).\
                     filter(PsPastureSoilEvaluation.current_year == current_year).\
                     filter(PsPastureSoilEvaluation.point_detail_id == point_detail_id).count()
@@ -1563,17 +1556,19 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
                     pasture_soil = self.session.query(PsPastureSoilEvaluation). \
                         filter(PsPastureSoilEvaluation.current_year == current_year). \
                         filter(PsPastureSoilEvaluation.point_detail_id == point_detail_id).one()
-
                     pasture_soil.soil_evaluation = soil_evaluation_code
-                    # pasture_soil.soil_evaluation_ref = soil_evaluation
                 else:
                     pasture_soil = PsPastureSoilEvaluation()
                     pasture_soil.point_detail_id = point_detail_id
                     pasture_soil.current_year = current_year
                     pasture_soil.soil_evaluation = soil_evaluation_code
-                    # pasture_soil.soil_evaluation_ref = soil_evaluation
                     self.session.add(pasture_soil)
 
+            missed_evaluation_code = self.missed_evaluation_cbox.itemData(self.missed_evaluation_cbox.currentIndex())
+            missed_evaluation_c = self.session.query(PsMissedEvaluation).filter(
+                PsMissedEvaluation.code == missed_evaluation_code).count()
+
+            if missed_evaluation_c == 1:
                 pasture_missed_count = self.session.query(PsPastureMissedEvaluation). \
                     filter(PsPastureMissedEvaluation.current_year == current_year). \
                     filter(PsPastureMissedEvaluation.point_detail_id == point_detail_id).count()
@@ -1581,15 +1576,12 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
                     pasture_missed = self.session.query(PsPastureMissedEvaluation). \
                         filter(PsPastureMissedEvaluation.current_year == current_year). \
                         filter(PsPastureMissedEvaluation.point_detail_id == point_detail_id).one()
-
                     pasture_missed.missed_evaluation = missed_evaluation_code
-                    # pasture_missed.missed_evaluation_ref = missed_evaluation
                 else:
                     pasture_missed = PsPastureMissedEvaluation()
                     pasture_missed.point_detail_id = point_detail_id
                     pasture_missed.current_year = current_year
                     pasture_missed.missed_evaluation = missed_evaluation_code
-                    # pasture_missed.missed_evaluation_ref = missed_evaluation
                     self.session.add(pasture_missed)
 
     def __save_point(self):
@@ -1622,7 +1614,6 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
         point_detail_id = item_detail.data(Qt.UserRole)
 
         for pasture_plant in pasture_plants:
-
             pasture_value = self.session.query(ClPastureValues).filter(ClPastureValues.code == pasture_plant.plants).one()
 
             item_name = QTableWidgetItem(pasture_value.description)
@@ -3519,7 +3510,12 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
             is_valid = False
             return
 
-        if float(self.duration_days_edit.text()) == 0:
+        if float(self.calc_duration_sbox.value()) == 0:
+            PluginUtils.show_message(self, self.tr("Can't"), self.tr("Duration zero!!!"))
+            is_valid = False
+            return
+
+        if not self.calc_duration_sbox.value():
             PluginUtils.show_message(self, self.tr("Can't"), self.tr("Duration zero!!!"))
             is_valid = False
             return

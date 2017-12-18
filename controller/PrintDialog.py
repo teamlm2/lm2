@@ -318,7 +318,7 @@ class PrintDialog(QDialog, Ui_PrintDialog):
         self.__create_parcel_distance_list(map_composition)
         self.__create_building_distance_list(map_composition)
         self.__create_building_polygon_area_list(map_composition)
-        self.__create_building_polygon_hayag_list(map_composition)
+        # self.__create_building_polygon_hayag_list(map_composition)
         self.__add_grid(composer_map)
         self.__add_aimag_name(map_composition)
         self.__add_admin_unit_l2_name(map_composition)

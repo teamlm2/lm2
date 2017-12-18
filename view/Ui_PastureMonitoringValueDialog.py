@@ -423,7 +423,7 @@ class Ui_PastureMonitoringValueDialog(object):
         self.calc_duration_sbox = QtGui.QSpinBox(self.groupBox_2)
         self.calc_duration_sbox.setEnabled(True)
         self.calc_duration_sbox.setGeometry(QtCore.QRect(210, 37, 63, 22))
-        self.calc_duration_sbox.setReadOnly(True)
+        self.calc_duration_sbox.setReadOnly(False)
         self.calc_duration_sbox.setMaximum(1000000000)
         self.calc_duration_sbox.setObjectName(_fromUtf8("calc_duration_sbox"))
         self.calc_biomass_sbox = QtGui.QSpinBox(self.groupBox_2)

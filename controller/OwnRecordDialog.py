@@ -426,25 +426,25 @@ class OwnRecordDialog(QDialog, Ui_OwnRecordDialog, DatabaseHelper):
                     file_name = file
                     app_no = file[:17]
 
-                for i in range(self.app_doc_twidget.rowCount()):
-                    doc_type_item = self.app_doc_twidget.item(i, APP_DOC_TYPE_COLUMN)
+                    for i in range(self.app_doc_twidget.rowCount()):
+                        doc_type_item = self.app_doc_twidget.item(i, APP_DOC_TYPE_COLUMN)
 
-                    doc_type_code = str(doc_type_item.data(Qt.UserRole))
+                        doc_type_code = str(doc_type_item.data(Qt.UserRole))
 
-                    if len(str(doc_type_item.data(Qt.UserRole))) == 1:
-                        doc_type_code = '0'+ str(doc_type_item.data(Qt.UserRole))
-                    if len(doc_type) == 1:
-                        doc_type = '0' + doc_type
+                        if len(str(doc_type_item.data(Qt.UserRole))) == 1:
+                            doc_type_code = '0'+ str(doc_type_item.data(Qt.UserRole))
+                        if len(doc_type) == 1:
+                            doc_type = '0' + doc_type
 
-                    if doc_type == doc_type_code and self.application_based_edit.text() == app_no:
-                            item_name = self.app_doc_twidget.item(i, APP_DOC_NAME_COLUMN)
-                            item_name.setText(file_name)
+                        if doc_type == doc_type_code and self.application_based_edit.text() == app_no:
+                                item_name = self.app_doc_twidget.item(i, APP_DOC_NAME_COLUMN)
+                                item_name.setText(file_name)
 
-                            item_provided = self.app_doc_twidget.item(i, APP_DOC_PROVIDED_COLUMN)
-                            item_provided.setCheckState(Qt.Checked)
+                                item_provided = self.app_doc_twidget.item(i, APP_DOC_PROVIDED_COLUMN)
+                                item_provided.setCheckState(Qt.Checked)
 
-                            self.app_doc_twidget.setItem(i, 0, item_provided)
-                            self.app_doc_twidget.setItem(i, 2, item_name)
+                                self.app_doc_twidget.setItem(i, 0, item_provided)
+                                self.app_doc_twidget.setItem(i, 2, item_name)
 
         except SQLAlchemyError, e:
             PluginUtils.show_error(self, self.tr("File Error"), self.tr("Error in line {0}: {1}").format(currentframe().f_lineno, e.message))
