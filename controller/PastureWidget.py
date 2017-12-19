@@ -804,15 +804,9 @@ class PastureWidget(QDockWidget, Ui_PastureWidget, DatabaseHelper):
         vlayer_eco = LayerUtils.load_layer_by_name_report("ca_pug_eco", "code", restrictions)
         vlayer_parcel = LayerUtils.load_layer_by_name_report("ca_pasture_parcel", "parcel_id", restrictions)
         vlayer_building = LayerUtils.load_layer_by_name_report("ca_pasture_building", "building_id", restrictions)
-        vlayer_monitoring_point = LayerUtils.load_layer_by_name_report("ca_pasture_monitoring", "point_id", restrictions)
+        # vlayer_monitoring_point = LayerUtils.load_layer_by_name_report("ca_pasture_monitoring", "point_id", restrictions)
 
         layers = self.plugin.iface.legendInterface().layers()
-
-        for layer in layers:
-            if layer.name() == "PastureMonitoringPoint":
-                is_monitoring_layer = True
-        if not is_pug_building:
-            mygroup.addLayer(monitoring_layer)
 
         for layer in layers:
             if layer.name() == "PUGBuilding"+'_' + restrictions:
@@ -839,10 +833,11 @@ class PastureWidget(QDockWidget, Ui_PastureWidget, DatabaseHelper):
             mygroup.addLayer(vlayer_eco)
 
         for layer in layers:
-            if layer.name() == "PUGMonitoringPoint":
+            if layer.name() == "PastureMonitoringPoint":
                 is_monitoring_layer = True
         if not is_monitoring_layer:
-            mygroup.addLayer(vlayer_monitoring_point)
+            print layer.name()
+            mygroup.addLayer(monitoring_layer)
 
         for layer in layers:
             if layer.name() == "NaturalZone":
