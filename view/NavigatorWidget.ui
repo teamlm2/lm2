@@ -3176,7 +3176,12 @@ QPushButton:disabled {
         </item>
         <item>
          <property name="text">
-          <string>14.Mortgage Parcel</string>
+          <string>14.Mortgage</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>15.Court</string>
          </property>
         </item>
        </widget>
