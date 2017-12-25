@@ -88,7 +88,7 @@ class PasturePhotosDelegate(QStyledItemDelegate):
 
                         file_info = QFileInfo(selected_file)
 
-                        if QFileInfo(file_info).size()/(1024*1024) > 15:
+                        if QFileInfo(file_info).size()/(1024*1024) > 20:
                             PluginUtils.show_error(self.parent, self.tr("File size exceeds limit!"), self.tr("The maximum size of documents to be attached is 15 MB."))
                             return False
 

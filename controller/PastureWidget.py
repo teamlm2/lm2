@@ -836,7 +836,6 @@ class PastureWidget(QDockWidget, Ui_PastureWidget, DatabaseHelper):
             if layer.name() == "PastureMonitoringPoint":
                 is_monitoring_layer = True
         if not is_monitoring_layer:
-            print layer.name()
             mygroup.addLayer(monitoring_layer)
 
         for layer in layers:
@@ -1207,8 +1206,10 @@ class PastureWidget(QDockWidget, Ui_PastureWidget, DatabaseHelper):
 
     def __calculate_capacity(self, area, biomass_present, duration):
 
-        d3 = int(float(area) * biomass_present / float(duration * 1.4))
-
+        if duration > 0:
+            d3 = int(float(area) * biomass_present / float(duration * 1.4))
+        else:
+            d3 = int(float(area) * biomass_present / float(1 * 1.4))
         return d3
 
     @pyqtSlot()

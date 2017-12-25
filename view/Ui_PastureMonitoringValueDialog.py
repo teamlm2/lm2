@@ -414,7 +414,7 @@ class Ui_PastureMonitoringValueDialog(object):
         self.calc_area_sbox = QtGui.QSpinBox(self.groupBox_2)
         self.calc_area_sbox.setEnabled(True)
         self.calc_area_sbox.setGeometry(QtCore.QRect(110, 37, 91, 22))
-        self.calc_area_sbox.setReadOnly(True)
+        self.calc_area_sbox.setReadOnly(False)
         self.calc_area_sbox.setMaximum(1000000000)
         self.calc_area_sbox.setObjectName(_fromUtf8("calc_area_sbox"))
         self.label_54 = QtGui.QLabel(self.groupBox_2)
@@ -639,7 +639,7 @@ class Ui_PastureMonitoringValueDialog(object):
         self.label_53.setObjectName(_fromUtf8("label_53"))
 
         self.retranslateUi(PastureMonitoringValueDialog)
-        self.pasture_value_tab.setCurrentIndex(5)
+        self.pasture_value_tab.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(PastureMonitoringValueDialog)
         PastureMonitoringValueDialog.setTabOrder(self.value_load_button, self.point_detail_twidget)
         PastureMonitoringValueDialog.setTabOrder(self.point_detail_twidget, self.plant_value_load_button)

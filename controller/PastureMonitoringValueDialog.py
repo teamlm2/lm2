@@ -3218,14 +3218,14 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
         last_col = col
         worksheet.write(row, col, u'Хонин толгой', format)
 
-        worksheet.merge_range(row_0, first_col, row_1, last_col, u'Мал аж ахуй', format)
+        worksheet.merge_range(row_0, first_col, row_1, last_col, u'Мал тоо', format)
 
         col = col + 1
         first_col = col
         worksheet.write(row, col, u'Бэлчээрийн талбай', format)
         worksheet.write(row-1, col, u'talbai', format)
         col = col + 1
-        worksheet.write(row, col, u'Бэлчээрийн ургац', format)
+        worksheet.write(row, col, u'Бэлчээрийн ургац кг/га', format)
         worksheet.write(row-1, col, u'urgats', format)
         col = col + 1
         worksheet.write(row, col, u'Төлөв байдлын код', format)
@@ -3237,25 +3237,25 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
         worksheet.write(row, col, u'Хугацаа', format)
         worksheet.write(row-1, col, u'hugatsaa', format)
         col = col + 1
-        worksheet.write(row, col, u'Хоног', format)
+        worksheet.write(row, col, u'Бэлчээрлэх хоног', format)
         worksheet.write(row-1, col, u'honog', format)
         col = col + 1
-        worksheet.write(row, col, u'1 жилд нэг га-д ноогдож байгаа ХТ даац D1', format)
+        worksheet.write(row, col, u'1 га-д бэлчих ХТ D1', format)
         worksheet.write(row-1, col, u'd1', format)
         col = col + 1
-        worksheet.write(row, col, u'D1-100', format)
+        worksheet.write(row, col, u'100 га-д бэлчих ХТ D1-100га', format)
         worksheet.write(row - 1, col, u'd1_1_100', format)
         col = col + 1
-        worksheet.write(row, col, u'D2', format)
+        worksheet.write(row, col, u'1 ХТ-д шаардлагатай талбай', format)
         worksheet.write(row - 1, col, u'd_2', format)
         col = col + 1
-        worksheet.write(row, col, u'D3', format)
+        worksheet.write(row, col, u'Боломжит даац', format)
         worksheet.write(row - 1, col, u'd_3', format)
         col = col + 1
         worksheet.write(row, col, u'CD3', format)
         worksheet.write(row - 1, col, u'rc_d_3', format)
         col = col + 1
-        worksheet.write(row, col, u'Үнэлгээ', format)
+        worksheet.write(row, col, u'Боломжит ХТ - Одоо байгаа ХТ = Үнэлгээ', format)
         worksheet.write(row - 1, col, u'unelgee', format)
 
         last_col = col
@@ -3451,7 +3451,7 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
         sheep_unit_food = None
         if not self.zone_id:
             return
-        duration = int(self.duration_days_edit.text())
+        duration = int(self.calc_duration_sbox.value())
         nz_sheep_food = self.session.query(PsNZSheepFood).filter(PsNZSheepFood.natural_zone == self.zone_id).one()
         sheep_unit_food = nz_sheep_food.current_value
 
@@ -3504,9 +3504,19 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
             PluginUtils.show_message(self, self.tr("Selection"), self.tr("Please choose point detail!!!"))
             is_valid = False
             return
+        #
+        # if float(self.area_ga_edit.text()) == 0:
+        #     PluginUtils.show_message(self, self.tr("Can't"), self.tr("Area zero!!!"))
+        #     is_valid = False
+        #     return
 
-        if float(self.area_ga_edit.text()) == 0:
-            PluginUtils.show_message(self, self.tr("Can't"), self.tr("Area zero!!!"))
+        if float(self.calc_area_sbox.value()) == 0:
+            PluginUtils.show_message(self, self.tr("Can't"), self.tr("Duration zero!!!"))
+            is_valid = False
+            return
+
+        if not self.calc_area_sbox.value():
+            PluginUtils.show_message(self, self.tr("Can't"), self.tr("Duration zero!!!"))
             is_valid = False
             return
 
@@ -3535,11 +3545,11 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
 
         is_valid = True
 
-        if float(self.area_ga_edit.text()) == 0:
+        if float(self.calc_area_sbox.value()) == 0:
             is_valid = False
             return
 
-        if float(self.duration_days_edit.text()) == 0:
+        if float(self.calc_duration_sbox.value()) == 0:
             is_valid = False
             return
 
@@ -3602,12 +3612,17 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
         duration = int(self.duration_days_edit.text())
         sheep_unit_plant = self.__load_sheep_unit_biomass()
         sheep_unit = self.__load_live_stock_convert()
-
-        self.calc_area_sbox.setValue(area_ga)
+        if area_ga > 0:
+            self.calc_area_sbox.setValue(area_ga)
+        else:
+            area_ga = self.calc_area_sbox.value()
         self.calc_biomass_sbox.setValue(biomass)
         self.calc_rc_edit.setText(rc_code)
         self.calc_rc_precent_sbox.setValue(rc_precent)
-        self.calc_duration_sbox.setValue(duration)
+        if duration > 0:
+            self.calc_duration_sbox.setValue(duration)
+        else:
+            duration = self.calc_duration_sbox.value()
         self.calc_sheep_unit_sbox.setValue(sheep_unit)
         self.calc_sheep_unit_plant_sbox.setValue(sheep_unit_plant)
 
@@ -3632,12 +3647,12 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
         if not self.__calc_validate_save():
             return
 
-        area_ga = float(self.area_ga_edit.text())
+        area_ga = float(self.calc_area_sbox.value())
         biomass = self.__load_urgats()
         rc_id = self.__load_rc().id
         rc_code = self.__load_rc().rc_code
         rc_precent = self.__load_rc().rc_precent
-        duration = int(self.duration_days_edit.text())
+        duration = int(self.calc_duration_sbox.value())
         sheep_unit_plant = self.__load_sheep_unit_biomass()
         sheep_unit = self.__load_live_stock_convert()
         rc_precent_d = rc_precent
@@ -3664,6 +3679,7 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
         daats_count = self.session.query(PsPointDaatsValue).\
             filter(PsPointDaatsValue.point_detail_id == self.point_detail_id).\
             filter(PsPointDaatsValue.monitoring_year == self.print_year_sbox.value()).count()
+
         if daats_count == 0:
             daats = PsPointDaatsValue()
             daats.point_detail_id = self.point_detail_id
