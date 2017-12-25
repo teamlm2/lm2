@@ -318,7 +318,6 @@ class PrintDialog(QDialog, Ui_PrintDialog):
         self.__create_parcel_distance_list(map_composition)
         self.__create_building_distance_list(map_composition)
         self.__create_building_polygon_area_list(map_composition)
-        # self.__create_building_polygon_hayag_list(map_composition)
         self.__add_grid(composer_map)
         self.__add_aimag_name(map_composition)
         self.__add_admin_unit_l2_name(map_composition)
@@ -647,15 +646,6 @@ class PrintDialog(QDialog, Ui_PrintDialog):
                 building_no = building.building_no
             building_no_area = building_no + '/ ' + str(int(building.area_m2))
             area_start_label = self.__copy_label(area_start_label, building_no_area, map_composition)
-
-    def __create_building_polygon_hayag_list(self, map_composition):
-
-        for building_id in self.__building_id_list:
-            building_hayag_no = self.session.query(CaBuilding).filter(CaBuilding.building_id == building_id).one()
-
-        item = map_composition.getComposerItemById("building_hayag")
-        item.setText(building_hayag_no)
-        item.adjustSizeToText()
 
     def __set_north_arrow_position(self, map_composition):
 

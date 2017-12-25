@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'D:\work\LAND_MANAGER\lm2\view\ApplicationsDialog.ui'
+# Form implementation generated from reading ui file '.\ApplicationsDialog.ui'
 #
 # Created by: PyQt4 UI code generator 4.11.4
 #
@@ -50,7 +50,7 @@ class Ui_ApplicationsDialog(object):
         self.registration_group_box.setGeometry(QtCore.QRect(3, 10, 351, 391))
         self.registration_group_box.setObjectName(_fromUtf8("registration_group_box"))
         self.date_time_date = QtGui.QDateTimeEdit(self.registration_group_box)
-        self.date_time_date.setEnabled(False)
+        self.date_time_date.setEnabled(True)
         self.date_time_date.setGeometry(QtCore.QRect(10, 40, 181, 22))
         self.date_time_date.setButtonSymbols(QtGui.QAbstractSpinBox.NoButtons)
         self.date_time_date.setCalendarPopup(True)
@@ -669,7 +669,7 @@ class Ui_ApplicationsDialog(object):
         self.status_label.setObjectName(_fromUtf8("status_label"))
 
         self.retranslateUi(ApplicationsDialog)
-        self.application_tab_widget.setCurrentIndex(6)
+        self.application_tab_widget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(ApplicationsDialog)
         ApplicationsDialog.setTabOrder(self.application_tab_widget, self.date_time_date)
         ApplicationsDialog.setTabOrder(self.date_time_date, self.application_type_cbox)
