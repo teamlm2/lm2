@@ -1447,6 +1447,7 @@ class PastureSettings(QDialog, Ui_PastureSettings, DatabaseHelper):
             return
 
         self.recovery_class_comp_cbox.clear()
+        self.recovery_class_cbox.clear()
         recovery_classes = self.session.query(PsRecoveryClass).all()
         for recovery_class in recovery_classes:
             self.recovery_class_cbox.addItem(recovery_class.rc_code, recovery_class.id)

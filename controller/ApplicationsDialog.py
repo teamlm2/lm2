@@ -3585,8 +3585,14 @@ class ApplicationsDialog(QDialog, Ui_ApplicationsDialog, DatabaseHelper):
 
                 app_person_role.application = self.application.app_no
                 app_person_role.share = applicant.share
-                app_person_role.role = applicant.role
-                app_person_role.role_ref = applicant.role_ref
+
+                app_type = self.application_type_cbox.itemData(self.application_type_cbox.currentIndex())
+
+                if app_type == ApplicationType.mortgage_possession:
+                    app_person_role.role = 10
+                else:
+                    app_person_role.role = applicant.role
+                # app_person_role.role_ref = applicant.role_ref
                 app_person_role.person = applicant.person
                 app_person_role.person_ref = applicant.person_ref
                 app_person_role.main_applicant = applicant.main_applicant

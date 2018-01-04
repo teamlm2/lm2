@@ -903,11 +903,9 @@ class UserRoleManagementDialog(QDialog, Ui_UserRoleManagementDialog):
                 is_register = False
                 for index in range(self.soum_lwidget.count()):
                     granted_soum_code = str(self.soum_lwidget.item(index).data(Qt.UserRole))
-                    print granted_soum_code
                     if granted_soum_code == au_level2_code:
                         is_register = True
                 if not is_register:
-                    print au_level2_name + '_' + au_level2_code
                     item = QListWidgetItem(au_level2_name + '_' + au_level2_code)
                     item.setData(Qt.UserRole, au_level2_code)
                     self.soum_lwidget.addItem(item)
