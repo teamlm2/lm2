@@ -2639,19 +2639,24 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
             person_id = item_row[0]
 
             person = self.session.query(BsPerson).filter(BsPerson.person_id == person_id).one()
+
             role_ref = self.session.query(ClPersonRole).filter_by(
                 code=Constants.APPLICANT_ROLE_CODE).one()
+            app_person_count = self.session.query(CtApplicationPersonRole).\
+                filter(CtApplicationPersonRole.application == application.app_no).\
+                filter(CtApplicationPersonRole.role == Constants.APPLICANT_ROLE_CODE).\
+                filter(CtApplicationPersonRole.person == person.person_id).count()
+            if app_person_count == 0:
+                app_person_role = CtApplicationPersonRole()
+                app_person_role.application = application.app_no
+                app_person_role.share = Decimal(0)
+                app_person_role.role = Constants.APPLICANT_ROLE_CODE
+                app_person_role.role_ref = role_ref
+                app_person_role.person = person.person_id
+                app_person_role.person_ref = person
+                app_person_role.main_applicant = True
 
-            app_person_role = CtApplicationPersonRole()
-            app_person_role.application = application.app_no
-            app_person_role.share = Decimal(0)
-            app_person_role.role = Constants.APPLICANT_ROLE_CODE
-            app_person_role.role_ref = role_ref
-            app_person_role.person = person.person_id
-            app_person_role.person_ref = person
-            app_person_role.main_applicant = True
-
-            application.stakeholders.append(app_person_role)
+                application.stakeholders.append(app_person_role)
 
     def __save_person(self):
 

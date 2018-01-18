@@ -5,7 +5,7 @@
       <paths name="QGIS">
         <serverdata>
           <mappings>
-            <mapping deploy="lm2" local="$PROJECT_DIR$" web="/" />
+            <mapping local="$PROJECT_DIR$" web="lm2" />
           </mappings>
         </serverdata>
       </paths>
