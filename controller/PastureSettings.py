@@ -135,8 +135,8 @@ class PastureSettings(QDialog, Ui_PastureSettings, DatabaseHelper):
             self.less_symbol_cbox.addItem(formula_type.description, formula_type.code)
 
         for formula_type in formula_types:
-            if formula_type.code == 1 or formula_type.code == 2:
-                self.less_symbol_comp_cbox.addItem(formula_type.description, formula_type.code)
+            # if formula_type.code == 1 or formula_type.code == 2:
+            self.less_symbol_comp_cbox.addItem(formula_type.description, formula_type.code)
 
         soil_evaluations = self.session.query(PsSoilEvaluation).all()
 
@@ -1046,6 +1046,29 @@ class PastureSettings(QDialog, Ui_PastureSettings, DatabaseHelper):
                 item.setData(Qt.UserRole, type.code)
                 self.connect_type_twidget.setItem(count, 1, item)
                 count += 1
+        elif self.formula_type_land_form_rbutton.isChecked():
+            formula_type = self.base_type.itemData(self.base_type.currentIndex(), Qt.UserRole)
+            if state == Qt.Checked:
+                land_forms = self.session.query(ClLandForm).all()
+            else:
+                land_forms = self.session.query(ClLandForm) \
+                    .join(PsFormulaTypeLandForm, ClLandForm.code == PsFormulaTypeLandForm.land_form) \
+                    .filter(PsFormulaTypeLandForm.formula_type == formula_type).all()
+            formula_land_forms = self.session.query(PsFormulaTypeLandForm).all()
+            for type in land_forms:
+                self.connect_type_twidget.insertRow(count)
+                item = QTableWidgetItem()
+                item.setCheckState(Qt.Unchecked)
+                for form in formula_land_forms:
+                    if type.code == form.land_form and form.formula_type == formula_type:
+                        item.setCheckState(Qt.Checked)
+                        # item.setBackground(Qt.blue)
+                self.connect_type_twidget.setItem(count, 0, item)
+
+                item = QTableWidgetItem(type.description)
+                item.setData(Qt.UserRole, type.code)
+                self.connect_type_twidget.setItem(count, 1, item)
+                count += 1
 
     def __save_codelist_settings(self):
 
@@ -1463,14 +1486,15 @@ class PastureSettings(QDialog, Ui_PastureSettings, DatabaseHelper):
         self.formula_tab_widget.removeTab(self.formula_tab_widget.indexOf(self.formula_precent_tab))
         self.formula_tab_widget.removeTab(self.formula_tab_widget.indexOf(self.formula_comparison_tab))
 
-        formula_type = self.session.query(PsFormulaTypeLandForm.formula_type).\
-            filter(PsFormulaTypeLandForm.land_form == land_form_code).group_by(PsFormulaTypeLandForm.formula_type).one()
-        if formula_type.formula_type == 1:
-            self.formula_tab_widget.insertTab(self.formula_tab_widget.count()-1, self.formula_precent_tab,
-                                              self.tr("RC Precent"))
-        elif formula_type.formula_type == 2:
-            self.formula_tab_widget.insertTab(self.formula_tab_widget.count()-1, self.formula_comparison_tab,
-                                              self.tr("RC Comparison"))
+        formula_types = self.session.query(PsFormulaTypeLandForm.formula_type).\
+            filter(PsFormulaTypeLandForm.land_form == land_form_code).group_by(PsFormulaTypeLandForm.formula_type).all()
+        for formula_type in formula_types:
+            if formula_type.formula_type == 1:
+                self.formula_tab_widget.insertTab(self.formula_tab_widget.count()-1, self.formula_precent_tab,
+                                                  self.tr("RC Precent"))
+            if formula_type.formula_type == 2:
+                self.formula_tab_widget.insertTab(self.formula_tab_widget.count(), self.formula_comparison_tab,
+                                                  self.tr("RC Comparison"))
 
     @pyqtSlot(QTableWidgetItem)
     def on_formula_twidget_itemClicked(self, item):

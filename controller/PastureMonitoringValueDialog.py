@@ -3292,133 +3292,136 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
         point_detail = self.session.query(PsPointDetail).filter(PsPointDetail.point_detail_id == point_detail_id).one()
         land_form_code = point_detail.land_form
 
-        formula_type = self.session.query(PsFormulaTypeLandForm.formula_type).\
-            filter(PsFormulaTypeLandForm.land_form == land_form_code).group_by(PsFormulaTypeLandForm.formula_type).one()
+        formula_types = self.session.query(PsFormulaTypeLandForm.formula_type).\
+            filter(PsFormulaTypeLandForm.land_form == land_form_code).group_by(PsFormulaTypeLandForm.formula_type).all()
         recover_class = None
-        if formula_type.formula_type == 1:
-            rc_id = None
-            rc_code = None
-            is_stop = False
-            is_row_rc = True
-            rcs = self.session.query(PsRecoveryClass).order_by(PsRecoveryClass.id.desc()).all()
-            for rc in rcs:
-                if is_stop:
-                    break
-
-                status_plants_count = self.session.query(PsPastureStatusFormula). \
-                    filter(PsPastureStatusFormula.natural_zone == self.zone_id). \
-                    filter(PsPastureStatusFormula.rc_id == rc.id). \
-                    filter(PsPastureStatusFormula.land_form == land_form_code).count()
-
-                if not status_plants_count == 0:
-                    status_plants = self.session.query(PsPastureStatusFormula).\
-                        filter(PsPastureStatusFormula.natural_zone == self.zone_id). \
-                        filter(PsPastureStatusFormula.rc_id == rc.id). \
-                        filter(PsPastureStatusFormula.land_form == land_form_code).all()
+        for formula_type in formula_types:
+            if self.calc_present_rbutton.isChecked():
+                if formula_type.formula_type == 1:
+                    rc_id = None
+                    rc_code = None
+                    is_stop = False
                     is_row_rc = True
-                    for status_plant in status_plants:
-                        plants_year_count = self.session.query(PsPointPastureValue). \
-                            filter(PsPointPastureValue.value_year == print_year). \
-                            filter(PsPointPastureValue.point_detail_id == point_detail_id). \
-                            filter(PsPointPastureValue.pasture_value == status_plant.plants).count()
-                        if plants_year_count == 1:
-                            pasture_value = self.session.query(PsPointPastureValue). \
-                                filter(PsPointPastureValue.point_detail_id == point_detail_id). \
-                                filter(PsPointPastureValue.value_year == print_year). \
-                                filter(PsPointPastureValue.pasture_value == status_plant.plants).one()
+                    rcs = self.session.query(PsRecoveryClass).order_by(PsRecoveryClass.id.desc()).all()
+                    for rc in rcs:
+                        if is_stop:
+                            break
 
-                            status_plants = self.session.query(PsPastureStatusFormula). \
+                        status_plants_count = self.session.query(PsPastureStatusFormula). \
+                            filter(PsPastureStatusFormula.natural_zone == self.zone_id). \
+                            filter(PsPastureStatusFormula.rc_id == rc.id). \
+                            filter(PsPastureStatusFormula.land_form == land_form_code).count()
+
+                        if not status_plants_count == 0:
+                            status_plants = self.session.query(PsPastureStatusFormula).\
                                 filter(PsPastureStatusFormula.natural_zone == self.zone_id). \
                                 filter(PsPastureStatusFormula.rc_id == rc.id). \
-                                filter(PsPastureStatusFormula.plants == pasture_value.pasture_value). \
-                                filter(PsPastureStatusFormula.land_form == land_form_code).one()
+                                filter(PsPastureStatusFormula.land_form == land_form_code).all()
+                            is_row_rc = True
+                            for status_plant in status_plants:
+                                plants_year_count = self.session.query(PsPointPastureValue). \
+                                    filter(PsPointPastureValue.value_year == print_year). \
+                                    filter(PsPointPastureValue.point_detail_id == point_detail_id). \
+                                    filter(PsPointPastureValue.pasture_value == status_plant.plants).count()
+                                if plants_year_count == 1:
+                                    pasture_value = self.session.query(PsPointPastureValue). \
+                                        filter(PsPointPastureValue.point_detail_id == point_detail_id). \
+                                        filter(PsPointPastureValue.value_year == print_year). \
+                                        filter(PsPointPastureValue.pasture_value == status_plant.plants).one()
 
-                            if status_plants.symbol_id == 1:
-                                if not pasture_value.current_value > status_plants.cover_precent:
-                                    is_row_rc = False
-                            if status_plants.symbol_id == 2:
-                                if not pasture_value.current_value < status_plants.cover_precent:
-                                    is_row_rc = False
-                            if status_plants.symbol_id == 3:
-                                if not pasture_value.current_value >= status_plants.cover_precent:
-                                    is_row_rc = False
-                            if status_plants.symbol_id == 4:
-                                if not pasture_value.current_value <= status_plants.cover_precent:
-                                    is_row_rc = False
-                            if status_plants.symbol_id == 5:
-                                if not pasture_value.current_value == status_plants.cover_precent:
-                                    is_row_rc = False
-                    if is_row_rc:
-                        is_stop = True
-                        recover_class = rc
-        else:
-            is_row_rc = True
-            is_stop = False
-            rcs = self.session.query(PsRecoveryClass).order_by(PsRecoveryClass.id.desc()).all()
-            for rc in rcs:
-                if is_stop:
-                    break
-                pasture_comp_formula_count = self.session.query(PsPastureComparisonFormula).\
-                    filter(PsPastureComparisonFormula.land_form == land_form_code). \
-                    filter(PsPastureComparisonFormula.natural_zone == self.zone_id). \
-                    filter(PsPastureComparisonFormula.rc_id == rc.id).count()
-                if not pasture_comp_formula_count == 0:
-                    pasture_comp_formulas = self.session.query(PsPastureComparisonFormula). \
-                        filter(PsPastureComparisonFormula.land_form == land_form_code). \
-                        filter(PsPastureComparisonFormula.natural_zone == self.zone_id). \
-                        filter(PsPastureComparisonFormula.rc_id == rc.id).all()
-                    more_value = 0
-                    less_value = 0
+                                    status_plants = self.session.query(PsPastureStatusFormula). \
+                                        filter(PsPastureStatusFormula.natural_zone == self.zone_id). \
+                                        filter(PsPastureStatusFormula.rc_id == rc.id). \
+                                        filter(PsPastureStatusFormula.plants == pasture_value.pasture_value). \
+                                        filter(PsPastureStatusFormula.land_form == land_form_code).one()
+
+                                    if status_plants.symbol_id == 1:
+                                        if not pasture_value.current_value > status_plants.cover_precent:
+                                            is_row_rc = False
+                                    if status_plants.symbol_id == 2:
+                                        if not pasture_value.current_value < status_plants.cover_precent:
+                                            is_row_rc = False
+                                    if status_plants.symbol_id == 3:
+                                        if not pasture_value.current_value >= status_plants.cover_precent:
+                                            is_row_rc = False
+                                    if status_plants.symbol_id == 4:
+                                        if not pasture_value.current_value <= status_plants.cover_precent:
+                                            is_row_rc = False
+                                    if status_plants.symbol_id == 5:
+                                        if not pasture_value.current_value == status_plants.cover_precent:
+                                            is_row_rc = False
+                            if is_row_rc:
+                                is_stop = True
+                                recover_class = rc
+            if self.calc_comparison_rbutton.isChecked():
+                if formula_type.formula_type == 2:
                     is_row_rc = True
-                    for pasture_comp_formula in pasture_comp_formulas:
-                        plants_year_count = self.session.query(PsPointPastureValue). \
-                            filter(PsPointPastureValue.value_year == print_year). \
-                            filter(PsPointPastureValue.point_detail_id == point_detail_id). \
-                            filter(PsPointPastureValue.pasture_value == pasture_comp_formula.plants).count()
-                        if plants_year_count == 1:
-                            pasture_value = self.session.query(PsPointPastureValue). \
-                                filter(PsPointPastureValue.point_detail_id == point_detail_id). \
-                                filter(PsPointPastureValue.value_year == print_year). \
-                                filter(PsPointPastureValue.pasture_value == pasture_comp_formula.plants).one()
-                            if pasture_comp_formula.symbol_id == 1:
-                                more_value = more_value + pasture_value.current_value
-                            if pasture_comp_formula.symbol_id == 2:
-                                less_value = less_value + pasture_value.current_value
-                    if not more_value > less_value:
-                        is_row_rc = False
+                    is_stop = False
+                    rcs = self.session.query(PsRecoveryClass).order_by(PsRecoveryClass.id.desc()).all()
+                    for rc in rcs:
+                        if is_stop:
+                            break
+                        pasture_comp_formula_count = self.session.query(PsPastureComparisonFormula).\
+                            filter(PsPastureComparisonFormula.land_form == land_form_code). \
+                            filter(PsPastureComparisonFormula.natural_zone == self.zone_id). \
+                            filter(PsPastureComparisonFormula.rc_id == rc.id).count()
+                        if not pasture_comp_formula_count == 0:
+                            pasture_comp_formulas = self.session.query(PsPastureComparisonFormula). \
+                                filter(PsPastureComparisonFormula.land_form == land_form_code). \
+                                filter(PsPastureComparisonFormula.natural_zone == self.zone_id). \
+                                filter(PsPastureComparisonFormula.rc_id == rc.id).all()
+                            more_value = 0
+                            less_value = 0
+                            is_row_rc = True
+                            for pasture_comp_formula in pasture_comp_formulas:
+                                plants_year_count = self.session.query(PsPointPastureValue). \
+                                    filter(PsPointPastureValue.value_year == print_year). \
+                                    filter(PsPointPastureValue.point_detail_id == point_detail_id). \
+                                    filter(PsPointPastureValue.pasture_value == pasture_comp_formula.plants).count()
+                                if plants_year_count == 1:
+                                    pasture_value = self.session.query(PsPointPastureValue). \
+                                        filter(PsPointPastureValue.point_detail_id == point_detail_id). \
+                                        filter(PsPointPastureValue.value_year == print_year). \
+                                        filter(PsPointPastureValue.pasture_value == pasture_comp_formula.plants).one()
+                                    if pasture_comp_formula.symbol_id == 1:
+                                        more_value = more_value + pasture_value.current_value
+                                    if pasture_comp_formula.symbol_id == 2:
+                                        less_value = less_value + pasture_value.current_value
+                            if not more_value > less_value:
+                                is_row_rc = False
 
-                    if is_row_rc:
-                        is_stop = True
-                        recover_class = rc
-                else:
-                    evaluation_formulas_count = self.session.query(PsPastureEvaluationFormula). \
-                        filter(PsPastureEvaluationFormula.natural_zone == self.zone_id). \
-                        filter(PsPastureEvaluationFormula.land_form == land_form_code). \
-                        filter(PsPastureEvaluationFormula.rc_id == rc.id).count()
-                    if not evaluation_formulas_count == 0:
-                        evaluation_formulas = self.session.query(PsPastureEvaluationFormula).\
-                            filter(PsPastureEvaluationFormula.natural_zone == self.zone_id).\
-                            filter(PsPastureEvaluationFormula.land_form == land_form_code).\
-                            filter(PsPastureEvaluationFormula.rc_id == rc.id).all()
+                            if is_row_rc:
+                                is_stop = True
+                                recover_class = rc
+                        else:
+                            evaluation_formulas_count = self.session.query(PsPastureEvaluationFormula). \
+                                filter(PsPastureEvaluationFormula.natural_zone == self.zone_id). \
+                                filter(PsPastureEvaluationFormula.land_form == land_form_code). \
+                                filter(PsPastureEvaluationFormula.rc_id == rc.id).count()
+                            if not evaluation_formulas_count == 0:
+                                evaluation_formulas = self.session.query(PsPastureEvaluationFormula).\
+                                    filter(PsPastureEvaluationFormula.natural_zone == self.zone_id).\
+                                    filter(PsPastureEvaluationFormula.land_form == land_form_code).\
+                                    filter(PsPastureEvaluationFormula.rc_id == rc.id).all()
 
-                        point_detail_id = self.point_detail_id
-                        current_year = self.print_year_sbox.value()
-                        is_row_rc = True
-                        for evaluation_formula in evaluation_formulas:
-                            formula_ball = evaluation_formula.soil_evaluation_ref.ball
-                            pasture_soil_evaluation_count = self.session.query(PsPastureSoilEvaluation). \
-                                filter(PsPastureSoilEvaluation.point_detail_id == point_detail_id). \
-                                filter(PsPastureSoilEvaluation.current_year == current_year).count()
-                            if pasture_soil_evaluation_count == 1:
-                                pasture_soil_evaluation = self.session.query(PsPastureSoilEvaluation).\
-                                    filter(PsPastureSoilEvaluation.point_detail_id == point_detail_id). \
-                                    filter(PsPastureSoilEvaluation.current_year == current_year).one()
-                                ball = pasture_soil_evaluation.soil_evaluation_ref.ball
-                                if not ball >= formula_ball:
-                                    is_row_rc = False
-                        if is_row_rc:
-                            is_stop = True
-                            recover_class = rc
+                                point_detail_id = self.point_detail_id
+                                current_year = self.print_year_sbox.value()
+                                is_row_rc = True
+                                for evaluation_formula in evaluation_formulas:
+                                    formula_ball = evaluation_formula.soil_evaluation_ref.ball
+                                    pasture_soil_evaluation_count = self.session.query(PsPastureSoilEvaluation). \
+                                        filter(PsPastureSoilEvaluation.point_detail_id == point_detail_id). \
+                                        filter(PsPastureSoilEvaluation.current_year == current_year).count()
+                                    if pasture_soil_evaluation_count == 1:
+                                        pasture_soil_evaluation = self.session.query(PsPastureSoilEvaluation).\
+                                            filter(PsPastureSoilEvaluation.point_detail_id == point_detail_id). \
+                                            filter(PsPastureSoilEvaluation.current_year == current_year).one()
+                                        ball = pasture_soil_evaluation.soil_evaluation_ref.ball
+                                        if not ball >= formula_ball:
+                                            is_row_rc = False
+                                if is_row_rc:
+                                    is_stop = True
+                                    recover_class = rc
 
         return recover_class
 

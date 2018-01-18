@@ -16,7 +16,7 @@ from ..model import Constants
 from .qt_classes.ApplicationCmbBoxDelegate import *
 from ..controller.ApplicationsDialog import *
 from ..model.ApplicationSearch import *
-#from ..model.CaPlanParcel import *
+# from ..model.CaPlanParcel import *
 
 class CreateCaseDialog(QDialog, Ui_CreateCaseDialog, DatabaseHelper):
 
@@ -676,68 +676,68 @@ class CreateCaseDialog(QDialog, Ui_CreateCaseDialog, DatabaseHelper):
 
         iterator = parcel_shape_layer.getFeatures()
         count = 0
-        try:
-            for parcel in iterator:
-                count += 1
-                new_parcel = CaTmpParcel()
-                new_parcel.parcel_id = QDateTime().currentDateTime().toString("MMddhhmmss") + str(count)
-                new_parcel.initial_insert = None
-                new_parcel.maintenance_case = self.ca_maintenance_case.id
+        # try:
+        for parcel in iterator:
+            count += 1
+            new_parcel = CaTmpParcel()
+            new_parcel.parcel_id = QDateTime().currentDateTime().toString("MMddhhmmss") + str(count)
+            new_parcel.initial_insert = None
+            new_parcel.maintenance_case = self.ca_maintenance_case.id
 
-                new_parcel.geometry = WKTElement(parcel.geometry().exportToWkt(), srid=4326)
-                new_parcel = self.__copy_parcel_attributes(parcel, new_parcel, parcel_shape_layer)
+            new_parcel.geometry = WKTElement(parcel.geometry().exportToWkt(), srid=4326)
+            new_parcel = self.__copy_parcel_attributes(parcel, new_parcel, parcel_shape_layer)
 
-                parcel_overlap_c = self.session.query(CaParcel.parcel_id) \
-                    .filter(WKTElement(parcel.geometry().exportToWkt(), srid=4326).ST_Overlaps(CaParcel.geometry)) \
-                    .filter(CaParcel.valid_till == "infinity").count()
+            parcel_overlap_c = self.session.query(CaParcel.parcel_id) \
+                .filter(WKTElement(parcel.geometry().exportToWkt(), srid=4326).ST_Overlaps(CaParcel.geometry)) \
+                .filter(CaParcel.valid_till == "infinity").count()
 
-                tmp_parcel_overlap_c = self.session.query(CaTmpParcel.parcel_id) \
-                    .filter(
-                    WKTElement(parcel.geometry().exportToWkt(), srid=4326).ST_Overlaps(CaTmpParcel.geometry)) \
-                    .filter(CaTmpParcel.valid_till == "infinity").count()
+            tmp_parcel_overlap_c = self.session.query(CaTmpParcel.parcel_id) \
+                .filter(
+                WKTElement(parcel.geometry().exportToWkt(), srid=4326).ST_Overlaps(CaTmpParcel.geometry)) \
+                .filter(CaTmpParcel.valid_till == "infinity").count()
 
-                parcel_c = self.session.query(CaParcel.parcel_id) \
-                    .filter(WKTElement(parcel.geometry().exportToWkt(), srid=4326).ST_Within(CaParcel.geometry)).count()
+            parcel_c = self.session.query(CaParcel.parcel_id) \
+                .filter(WKTElement(parcel.geometry().exportToWkt(), srid=4326).ST_Within(CaParcel.geometry)).count()
 
-                tmp_parcel_c = self.session.query(CaTmpParcel.parcel_id) \
-                    .filter(
-                    WKTElement(parcel.geometry().exportToWkt(), srid=4326).ST_Within(CaTmpParcel.geometry)).count()
+            tmp_parcel_c = self.session.query(CaTmpParcel.parcel_id) \
+                .filter(
+                WKTElement(parcel.geometry().exportToWkt(), srid=4326).ST_Within(CaTmpParcel.geometry)).count()
 
-                #parcel_plan_c = self.session.query(CaPlanParcel.parcel_id) \
-                    #.filter(CaPlanParcel.geometry.ST_Within(WKTElement(parcel.geometry().exportToWkt(), srid=4326))).count()
+            # parcel_plan_c = self.session.query(CaPlanParcel.parcel_id) \
+            #     .filter(CaPlanParcel.geometry.ST_Within(WKTElement(parcel.geometry().exportToWkt(), srid=4326))).count()
+            #
+            # if parcel_plan_c == 0:
+            #     PluginUtils.show_message(self, self.tr("Error"), self.tr("This parcel not in cadastre plan!!!"))
+            #     return
 
-                #if parcel_plan_c == 0:
-                    #PluginUtils.show_message(self, self.tr("Error"), self.tr("This parcel not in cadastre plan!!!"))
-                    #return
+            if parcel_overlap_c != 0:
+                PluginUtils.show_message(self, self.tr("Error"), self.tr("Ca_Parcel layer parcel overlap!!!"))
+                return
 
-                if parcel_overlap_c != 0:
-                    PluginUtils.show_message(self, self.tr("Error"), self.tr("Ca_Parcel layer parcel overlap!!!"))
-                    return
+            if tmp_parcel_overlap_c != 0:
+                PluginUtils.show_message(self, self.tr("Error"), self.tr("Ca_Tmp_Parcel layer parcel overlap!!!"))
+                return
 
-                if tmp_parcel_overlap_c != 0:
-                    PluginUtils.show_message(self, self.tr("Error"), self.tr("Ca_Tmp_Parcel layer parcel overlap!!!"))
-                    return
+            if tmp_parcel_c != 0:
+                PluginUtils.show_message(self, self.tr("Error"), self.tr("Ca_Tmp_Parcel layer parcel duplicate!!!"))
+                return
+            if parcel_c != 0:
+                PluginUtils.show_message(self, self.tr("Error"), self.tr("Ca_Parcel layer parcel duplicate!!!"))
+                return
 
-                if tmp_parcel_c != 0:
-                    PluginUtils.show_message(self, self.tr("Error"), self.tr("Ca_Tmp_Parcel layer parcel duplicate!!!"))
-                    return
-                if parcel_c != 0:
-                    PluginUtils.show_message(self, self.tr("Error"), self.tr("Ca_Parcel layer parcel duplicate!!!"))
-                    return
+            self.session.add(new_parcel)
 
-                self.session.add(new_parcel)
+                #Add main parcel to the tree
+            main_parcel_item = QTreeWidgetItem()
+            main_parcel_item.setText(0, new_parcel.parcel_id)
+            main_parcel_item.setIcon(0, QIcon(QPixmap(":/plugins/lm2/parcel_red.png")))
+            main_parcel_item.setData(0, Qt.UserRole, new_parcel.parcel_id)
+            main_parcel_item.setData(0, Qt.UserRole + 1, Constants.CASE_PARCEL_IDENTIFIER)
+            self.parcels_item.addChild(main_parcel_item)
 
-                    #Add main parcel to the tree
-                main_parcel_item = QTreeWidgetItem()
-                main_parcel_item.setText(0, new_parcel.parcel_id)
-                main_parcel_item.setIcon(0, QIcon(QPixmap(":/plugins/lm2/parcel_red.png")))
-                main_parcel_item.setData(0, Qt.UserRole, new_parcel.parcel_id)
-                main_parcel_item.setData(0, Qt.UserRole + 1, Constants.CASE_PARCEL_IDENTIFIER)
-                self.parcels_item.addChild(main_parcel_item)
-
-        except SQLAlchemyError, e:
-            PluginUtils.show_error(self, self.tr("Query Error"), self.tr("Error in line {0}: {1}").format(currentframe().f_lineno, e.message))
-            return
+        # except SQLAlchemyError, e:
+        #     PluginUtils.show_error(self, self.tr("Query Error"), self.tr("Error in line {0}: {1}").format(currentframe().f_lineno, e.message))
+        #     return
 
         self.is_shape_parcel = True
 

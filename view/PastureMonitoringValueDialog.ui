@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>840</width>
-    <height>537</height>
+    <height>536</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -1121,7 +1121,7 @@
      <property name="geometry">
       <rect>
        <x>1</x>
-       <y>180</y>
+       <y>230</y>
        <width>481</width>
        <height>168</height>
       </rect>
@@ -1331,7 +1331,7 @@
        <x>1</x>
        <y>0</y>
        <width>481</width>
-       <height>181</height>
+       <height>231</height>
       </rect>
      </property>
      <property name="title">
@@ -1607,9 +1607,9 @@
      <widget class="QPushButton" name="calc_refresh_button">
       <property name="geometry">
        <rect>
-        <x>389</x>
-        <y>150</y>
-        <width>82</width>
+        <x>330</x>
+        <y>190</y>
+        <width>141</width>
         <height>23</height>
        </rect>
       </property>
@@ -1672,14 +1672,40 @@
      <widget class="QPushButton" name="calc_load_button">
       <property name="geometry">
        <rect>
-        <x>390</x>
+        <x>331</x>
         <y>120</y>
-        <width>82</width>
+        <width>141</width>
         <height>23</height>
        </rect>
       </property>
       <property name="text">
        <string>Load</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="calc_present_rbutton">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>150</y>
+        <width>141</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Present calculate</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="calc_comparison_rbutton">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>170</y>
+        <width>141</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Comparison calculate</string>
       </property>
      </widget>
     </widget>
