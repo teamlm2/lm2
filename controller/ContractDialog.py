@@ -3391,7 +3391,23 @@ class ContractDialog(QDialog, Ui_ContractDialog, DatabaseHelper):
         self.__add_officer_cert(map_composition)
         # self.__add_app_remarks(map_composition)
         map_composition.exportAsPDF(path + "certificate.pdf")
-        QDesktopServices.openUrl(QUrl.fromLocalFile(path+"certificate.pdf"))
+
+        if self.pdf_checkbox.isChecked():
+            QDesktopServices.openUrl(QUrl.fromLocalFile(path+"certificate.pdf"))
+        else:
+            path = FileUtils.map_file_path()
+            default_path = r'D:/TM_LM2/contracts'
+            tpl = DocxTemplate(path + 'cert_company.docx')
+
+            QDesktopServices.openUrl(
+                QUrl.fromLocalFile(path + 'cert_company.docx'))
+            # try:
+            #     # tpl.save(default_path + "/" + contract_no[:-6] + '-' + contract_no[-5:] + ".docx")
+            #     QDesktopServices.openUrl(
+            #         QUrl.fromLocalFile(path + 'cert_company.docx'))
+            # except IOError, e:
+            #     PluginUtils.show_error(self, self.tr("Out error"),
+            #                            self.tr("This file is already opened. Please close re-run"))
 
     @pyqtSlot()
     def on_print_soil_qual_pass_edit_clicked(self):
