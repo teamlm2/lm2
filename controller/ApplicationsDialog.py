@@ -590,9 +590,9 @@ class ApplicationsDialog(QDialog, Ui_ApplicationsDialog, DatabaseHelper):
                 order_by(ClApplicationType.code).all()
             statuses = self.session.query(ClApplicationStatus).order_by(ClApplicationStatus.code).all()
             transfer_type = self.session.query(ClTransferType).all()
+
             set_roles = self.session.query(SetRole). \
-                filter(SetRole.is_active == True). \
-                filter(SetRole.user_name.startswith(user)).all()
+                filter(SetRole.is_active == True).all()
             mortgage_list = self.session.query(ClMortgageType).all()
             landuse_types = self.session.query(ClLanduseType).all()
             mortgage_status = self.session.query(ClMortgageStatus).all()
@@ -613,8 +613,11 @@ class ApplicationsDialog(QDialog, Ui_ApplicationsDialog, DatabaseHelper):
         for item in transfer_type:
             self.type_of_transfer_cbox.addItem(item.description, item.code)
 
+        soum_code = DatabaseUtils.working_l2_code()
         for setRole in set_roles:
-            self.next_officer_in_charge_cbox.addItem(setRole.surname + ", " + setRole.first_name, setRole.user_name_real)
+            l2_code_list = setRole.restriction_au_level2.split(',')
+            if soum_code in l2_code_list:
+                self.next_officer_in_charge_cbox.addItem(setRole.surname + ", " + setRole.first_name, setRole.user_name_real)
 
         officer = self.session.query(SetRole) \
             .filter(SetRole.user_name == QSettings().value(SettingsConstants.USER)) \

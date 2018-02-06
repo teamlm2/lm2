@@ -2225,6 +2225,23 @@ class ContractDialog(QDialog, Ui_ContractDialog, DatabaseHelper):
         item.setText(officer_name)
         item.adjustSizeToText()
 
+    def __add_cert_officer_name(self):
+
+        app_no = self.application_this_contract_based_edit.text()
+        try:
+            app_status = self.session.query(CtApplicationStatus).filter(CtApplicationStatus.application == app_no).all()
+            for p in app_status:
+                if p.status == 9:
+                    officer = self.session.query(SetRole).filter(SetRole.user_name_real == p.officer_in_charge).one()
+        except SQLAlchemyError, e:
+            raise LM2Exception(self.tr("Database Query Error"), self.tr("aCould not execute: {0}").format(e.message))
+
+        restrictions = DatabaseUtils.working_l2_code()
+        # if restrictions[3:] == '01':
+        officer_name = self.print_officer_cbox.currentText()
+
+        return officer_name
+
     def __add_officer(self,map_composition):
 
         report_settings = self.__admin_settings("set_report_parameter")
@@ -2280,6 +2297,16 @@ class ContractDialog(QDialog, Ui_ContractDialog, DatabaseHelper):
         item.setText(aimag.name)
         item.adjustSizeToText()
 
+    def __add_cert_aimag(self):
+
+        aimag_code = self.application_this_contract_based_edit.text()[:3]
+        try:
+            aimag = self.session.query(AuLevel1).filter(AuLevel1.code == aimag_code).one()
+        except SQLAlchemyError, e:
+            raise LM2Exception(self.tr("Database Query Error"), self.tr("aCould not execute: {0}").format(e.message))
+
+        return aimag
+
     def __add_soum_name_cert(self,map_composition):
 
         soum_code = self.application_this_contract_based_edit.text()[:5]
@@ -2294,6 +2321,16 @@ class ContractDialog(QDialog, Ui_ContractDialog, DatabaseHelper):
         item = map_composition.getComposerItemById("officer_soum")
         item.setText(soum.name)
         item.adjustSizeToText()
+
+    def __add_cert_soum(self):
+
+        soum_code = self.application_this_contract_based_edit.text()[:5]
+        try:
+            soum = self.session.query(AuLevel2).filter(AuLevel2.code == soum_code).one()
+        except SQLAlchemyError, e:
+            raise LM2Exception(self.tr("Database Query Error"), self.tr("aCould not execute: {0}").format(e.message))
+
+        return soum
 
     def __officer_info(self, map_composition):
 
@@ -2419,6 +2456,32 @@ class ContractDialog(QDialog, Ui_ContractDialog, DatabaseHelper):
         item = map_composition.getComposerItemById("contract_date")
         item.setText(contract_date)
         item.adjustSizeToText()
+
+    def __add__cert_decision(self):
+
+        app_no = self.application_this_contract_based_edit.text()
+        try:
+            pp = ""
+            app_dec = self.session.query(CtDecisionApplication).filter(CtDecisionApplication.application == app_no).all()
+            for p in app_dec:
+                pp = p.decision
+            decision = self.session.query(CtDecision).filter(CtDecision.decision_no == pp).one()
+        except SQLAlchemyError, e:
+            raise LM2Exception(self.tr("Database Query Error"), self.tr("aCould not execute: {0}").format(e.message))
+
+        decision_date = str(decision.decision_date)
+        decision_date = " "+decision_date[1:-6]+u"           " + decision_date[5:-3]+u"            " + decision_date[-2:] + u"               " + decision.decision_no[6:-5]
+
+        app_duration = self.contract_duration_edit.text()
+
+        print_date = QDate().currentDate()
+        year = print_date.year()
+        month = print_date.month()
+        day = print_date.day()
+
+        contract_date = str(year)[-3:] + "           " + str(month) +"              " + str(day)
+        decision_value = [decision.decision_no, decision_date, app_duration, contract_date]
+        return decision_value
 
     def __add_decision(self,map_composition):
 
@@ -2596,6 +2659,105 @@ class ContractDialog(QDialog, Ui_ContractDialog, DatabaseHelper):
                 local_name  = person.address_town_or_local_name
             person_address = aimag_name +", "+ soum_name +", " +bag_name+", "+local_name
         item.setText(self.__wrap(person_address,100))
+
+    def __add_cert_person(self):
+
+        app_no = self.application_this_contract_based_edit.text()
+        try:
+            app_person = self.session.query(CtApplicationPersonRole).filter(CtApplicationPersonRole.application == app_no).all()
+            app_person_new_count = self.session.query(CtApplicationPersonRole).\
+                filter(CtApplicationPersonRole.application == app_no).\
+                filter(CtApplicationPersonRole.role == 70).count()
+            if app_person_new_count > 0:
+                app_person = self.session.query(CtApplicationPersonRole).\
+                    filter(CtApplicationPersonRole.application == app_no).\
+                    filter(CtApplicationPersonRole.role == 70).all()
+
+            for p in app_person:
+                if p.main_applicant == True:
+                    person = self.session.query(BsPerson).filter(BsPerson.person_id == p.person).one()
+
+                    aimag_count = self.session.query(AuLevel1).filter(AuLevel1.code == person.address_au_level1).count()
+                    aimag_name = " "
+                    if aimag_count != 0:
+                        aimag = self.session.query(AuLevel1).filter(AuLevel1.code == person.address_au_level1).one()
+                        aimag_name = aimag.name
+
+                    soum_count = self.session.query(AuLevel2).filter(AuLevel2.code == person.address_au_level2).count()
+                    soum_name = " "
+                    if soum_count != 0:
+                        soum = self.session.query(AuLevel2).filter(AuLevel2.code == person.address_au_level2).one()
+                        soum_name = soum.name
+
+                    bag_count = self.session.query(AuLevel2).filter(AuLevel3.code == person.address_au_level3).count()
+                    bag_name = " "
+                    if bag_count != 0:
+                        bag = self.session.query(AuLevel3).filter(AuLevel3.code == person.address_au_level3).one()
+                        bag_name = bag.name
+
+        except SQLAlchemyError, e:
+            raise LM2Exception(self.tr("Database Query Error"), self.tr("aCould not execute: {0}").format(e.message))
+
+        company_name = ''
+        company_id = ''
+        family_name = ''
+        surname = ''
+        first_name = ''
+
+        if person.type == 10 or person.type == 20:
+            family_name = person.middle_name
+            surname = person.name
+            first_name = person.first_name
+        elif person.type == 30 or person.type == 40:
+            state_reg = " "
+            if person.state_registration_no != None:
+                state_reg = person.state_registration_no
+            person_id = state_reg +", "+person.person_id
+            company_name = person.name
+        elif person.type == 50:
+            state_reg = " "
+            if person.state_registration_no != None:
+                state_reg = person.state_registration_no
+            person_id = state_reg +", "+person.person_id
+            company_name = person.name +", "+ person.first_name
+        elif person.type == 60:
+            state_reg = " "
+            if person.state_registration_no != None:
+                state_reg = person.state_registration_no
+                company_id = state_reg +", "+person.person_id
+            company_name = person.name
+
+        local_name = ""
+        address_street_name = ""
+        address_khaskhaa = ""
+        address_building_no = ""
+        address_entrance_no = ""
+        address_apartment_no = ""
+        if person.address_street_name != None:
+            address_street_name = person.address_street_name + u" гудамж, "
+        if person.address_khaskhaa != None:
+            address_khaskhaa = person.address_khaskhaa
+        if person.address_building_no != None:
+            address_building_no = person.address_building_no + u' байр, '
+        if person.address_entrance_no != None:
+            address_entrance_no = person.address_entrance_no + ', '
+        if person.address_apartment_no != None:
+            address_apartment_no = person.address_apartment_no
+        if person.address_street_name != None or person.address_khaskhaa != None:
+            if person.address_town_or_local_name != None:
+                local_name  = person.address_town_or_local_name + ', '
+            person_address = aimag_name +", "+ soum_name +", " +bag_name+", "+local_name + address_street_name + address_khaskhaa
+        elif person.address_building_no != None or person.address_entrance_no != None:
+            if person.address_town_or_local_name != None:
+                local_name  = person.address_town_or_local_name + ', '
+            person_address = aimag_name +", "+ soum_name +", " +bag_name+", "+local_name + address_building_no + address_entrance_no + address_apartment_no
+        else:
+            if person.address_town_or_local_name != None:
+                local_name  = person.address_town_or_local_name
+            person_address = aimag_name +", "+ soum_name +", " +bag_name+", "+local_name
+
+        value = [person.person_id, family_name, surname, first_name, company_name, company_id, person_address]
+        return value
 
     def __add_person_name(self,map_composition):
 
@@ -3145,6 +3307,39 @@ class ContractDialog(QDialog, Ui_ContractDialog, DatabaseHelper):
         item.setText(parcel_id)
         item.adjustSizeToText()
 
+    def __add_cert_parcel(self):
+
+        app_no = self.application_this_contract_based_edit.text()
+        contract_no = self.contract_num_edit.text()
+        parcel_id  = self.id_main_edit.text()[1:-9] + self.id_main_edit.text()[4:]
+
+        landuse = self.land_use_type_edit.text()
+        area_m2 = self.calculated_area_edit.text()
+        area_m2 = str((area_m2)) + " /"+str(float(area_m2)/10000)+"/"
+
+        try:
+            parcel = self.session.query(CaParcel).filter(CaParcel.parcel_id == self.id_main_edit.text()).one()
+        except SQLAlchemyError, e:
+            raise LM2Exception(self.tr("Database Query Error"), self.tr("aCould not execute: {0}").format(e.message))
+
+        address_streetname = " "
+        address_khashaa = " "
+        address_neighbourhood = " "
+        if parcel.address_streetname != None:
+            address_streetname = parcel.address_streetname
+        if parcel.address_khashaa != None:
+            address_khashaa = parcel.address_khashaa
+        if parcel.address_neighbourhood != None:
+            address_neighbourhood = parcel.address_neighbourhood
+
+        bag_name = self.bag_edit.text()
+        parcel_address = bag_name + u', ' + address_streetname +u" гудамж, "+ address_khashaa +", "+ address_neighbourhood
+
+        landuse = self.__wrap(landuse,25)
+
+        parcel_value = [parcel_id, landuse, area_m2, parcel_address]
+        return parcel_value
+
     def __add_parcel(self,map_composition):
 
         base_fee = 0
@@ -3395,19 +3590,76 @@ class ContractDialog(QDialog, Ui_ContractDialog, DatabaseHelper):
         if self.pdf_checkbox.isChecked():
             QDesktopServices.openUrl(QUrl.fromLocalFile(path+"certificate.pdf"))
         else:
-            path = FileUtils.map_file_path()
-            default_path = r'D:/TM_LM2/contracts'
+            self.__cert_docx_print(person)
+
+
+    def __cert_docx_print(self, person):
+
+        aimag_name = self.__add_cert_aimag().name
+        soum_name = self.__add_cert_soum().name
+        decision_date = self.__add__cert_decision()[1]
+        approved_duration = self.__add__cert_decision()[2]
+        contract_date = self.__add__cert_decision()[3]
+
+        parcel_id = self.__add_cert_parcel()[0]
+        parcel_address = self.__add_cert_parcel()[3]
+        landuse = self.__add_cert_parcel()[1]
+        area_m2 = self.__add_cert_parcel()[2]
+        person_id = self.__add_cert_person()[0]
+        family_name = self.__add_cert_person()[1]
+        surname = self.__add_cert_person()[2]
+        first_name = self.__add_cert_person()[3]
+        company_name = self.__add_cert_person()[4]
+        company_id = self.__add_cert_person()[5]
+        person_address = self.__add_cert_person()[6]
+        officer_name = self.__add_cert_officer_name()
+
+        path = FileUtils.map_file_path()
+        tpl = DocxTemplate(path + 'cert_company.docx')
+        if person.type == 10 or person.type == 20:
+            tpl = DocxTemplate(path + 'cert_company.docx')
+        elif person.type == 30:
+            tpl = DocxTemplate(path + 'cert_company.docx')
+        elif person.type == 40:
+            tpl = DocxTemplate(path + 'cert_company.docx')
+        elif person.type == 50 or person.type == 60:
             tpl = DocxTemplate(path + 'cert_company.docx')
 
-            QDesktopServices.openUrl(
-                QUrl.fromLocalFile(path + 'cert_company.docx'))
-            # try:
-            #     # tpl.save(default_path + "/" + contract_no[:-6] + '-' + contract_no[-5:] + ".docx")
-            #     QDesktopServices.openUrl(
-            #         QUrl.fromLocalFile(path + 'cert_company.docx'))
-            # except IOError, e:
-            #     PluginUtils.show_error(self, self.tr("Out error"),
-            #                            self.tr("This file is already opened. Please close re-run"))
+        context = {
+            'aimag_name': aimag_name,
+            'soum_name': soum_name,
+            'decision': decision_date,
+            'parcel_id': parcel_id,
+            'parcel_address': parcel_address,
+            'person_id': person_id,
+            'company_id': company_id,
+            'family_name': family_name,
+            'surname': surname,
+            'first_name': first_name,
+            'company_name': company_name,
+            'person_address': person_address,
+            'landuse': landuse,
+            'contract_date': contract_date,
+            'officer_name': officer_name,
+            'officer_aimag': aimag_name,
+            'officer_soum': soum_name,
+            'area_m2': area_m2,
+            'approved_duration': approved_duration
+        }
+        tpl.render(context)
+        tpl.save(path + 'certificate.docx')
+        default_path = r'D:/TM_LM2/contracts'
+        # tpl = DocxTemplate(path + 'cert_company.docx')
+
+        QDesktopServices.openUrl(
+            QUrl.fromLocalFile(path + 'certificate.docx'))
+        # try:
+        #     # tpl.save(default_path + "/" + contract_no[:-6] + '-' + contract_no[-5:] + ".docx")
+        #     QDesktopServices.openUrl(
+        #         QUrl.fromLocalFile(path + 'cert_company.docx'))
+        # except IOError, e:
+        #     PluginUtils.show_error(self, self.tr("Out error"),
+        #                            self.tr("This file is already opened. Please close re-run"))
 
     @pyqtSlot()
     def on_print_soil_qual_pass_edit_clicked(self):
