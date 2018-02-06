@@ -371,14 +371,16 @@ class NavigatorWidget(QDockWidget, Ui_NavigatorWidget, DatabaseHelper):
 
         current_user = DatabaseUtils.current_user()
         restrictions = current_user.restriction_au_level2.split(",")
-
-        for restriction in restrictions:
-            restriction = restriction.strip()
-            if set_roles is not None:
-                for role in set_roles:
-                    if role.user_name_real.find(restriction[1:]) != -1:
-                        self.office_in_charge_cbox.addItem(role.surname + ", " + role.first_name, role)
-                        self.next_officer_in_charge_cbox.addItem(role.surname + ", " + role.first_name, role)
+        soum_code = DatabaseUtils.working_l2_code()
+        # for restriction in restrictions:
+        #     restriction = restriction.strip()
+        if set_roles is not None:
+            for role in set_roles:
+                l2_code_list = role.restriction_au_level2.split(',')
+                if soum_code in l2_code_list:
+                    # if role.user_name_real.find(restriction[1:]) != -1:
+                    self.office_in_charge_cbox.addItem(role.surname + ", " + role.first_name, role)
+                    self.next_officer_in_charge_cbox.addItem(role.surname + ", " + role.first_name, role)
 
         if cl_landusetype is not None:
             for landuse in cl_landusetype:

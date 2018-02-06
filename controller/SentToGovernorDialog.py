@@ -139,10 +139,12 @@ class SentToGovernorDialog(QDialog, Ui_SentToGovernorDialog, DatabaseHelper):
             #         for item in decision_level:
             #             self.decision_level_cbox.addItem(item.description, item.code)
             #         # self.decision_level_cbox.setCurrentIndex(3)
-            restrictions = DatabaseUtils.working_l2_code()
+            soum_code = DatabaseUtils.working_l2_code()
             if set_roles is not None:
                 for role in set_roles:
-                    if role.user_name_real.find(restrictions[1:]) != -1:
+                    l2_code_list = role.restriction_au_level2.split(',')
+                    if soum_code in l2_code_list:
+                    # if role.user_name_real.find(restrictions[1:]) != -1:
                         self.officer_cbox.addItem(role.surname + ", " + role.first_name, role)
         except SQLAlchemyError, e:
             self.rollback_to_savepoint()
