@@ -809,37 +809,37 @@ class PastureWidget(QDockWidget, Ui_PastureWidget, DatabaseHelper):
         layers = self.plugin.iface.legendInterface().layers()
 
         for layer in layers:
-            if layer.name() == "PUGBuilding"+'_' + restrictions:
+            if layer.name() == "PUGBuilding"+'_' + restrictions or layer.name() == u"БАХ байшин"+'_' + restrictions:
                 is_pug_building = True
         if not is_pug_building:
             mygroup.addLayer(vlayer_building)
 
         for layer in layers:
-            if layer.name() == "PUGParcel"+'_' + restrictions:
+            if layer.name() == "PUGParcel"+'_' + restrictions or layer.name() == u"БАХ нэгж талбар"+'_' + restrictions:
                 is_pug_parcel = True
         if not is_pug_parcel:
             mygroup.addLayer(vlayer_parcel)
 
         for layer in layers:
-            if layer.name() == "PUGBoundary"+'_' + restrictions:
+            if layer.name() == "PUGBoundary"+'_' + restrictions or layer.name() == u"БАХ-ийн хил"+'_' + restrictions:
                 is_layer = True
         if not is_layer:
             mygroup.addLayer(vlayer)
 
         for layer in layers:
-            if layer.name() == "PUGEcological"+'_' + restrictions:
+            if layer.name() == "PUGEcological"+'_' + restrictions or layer.name() == u"БАХ экологийн чадавхи"+'_' + restrictions:
                 is_eco_layer = True
         if not is_eco_layer:
             mygroup.addLayer(vlayer_eco)
 
         for layer in layers:
-            if layer.name() == "PastureMonitoringPoint":
+            if layer.name() == "PastureMonitoringPoint" or layer.name() == u"Мониторингийн Цэг":
                 is_monitoring_layer = True
         if not is_monitoring_layer:
             mygroup.addLayer(monitoring_layer)
 
         for layer in layers:
-            if layer.name() == "NaturalZone":
+            if layer.name() == "NaturalZone" or layer.name() == u"Байгалийн бүс, бүслүүр":
                 is_natural_zone_layer = True
         if not is_natural_zone_layer:
             mygroup.addLayer(natural_zone_layaer)
