@@ -39,6 +39,62 @@ from ..model.LM2Exception import LM2Exception
 import win32net
 import os
 
+import os
+import re
+import math
+import time
+import locale
+import win32api
+import win32net
+from PyQt4.QtCore import *
+from PyQt4.QtGui import *
+from PyQt4.QtXml import *
+from geoalchemy2.elements import WKTElement
+from qgis.core import *
+from sqlalchemy import func, or_, extract
+from PyQt4.QtXml import *
+from qgis.core import *
+from qgis.gui import *
+from inspect import currentframe
+from sqlalchemy.exc import SQLAlchemyError
+from sqlalchemy import func
+from datetime import date, datetime, timedelta
+from ..model import Constants
+from ..model.BsPerson import *
+from ..model.ClBank import *
+from ..model.AuLevel1 import *
+from ..model.AuLevel2 import *
+from ..model.AuLevel3 import *
+from ..model.SetFeeZone import *
+from ..model import SettingsConstants
+from ..model.DatabaseHelper import *
+from ..view.Ui_ContractDialog import *
+from ..model.CtRecordDocument import *
+from ..model.ClPositionType import *
+from ..model.ClContractCondition import *
+from ..model.Enumerations import UserRight, UserRight_code
+from ..model.CtDecisionApplication import *
+from ..model.CtDecision import *
+from ..model.LM2Exception import LM2Exception
+from ..model.CtContractApplicationRole import *
+from ..model.ClContractCancellationReason import *
+from ..model.SetContractDocumentRole import SetContractDocumentRole
+from ..model.SetApplicationTypeDocumentRole import SetApplicationTypeDocumentRole
+from ..model.CtApplicationStatus import *
+from ..model.SetCertificate import *
+from ..model.SetUserGroupRole import *
+from ..utils.FileUtils import FileUtils
+from ..utils.PluginUtils import PluginUtils
+from ..utils.SessionHandler import SessionHandler
+from ..utils.DatabaseUtils import DatabaseUtils
+from ..utils.FilePath import *
+from .qt_classes.ComboBoxDelegate import *
+from .qt_classes.DropLabel import DropLabel
+from .qt_classes.IntegerSpinBoxDelegate import *
+from .qt_classes.ObjectAppDocumentDelegate import ObjectAppDocumentDelegate
+from .qt_classes.ContractDocumentDelegate import ContractDocumentDelegate
+from docxtpl import DocxTemplate, RichText
+
 OWNER_NAME = 0
 OWNER_ID = 1
 OWNER_SHARE = 2
@@ -60,7 +116,6 @@ DOC_NAME_COLUMN = 2
 DOC_OPEN_COLUMN = 3
 DOC_REMOVE_COLUMN = 4
 DOC_VIEW_COLUMN = 5
-
 
 class OwnRecordDialog(QDialog, Ui_OwnRecordDialog, DatabaseHelper):
 
@@ -836,10 +891,6 @@ class OwnRecordDialog(QDialog, Ui_OwnRecordDialog, DatabaseHelper):
             PluginUtils.show_error(self, self.tr("Database Query Error"), self.tr("Error in line {0}: {1}").format(currentframe().f_lineno, e.message))
             return
 
-        self.khashaa_edit.setText(parcel.address_khashaa)
-        self.street_name_edit.setText(parcel.address_streetname)
-        self.bag_edit.setText(parcel.address_neighbourhood)
-
         #decision date
         if not application.app_type in Constants.RECORD_WITHOUT_DECISION:
             last_decision = self.session.query(CtDecision).join(CtApplication.decision_result)\
@@ -1237,6 +1288,208 @@ class OwnRecordDialog(QDialog, Ui_OwnRecordDialog, DatabaseHelper):
         self.__start_fade_out_timer()
 
     @pyqtSlot()
+    def on_decision_page_print_button_clicked(self):
+
+        app_no = self.application_based_edit.text()
+        record_no = self.record_number_edit.text()
+        record_count = self.session.query(CtOwnershipRecord).filter(CtOwnershipRecord.record_no == record_no).count()
+        if record_count == 0:
+            PluginUtils.show_error(self, self.tr("owner error"), self.tr("not save"))
+            return
+
+        try:
+            app_person = self.session.query(CtApplicationPersonRole).filter(CtApplicationPersonRole.application == app_no).all()
+            for p in app_person:
+                if p.main_applicant == True:
+                    person = self.session.query(BsPerson).filter(BsPerson.person_id == p.person).one()
+        except SQLAlchemyError, e:
+            raise LM2Exception(self.tr("Database Query Error"), self.tr("aCould not execute: {0}").format(e.message))
+
+        ok = 0
+        try:
+            app_status = self.session.query(CtApplicationStatus).filter(CtApplicationStatus.application == app_no).all()
+            for p in app_status:
+                if p.status == 9:
+                    ok = 1
+                    officer = self.session.query(SetRole).filter(SetRole.user_name_real == p.officer_in_charge).one()
+        except SQLAlchemyError, e:
+            raise LM2Exception(self.tr("Database Query Error"), self.tr("aCould not execute: {0}").format(e.message))
+        if ok == 0:
+            PluginUtils.show_error(self, self.tr("contract error"), self.tr("must status 9"))
+            return
+        header = "no text"
+
+
+        path = FileUtils.map_file_path()
+        tpl = DocxTemplate(path + 'cert_owner_person.docx')
+        if person.type == 10 or person.type == 20:
+            tpl = DocxTemplate(path + 'cert_owner_person.docx')
+
+        aimag_name = self.__add_cert_owner_aimag().name
+        soum_name = self.__add_cert_owner_soum().name
+        decision_date = self.__add__cert_owner_decision()[1]
+        decision_no = self.__add__cert_owner_decision()[0]
+        owner_date = self.__add__cert_owner_decision()[2]
+        area_m2 = self.__add_cert_owner_parcel()[0]
+        parcel_address = self.__add_cert_owner_parcel()[1]
+        person_id = self.__add_cert_owner_person()[0]
+        surname = self.__add_cert_owner_person()[1]
+        first_name = self.__add_cert_owner_person()[2]
+
+        context = {
+            'aimag_name': aimag_name,
+            'soum_name': soum_name,
+            'decision': decision_date,
+            'decision_no': decision_no,
+            'person_id': person_id,
+            'parcel_address': parcel_address,
+            'surname': surname,
+            'first_name': first_name,
+            'owner_date': owner_date,
+            'officer_aimag': aimag_name,
+            'officer_soum': soum_name,
+            'area_m2': area_m2,
+        }
+        tpl.render(context)
+        tpl.save(path + 'certificate.docx')
+        default_path = r'D:/TM_LM2/contracts'
+        # tpl = DocxTemplate(path + 'cert_company.docx')
+
+        QDesktopServices.openUrl(
+            QUrl.fromLocalFile(path + 'certificate.docx'))
+        # try:
+        #     # tpl.save(default_path + "/" + contract_no[:-6] + '-' + contract_no[-5:] + ".docx")
+        #     QDesktopServices.openUrl(
+        #         QUrl.fromLocalFile(path + 'cert_company.docx'))
+        # except IOError, e:
+        #     PluginUtils.show_error(self, self.tr("Out error"),
+        #                            self.tr("This file is already opened. Please close re-run"))
+
+    def __add_cert_owner_aimag(self):
+
+        aimag_code = self.application_based_edit.text()[:3]
+        try:
+            aimag = self.session.query(AuLevel1).filter(AuLevel1.code == aimag_code).one()
+        except SQLAlchemyError, e:
+            raise LM2Exception(self.tr("Database Query Error"), self.tr("aCould not execute: {0}").format(e.message))
+
+        return aimag
+
+    def __add_cert_owner_soum(self):
+
+        soum_code = self.application_based_edit.text()[:5]
+        try:
+            soum = self.session.query(AuLevel2).filter(AuLevel2.code == soum_code).one()
+        except SQLAlchemyError, e:
+            raise LM2Exception(self.tr("Database Query Error"), self.tr("aCould not execute: {0}").format(e.message))
+
+        return soum
+
+    def __add__cert_owner_decision(self):
+
+        app_no = self.application_based_edit.text()
+        try:
+            pp = ""
+            app_dec = self.session.query(CtDecisionApplication).filter(CtDecisionApplication.application == app_no).all()
+            for p in app_dec:
+                pp = p.decision
+            decision = self.session.query(CtDecision).filter(CtDecision.decision_no == pp).one()
+        except SQLAlchemyError, e:
+            raise LM2Exception(self.tr("Database Query Error"), self.tr("aCould not execute: {0}").format(e.message))
+
+        decision_date = str(decision.decision_date)
+        decision_date = " "+decision_date[3:-6]
+        decision_no = str(decision.decision_no)
+        decision_no = " "+decision.decision_no[6:-5]
+
+        print_date = QDate().currentDate()
+        year = print_date.year()
+        month = print_date.month()
+        day = print_date.day()
+
+        owner_date = str(year)[-2:] + "           " + str(month) +"              " + str(day)
+        decision_value = [decision_no, decision_date, owner_date]
+        return decision_value
+
+    def __add_cert_owner_parcel(self):
+
+        app_no = self.application_based_edit.text()
+        owner_no = self.record_number_edit.text()
+        area_m2 = self.calculated_area_edit.text()
+        area_m2 = str((area_m2))
+
+        try:
+            parcel = self.session.query(CaParcel).filter(CaParcel.parcel_id == self.id_main_edit.text()).one()
+        except SQLAlchemyError, e:
+            raise LM2Exception(self.tr("Database Query Error"), self.tr("aCould not execute: {0}").format(e.message))
+
+        address_streetname = " "
+        address_khashaa = " "
+        address_neighbourhood = " "
+        if parcel.address_streetname != None:
+            address_streetname = parcel.address_streetname
+        if parcel.address_khashaa != None:
+            address_khashaa = parcel.address_khashaa
+        if parcel.address_neighbourhood != None:
+            address_neighbourhood = parcel.address_neighbourhood
+
+        bag_name = self.bag_edit.text()
+        parcel_address = bag_name
+
+        parcel_value = [area_m2, parcel_address]
+        return parcel_value
+
+    def __add_cert_owner_person(self):
+
+        app_no = self.application_based_edit.text()
+        try:
+            app_person = self.session.query(CtApplicationPersonRole).filter(CtApplicationPersonRole.application == app_no).all()
+            app_person_new_count = self.session.query(CtApplicationPersonRole).\
+                filter(CtApplicationPersonRole.application == app_no).\
+                filter(CtApplicationPersonRole.role == 70).count()
+            if app_person_new_count > 0:
+                app_person = self.session.query(CtApplicationPersonRole).\
+                    filter(CtApplicationPersonRole.application == app_no).\
+                    filter(CtApplicationPersonRole.role == 70).all()
+
+            for p in app_person:
+                if p.main_applicant == True:
+                    person = self.session.query(BsPerson).filter(BsPerson.person_id == p.person).one()
+
+                    aimag_count = self.session.query(AuLevel1).filter(AuLevel1.code == person.address_au_level1).count()
+                    aimag_name = " "
+                    if aimag_count != 0:
+                        aimag = self.session.query(AuLevel1).filter(AuLevel1.code == person.address_au_level1).one()
+                        aimag_name = aimag.name
+
+                    soum_count = self.session.query(AuLevel2).filter(AuLevel2.code == person.address_au_level2).count()
+                    soum_name = " "
+                    if soum_count != 0:
+                        soum = self.session.query(AuLevel2).filter(AuLevel2.code == person.address_au_level2).one()
+                        soum_name = soum.name
+
+                    bag_count = self.session.query(AuLevel2).filter(AuLevel3.code == person.address_au_level3).count()
+                    bag_name = " "
+                    if bag_count != 0:
+                        bag = self.session.query(AuLevel3).filter(AuLevel3.code == person.address_au_level3).one()
+                        bag_name = bag.name
+
+        except SQLAlchemyError, e:
+            raise LM2Exception(self.tr("Database Query Error"), self.tr("aCould not execute: {0}").format(e.message))
+
+        company_name = ''
+        company_id = ''
+        surname = ''
+        first_name = ''
+
+        if person.type == 10 or person.type == 20:
+            surname = person.name
+            first_name = person.first_name
+
+        value = [person.person_id, surname, first_name]
+        return value
+
+    @pyqtSlot()
     def on_unassign_button_clicked(self):
 
         self.application_based_edit.setText("")
@@ -1361,3 +1614,4 @@ class OwnRecordDialog(QDialog, Ui_OwnRecordDialog, DatabaseHelper):
         for app in application:
             self.app_no = app.app_no
             self.app_number_cbox.addItem(self.app_no, self.app_no)
+

@@ -2,8 +2,7 @@
 
 # Form implementation generated from reading ui file '.\OwnRecordDialog.ui'
 #
-# Created: Tue Oct 11 16:41:39 2016
-#      by: PyQt4 UI code generator 4.10.4
+# Created by: PyQt4 UI code generator 4.11.4
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -525,6 +524,9 @@ class Ui_OwnRecordDialog(object):
         self.land_tax_summary_button = QtGui.QPushButton(self.groupBox_5)
         self.land_tax_summary_button.setGeometry(QtCore.QRect(50, 40, 250, 23))
         self.land_tax_summary_button.setObjectName(_fromUtf8("land_tax_summary_button"))
+        self.decision_page_print_button = QtGui.QPushButton(self.groupBox_5)
+        self.decision_page_print_button.setGeometry(QtCore.QRect(50, 80, 251, 23))
+        self.decision_page_print_button.setObjectName(_fromUtf8("decision_page_print_button"))
         self.tabWidget.addTab(self.print_tab, _fromUtf8(""))
         self.status_label = QtGui.QLabel(OwnRecordDialog)
         self.status_label.setGeometry(QtCore.QRect(20, 420, 441, 21))
@@ -673,5 +675,6 @@ class Ui_OwnRecordDialog(object):
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.app_doc_tab), _translate("OwnRecordDialog", "Application Documents", None))
         self.groupBox_5.setTitle(_translate("OwnRecordDialog", "Print", None))
         self.land_tax_summary_button.setText(_translate("OwnRecordDialog", "Land Tax Summary", None))
+        self.decision_page_print_button.setText(_translate("OwnRecordDialog", "Decision Page Pring", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.print_tab), _translate("OwnRecordDialog", "Print", None))
 

@@ -3617,13 +3617,13 @@ class ContractDialog(QDialog, Ui_ContractDialog, DatabaseHelper):
         path = FileUtils.map_file_path()
         tpl = DocxTemplate(path + 'cert_company.docx')
         if person.type == 10 or person.type == 20:
-            tpl = DocxTemplate(path + 'cert_company.docx')
+            tpl = DocxTemplate(path + 'cert_person.docx')
         elif person.type == 30:
             tpl = DocxTemplate(path + 'cert_company.docx')
         elif person.type == 40:
-            tpl = DocxTemplate(path + 'cert_company.docx')
+            tpl = DocxTemplate(path + 'cert_state.docx')
         elif person.type == 50 or person.type == 60:
-            tpl = DocxTemplate(path + 'cert_company.docx')
+            tpl = DocxTemplate(path + 'cert_use.docx')
 
         context = {
             'aimag_name': aimag_name,

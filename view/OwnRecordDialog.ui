@@ -104,7 +104,7 @@
     <enum>Qt::LeftToRight</enum>
    </property>
    <property name="currentIndex">
-    <number>7</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="application_tab">
     <attribute name="title">
@@ -1703,7 +1703,7 @@
        <string>Land Tax Summary</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="decision_page_print_button">
       <property name="geometry">
        <rect>
         <x>50</x>
