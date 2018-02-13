@@ -1703,6 +1703,19 @@
        <string>Land Tax Summary</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="decision_page_print_button">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>80</y>
+        <width>251</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Decision Page Pring</string>
+      </property>
+     </widget>
     </widget>
    </widget>
   </widget>
