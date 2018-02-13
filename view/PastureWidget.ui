@@ -93,7 +93,7 @@
        </size>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <property name="usesScrollButtons">
        <bool>true</bool>
@@ -1487,6 +1487,19 @@ font: 75 14pt &quot;Helvetica&quot;;</string>
           </property>
          </widget>
         </widget>
+       </widget>
+       <widget class="QPushButton" name="point_detail_button">
+        <property name="geometry">
+         <rect>
+          <x>220</x>
+          <y>5</y>
+          <width>141</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Point Detail</string>
+        </property>
        </widget>
       </widget>
       <widget class="QWidget" name="tab">
