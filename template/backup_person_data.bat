@@ -1,8 +1,8 @@
 @ECHO OFF
-SET Dump_name=
-SET Database_name=lm_1101
+SET Dump_name=s04207_2018-02-09
+SET Database_name=lm_4204
 SET Host=localhost
-SET Schema_name=
+SET Schema_name=s04207
 SET pgsql_bin_path="C:\Program Files\PostgreSQL\9.5\bin"
 REM Set path to backup directory
 SET backup_path="D:\TM_LM2\dumps"

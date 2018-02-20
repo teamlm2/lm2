@@ -125,7 +125,10 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
         self.print_year_sbox.setSingleStep(1)
         self.print_year_sbox.setValue(QDate.currentDate().year())
         self.point_detail_date.setDate(QDate.currentDate())
-        self.calc_date_edit.setDate(QDate.currentDate())
+
+        year = self.print_year_sbox.value()
+        self.calc_date_edit.setDate(QDate(year, 8, 10))
+        # self.calc_date_edit.setDate(QDate.currentDate())
 
         # self.begin_month_date.setDisplayFormat('%m, %d')
         self.begin_month_date.setDisplayFormat("MM-dd")
@@ -1156,6 +1159,12 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
         self.__set_twidgets_row()
 
         self.__load_pasture_evaluations()
+
+    @pyqtSlot(int)
+    def on_print_year_sbox_valueChanged(self, sbox_value):
+
+        year = sbox_value
+        self.calc_date_edit.setDate(QDate(year, 8, 10))
 
     def __load_pasture_evaluations(self):
 
@@ -2863,7 +2872,7 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
 
         worksheet.merge_range('G4:P4', u'Газрын мэдээлэл', format)
         worksheet.merge_range('H5:H6', u'Цэгийн дугаар', format)
-        worksheet.merge_range('I5:I6', u'Огноо', format)
+        worksheet.merge_range('I5:I6', u'Мониторинг хийсэн огноо', format)
         worksheet.merge_range('J5:J6', u'Байгалийн бүс, бүслүүр', format)
         worksheet.merge_range('K5:K6', u'Бэлчээрийн төлөв байдал, өөрчлөлтийн загвар', format)
         worksheet.merge_range('L5:L6', u'Өндөршил', format)
@@ -2943,6 +2952,14 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
                 pug_name = pug_boundary.group_name
             zone_id = zone.code
 
+            monitoring_year = self.print_year_sbox.value()
+            monitoring_date = ''
+            d_value = self.session.query(PsPointDaatsValue).\
+                filter(PsPointDaatsValue.point_detail_id == point_detail_id).\
+                filter(PsPointDaatsValue.monitoring_year == monitoring_year).one()
+
+            if d_value.register_date:
+                monitoring_date = str(d_value.register_date)
             worksheet.write(data_row, col, row_number, format)
             worksheet.write(data_row, col + 1, au1.name, format)
             worksheet.write(data_row, col + 2, au2.name, format)
@@ -2952,7 +2969,7 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
             worksheet.write(data_row, col + 6, point_detail.land_name, format)
 
             worksheet.write(data_row, col + 7, str(point_detail_id), format)
-            worksheet.write(data_row, col + 8, str(point_detail.register_date), format)
+            worksheet.write(data_row, col + 8, monitoring_date, format)
             worksheet.write(data_row, col + 9, (zone.name), format)
             worksheet.write(data_row, col + 10, (land_form.description), format)
             worksheet.write(data_row, col + 11, str(point_detail.elevation), format)

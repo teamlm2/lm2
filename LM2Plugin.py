@@ -18,6 +18,7 @@ from controller.CreateCaseDialog import CreateCaseDialog
 from controller.SentToGovernorDialog import *
 from controller.PrintCadastreExtractMapTool import *
 from controller.ParcelInfoExtractMapTool import *
+from controller.PrintPointExtractMapTool import *
 from controller.AboutDialog import *
 from controller.ReportDialog import *
 from utils.DatabaseUtils import *
@@ -98,6 +99,9 @@ class LM2Plugin:
         self.import_decision_action = QAction(QIcon(":/plugins/lm2/import_decision.png"), QApplication.translate("Plugin", "Import Decision"), self.iface.mainWindow())
         self.mark_apps_action = QAction(QIcon(":/plugins/lm2/send_to_governor.png"), QApplication.translate("Plugin", "Mark Apps As Sent To Governor"), self.iface.mainWindow())
         self.print_cadastre_map_action = QAction(QIcon(":/plugins/lm2/extract.png"), QApplication.translate("Plugin", "Print cadastre map"), self.iface.mainWindow())
+        self.print_point_map_action = QAction(QIcon(":/plugins/lm2_pasture/point.png"),
+                                                 QApplication.translate("Plugin", "Print cadastre map"),
+                                                 self.iface.mainWindow())
         # self.print_cadastre_map_action.setCheckable(True)
         self.parcel_map_action = QAction(QIcon(":/plugins/lm2/parcel_grey.png"),
                                                  QApplication.translate("Plugin", "Parcel Info"),
@@ -135,6 +139,9 @@ class LM2Plugin:
         self.print_cadastre_map_action.triggered.connect(self.__start_print_cadastre_map)
         self.print_cadastre_map_action.setCheckable(True)
 
+        self.print_point_map_action.triggered.connect(self.__start_print_point_map)
+        self.print_point_map_action.setCheckable(True)
+
         self.manage_parcel_records_action.triggered.connect(self.__show_manage_parcel_records_dialog)
         self.database_dump_action.triggered.connect(self.__show_database_dump_dialog)
         self.webgis_utility_action.triggered.connect(self.__show_webgis_utility_action)
@@ -152,6 +159,7 @@ class LM2Plugin:
         self.lm_toolbar.addAction(self.mark_apps_action)
         self.lm_toolbar.addAction(self.import_decision_action)
         self.lm_toolbar.addAction(self.print_cadastre_map_action)
+        self.lm_toolbar.addAction(self.print_point_map_action)
         database = QSettings().value(SettingsConstants.DATABASE_NAME)
         if database:
             au1 = database.split('_')[1][:2]
@@ -161,7 +169,10 @@ class LM2Plugin:
                     self.lm_toolbar.addAction(self.parcel_map_action)
         self.lm_toolbar.addSeparator()
         self.lm_toolbar.addAction(self.navigator_action)
+        self.lm_toolbar.addSeparator()
         self.lm_toolbar.addAction(self.pasture_use_action)
+        self.lm_toolbar.addAction(self.print_point_map_action)
+        self.lm_toolbar.addSeparator()
         self.lm_toolbar.addAction(self.webgis_utility_action)
         self.lm_toolbar.addAction(self.document_action)
         self.lm_toolbar.addSeparator()
@@ -223,7 +234,10 @@ class LM2Plugin:
         self.lm_menu.addAction(self.manage_parcel_records_action)
         self.lm_menu.addAction(self.database_dump_action)
         self.lm_menu.addAction(self.webgis_utility_action)
+        self.lm_menu.addSeparator()
         self.lm_menu.addAction(self.pasture_use_action)
+        # self.lm_menu.addAction(self.print_point_map_action)
+        self.lm_menu.addSeparator()
         self.lm_menu.addAction(self.help_action)
         self.lm_menu.addAction(self.about_action)
 
@@ -254,6 +268,7 @@ class LM2Plugin:
         self.iface.removePluginMenu(QApplication.translate("Plugin", "&LM2"), self.database_dump_action)
         self.iface.removePluginMenu(QApplication.translate("Plugin", "&LM2"), self.webgis_utility_action)
         self.iface.removePluginMenu(QApplication.translate("Plugin", "&LM2"), self.pasture_use_action)
+        self.iface.removePluginMenu(QApplication.translate("Plugin", "&LM2"), self.print_point_map_action)
 
         del self.lm_toolbar
 
@@ -705,6 +720,51 @@ class LM2Plugin:
         self.iface.mapCanvas().setCursor(QCursor(Qt.ArrowCursor))
 
         self.activeAction = self.print_cadastre_map_action
+        self.iface.mapCanvas().setFocus(Qt.OtherFocusReason)
+
+    def __start_print_point_map(self):
+
+        if self.print_point_map_action.isCheckable():
+            self.print_point_map_action.setCheckable(False)
+        else:
+            self.print_point_map_action.setCheckable(True)
+            self.activeAction = None
+
+        self.removeLayers()
+        if DialogInspector().dialog_visible():
+            return
+
+        if self.activeAction == self.print_point_map_action:
+            self.print_point_map_action.setChecked(True)
+            return
+
+        soum = DatabaseUtils.working_l2_code()
+        layer = LayerUtils.layer_by_data_source("pasture", 'ca_pasture_monitoring')
+
+        if layer is None:
+            QMessageBox.warning(self.iface.mainWindow(), QApplication.translate( "Plugin", "No <monitoring> layer"),
+                                QApplication.translate( "Plugin", "Layer <monitoring> must be added "
+                                                                  "to the table of contents first!"))
+            self.print_point_map_action.setChecked(False)
+            return
+
+        map_units = self.iface.mapCanvas().mapUnits()
+        if map_units != 0: # 0 = Meters
+            self.print_point_map_action.setChecked(False)
+            QMessageBox.warning(self.iface.mainWindow(),
+                                QApplication.translate( "Plugin", "Layer / map units not set to 'Meters'"),
+                                QApplication.translate( "Plugin", "Printing requires the layer units set to 'Meters'."
+                                                          " \n(Settings->Project Properties->General->Layer units)"))
+            return
+
+        self.iface.mapCanvas().unsetMapTool(self.iface.mapCanvas().mapTool())
+
+        mapTool = PrintPointExtractMapTool(self)
+
+        self.iface.mapCanvas().setMapTool(mapTool)
+        self.iface.mapCanvas().setCursor(QCursor(Qt.ArrowCursor))
+
+        self.activeAction = self.print_point_map_action
         self.iface.mapCanvas().setFocus(Qt.OtherFocusReason)
 
     def __show_help(self):

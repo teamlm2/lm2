@@ -2,6 +2,7 @@
   <qresource prefix="/plugins/lm2_pasture">
 
     <file alias="crops.png">icons_pasture/crops.png</file>
+    <file alias="point.png">icons_pasture/point.png</file>
     <file alias="double_angle_right.png">icons_pasture/double_angle_right.png</file>
     <file alias="double_angle_left.png">icons_pasture/double_angle_left.png</file>
     <file alias="bag.png">icons_pasture/bag.png</file>
