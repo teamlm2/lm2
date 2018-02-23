@@ -7,6 +7,11 @@
     <file alias="double_angle_left.png">icons_pasture/double_angle_left.png</file>
     <file alias="bag.png">icons_pasture/bag.png</file>
     <file alias="group.png">icons_pasture/group.png</file>
+    <file alias="open_folder.png">icons_pasture/open_folder.png</file>
+    <file alias="printer.png">icons_pasture/printer.png</file>
+    <file alias="zoom_fit.png">icons_pasture/zoom_fit.png</file>
+    <file alias="zoom_in.png">icons_pasture/zoom_in.png</file>
+    <file alias="zoom_out.png">icons_pasture/zoom_out.png</file>
     <!--<file>icons/crown.png</file>-->
     <!--<file>icons/fatcow.png</file>-->
   </qresource>

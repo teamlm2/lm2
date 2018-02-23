@@ -1439,6 +1439,44 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
 
             self.point_detail_twidget.setItem(count, 4, item)
 
+    def __load_all_point_detail(self):
+
+        soum_code = DatabaseUtils.working_l2_code()
+        value = soum_code + '%'
+
+        point_details = self.session.query(PsPointDetail)
+
+        count = 0
+        for point_detail in point_details:
+            self.point_detail_twidget.insertRow(count)
+
+            item = QTableWidgetItem(point_detail.point_detail_id)
+            item.setData(Qt.UserRole, point_detail.point_detail_id)
+
+            self.point_detail_twidget.setItem(count, 0, item)
+
+            item = QTableWidgetItem(str(point_detail.register_date))
+            item.setData(Qt.UserRole, point_detail.register_date)
+
+            self.point_detail_twidget.setItem(count, 1, item)
+
+            item = QTableWidgetItem(unicode(point_detail.land_name))
+            item.setData(Qt.UserRole, point_detail.land_name)
+
+            self.point_detail_twidget.setItem(count, 2, item)
+
+            land_form = self.session.query(ClLandForm).filter(ClLandForm.code == point_detail.land_form).one()
+
+            item = QTableWidgetItem(unicode(land_form.description))
+            item.setData(Qt.UserRole, land_form.code)
+
+            self.point_detail_twidget.setItem(count, 3, item)
+
+            item = QTableWidgetItem(str(point_detail.elevation))
+            item.setData(Qt.UserRole, point_detail.elevation)
+
+            self.point_detail_twidget.setItem(count, 4, item)
+
     @pyqtSlot(int)
     def on_all_point_chbox_stateChanged(self, state):
 
@@ -1454,11 +1492,15 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
         self.point_detail_twidget.clearContents()
         self.point_detail_twidget.setRowCount(0)
 
-        if state == Qt.Checked:
-            if self.otor_find_chbox.isChecked():
-                self.__load_reserve_point_detail()
+        if self.otor_find_chbox.isChecked():
+            self.__load_reserve_point_detail()
+        else:
+            if state == Qt.Checked:
+                self.__load_all_point_detail()
             else:
                 self.__load_point_detail()
+
+
 
     def __point_item_clicked(self, item):
 
@@ -2932,58 +2974,64 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
                     second_point_y = point.y_coordinate
                 point_id = point.point_id
                 point_count += 1
-            point = self.session.query(CaPastureMonitoring).filter(CaPastureMonitoring.point_id == point_id).one()
-            zone = self.session.query(AuNaturalZone).filter(point.geometry.ST_Within(AuNaturalZone.geometry)).one()
-            au3 = self.session.query(AuLevel3).filter(point.geometry.ST_Within(AuLevel3.geometry)).one()
-            au2 = self.session.query(AuLevel2).filter(point.geometry.ST_Within(AuLevel2.geometry)).one()
-            au1 = self.session.query(AuLevel1).filter(point.geometry.ST_Within(AuLevel1.geometry)).one()
-
             pug_name = ''
             pasture_type = ''
-            pasture_parcel_count = self.session.query(CaPastureParcel).filter(
-                point.geometry.ST_Within(CaPastureParcel.geometry)).count()
-            if pasture_parcel_count == 1:
-                pasture_parcel = self.session.query(CaPastureParcel).filter(point.geometry.ST_Within(CaPastureParcel.geometry)).one()
-                pasture_type = pasture_parcel.pasture_type
-            pug_boundary_count = self.session.query(CaPUGBoundary).filter(
-                point.geometry.ST_Within(CaPUGBoundary.geometry)).count()
-            if pug_boundary_count == 1:
-                pug_boundary = self.session.query(CaPUGBoundary).filter(point.geometry.ST_Within(CaPUGBoundary.geometry)).one()
-                pug_name = pug_boundary.group_name
-            zone_id = zone.code
+            if point_id:
+                point = self.session.query(CaPastureMonitoring).filter(CaPastureMonitoring.point_id == point_id).one()
+                zone = self.session.query(AuNaturalZone).filter(point.geometry.ST_Within(AuNaturalZone.geometry)).one()
+                au3 = self.session.query(AuLevel3).filter(point.geometry.ST_Within(AuLevel3.geometry)).one()
+                au2 = self.session.query(AuLevel2).filter(point.geometry.ST_Within(AuLevel2.geometry)).one()
+                au1 = self.session.query(AuLevel1).filter(point.geometry.ST_Within(AuLevel1.geometry)).one()
 
-            monitoring_year = self.print_year_sbox.value()
-            monitoring_date = ''
-            d_value = self.session.query(PsPointDaatsValue).\
-                filter(PsPointDaatsValue.point_detail_id == point_detail_id).\
-                filter(PsPointDaatsValue.monitoring_year == monitoring_year).one()
 
-            if d_value.register_date:
-                monitoring_date = str(d_value.register_date)
-            worksheet.write(data_row, col, row_number, format)
-            worksheet.write(data_row, col + 1, au1.name, format)
-            worksheet.write(data_row, col + 2, au2.name, format)
-            worksheet.write(data_row, col + 3, au3.name, format)
-            worksheet.write(data_row, col + 4, pug_name, format)
-            worksheet.write(data_row, col + 5, pasture_type, format)
-            worksheet.write(data_row, col + 6, point_detail.land_name, format)
+                pasture_parcel_count = self.session.query(CaPastureParcel).filter(
+                    point.geometry.ST_Within(CaPastureParcel.geometry)).count()
+                if pasture_parcel_count == 1:
+                    pasture_parcel = self.session.query(CaPastureParcel).filter(point.geometry.ST_Within(CaPastureParcel.geometry)).one()
+                    pasture_type = pasture_parcel.pasture_type
+                pug_boundary_count = self.session.query(CaPUGBoundary).filter(
+                    point.geometry.ST_Within(CaPUGBoundary.geometry)).count()
+                if pug_boundary_count == 1:
+                    pug_boundary = self.session.query(CaPUGBoundary).filter(point.geometry.ST_Within(CaPUGBoundary.geometry)).one()
+                    pug_name = pug_boundary.group_name
+                zone_id = zone.code
 
-            worksheet.write(data_row, col + 7, str(point_detail_id), format)
-            worksheet.write(data_row, col + 8, monitoring_date, format)
-            worksheet.write(data_row, col + 9, (zone.name), format)
-            worksheet.write(data_row, col + 10, (land_form.description), format)
-            worksheet.write(data_row, col + 11, str(point_detail.elevation), format)
+                monitoring_year = self.print_year_sbox.value()
+                monitoring_date = ''
+                d_value_count = self.session.query(PsPointDaatsValue). \
+                    filter(PsPointDaatsValue.point_detail_id == point_detail_id). \
+                    filter(PsPointDaatsValue.monitoring_year == monitoring_year).count()
+                if d_value_count == 1:
+                    d_value = self.session.query(PsPointDaatsValue).\
+                        filter(PsPointDaatsValue.point_detail_id == point_detail_id).\
+                        filter(PsPointDaatsValue.monitoring_year == monitoring_year).one()
 
-            worksheet.write(data_row, col + 12, str(first_point_x), format)
-            worksheet.write(data_row, col + 13, str(first_point_y), format)
-            worksheet.write(data_row, col + 14, str(second_point_x), format)
-            worksheet.write(data_row, col + 15, str(second_point_y), format)
+                    if d_value.register_date:
+                        monitoring_date = str(d_value.register_date)
+                worksheet.write(data_row, col, row_number, format)
+                worksheet.write(data_row, col + 1, au1.name, format)
+                worksheet.write(data_row, col + 2, au2.name, format)
+                worksheet.write(data_row, col + 3, au3.name, format)
+                worksheet.write(data_row, col + 4, pug_name, format)
+                worksheet.write(data_row, col + 5, pasture_type, format)
+                worksheet.write(data_row, col + 6, point_detail.land_name, format)
 
-            print_year = self.print_year_sbox.value()
-            self.__load_cover_plants_data(zone_id, point_detail_id, data_row, print_year, pasture_plants, worksheet, format)
+                worksheet.write(data_row, col + 7, str(point_detail_id), format)
+                worksheet.write(data_row, col + 8, monitoring_date, format)
+                worksheet.write(data_row, col + 9, (zone.name), format)
+                worksheet.write(data_row, col + 10, (land_form.description), format)
+                worksheet.write(data_row, col + 11, str(point_detail.elevation), format)
 
-            data_row += 1
-            row_number += 1
+                worksheet.write(data_row, col + 12, str(first_point_x), format)
+                worksheet.write(data_row, col + 13, str(first_point_y), format)
+                worksheet.write(data_row, col + 14, str(second_point_x), format)
+                worksheet.write(data_row, col + 15, str(second_point_y), format)
+
+                print_year = self.print_year_sbox.value()
+                self.__load_cover_plants_data(zone_id, point_detail_id, data_row, print_year, pasture_plants, worksheet, format)
+
+                data_row += 1
+                row_number += 1
 
     def __load_cover_plants_data(self, zone_id, point_detail_id, data_row, print_year, pasture_plants, worksheet, format):
 

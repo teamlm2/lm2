@@ -15,6 +15,11 @@ from ..utils.DatabaseUtils import DatabaseUtils
 from ..utils.SessionHandler import SessionHandler
 from ..utils.PasturePath import *
 from ..utils.FileUtils import FileUtils
+from ..model.PsPointDetail import *
+from ..model.CaPastureMonitoring import *
+from ..model.PsPointDaatsValue import *
+from ..model.PsPointPastureValue import *
+from ..model.PsRecoveryClass import *
 from ..model.CaBuilding import *
 from ..model.CtApplication import *
 from ..model.AuLevel1 import *
@@ -48,15 +53,37 @@ class PrintPointDialog(QDialog, Ui_PrintPointDialog):
 
         self.plugin = plugin
         self.point_id = point_id
+        self.point_detail_id = str(self.point_id[:-2])
 
         self.session = SessionHandler().session_instance()
         self.setupUi(self)
 
         self.image_id = 0
         self.image_type = 0
+        self.pixmap_size = None
+
+        self.__label_setup()
+
+        self.setWindowTitle("Image Viewer")
+        # self.resize(500, 400)
+
+        # self.open_button.setStyleSheet("""QToolTip {
+        #                    background-color: black;
+        #                    color: white;
+        #                    border: black solid 1px
+        #                    }""")
+        # self.open_button.setStyleSheet("background: transparent;")
+        self.zoomin_button.setStyleSheet("background: transparent;")
+        self.zoomout_button.setStyleSheet("background: transparent;")
+        self.fit_button.setStyleSheet("background: transparent;")
+        self.print_button.setStyleSheet("background: transparent;")
+
+        self.__point_detail_info()
+
+    def __label_setup(self):
 
         self.printer = QPrinter()
-        self.scaleFactor = 0.0
+        self.scaleFactor = 0.12
 
         # self.imageLabel = QLabel()
 
@@ -73,19 +100,49 @@ class PrintPointDialog(QDialog, Ui_PrintPointDialog):
         self.createActions()
         self.createMenus()
 
-        self.setWindowTitle("Image Viewer")
-        # self.resize(500, 400)
+        self.land_form_label.setWordWrap(True)
+        self.point_address_label.setWordWrap(True)
+        self.point_address_label.setAlignment(Qt.AlignCenter)
 
-        self.open_button.setStyleSheet("""QToolTip { 
-                           background-color: black; 
-                           color: white; 
-                           border: black solid 1px
-                           }""")
+        address_font = QFont()
+        address_font.setBold(True)
+        address_font.setItalic(True)
+        address_font.setUnderline(True)
+        address_font.setPointSize(10)
 
-    @pyqtSlot()
-    def on_open_button_clicked(self):
+        self.point_address_label.setFont(address_font)
 
-        self.__open_image()
+        self.rc_label.setStyleSheet('color: red')
+        self.rc_label.setOpenExternalLinks(True)
+
+        self.biomass_label.setStyleSheet('color: red')
+        self.cover_label.setStyleSheet('color: red')
+
+    def __point_detail_info(self):
+
+        if self.point_detail_id:
+            point_detail = self.session.query(PsPointDetail).filter(PsPointDetail.point_detail_id == self.point_detail_id).one()
+            land_form_desc = point_detail.land_form_ref.description
+
+            self.land_form_label.setText(land_form_desc)
+
+            address_point = ''
+            aimag = self.session.query(AuLevel1).filter(CaPastureMonitoring.geometry.ST_Within(AuLevel1.geometry)).\
+                filter(CaPastureMonitoring.point_id == self.point_id).one()
+
+            soum = self.session.query(AuLevel2).filter(CaPastureMonitoring.geometry.ST_Within(AuLevel2.geometry)). \
+                filter(CaPastureMonitoring.point_id == self.point_id).one()
+
+            bag = self.session.query(AuLevel3).filter(CaPastureMonitoring.geometry.ST_Within(AuLevel3.geometry)). \
+                filter(CaPastureMonitoring.point_id == self.point_id).one()
+
+            address_point = aimag.name + ', ' + soum.name + ', ' + bag.name + ', ' + point_detail.land_name
+            self.point_address_label.setText(address_point)
+
+    # @pyqtSlot()
+    # def on_open_button_clicked(self):
+    #
+    #     self.__open_image()
 
     def __open_image(self):
 
@@ -99,7 +156,7 @@ class PrintPointDialog(QDialog, Ui_PrintPointDialog):
                 return
 
             self.imageLabel.setPixmap(QPixmap.fromImage(image))
-            self.scaleFactor = 1.0
+            self.scaleFactor = 0.34
 
             self.printAct.setEnabled(True)
             self.fitToWindowAct.setEnabled(True)
@@ -145,17 +202,19 @@ class PrintPointDialog(QDialog, Ui_PrintPointDialog):
 
     def __normal_size(self):
 
-        self.imageLabel.adjustSize()
-        self.scaleFactor = 1.0
+        if self.pixmap_size:
+            self.imageLabel.resize(QSize(420, 325))
+        self.scaleFactor = 0.12
 
-    @pyqtSlot()
-    def on_normal_size_button_clicked(self):
-
-        self.__normal_size()
+    # @pyqtSlot()
+    # def on_normal_size_button_clicked(self):
+    #
+    #     self.__normal_size()
 
     def __fit_image(self):
 
         fitToWindow = self.fitToWindowAct.isChecked()
+
         self.scrollArea.setWidgetResizable(fitToWindow)
         if not fitToWindow:
             self.__normal_size()
@@ -170,20 +229,19 @@ class PrintPointDialog(QDialog, Ui_PrintPointDialog):
     @pyqtSlot()
     def on_about_button_clicked(self):
 
-        QMessageBox.about(self, "About Image Viewer",
-                                "<p>The <b>Image Viewer</b> example shows how to combine "
-                                "QLabel and QScrollArea to display an image. QLabel is "
-                                "typically used for displaying text, but it can also display "
-                                "an image. QScrollArea provides a scrolling view around "
-                                "another widget. If the child widget exceeds the size of the "
-                                "frame, QScrollArea automatically provides scroll bars.</p>"
-                                "<p>The example demonstrates how QLabel's ability to scale "
-                                "its contents (QLabel.scaledContents), and QScrollArea's "
-                                "ability to automatically resize its contents "
-                                "(QScrollArea.widgetResizable), can be used to implement "
-                                "zooming and scaling features.</p>"
-                                "<p>In addition the example shows how to use QPainter to "
-                                "print an image.</p>")
+        QMessageBox.about(self, u"Мониторингийн цэгийн мэдээлэл",
+                                u"<p>Бэлчээрийн газрын тухайн цэгийн <b>Мониторингийн мэдээлэл</b> "
+                                u"Мониторингийн цэгийн байршлын/аймаг, сум, баг, газрын нэр/ мэдээлэл</b> "
+                                u"болон тухайн газрын гадаргийн хэлбэр төлөв байдлын загварыг харуулна.</b> "
+                                u"Цэгийн мониторингийн мэдээллийг он оноор харж болох бөгөөд "
+                                u"фото зургийг орчны болон бүрхэцийн сонголттойгоор бүгдийг нь "
+                                u"томруулж, жижигрүүлж харах боломжтой. "
+                                u"Сонгогдсон жилийн бэлчээрийн даац, сэргэх чадавхи, төлөв байдлын "
+                                u"мэдээлэл болон Фото зургийг хэвлэх командыг оруулж өгсөн болно.</p> "
+                                u"<p>Дараах зурган мэдээлэл хэвлэх боломжтой</p> "
+                                u"<p>-БАХ-ийн зураг</p> "
+                                u"<p>-Улирлын бэлчээрийн зураг</p> "
+                                u"<p>-Сэргэх чадавхийн зураг</p> ")
 
     def createActions(self):
         self.openAct = QAction("&Open...", self, shortcut="Ctrl+O",
@@ -215,11 +273,11 @@ class PrintPointDialog(QDialog, Ui_PrintPointDialog):
 
     def createMenus(self):
 
-        self.open_button.addAction(self.openAct)
+        # self.open_button.addAction(self.openAct)
         self.zoomin_button.addAction(self.zoomInAct)
         self.zoomout_button.addAction(self.zoomOutAct)
         self.print_button.addAction(self.printAct)
-        self.normal_size_button.addAction(self.normalSizeAct)
+        # self.normal_size_button.addAction(self.normalSizeAct)
         self.fit_button.addAction(self.fitToWindowAct)
 
         self.fileMenu = QMenu("&File", self)
@@ -244,19 +302,25 @@ class PrintPointDialog(QDialog, Ui_PrintPointDialog):
         # self.menuBar().addMenu(self.helpMenu)
 
     def updateActions(self):
+
         self.zoomInAct.setEnabled(not self.fitToWindowAct.isChecked())
         self.zoomOutAct.setEnabled(not self.fitToWindowAct.isChecked())
         self.normalSizeAct.setEnabled(not self.fitToWindowAct.isChecked())
 
     def scaleImage(self, factor):
+
+        fitToWindow = self.fitToWindowAct.isChecked()
+        self.scrollArea.setWidgetResizable(fitToWindow)
+        self.updateActions()
+
         self.scaleFactor *= factor
         self.imageLabel.resize(self.scaleFactor * self.imageLabel.pixmap().size())
 
         self.adjustScrollBar(self.scrollArea.horizontalScrollBar(), factor)
         self.adjustScrollBar(self.scrollArea.verticalScrollBar(), factor)
 
-        self.zoomInAct.setEnabled(self.scaleFactor < 3.0)
-        self.zoomOutAct.setEnabled(self.scaleFactor > 0.333)
+        # self.zoomInAct.setEnabled(self.scaleFactor < 3.0)
+        # self.zoomOutAct.setEnabled(self.scaleFactor > 0.333)
 
     def adjustScrollBar(self, scrollBar, factor):
         scrollBar.setValue(int(factor * scrollBar.value()
@@ -274,8 +338,8 @@ class PrintPointDialog(QDialog, Ui_PrintPointDialog):
 
         file_path = PasturePath.pasture_photo_file_path()
         point_year = str(self.year_sbox.value())
-        point_detail_id = str(self.point_id[:-2])
-        file_path = file_path + '/' + point_year + '/' + point_detail_id + '/image'
+
+        file_path = file_path + '/' + point_year + '/' + self.point_detail_id + '/image'
 
         if not os.path.exists(file_path):
             PluginUtils.show_message(self, self.tr("Image View"), self.tr("No image!"))
@@ -300,7 +364,7 @@ class PrintPointDialog(QDialog, Ui_PrintPointDialog):
                 for i in range(4):
                     photo_type_code = 'cover'
 
-                    if photo_type == photo_type_code and point_detail_id == file_point_detail_id:
+                    if photo_type == photo_type_code and self.point_detail_id == file_point_detail_id:
                         if fileName:
                             image = QImage(fileName)
                             if image.isNull():
@@ -309,8 +373,7 @@ class PrintPointDialog(QDialog, Ui_PrintPointDialog):
                                 return
 
                             self.imageLabel.setPixmap(QPixmap.fromImage(image))
-                            self.scaleFactor = 1.0
-
+                            self.pixmap_size = self.imageLabel.pixmap().size()
                             self.printAct.setEnabled(True)
                             self.fitToWindowAct.setEnabled(True)
                             self.updateActions()
@@ -327,8 +390,8 @@ class PrintPointDialog(QDialog, Ui_PrintPointDialog):
 
         file_path = PasturePath.pasture_photo_file_path()
         point_year = str(self.year_sbox.value())
-        point_detail_id = str(self.point_id[:-2])
-        file_path = file_path + '/' + point_year + '/' + point_detail_id + '/image'
+
+        file_path = file_path + '/' + point_year + '/' + self.point_detail_id + '/image'
 
         if not os.path.exists(file_path):
             PluginUtils.show_message(self, self.tr("Image View"), self.tr("No image!"))
@@ -340,7 +403,6 @@ class PrintPointDialog(QDialog, Ui_PrintPointDialog):
             if file.endswith(".JPG") or file.endswith(".jpg"):
                 file_name_split = file.split('_')
                 photo_type = file_name_split[0]
-                image_id = file_name_split[1]
 
                 file_point_detail_id = file_name_split[2]
                 file_point_detail_id = file_point_detail_id.split('.')[0]
@@ -353,7 +415,7 @@ class PrintPointDialog(QDialog, Ui_PrintPointDialog):
                 for i in range(4):
                     photo_type_code = 'around'
 
-                    if photo_type == photo_type_code and point_detail_id == file_point_detail_id:
+                    if photo_type == photo_type_code and self.point_detail_id == file_point_detail_id:
                         if fileName:
                             image = QImage(fileName)
                             if image.isNull():
@@ -362,8 +424,7 @@ class PrintPointDialog(QDialog, Ui_PrintPointDialog):
                                 return
 
                             self.imageLabel.setPixmap(QPixmap.fromImage(image))
-                            self.scaleFactor = 1.0
-
+                            self.pixmap_size = self.imageLabel.pixmap().size()
                             self.printAct.setEnabled(True)
                             self.fitToWindowAct.setEnabled(True)
                             self.updateActions()
@@ -388,9 +449,8 @@ class PrintPointDialog(QDialog, Ui_PrintPointDialog):
 
         file_path = PasturePath.pasture_photo_file_path()
         point_year = str(self.year_sbox.value())
-        point_detail_id = str(self.point_id[:-2])
-        file_path = file_path + '/' + point_year + '/' + point_detail_id + '/image'
-        file_name = 'cover_' + str(int(self.image_id)+1) + '_' + point_detail_id
+        file_path = file_path + '/' + point_year + '/' + self.point_detail_id + '/image'
+        file_name = 'cover_' + str(int(self.image_id)+1) + '_' + self.point_detail_id
         fileName = file_path + '/' + file_name
 
         photo_type_code = 'cover'
@@ -404,14 +464,13 @@ class PrintPointDialog(QDialog, Ui_PrintPointDialog):
                     return
 
                 self.imageLabel.setPixmap(QPixmap.fromImage(image))
-                self.scaleFactor = 1.0
-
+                self.pixmap_size = self.imageLabel.pixmap().size()
                 self.printAct.setEnabled(True)
                 self.fitToWindowAct.setEnabled(True)
                 self.updateActions()
 
-                if not self.fitToWindowAct.isChecked():
-                    self.imageLabel.adjustSize()
+                # if not self.fitToWindowAct.isChecked():
+                #     self.imageLabel.adjustSize()
         self.image_id = str(int(self.image_id) + 1)
         self.count_label.setText(str(int(self.image_id))+'/9')
 
@@ -419,9 +478,8 @@ class PrintPointDialog(QDialog, Ui_PrintPointDialog):
 
         file_path = PasturePath.pasture_photo_file_path()
         point_year = str(self.year_sbox.value())
-        point_detail_id = str(self.point_id[:-2])
-        file_path = file_path + '/' + point_year + '/' + point_detail_id + '/image'
-        file_name = 'around_' + str(int(self.image_id)+1) + '_' + point_detail_id
+        file_path = file_path + '/' + point_year + '/' + self.point_detail_id + '/image'
+        file_name = 'around_' + str(int(self.image_id)+1) + '_' + self.point_detail_id
         fileName = file_path + '/' + file_name
 
         photo_type_code = 'around'
@@ -435,14 +493,13 @@ class PrintPointDialog(QDialog, Ui_PrintPointDialog):
                     return
 
                 self.imageLabel.setPixmap(QPixmap.fromImage(image))
-                self.scaleFactor = 1.0
-
+                self.pixmap_size = self.imageLabel.pixmap().size()
                 self.printAct.setEnabled(True)
                 self.fitToWindowAct.setEnabled(True)
                 self.updateActions()
 
-                if not self.fitToWindowAct.isChecked():
-                    self.imageLabel.adjustSize()
+                # if not self.fitToWindowAct.isChecked():
+                #     self.imageLabel.adjustSize()
         self.image_id = str(int(self.image_id) + 1)
         self.count_label.setText(str(int(self.image_id))+'/4')
 
@@ -458,9 +515,8 @@ class PrintPointDialog(QDialog, Ui_PrintPointDialog):
 
         file_path = PasturePath.pasture_photo_file_path()
         point_year = str(self.year_sbox.value())
-        point_detail_id = str(self.point_id[:-2])
-        file_path = file_path + '/' + point_year + '/' + point_detail_id + '/image'
-        file_name = 'cover_' + str(int(self.image_id)-1) + '_' + point_detail_id
+        file_path = file_path + '/' + point_year + '/' + self.point_detail_id + '/image'
+        file_name = 'cover_' + str(int(self.image_id)-1) + '_' + self.point_detail_id
         fileName = file_path + '/' + file_name
 
         photo_type_code = 'cover'
@@ -474,14 +530,13 @@ class PrintPointDialog(QDialog, Ui_PrintPointDialog):
                     return
 
                 self.imageLabel.setPixmap(QPixmap.fromImage(image))
-                self.scaleFactor = 1.0
-
+                self.pixmap_size = self.imageLabel.pixmap().size()
                 self.printAct.setEnabled(True)
                 self.fitToWindowAct.setEnabled(True)
                 self.updateActions()
 
-                if not self.fitToWindowAct.isChecked():
-                    self.imageLabel.adjustSize()
+                # if not self.fitToWindowAct.isChecked():
+                #     self.imageLabel.adjustSize()
         self.image_id = str(int(self.image_id) - 1)
         self.count_label.setText(str(int(self.image_id))+'/9')
 
@@ -489,9 +544,9 @@ class PrintPointDialog(QDialog, Ui_PrintPointDialog):
 
         file_path = PasturePath.pasture_photo_file_path()
         point_year = str(self.year_sbox.value())
-        point_detail_id = str(self.point_id[:-2])
-        file_path = file_path + '/' + point_year + '/' + point_detail_id + '/image'
-        file_name = 'around_' + str(int(self.image_id)-1) + '_' + point_detail_id
+
+        file_path = file_path + '/' + point_year + '/' + self.point_detail_id + '/image'
+        file_name = 'around_' + str(int(self.image_id)-1) + '_' + self.point_detail_id
         fileName = file_path + '/' + file_name
 
         photo_type_code = 'around'
@@ -505,13 +560,53 @@ class PrintPointDialog(QDialog, Ui_PrintPointDialog):
                     return
 
                 self.imageLabel.setPixmap(QPixmap.fromImage(image))
-                self.scaleFactor = 1.0
-
+                self.pixmap_size = self.imageLabel.pixmap().size()
                 self.printAct.setEnabled(True)
                 self.fitToWindowAct.setEnabled(True)
                 self.updateActions()
 
-                if not self.fitToWindowAct.isChecked():
-                    self.imageLabel.adjustSize()
+                # if not self.fitToWindowAct.isChecked():
+                #     self.imageLabel.adjustSize()
         self.image_id = str(int(self.image_id) - 1)
         self.count_label.setText(str(int(self.image_id))+'/4')
+
+    @pyqtSlot()
+    def on_load_data_button_clicked(self):
+
+        year = self.year_sbox.value()
+        point_daats_count = self.session.query(PsPointDaatsValue).\
+            filter(PsPointDaatsValue.point_detail_id == self.point_detail_id).\
+            filter(PsPointDaatsValue.monitoring_year == year).count()
+
+        if point_daats_count == 1:
+            point_daats = self.session.query(PsPointDaatsValue).\
+                filter(PsPointDaatsValue.point_detail_id == self.point_detail_id).\
+                filter(PsPointDaatsValue.monitoring_year == year).one()
+
+            rc_count = self.session.query(PsRecoveryClass).filter(PsRecoveryClass.rc_code == point_daats.rc).count()
+            rc_tooltip = ''
+            if rc_count == 1:
+                rc = self.session.query(PsRecoveryClass).filter(PsRecoveryClass.rc_code == point_daats.rc).one()
+                rc_tooltip = rc.description
+                self.rc_label.setToolTip(rc_tooltip)
+
+            self.rc_label.setText(point_daats.rc)
+
+            self.biomass_label.setText(str(round(point_daats.biomass, 2)))
+
+        point_pasture_value_count = self.session.query(PsPointPastureValue).\
+            filter(PsPointPastureValue.point_detail_id == self.point_detail_id).\
+            filter(PsPointPastureValue.pasture_value == 1).\
+            filter(PsPointPastureValue.value_year == year).count()
+        if point_pasture_value_count == 1:
+            point_pasture_value = self.session.query(PsPointPastureValue). \
+                filter(PsPointPastureValue.point_detail_id == self.point_detail_id). \
+                filter(PsPointPastureValue.pasture_value == 1). \
+                filter(PsPointPastureValue.value_year == year).one()
+
+            self.cover_label.setText(str(point_pasture_value.current_value))
+
+    @pyqtSlot()
+    def on_close_button_clicked(self):
+
+        self.reject()
