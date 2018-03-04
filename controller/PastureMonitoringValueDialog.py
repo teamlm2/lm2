@@ -1406,7 +1406,7 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
         value = soum_code + '%'
 
         point_details = self.session.query(PsPointDetail). \
-            filter(PsPointDetail.point_detail_id.ilike(value))
+            filter(PsPointDetail.point_detail_id.ilike(value)).order_by(PsPointDetail.point_detail_id.asc())
 
         count = 0
         for point_detail in point_details:
@@ -1441,10 +1441,11 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
 
     def __load_all_point_detail(self):
 
-        soum_code = DatabaseUtils.working_l2_code()
-        value = soum_code + '%'
+        aimag_code = DatabaseUtils.working_l1_code()
+        value = aimag_code + '%'
 
-        point_details = self.session.query(PsPointDetail)
+        point_details = self.session.query(PsPointDetail). \
+            filter(PsPointDetail.point_detail_id.ilike(value)).order_by(PsPointDetail.point_detail_id.asc())
 
         count = 0
         for point_detail in point_details:
