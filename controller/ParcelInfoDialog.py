@@ -86,6 +86,7 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
         self.__overview_map_scale = None
         self.__coord_transform = None
         self.__second_page_enabled = False
+        self.isSave = True
         self.setupUi(self)
         self.__setup_validators()
         self.__setup_table_widget()
@@ -2370,6 +2371,27 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
         if not valid:
             valid = False
 
+        decision_no = self.decision_full_edit.text()
+
+        decision_count = self.session.query(CtDecision).filter(CtDecision.decision_no == decision_no).count()
+        if decision_count == 1:
+            self.decision = self.session.query(CtDecision).filter(CtDecision.decision_no == decision_no).one()
+            app_dec_count = self.session.query(CtDecisionApplication).filter(
+                CtDecisionApplication.decision == self.decision.decision_no).count()
+            if app_dec_count > 0:
+                app_dec = self.session.query(CtDecisionApplication).filter(
+                    CtDecisionApplication.decision == self.decision.decision_no).first()
+                application = app_dec.application_ref
+                application_type = application.app_type
+                app_type = self.application_type_cbox.itemData(self.application_type_cbox.currentIndex())
+                if app_type != application_type:
+                    # PluginUtils.show_message(self, self.tr("LM2", "Application Type"),
+                    #                          self.tr("Can't match application type!!!"))
+                    # self.isSave = False
+                    valid = False
+                    street_error = self.tr("Can't match application type!!!")
+                    error_message = error_message + "\n \n" + street_error
+
         return valid, error_message
 
     @pyqtSlot(int)
@@ -2414,6 +2436,7 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
             self.__save_decision()
             self.__save_contract_owner()
             # return
+
             self.session.commit()
 
     def __multi_owner_save(self, person_id):
@@ -2445,7 +2468,7 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
 
             self.session.add(bs_person)
 
-            self.session.flush()
+            # self.session.flush()
 
     def __generate_record_number(self):
 
@@ -2567,6 +2590,18 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
         decision_count = self.session.query(CtDecision).filter(CtDecision.decision_no == decision_no).count()
         if decision_count == 1:
             self.decision = self.session.query(CtDecision).filter(CtDecision.decision_no == decision_no).one()
+            # app_dec_count = self.session.query(CtDecisionApplication).filter(
+            #     CtDecisionApplication.decision == self.decision.decision_no).count()
+            # if app_dec_count > 0:
+            #     app_dec = self.session.query(CtDecisionApplication).filter(CtDecisionApplication.decision == self.decision.decision_no).first()
+            #     application = app_dec.application_ref
+            #     application_type = application.app_type
+            #     app_type = self.application_type_cbox.itemData(self.application_type_cbox.currentIndex())
+            #     if app_type != application_type:
+            #         PluginUtils.show_message(self, self.tr("LM2", "Application Type"),
+            #                                  self.tr("Can't match application type!!!"))
+            #         self.isSave = False
+            #         return
         else:
             self.decision = CtDecision()
 
@@ -2581,7 +2616,7 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
         decicion_app.application = self.application.app_no
         self.decision.results.append(decicion_app)
         self.session.add(self.decision)
-        self.session.flush()
+        # self.session.flush()
 
     def __save_status(self):
 
@@ -2706,7 +2741,7 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
             bs_person.address_au_level3 = bag
         if person_count == 0:
             self.session.add(bs_person)
-        self.session.flush()
+        # self.session.flush()
 
         self.__multi_owner_save(person_id)
 
@@ -2738,7 +2773,7 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
         # if parcel_count == 0:
             # self.session.execute("alter table s01125.ca_parcel_tbl disable trigger a_create_parcel_id;")
         self.session.add(parcel)
-        self.session.flush()
+        # self.session.flush()
         # self.session.execute("alter table s01125.ca_parcel_tbl enable trigger a_create_parcel_id;")
         # self.session.commit()
 
@@ -2793,7 +2828,7 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
 
         self.application.parcel = parcel.parcel_id
         self.session.add(self.application)
-        self.session.flush()
+        # self.session.flush()
 
         # except SQLAlchemyError, e:
         #     self.rollback_to_savepoint()
