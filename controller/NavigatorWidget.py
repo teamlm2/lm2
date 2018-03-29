@@ -4927,7 +4927,7 @@ class NavigatorWidget(QDockWidget, Ui_NavigatorWidget, DatabaseHelper):
                 if value.CtApplication.approved_landuse != None:
                     landuse = value.CtApplication.approved_landuse_ref.description
                     landuse_code = value.CtApplication.approved_landuse_ref.code
-                if value.CtApplication.parcel != None:
+                if value.CtApplication.parcel_ref != None:
 
                     if value.CtApplication.parcel_ref != None:
                         khashaa = value.CtApplication.parcel_ref.address_khashaa
@@ -5977,7 +5977,7 @@ class NavigatorWidget(QDockWidget, Ui_NavigatorWidget, DatabaseHelper):
                 if value.CtApplication.approved_landuse != None:
                     landuse = value.CtApplication.approved_landuse_ref.description
                     landuse_code = value.CtApplication.approved_landuse_ref.code
-                if value.CtApplication.parcel != None:
+                if value.CtApplication.parcel_ref != None:
                     if value.CtApplication.parcel_ref.address_khashaa != None:
                         khashaa = value.CtApplication.parcel_ref.address_khashaa
                     if value.CtApplication.parcel_ref.address_streetname != None:

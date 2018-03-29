@@ -121,6 +121,7 @@ class ApplicationsDialog(QDialog, Ui_ApplicationsDialog, DatabaseHelper):
         self.last_row = None
         self.last_tab = -1
         self.updating = False
+        self.isReturnPrint = True
 
         self.applicant_twidget = None
         self.legal_rep_twidget = None
@@ -2968,6 +2969,8 @@ class ApplicationsDialog(QDialog, Ui_ApplicationsDialog, DatabaseHelper):
         map_composition.render(pdfPainter, paperRectPixel, paperRectMM)
         pdfPainter.end()
 
+        self.isReturnPrint = True
+
         self.__add_person_address(map_composition)
         self.__add_aimag_name(map_composition)
         self.__add_soum_name(map_composition)
@@ -3046,6 +3049,7 @@ class ApplicationsDialog(QDialog, Ui_ApplicationsDialog, DatabaseHelper):
         map_composition.render(pdfPainter, paperRectPixel, paperRectMM)
         pdfPainter.end()
 
+        self.isReturnPrint=False
         self.__add_aimag_name(map_composition)
         self.__add_soum_name(map_composition)
         self.__add_app_no(map_composition)
@@ -3089,15 +3093,16 @@ class ApplicationsDialog(QDialog, Ui_ApplicationsDialog, DatabaseHelper):
         item.setText(app_no)
         item.adjustSizeToText()
 
-        item = map_composition.getComposerItemById("card_app_no")
-        item.setText(app_no)
-        item.adjustSizeToText()
+        if self.isReturnPrint:
+            item = map_composition.getComposerItemById("card_app_no")
+            item.setText(app_no)
+            item.adjustSizeToText()
 
-        app_type = self.application_type_cbox.currentText()
-        app_type = app_type.split(':')[1]
-        item = map_composition.getComposerItemById("card_app_type")
-        item.setText(app_type)
-        item.adjustSizeToText()
+            app_type = self.application_type_cbox.currentText()
+            app_type = app_type.split(':')[1]
+            item = map_composition.getComposerItemById("card_app_type")
+            item.setText(app_type)
+            item.adjustSizeToText()
 
     def __wrap(self,text, width):
         """
@@ -3391,11 +3396,11 @@ class ApplicationsDialog(QDialog, Ui_ApplicationsDialog, DatabaseHelper):
             position = officer.position
             position = self.session.query(ClPositionType).filter(ClPositionType.code == position).one()
             position = position.description
-
-        card_officer_full = position + ' ' + officer.surname[:1] + '.' + officer.first_name
-        item = map_composition.getComposerItemById("card_officer_full")
-        item.setText(self.__wrap(card_officer_full, 200))
-        # item.adjustSizeToText()
+        if self.isReturnPrint:
+            card_officer_full = position + ' ' + officer.surname[:1] + '.' + officer.first_name
+            item = map_composition.getComposerItemById("card_officer_full")
+            item.setText(self.__wrap(card_officer_full, 200))
+            # item.adjustSizeToText()
 
     def __duplicate_new_applicant(self, new_person_id):
 
