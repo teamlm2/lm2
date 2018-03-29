@@ -248,6 +248,7 @@ class ApplicationsDialog(QDialog, Ui_ApplicationsDialog, DatabaseHelper):
         self.application_type_cbox.setEnabled(False)
         self.approved_land_use_type_cbox.setCurrentIndex(self.approved_land_use_type_cbox.findData(self.application.approved_landuse))
         self.requested_land_use_type_cbox.setCurrentIndex(self.requested_land_use_type_cbox.findData(self.application.requested_landuse))
+        self.rigth_type_cbox.setEnabled(False)
 
         if self.application.parcel is None:
             self.parcel_edit.setText(self.application.tmp_parcel)

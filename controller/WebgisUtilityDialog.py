@@ -35,7 +35,7 @@ class WebgisUtilityDialog(QDialog, Ui_WebgisUtilityDialog):
 
         if QSettings().value(SettingsConstants.WEBGIS_IP):
             self.webgis_ip_edit.setText(QSettings().value(SettingsConstants.WEBGIS_IP))
-            self.webgis_url_edit.setText(QSettings().value(SettingsConstants.WEBGIS_IP)+'/lm_webgis')
+            self.webgis_url_edit.setText(QSettings().value(SettingsConstants.WEBGIS_IP)+'/mn_webgis')
 
     @pyqtSlot()
     def on_refresh_webgis_button_clicked(self):
@@ -104,10 +104,10 @@ class WebgisUtilityDialog(QDialog, Ui_WebgisUtilityDialog):
     def __connect_webgis(self):
 
         user = 'geodb_admin'
-        password = 'cX97&g-3'
+        password = 'cX97&b-3'
         host = self.webgis_ip_edit.text()
         port = '5432'
-        database = 'lm_webgis'
+        database = 'mn_webgis'
         if not self.__session_webgis(user, password, host, port, database):
             PluginUtils.show_message(self, self.tr("Connection failed"),
                                      self.tr("Please check your VPN connection!!!"))
@@ -145,9 +145,9 @@ class WebgisUtilityDialog(QDialog, Ui_WebgisUtilityDialog):
     def __create_webgis_view(self):
 
         sql = "SELECT c.parcel_id, c.person_id, c.name, c.first_name, c.decision_date, c.decision_no, c.aimag_name, "\
-                "c.soum_name, c.address_streetname, c.address_khashaa, c.app_type_description, c.valid_from, c.valid_till, c.area_m2  FROM webgis.view_ownership c "\
+                "c.soum_name, c.address_streetname, c.address_khashaa, c.app_type_description, null as valid_from, null as valid_till, c.area_m2  FROM webgis.wg_contract c "\
                 "group by c.parcel_id, c.person_id, c.name, c.first_name, c.decision_date, c.decision_no, aimag_name, c.soum_name, "\
-                "c.address_streetname, c.address_khashaa, c.app_type_description, c.valid_from, c.valid_till, c.area_m2 "
+                "c.address_streetname, c.address_khashaa, c.app_type_description, c.area_m2 "
 
         sql = "{0} order by parcel_id;".format(sql)
         count = 0
