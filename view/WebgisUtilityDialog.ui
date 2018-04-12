@@ -26,29 +26,19 @@
    <string>Dialog</string>
   </property>
   <widget class="QLineEdit" name="webgis_ip_edit">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>89</y>
-     <width>176</width>
+     <x>150</x>
+     <y>37</y>
+     <width>127</width>
      <height>20</height>
     </rect>
    </property>
    <property name="readOnly">
     <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_50">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>71</y>
-     <width>181</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Webgis IP Address</string>
    </property>
   </widget>
   <widget class="Line" name="line">
@@ -67,9 +57,9 @@
   <widget class="QLineEdit" name="person_id">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>133</y>
-     <width>176</width>
+     <x>150</x>
+     <y>130</y>
+     <width>127</width>
      <height>20</height>
     </rect>
    </property>
@@ -78,13 +68,13 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>116</y>
-     <width>171</width>
+     <y>132</y>
+     <width>131</width>
      <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>Person id</string>
+    <string>Регистрийн дугаар:</string>
    </property>
   </widget>
   <widget class="QPushButton" name="refresh_webgis_button">
@@ -93,8 +83,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>220</x>
-     <y>88</y>
+     <x>10</x>
+     <y>400</y>
      <width>91</width>
      <height>23</height>
     </rect>
@@ -109,9 +99,9 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>220</x>
-     <y>133</y>
-     <width>91</width>
+     <x>149</x>
+     <y>155</y>
+     <width>128</width>
      <height>23</height>
     </rect>
    </property>
@@ -122,10 +112,10 @@
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>155</y>
-     <width>651</width>
-     <height>161</height>
+     <x>5</x>
+     <y>179</y>
+     <width>676</width>
+     <height>153</height>
     </rect>
    </property>
    <property name="title">
@@ -134,73 +124,65 @@
    <widget class="QTableWidget" name="owner_twidget">
     <property name="geometry">
      <rect>
-      <x>6</x>
-      <y>16</y>
-      <width>641</width>
-      <height>137</height>
+      <x>4</x>
+      <y>14</y>
+      <width>669</width>
+      <height>131</height>
      </rect>
     </property>
+    <attribute name="horizontalHeaderDefaultSectionSize">
+     <number>180</number>
+    </attribute>
+    <attribute name="horizontalHeaderMinimumSectionSize">
+     <number>30</number>
+    </attribute>
+    <attribute name="verticalHeaderDefaultSectionSize">
+     <number>30</number>
+    </attribute>
+    <attribute name="verticalHeaderMinimumSectionSize">
+     <number>19</number>
+    </attribute>
     <column>
      <property name="text">
-      <string>Parcel Id(area m2)</string>
+      <string>Parcel ID</string>
      </property>
     </column>
     <column>
      <property name="text">
-      <string>Aimag/Soum</string>
+      <string>Person information</string>
      </property>
     </column>
     <column>
      <property name="text">
-      <string>Street name/Khashaa</string>
+      <string>Legal inforamation</string>
      </property>
     </column>
     <column>
      <property name="text">
-      <string>App Type</string>
+      <string>Address</string>
      </property>
     </column>
     <column>
      <property name="text">
-      <string>Name</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>Valid from</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>Valid Till</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>Decision No</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>Decision Date</string>
+      <string>Status</string>
      </property>
     </column>
    </widget>
   </widget>
-  <widget class="QPushButton" name="print_button">
+  <widget class="QPushButton" name="detail_print_button">
    <property name="enabled">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <property name="geometry">
     <rect>
-     <x>596</x>
-     <y>321</y>
-     <width>76</width>
+     <x>537</x>
+     <y>365</y>
+     <width>141</width>
      <height>23</height>
     </rect>
    </property>
    <property name="text">
-    <string>Print</string>
+    <string>Detail Pring</string>
    </property>
   </widget>
   <widget class="QPushButton" name="close_button">
@@ -233,7 +215,7 @@
    <property name="geometry">
     <rect>
      <x>324</x>
-     <y>365</y>
+     <y>358</y>
      <width>111</width>
      <height>23</height>
     </rect>
@@ -246,7 +228,7 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>366</y>
+     <y>359</y>
      <width>290</width>
      <height>20</height>
     </rect>
@@ -259,7 +241,7 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>345</y>
+     <y>338</y>
      <width>291</width>
      <height>16</height>
     </rect>
@@ -271,10 +253,10 @@
   <widget class="QLabel" name="error_label">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>110</x>
      <y>400</y>
-     <width>481</width>
-     <height>16</height>
+     <width>471</width>
+     <height>20</height>
     </rect>
    </property>
    <property name="text">
@@ -310,9 +292,9 @@
   <widget class="QPushButton" name="check_connect_button">
    <property name="geometry">
     <rect>
-     <x>19</x>
-     <y>40</y>
-     <width>176</width>
+     <x>10</x>
+     <y>36</y>
+     <width>134</width>
      <height>23</height>
     </rect>
    </property>
@@ -333,37 +315,110 @@
     <string>Find ownership progress:</string>
    </property>
   </widget>
-  <widget class="QComboBox" name="soum_cbox">
-   <property name="geometry">
-    <rect>
-     <x>400</x>
-     <y>321</y>
-     <width>191</width>
-     <height>22</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QComboBox" name="aimag_cbox">
-   <property name="geometry">
-    <rect>
-     <x>200</x>
-     <y>321</y>
-     <width>191</width>
-     <height>22</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_5">
+  <widget class="QRadioButton" name="lm_rbutton">
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>323</y>
-     <width>171</width>
-     <height>16</height>
+     <y>70</y>
+     <width>82</width>
+     <height>17</height>
     </rect>
    </property>
    <property name="text">
-    <string>To whom to may concern:</string>
+    <string>LM</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="lpis_rbutton">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>90</y>
+     <width>82</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>LPIS</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="subject_rbutton">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>110</y>
+     <width>82</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Subject</string>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_2">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>30</y>
+     <width>381</width>
+     <height>149</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Information Detail</string>
+   </property>
+   <widget class="QTableWidget" name="owner_co_twidget">
+    <property name="geometry">
+     <rect>
+      <x>7</x>
+      <y>15</y>
+      <width>371</width>
+      <height>128</height>
+     </rect>
+    </property>
+    <attribute name="horizontalHeaderDefaultSectionSize">
+     <number>120</number>
+    </attribute>
+    <column>
+     <property name="text">
+      <string>Person ID</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Person Info</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Who</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>New Column</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>New Column</string>
+     </property>
+    </column>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="defination_print_button">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>537</x>
+     <y>335</y>
+     <width>141</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Defination Print</string>
    </property>
   </widget>
  </widget>
@@ -375,7 +430,7 @@
   <tabstop>webgis_ip_edit</tabstop>
   <tabstop>refresh_webgis_button</tabstop>
   <tabstop>webgis_url_edit</tabstop>
-  <tabstop>print_button</tabstop>
+  <tabstop>detail_print_button</tabstop>
   <tabstop>close_button</tabstop>
  </tabstops>
  <resources/>

@@ -35,7 +35,15 @@ class WebgisUtilityDialog(QDialog, Ui_WebgisUtilityDialog):
 
         if QSettings().value(SettingsConstants.WEBGIS_IP):
             self.webgis_ip_edit.setText(QSettings().value(SettingsConstants.WEBGIS_IP))
-            self.webgis_url_edit.setText(QSettings().value(SettingsConstants.WEBGIS_IP)+'/mn_webgis')
+            self.webgis_url_edit.setText(QSettings().value(SettingsConstants.WEBGIS_IP))
+
+        self.owner_co_twidget.setAlternatingRowColors(True)
+        self.owner_co_twidget.setEditTriggers(QTableWidget.NoEditTriggers)
+        self.owner_co_twidget.setSelectionBehavior(QTableWidget.SelectRows)
+
+        self.owner_twidget.setAlternatingRowColors(True)
+        self.owner_twidget.setEditTriggers(QTableWidget.NoEditTriggers)
+        self.owner_twidget.setSelectionBehavior(QTableWidget.SelectRows)
 
     @pyqtSlot()
     def on_refresh_webgis_button_clicked(self):
@@ -77,37 +85,164 @@ class WebgisUtilityDialog(QDialog, Ui_WebgisUtilityDialog):
 
         if not self.person_id.text():
             PluginUtils.show_message(self, self.tr("Person ID"),
-                                     self.tr("Enter person id!!!"))
+                                     self.tr("Enter find value!!!"))
             return
-        self.owner_twidget.setRowCount(0)
+        person_id = self.person_id.text()
+
+        if self.lm_rbutton.isChecked():
+            self.__find_lm(person_id)
+        if self.lpis_rbutton.isChecked():
+            self.__find_lpis(person_id)
+        if self.subject_rbutton.isChecked():
+            self.__find_subject(person_id)
+
+
+        # self.owner_twidget.setRowCount(0)
         self.progressBar.setValue(0)
-        if self.__find_person(self.person_id.text()):
-            self.__create_webgis_view()
-            soum = DatabaseUtils.current_working_soum_schema()
 
-            PluginUtils.populate_au_level1_cbox(self.aimag_cbox, True, False, False)
+    def __find_subject(self, person_id):
 
-            aimag_code = soum[:3]
-            self.aimag_cbox.setCurrentIndex(self.aimag_cbox.findData(aimag_code))
+        sql = "select * from owner.all_burtgel c where (upper(c.owner_reg) = :person_id) "
 
-    @pyqtSlot(int)
-    def on_aimag_cbox_currentIndexChanged(self, index):
+        count = 0
+        results = self.session.execute(sql, {'person_id': person_id})
+        # print len(results)
+        self.owner_twidget.setRowCount(0)
+        for row in results:
+            self.owner_twidget.insertRow(count)
 
-        l1_code = str(self.aimag_cbox.itemData(index))
+            item = QTableWidgetItem(str(row[5]))
+            self.owner_twidget.setItem(count, 0, item)
 
-        self.soum_cbox.clear()
-        for code, name in self.session_db.query(AuLevel2.code, AuLevel2.name).filter(
-                        AuLevel2.code.startswith(l1_code)).order_by(AuLevel2.name):
-            self.soum_cbox.addItem(name, code)
-        # PluginUtils.populate_au_level2_cbox(self.soum_cbox, l1_code, True, False, False)
+            item = QTableWidgetItem((row[21]) + ' (' + (row[19]) + ' ' + (row[20]) + ')')
+            item.setData(Qt.UserRole, row[21])
+            self.owner_twidget.setItem(count, 1, item)
+
+            item = QTableWidgetItem((row[22]) + ' ' + (row[23]) +' '+ unicode(row[24])+ u'-р баг')
+            self.owner_twidget.setItem(count, 2, item)
+
+            item = QTableWidgetItem((row[25]) +' '+ unicode(row[26]) + u'-р гудамж' + unicode(row[27]) + u' хашаа/хаалга/')
+            self.owner_twidget.setItem(count, 3, item)
+
+            item = QTableWidgetItem(str(row[28]))
+            self.owner_twidget.setItem(count, 4, item)
+
+            count += 1
+
+        if self.owner_twidget.rowCount() == 0:
+            self.error_label.setText(self.tr("Owner record not found"))
+
+    @pyqtSlot(QTableWidgetItem)
+    def on_owner_twidget_itemClicked(self, item):
+
+        self.owner_co_twidget.setRowCount(0)
+
+        selected_row = self.owner_twidget.currentRow()
+
+        if selected_row == -1:
+            return
+        register = self.owner_twidget.item(selected_row, 1).data(Qt.UserRole)
+
+        sql = "select register, ovog,ner ,hen,zahid " \
+              "from owner.ub_lpis_co info " \
+              "where oregister = :register "
+
+        result = self.session.execute(sql, {'register': register})
+        row = 0
+        for item_row in result:
+            row = self.owner_co_twidget.rowCount()
+            self.owner_co_twidget.insertRow(row)
+            item = QTableWidgetItem()
+            item.setText(unicode(item_row[0]))
+            item.setData(Qt.UserRole, item_row[0])
+            self.owner_co_twidget.setItem(row, 0, item)
+
+            item = QTableWidgetItem()
+            item.setText(unicode(item_row[1]))
+            self.owner_co_twidget.setItem(row, 1, item)
+
+            item = QTableWidgetItem()
+            item.setText(unicode(item_row[2]))
+            self.owner_co_twidget.setItem(row, 2, item)
+
+            item = QTableWidgetItem()
+            item.setText(unicode(item_row[3]))
+            self.owner_co_twidget.setItem(row, 3, item)
+
+            item = QTableWidgetItem()
+            item.setText(unicode(item_row[4]))
+            self.owner_co_twidget.setItem(row, 4, item)
+
+            row = + 1
+
+    def __find_lpis(self, person_id):
+
+        sql = "select * from owner.ub_lpis c where (c.register = :person_id) "
+
+        count = 0
+        results = self.session.execute(sql, {'person_id': person_id})
+        # print len(results)
+        self.owner_twidget.setRowCount(0)
+        for row in results:
+            self.owner_twidget.insertRow(count)
+
+            item = QTableWidgetItem((row[14]))
+            self.owner_twidget.setItem(count, 0, item)
+
+            item = QTableWidgetItem((row[1]) + ' (' + (row[3]) + ' ' + (row[4]) + ')')
+            item.setData(Qt.UserRole, row[1])
+            self.owner_twidget.setItem(count, 1, item)
+
+            item = QTableWidgetItem((row[10]) + ' ' + (row[11]))
+            self.owner_twidget.setItem(count, 2, item)
+
+            item = QTableWidgetItem((row[12]))
+            self.owner_twidget.setItem(count, 3, item)
+
+            item = QTableWidgetItem((row[29]))
+            self.owner_twidget.setItem(count, 4, item)
+
+            count += 1
+
+        if self.owner_twidget.rowCount() == 0:
+            self.error_label.setText(self.tr("Owner record not found"))
+
+    def __find_lm(self, person_id):
+
+        sql = "select * from webgis.wg_rightholder c where (c.person_id = :person_id) and tr_type_code = 3  "
+
+        sql = "{0} order by parcel_id;".format(sql)
+        count = 0
+        results = self.session.execute(sql, {'person_id': person_id})
+        # print len(results)
+        self.owner_twidget.setRowCount(0)
+        for row in results:
+            self.owner_twidget.insertRow(count)
+
+            item = QTableWidgetItem((row[1]))
+            self.owner_twidget.setItem(count, 0, item)
+
+            item = QTableWidgetItem((row[3]) + ' (' + (row[5]) + ' ' + (row[6]) + ')')
+            self.owner_twidget.setItem(count, 1, item)
+
+            item = QTableWidgetItem((row[11]) + ' ' + (row[12]) + ' ' + (row[13]))
+            self.owner_twidget.setItem(count, 2, item)
+
+            item = QTableWidgetItem((row[14]) + ' ' + (row[15]))
+            self.owner_twidget.setItem(count, 3, item)
+
+            count += 1
+
+        if self.owner_twidget.rowCount() == 0:
+            self.error_label.setText(self.tr("Owner record not found"))
 
     def __connect_webgis(self):
 
-        user = 'geodb_admin'
-        password = 'cX97&b-3'
+        user = 'geodb_user'
+        password = 'geodb_user'
         host = self.webgis_ip_edit.text()
         port = '5432'
-        database = 'mn_webgis'
+        database = 'map_server'
         if not self.__session_webgis(user, password, host, port, database):
             PluginUtils.show_message(self, self.tr("Connection failed"),
                                      self.tr("Please check your VPN connection!!!"))
@@ -141,62 +276,6 @@ class WebgisUtilityDialog(QDialog, Ui_WebgisUtilityDialog):
             self.engine = None
             self.password = None
             raise e
-
-    def __create_webgis_view(self):
-
-        sql = "SELECT c.parcel_id, c.person_id, c.name, c.first_name, c.decision_date, c.decision_no, c.aimag_name, "\
-                "c.soum_name, c.address_streetname, c.address_khashaa, c.app_type_description, null as valid_from, null as valid_till, c.area_m2  FROM webgis.wg_contract c "\
-                "group by c.parcel_id, c.person_id, c.name, c.first_name, c.decision_date, c.decision_no, aimag_name, c.soum_name, "\
-                "c.address_streetname, c.address_khashaa, c.app_type_description, c.area_m2 "
-
-        sql = "{0} order by parcel_id;".format(sql)
-        count = 0
-        try:
-            results = self.session.execute(sql).fetchall()
-            self.progressBar.setMaximum(len(results))
-            for row in results:
-                if row[1] == self.person_id.text():
-                    self.owner_twidget.insertRow(count)
-
-                    item = QTableWidgetItem(str(row[0])+' ('+str(row[13])+')')
-                    item.setData(Qt.UserRole, row[0])
-                    self.owner_twidget.setItem(count, 0, item)
-
-                    item = QTableWidgetItem(row[6]+'/'+row[7])
-                    item.setData(Qt.UserRole, row[7])
-                    self.owner_twidget.setItem(count, 1, item)
-
-                    item = QTableWidgetItem(row[8]+'/'+row[9])
-                    self.owner_twidget.setItem(count, 2, item)
-
-                    item = QTableWidgetItem(row[10])
-                    self.owner_twidget.setItem(count, 3, item)
-
-                    item = QTableWidgetItem(row[2]+' '+row[3])
-                    self.owner_twidget.setItem(count, 4, item)
-
-                    item = QTableWidgetItem(str(row[11]))
-                    self.owner_twidget.setItem(count, 5, item)
-
-                    item = QTableWidgetItem(str(row[12]))
-                    self.owner_twidget.setItem(count, 6, item)
-
-                    item = QTableWidgetItem(row[5])
-                    self.owner_twidget.setItem(count, 7, item)
-
-                    item = QTableWidgetItem(str(row[4]))
-                    self.owner_twidget.setItem(count, 8, item)
-
-                    count += 1
-
-                value_p = self.progressBar.value() + 1
-                self.progressBar.setValue(value_p)
-
-        except SQLAlchemyError, e:
-            PluginUtils.show_message(self, self.tr("LM2", "Sql Error"), e.message)
-            return
-        if self.owner_twidget.rowCount() == 0:
-            self.error_label.setText(self.tr("Owner record not found"))
 
     @pyqtSlot(str)
     def on_person_id_textChanged(self, text):
@@ -264,44 +343,29 @@ class WebgisUtilityDialog(QDialog, Ui_WebgisUtilityDialog):
 
         return is_valid
 
-    def __find_person(self, person_id):
-
-        sql = "select person.person_id, person.name, person.first_name from base.bs_person person " \
-                          "where person.person_id=:bindName;"
-
-        result = self.session.execute(sql, {'bindName': person_id}).fetchall()
-        result_count = len(result)
-        if result_count == 0:
-            PluginUtils.show_message(self, self.tr("Person"),
-                                     self.tr("Person not found!!!"))
-            return False
-        else:
-            self.print_button.setDisabled(False)
-            self.person = result
-            return result
-
     @pyqtSlot()
-    def on_print_button_clicked(self):
+    def on_defination_print_button_clicked(self):
 
-        if self.soum_cbox.currentText() == '*':
-            PluginUtils.show_message(self, self.tr("Soum"),
-                                     self.tr("Select Soum!!!"))
+        selected_row = self.owner_twidget.currentRow()
+        if selected_row == -1:
             return
+
+        register = self.owner_twidget.item(selected_row, 1).data(Qt.UserRole)
+
         path = FileUtils.map_file_path()
         default_path = r'D:/TM_LM2/contracts'
 
         tpl = DocxTemplate(path+'owner_refer.docx')
 
-        person = self.person
-        for row in person:
-            person_id = row[0]
-            person_surname = row[1]
-            person_firstname = row[2]
+
+        person_id = register
+        person_surname = ''
+        person_firstname = ''
 
         user = DatabaseUtils.current_user()
 
         restrictions = user.restriction_au_level2.split(",")
-        is_true_text = u'аваагүй'
+        is_true_text = u'эрхгүй'
         for restriction in restrictions:
             restriction = restriction.strip()
             soum = self.session_db.query(AuLevel2).filter(AuLevel2.code == restriction).one()
@@ -309,7 +373,7 @@ class WebgisUtilityDialog(QDialog, Ui_WebgisUtilityDialog):
                 item_name = self.owner_twidget.item(row,1)
                 soum_name = item_name.data(Qt.UserRole)
                 if soum_name == soum.name:
-                    is_true_text = u'авсан'
+                    is_true_text = u'эрхтэй'
 
         officers = self.session_db.query(SetRole) \
             .filter(SetRole.user_name == user.user_name) \
@@ -333,7 +397,7 @@ class WebgisUtilityDialog(QDialog, Ui_WebgisUtilityDialog):
             header_text = (working_aimag).upper() + u' АЙМГИЙН ГАЗРЫН ХАРИЛЦАА, БАРИЛГА ХОТ БАЙГУУЛАЛТЫН ГАЗАР'
             position_text = (working_aimag).upper() + u' аймгийн газрын харилцаа, барилга хот байгуулалтын газрын мэргэжилтэн'
 
-        to_aimag = self.aimag_cbox.currentText() +u' аймгийн '+ self.soum_cbox.currentText() + u' сумын ЗДТГазарт'
+        # to_aimag = self.aimag_cbox.currentText() +u' аймгийн '+ self.soum_cbox.currentText() + u' сумын ЗДТГазарт'
         context = {
             'HEADER_TEXT': header_text,
             'person_id': person_id,
@@ -342,7 +406,7 @@ class WebgisUtilityDialog(QDialog, Ui_WebgisUtilityDialog):
             'current_date': current_date,
             'position_text': position_text,
             'officer_name': officer_name,
-            'to_soum': to_aimag,
+            # 'to_soum': to_aimag,
             'is_true': is_true_text
         }
 
