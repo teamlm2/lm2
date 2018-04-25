@@ -426,7 +426,7 @@ class PastureWidget(QDockWidget, Ui_PastureWidget, DatabaseHelper):
             schema_string = ",".join(schemaList)
 
             self.session.execute(
-                "SET search_path to base, codelists, admin_units, settings, pasture, public" + ", " + schema_string)
+                "SET search_path to base, codelists, admin_units, settings, pasture, data_landuse,public" + ", " + schema_string)
 
             self.session.commit()
         except SQLAlchemyError, e:

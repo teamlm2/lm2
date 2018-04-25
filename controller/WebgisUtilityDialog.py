@@ -1,4 +1,4 @@
-__author__ = 'Ankhbold'
+__author__ = 'bayantumen'
 # -*- encoding: utf-8 -*-
 
 import glob
@@ -30,6 +30,7 @@ class WebgisUtilityDialog(QDialog, Ui_WebgisUtilityDialog):
         self.progressBar.setMinimum(1)
         self.progressBar.setValue(0)
         self.person = None
+        self.logo_label.setScaledContents(True)
 
     def __setup(self):
 
@@ -112,20 +113,68 @@ class WebgisUtilityDialog(QDialog, Ui_WebgisUtilityDialog):
             self.owner_twidget.insertRow(count)
 
             item = QTableWidgetItem(str(row[5]))
+            item.setData(Qt.UserRole, row[5])
             self.owner_twidget.setItem(count, 0, item)
 
-            item = QTableWidgetItem((row[21]) + ' (' + (row[19]) + ' ' + (row[20]) + ')')
-            item.setData(Qt.UserRole, row[21])
+            item = QTableWidgetItem((row[19]))
+            item.setData(Qt.UserRole, row[19])
+            item.setData(Qt.UserRole + 1, (row[18]))
+            item.setData(Qt.UserRole + 2, (row[19]))
             self.owner_twidget.setItem(count, 1, item)
 
-            item = QTableWidgetItem((row[22]) + ' ' + (row[23]) +' '+ unicode(row[24])+ u'-р баг')
+            item = QTableWidgetItem((row[20]))
+            item.setData(Qt.UserRole, row[20])
+            item.setData(Qt.UserRole + 1, (row[20]))
             self.owner_twidget.setItem(count, 2, item)
 
-            item = QTableWidgetItem((row[25]) +' '+ unicode(row[26]) + u'-р гудамж' + unicode(row[27]) + u' хашаа/хаалга/')
+            item = QTableWidgetItem((row[21]))
+            item.setData(Qt.UserRole, row[21])
             self.owner_twidget.setItem(count, 3, item)
 
-            item = QTableWidgetItem(str(row[28]))
+            item = QTableWidgetItem(str(row[2]))
+            item.setData(Qt.UserRole, row[2])
+            item.setData(Qt.UserRole + 1, (row[22]))
             self.owner_twidget.setItem(count, 4, item)
+
+            item = QTableWidgetItem(str(row[3]))
+            item.setData(Qt.UserRole, row[3])
+            item.setData(Qt.UserRole + 1, (row[23]))
+            self.owner_twidget.setItem(count, 5, item)
+
+            item = QTableWidgetItem((unicode(row[12]))+ u'-р баг/хороо')
+            item.setData(Qt.UserRole, row[12])
+            item.setData(Qt.UserRole + 1, (row[24]))
+            self.owner_twidget.setItem(count, 6, item)
+
+            item = QTableWidgetItem((row[13]))
+            item.setData(Qt.UserRole, row[13])
+            item.setData(Qt.UserRole + 1, (row[25]))
+            self.owner_twidget.setItem(count, 7, item)
+
+            item = QTableWidgetItem((unicode(row[14])) + u'-р гудамж/хороолол')
+            item.setData(Qt.UserRole, row[14])
+            item.setData(Qt.UserRole + 1, (row[26]))
+            self.owner_twidget.setItem(count, 8, item)
+
+            item = QTableWidgetItem((unicode(row[15])) + u'хашаа/хаалга')
+            item.setData(Qt.UserRole, row[15])
+            item.setData(Qt.UserRole + 1, (row[27]))
+            self.owner_twidget.setItem(count, 9, item)
+
+            item = QTableWidgetItem(str(row[16]))
+            item.setData(Qt.UserRole, row[16])
+            self.owner_twidget.setItem(count, 10, item)
+
+            item = QTableWidgetItem(unicode(row[17]))
+            self.owner_twidget.setItem(count, 11, item)
+
+            item = QTableWidgetItem(unicode(row[6]))
+            item.setData(Qt.UserRole, row[6])
+            self.owner_twidget.setItem(count, 12, item)
+
+            item = QTableWidgetItem(str(row[28]))
+            item.setData(Qt.UserRole, row[28])
+            self.owner_twidget.setItem(count, 13, item)
 
             count += 1
 
@@ -141,7 +190,7 @@ class WebgisUtilityDialog(QDialog, Ui_WebgisUtilityDialog):
 
         if selected_row == -1:
             return
-        register = self.owner_twidget.item(selected_row, 1).data(Qt.UserRole)
+        register = self.owner_twidget.item(selected_row, 3).data(Qt.UserRole)
 
         sql = "select register, ovog,ner ,hen,zahid " \
               "from owner.ub_lpis_co info " \
@@ -187,20 +236,53 @@ class WebgisUtilityDialog(QDialog, Ui_WebgisUtilityDialog):
             self.owner_twidget.insertRow(count)
 
             item = QTableWidgetItem((row[14]))
+            item.setData(Qt.UserRole, (row[14]))
             self.owner_twidget.setItem(count, 0, item)
 
-            item = QTableWidgetItem((row[1]) + ' (' + (row[3]) + ' ' + (row[4]) + ')')
-            item.setData(Qt.UserRole, row[1])
+            item = QTableWidgetItem((row[3]))
+            item.setData(Qt.UserRole, (row[3]))
+            item.setData(Qt.UserRole + 1, (row[3]))
             self.owner_twidget.setItem(count, 1, item)
 
-            item = QTableWidgetItem((row[10]) + ' ' + (row[11]))
+            item = QTableWidgetItem((row[4]))
+            item.setData(Qt.UserRole, (row[4]))
+            item.setData(Qt.UserRole + 1, (row[4]))
             self.owner_twidget.setItem(count, 2, item)
 
-            item = QTableWidgetItem((row[12]))
+            item = QTableWidgetItem((row[1]))
+            item.setData(Qt.UserRole, (row[1]))
+            item.setData(Qt.UserRole + 1, (row[1]))
             self.owner_twidget.setItem(count, 3, item)
 
-            item = QTableWidgetItem((row[29]))
-            self.owner_twidget.setItem(count, 4, item)
+            # item = QTableWidgetItem((row[10]))
+            # item.setData(Qt.UserRole + 1, (row[25]))
+            # self.owner_twidget.setItem(count, 4, item)
+
+            item = QTableWidgetItem((row[10]))
+            item.setData(Qt.UserRole, (row[10]))
+            self.owner_twidget.setItem(count, 5, item)
+
+            item = QTableWidgetItem((unicode(row[11])) + u'-р баг/хороо')
+            item.setData(Qt.UserRole, row[11])
+            item.setData(Qt.UserRole + 1, (row[11]))
+            self.owner_twidget.setItem(count, 6, item)
+
+            item = QTableWidgetItem((row[12]))
+            item.setData(Qt.UserRole, (row[12]))
+            item.setData(Qt.UserRole + 1, (row[12]))
+            self.owner_twidget.setItem(count, 7, item)
+
+            item = QTableWidgetItem(str(row[21]))
+            item.setData(Qt.UserRole, (row[21]))
+            self.owner_twidget.setItem(count, 10, item)
+
+            item = QTableWidgetItem(unicode(row[15]))
+            item.setData(Qt.UserRole, (row[15]))
+            self.owner_twidget.setItem(count, 12, item)
+
+            item = QTableWidgetItem(str(row[29]))
+            item.setData(Qt.UserRole, (row[29]))
+            self.owner_twidget.setItem(count, 13, item)
 
             count += 1
 
@@ -220,16 +302,79 @@ class WebgisUtilityDialog(QDialog, Ui_WebgisUtilityDialog):
             self.owner_twidget.insertRow(count)
 
             item = QTableWidgetItem((row[1]))
+            item.setData(Qt.UserRole, row[1])
             self.owner_twidget.setItem(count, 0, item)
 
-            item = QTableWidgetItem((row[3]) + ' (' + (row[5]) + ' ' + (row[6]) + ')')
+            item = QTableWidgetItem((row[5]))
+            item.setData(Qt.UserRole, row[5])
+            item.setData(Qt.UserRole + 1, (row[4]))
+            item.setData(Qt.UserRole + 2, (row[5]))
             self.owner_twidget.setItem(count, 1, item)
 
-            item = QTableWidgetItem((row[11]) + ' ' + (row[12]) + ' ' + (row[13]))
+            item = QTableWidgetItem((row[6]))
+            item.setData(Qt.UserRole, row[6])
+            item.setData(Qt.UserRole + 1, (row[6]))
             self.owner_twidget.setItem(count, 2, item)
 
-            item = QTableWidgetItem((row[14]) + ' ' + (row[15]))
+            item = QTableWidgetItem((row[3]))
+            item.setData(Qt.UserRole, row[3])
+            item.setData(Qt.UserRole + 1, (row[3]))
             self.owner_twidget.setItem(count, 3, item)
+
+            item = QTableWidgetItem((row[11]))
+            item.setData(Qt.UserRole, row[11])
+            item.setData(Qt.UserRole + 1, (row[11]))
+            self.owner_twidget.setItem(count, 4, item)
+
+            item = QTableWidgetItem((row[12]))
+            item.setData(Qt.UserRole, row[12])
+            item.setData(Qt.UserRole + 1, (row[15]))
+            self.owner_twidget.setItem(count, 5, item)
+
+            item = QTableWidgetItem((unicode(row[13])) + u'-р баг/хороо')
+            item.setData(Qt.UserRole, row[13])
+            item.setData(Qt.UserRole + 1, (row[13]))
+            self.owner_twidget.setItem(count, 6, item)
+
+            item = QTableWidgetItem((row[14]))
+            item.setData(Qt.UserRole, row[14])
+            item.setData(Qt.UserRole + 1, (row[14]))
+            self.owner_twidget.setItem(count, 7, item)
+
+            item = QTableWidgetItem((unicode(row[15])) + u' хашаа/хаалга')
+            item.setData(Qt.UserRole, row[15])
+            item.setData(Qt.UserRole + 1, (row[15]))
+            self.owner_twidget.setItem(count, 8, item)
+
+            item = QTableWidgetItem('')
+            item.setData(Qt.UserRole, '')
+            item.setData(Qt.UserRole + 1, '')
+            self.owner_twidget.setItem(count, 9, item)
+
+            item = QTableWidgetItem(str(row[9]))
+            item.setData(Qt.UserRole, row[9])
+            self.owner_twidget.setItem(count, 10, item)
+
+            item = QTableWidgetItem(unicode(row[10]))
+            item.setData(Qt.UserRole, row[10])
+            self.owner_twidget.setItem(count, 11, item)
+
+            item = QTableWidgetItem(unicode(row[23]))
+            item.setData(Qt.UserRole, row[23])
+            self.owner_twidget.setItem(count, 12, item)
+
+            item = QTableWidgetItem(str(row[8]))
+            item.setData(Qt.UserRole, row[8])
+            self.owner_twidget.setItem(count, 13, item)
+
+            # item = QTableWidgetItem((row[3]) + ' (' + (row[5]) + ' ' + (row[6]) + ')')
+            # self.owner_twidget.setItem(count, 1, item)
+            #
+            # item = QTableWidgetItem((row[11]) + ' ' + (row[12]) + ' ' + (row[13]))
+            # self.owner_twidget.setItem(count, 2, item)
+            #
+            # item = QTableWidgetItem((row[14]) + ' ' + (row[15]))
+            # self.owner_twidget.setItem(count, 3, item)
 
             count += 1
 
@@ -350,7 +495,26 @@ class WebgisUtilityDialog(QDialog, Ui_WebgisUtilityDialog):
         if selected_row == -1:
             return
 
-        register = self.owner_twidget.item(selected_row, 1).data(Qt.UserRole)
+        person_id = ''
+        person_surname = ''
+        person_firstname = ''
+        person_aimag = ''
+        person_soum = ''
+        person_bag = ''
+        person_address = ''
+        person_middlename = ''
+        officer_aimag_name = ''
+        officer_soum_name = ''
+
+        register = self.owner_twidget.item(selected_row, 3).data(Qt.UserRole)
+        person_aimag_data = self.owner_twidget.item(selected_row, 4).data(Qt.UserRole + 1)
+        person_soum_data = self.owner_twidget.item(selected_row, 5).data(Qt.UserRole+1)
+        person_bag_data = self.owner_twidget.item(selected_row, 6).data(Qt.UserRole + 1)
+        person_address_data = unicode(self.owner_twidget.item(selected_row, 7).data(Qt.UserRole + 1)) + ' ' + \
+                              unicode(self.owner_twidget.item(selected_row, 8).data(Qt.UserRole + 1)) + ' ' + unicode(self.owner_twidget.item(selected_row, 9).data(Qt.UserRole + 1))
+        person_middlename_data = self.owner_twidget.item(selected_row, 1).data(Qt.UserRole + 1)
+        person_surname_data = self.owner_twidget.item(selected_row, 1).data(Qt.UserRole + 2)
+        person_firstname_data = self.owner_twidget.item(selected_row, 2).data(Qt.UserRole + 1)
 
         path = FileUtils.map_file_path()
         default_path = r'D:/TM_LM2/contracts'
@@ -358,9 +522,23 @@ class WebgisUtilityDialog(QDialog, Ui_WebgisUtilityDialog):
         tpl = DocxTemplate(path+'owner_refer.docx')
 
 
-        person_id = register
-        person_surname = ''
-        person_firstname = ''
+        if register:
+            person_id = register
+        if person_aimag_data:
+            person_aimag = person_aimag_data
+        if person_soum_data:
+            person_soum = person_soum_data
+        if person_bag_data:
+            person_bag = person_bag_data
+        if person_address_data:
+            person_address = person_address_data
+        if person_middlename_data:
+            person_middlename = person_middlename_data
+        if person_surname_data:
+            person_surname = person_surname_data
+        if person_firstname_data:
+            person_firstname = person_firstname_data
+
 
         user = DatabaseUtils.current_user()
 
@@ -391,11 +569,11 @@ class WebgisUtilityDialog(QDialog, Ui_WebgisUtilityDialog):
         current_day = QDate().currentDate().day()
         current_date = str(current_year)+ u' оны ' + str(current_month) + u' сарын ' + str(current_day)
         if role_position_code == 7:
-            header_text = (working_aimag).upper() + u' АЙМГИЙН ' + (working_soum).upper() + u' СУМЫН ЗДТГАЗАР'
-            position_text = (working_soum).upper() + u' сумын газрын даамал'
+            header_text = (working_aimag) + u' /аймаг,нийслэл/'
+            position_text = (working_soum) + u' /сум, дүүрэг/'
         else:
-            header_text = (working_aimag).upper() + u' АЙМГИЙН ГАЗРЫН ХАРИЛЦАА, БАРИЛГА ХОТ БАЙГУУЛАЛТЫН ГАЗАР'
-            position_text = (working_aimag).upper() + u' аймгийн газрын харилцаа, барилга хот байгуулалтын газрын мэргэжилтэн'
+            header_text = (working_aimag) + u' /аймаг,нийслэл/'
+            position_text = (working_soum) + u' /сум, дүүрэг/'
 
         # to_aimag = self.aimag_cbox.currentText() +u' аймгийн '+ self.soum_cbox.currentText() + u' сумын ЗДТГазарт'
         context = {
@@ -405,9 +583,16 @@ class WebgisUtilityDialog(QDialog, Ui_WebgisUtilityDialog):
             'firstname': person_firstname,
             'current_date': current_date,
             'position_text': position_text,
-            'officer_name': officer_name,
+            'officer_aimag': header_text,
+            'officer_soum': position_text,
+            'middle_name': person_middlename,
+            'person_aimag': person_aimag,
+            'person_soum': person_soum,
+            'person_bag': person_bag,
+            'person_address': person_address,
             # 'to_soum': to_aimag,
             'is_true': is_true_text
+
         }
 
         tpl.render(context)

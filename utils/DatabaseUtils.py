@@ -284,7 +284,7 @@ class DatabaseUtils():
             if found_code:
                 schema_list.insert(0, "s" + first_code.strip())
 
-            session.execute("SET search_path to base, codelists, ub_data, admin_units, settings, pasture, public" + ", " + ", ".join(schema_list))
+            session.execute("SET search_path to base, codelists, ub_data, admin_units, settings, pasture, data_landuse, public" + ", " + ", ".join(schema_list))
             session.commit()
 
         except DatabaseError, e:

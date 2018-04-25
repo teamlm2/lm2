@@ -26,12 +26,13 @@
     <file alias="parcel_red.png">icons/parcel_red.png</file>
     <file alias="drag_drop.png">icons/drag_drop.png</file>
     <file alias="parcel.gif">icons/parcel.gif</file>
-    <file alias="building.gif">icons/building.gif</file>
+    <!--<file alias="building.gif">i  cons/building.gif</file>-->
     <file alias="case.png">icons/case.png</file>
     <file alias="zoom.png">icons/zoom.png</file>
     <file alias="extract.png">icons/extract.png</file>
     <file alias="documents.png">icons/documents.png</file>
     <file alias="send_to_governor.png">icons/send_to_governor.png</file>
     <file alias="copy.png">icons/copy.png</file>
+    <file alias="gzb.png">icons/gzb.png</file>
   </qresource>
 </RCC>

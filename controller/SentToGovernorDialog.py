@@ -1923,7 +1923,7 @@ class SentToGovernorDialog(QDialog, Ui_SentToGovernorDialog, DatabaseHelper):
                         self.decision_level_cbox.addItem(item.description, item.code)
                         # self.decision_level_cbox.setCurrentIndex(2)
                 else:
-                    decision_level = self.session.query(ClDecisionLevel).filter(or_(ClDecisionLevel.code == 40, ClDecisionLevel.code == 50, ClDecisionLevel.code == 60)).all()
+                    decision_level = self.session.query(ClDecisionLevel).filter(or_(ClDecisionLevel.code == 30, ClDecisionLevel.code == 40, ClDecisionLevel.code == 50, ClDecisionLevel.code == 60)).all()
                     for item in decision_level:
                         self.decision_level_cbox.addItem(item.description, item.code)
                         # self.decision_level_cbox.setCurrentIndex(3)

@@ -47,7 +47,7 @@ class SessionHandler(QObject):
             Session = sessionmaker(bind=self.engine)
             self.session = Session()
             self.session.autocommit = False
-            self.session.execute("SET search_path to base, codelists, ub_data, admin_units, settings, pasture, public")
+            self.session.execute("SET search_path to base, codelists, ub_data, admin_units, settings, pasture, data_landuse,public")
 
             set_role_count = self.session.query(SetRole).filter(SetRole.user_name == user).filter(SetRole.is_active == True).count()
             if set_role_count == 0:
@@ -68,7 +68,7 @@ class SessionHandler(QObject):
 
             schema_string = ",".join(schemaList)
 
-            self.session.execute("SET search_path to base, codelists, ub_data, admin_units, settings, pasture, public" + ", " + schema_string)
+            self.session.execute("SET search_path to base, codelists, ub_data, admin_units, settings, pasture, data_landuse, public" + ", " + schema_string)
             self.session.commit()
 
             return True
