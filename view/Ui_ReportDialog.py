@@ -2,8 +2,7 @@
 
 # Form implementation generated from reading ui file '.\ReportDialog.ui'
 #
-# Created: Fri Jun 26 15:10:19 2015
-#      by: PyQt4 UI code generator 4.10.4
+# Created by: PyQt4 UI code generator 4.11.4
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -86,10 +85,10 @@ class Ui_ReportDialog(object):
         self.progressBar.setTextVisible(True)
         self.progressBar.setObjectName(_fromUtf8("progressBar"))
         self.label_5 = QtGui.QLabel(ReportDialog)
-        self.label_5.setGeometry(QtCore.QRect(10, 40, 61, 16))
+        self.label_5.setGeometry(QtCore.QRect(10, 40, 91, 16))
         self.label_5.setObjectName(_fromUtf8("label_5"))
         self.work_level_lbl = QtGui.QLabel(ReportDialog)
-        self.work_level_lbl.setGeometry(QtCore.QRect(80, 40, 241, 16))
+        self.work_level_lbl.setGeometry(QtCore.QRect(110, 40, 241, 16))
         self.work_level_lbl.setObjectName(_fromUtf8("work_level_lbl"))
         self.layer_view_button = QtGui.QPushButton(ReportDialog)
         self.layer_view_button.setGeometry(QtCore.QRect(20, 370, 201, 23))

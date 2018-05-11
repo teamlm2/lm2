@@ -4899,3 +4899,11 @@ class ReportDialog(QDialog, Ui_ReportDialog, DatabaseHelper):
             tmp_parcel_layer = LayerUtils.layer_by_data_source("s" + restrictions, "view_gt9_report")
             if tmp_parcel_layer is None:
                 LayerUtils.load_layer_by_name("view_gt9_report", "parcel_id", restrictions)
+
+
+
+
+
+
+
+
