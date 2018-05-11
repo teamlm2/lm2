@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>840</width>
-    <height>536</height>
+    <width>876</width>
+    <height>565</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>5</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="tab_6">
     <attribute name="title">
@@ -1040,7 +1040,7 @@
       <string>Pasture missed Evaluation</string>
      </property>
     </widget>
-    <widget class="QComboBox" name="soil_evaluation_cbox">
+    <widget class="QComboBox" name="missed_evaluation_cbox">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -1063,7 +1063,7 @@
       <string>Pasture soil Evaluation</string>
      </property>
     </widget>
-    <widget class="QComboBox" name="missed_evaluation_cbox">
+    <widget class="QComboBox" name="soil_evaluation_cbox">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -1901,7 +1901,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>All Point Information(Only working soum)</string>
+     <string>All Point Information(Only working aimag)</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_41">

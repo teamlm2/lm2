@@ -825,7 +825,6 @@ class LM2Plugin:
             layer = LayerUtils.layer_by_data_source("s" + soum, "ca_parcel")
             b_layer = LayerUtils.layer_by_data_source("s" + soum, "ca_building")
             plan_layer = LayerUtils.layer_by_data_source("s" + soum, "ca_plan_parcel")
-            sec_layer = LayerUtils.layer_by_data_source("s" + soum, "ca_sec_parcel")
 
             if layer is None:
                 layer = LayerUtils.load_layer_by_name_report("ca_parcel", "parcel_id", soum)
@@ -836,23 +835,12 @@ class LM2Plugin:
             if plan_layer is None:
                 plan_layer = LayerUtils.load_layer_by_name_report("ca_plan_parcel", "parcel_id", soum)
 
-            if sec_layer is None:
-                sec_layer = LayerUtils.load_layer_by_name_report("ca_sec_parcel", "parcel_id", soum)
-
 
             if plan_layer.name() == "ca_plan_parcel":
                 mygroup = root.findGroup(u"Кадастрын төлөвлөгөө")
                 myalayer = root.findLayer(plan_layer.id())
                 plan_layer.loadNamedStyle(str(os.path.dirname(os.path.realpath(__file__))) +"/template\style/ca_plan_parcel.qml")
                 plan_layer.setLayerName(QApplication.translate("Plugin", "Parcel Plan")+'_'+soum)
-                if myalayer is None:
-                    mygroup.addLayer(plan_layer)
-
-            if plan_layer.name() == "ca_sec_parcel":
-                mygroup = root.findGroup(u"Мэдээний хяналт")
-                myalayer = root.findLayer(sec_layer.id())
-                sec_layer.loadNamedStyle(str(os.path.dirname(os.path.realpath(__file__))) +"/template\style/ca_plan_parcel.qml")
-                sec_layer.setLayerName(QApplication.translate("Plugin", "Parcel Sec")+'_'+soum)
                 if myalayer is None:
                     mygroup.addLayer(plan_layer)
 
@@ -1130,7 +1118,7 @@ class LM2Plugin:
         Session = sessionmaker(bind=self.engine)
         session = Session()
         session.autocommit = False
-        session.execute("SET search_path to base, codelists, ub_data, admin_units, settings, pasture, data_landuse, public")
+        session.execute("SET search_path to base, codelists, ub_data, admin_units, settings, pasture, public")
 
         role_count = session.query(SetRole).\
             filter(SetRole.user_name == user_name).\

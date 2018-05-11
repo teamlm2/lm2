@@ -2282,6 +2282,8 @@ class ContractDialog(QDialog, Ui_ContractDialog, DatabaseHelper):
         item.setText(officer.surname)
         item.adjustSizeToText()
 
+        print ''
+
     def __add_aimag_name_cert(self,map_composition):
 
         aimag_code = self.application_this_contract_based_edit.text()[:3]
