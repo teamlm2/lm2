@@ -112,7 +112,7 @@ class LogOnDialog(QDialog, Ui_LogOnDialog):
 
         schema_string = ",".join(schemaList)
 
-        session.execute("SET search_path to base, codelists, admin_units, settings, data_landuse, public" + ", " + schema_string)
+        session.execute("SET search_path to base, codelists, admin_units, settings, public" + ", " + schema_string)
         sql = "select rolname from pg_user join pg_auth_members on (pg_user.usesysid=pg_auth_members.member) " \
               "join pg_roles on (pg_roles.oid=pg_auth_members.roleid) where pg_user.usename=:bindName"
 
