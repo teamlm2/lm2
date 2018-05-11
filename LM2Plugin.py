@@ -825,7 +825,8 @@ class LM2Plugin:
             layer = LayerUtils.layer_by_data_source("s" + soum, "ca_parcel")
             b_layer = LayerUtils.layer_by_data_source("s" + soum, "ca_building")
             plan_layer = LayerUtils.layer_by_data_source("s" + soum, "ca_plan_parcel")
-            sec_layer = LayerUtils.layer_by_data_source("s" + soum, "ca_sec_parcel")
+
+            sec_layer = LayerUtils.layer_by_data_source("data_landuse", "ca_sec_parcel")
 
             if layer is None:
                 layer = LayerUtils.load_layer_by_name_report("ca_parcel", "parcel_id", soum)
@@ -837,7 +838,8 @@ class LM2Plugin:
                 plan_layer = LayerUtils.load_layer_by_name_report("ca_plan_parcel", "parcel_id", soum)
 
             if sec_layer is None:
-                sec_layer = LayerUtils.load_layer_by_name_report("ca_sec_parcel", "parcel_id", soum)
+                # sec_layer = LayerUtils.load_layer_by_name_set_zones("ca_sec_parcel", "parcel_id", "data_landuse")
+                sec_layer = LayerUtils.load_layer_by_ca_sec_parcel("ca_sec_parcel", "parcel_id", "data_landuse")
 
 
             if plan_layer.name() == "ca_plan_parcel":
@@ -848,13 +850,14 @@ class LM2Plugin:
                 if myalayer is None:
                     mygroup.addLayer(plan_layer)
 
-            if plan_layer.name() == "ca_sec_parcel":
+
+            if sec_layer.name() == "ca_sec_parcel":
                 mygroup = root.findGroup(u"Мэдээний хяналт")
                 myalayer = root.findLayer(sec_layer.id())
-                sec_layer.loadNamedStyle(str(os.path.dirname(os.path.realpath(__file__))) +"/template\style/ca_plan_parcel.qml")
-                sec_layer.setLayerName(QApplication.translate("Plugin", "Parcel Sec")+'_'+soum)
+                sec_layer.loadNamedStyle(str(os.path.dirname(os.path.realpath(__file__))) +"/template\style/ca_sec_parcel.qml")
+                sec_layer.setLayerName(QApplication.translate("Plugin", "Parcel Sec"))
                 if myalayer is None:
-                    mygroup.addLayer(plan_layer)
+                    mygroup.addLayer(sec_layer)
 
             if layer.name() == "ca_parcel":
                 mygroup = root.findGroup(u"Кадастр")

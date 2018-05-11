@@ -107,7 +107,7 @@ class PrintPointExtractMapTool(QgsMapTool):
     def __add_boundary_points_layer(self):
 
         soum = DatabaseUtils.working_l2_code()
-        layer = LayerUtils.layer_by_data_source("s" + soum, 'ca_parcel')
+        layer = LayerUtils.layer_by_data_source("pasture", 'ca_pasture_monitoring')
         crs = layer.crs()
 
         boundary_points_layer = QgsVectorLayer("Point?crs=" + str(crs.authid()), "boundary_points", "memory")
@@ -195,6 +195,8 @@ class PrintPointExtractMapTool(QgsMapTool):
 
         vector_layer.dataProvider().deleteFeatures(ids)
         vector_layer.commitChanges()
+
+
 
     @pyqtSlot()
     def on_help_button_clicked(self):

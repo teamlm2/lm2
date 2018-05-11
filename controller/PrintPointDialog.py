@@ -5,6 +5,9 @@ from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 from PyQt4.QtXml import *
 from qgis.core import *
+from qgis.gui import *
+from sqlalchemy.exc import SQLAlchemyError
+
 from sqlalchemy.exc import SQLAlchemyError
 from geoalchemy2.elements import WKTElement
 from sqlalchemy import func, or_, and_, desc
@@ -18,6 +21,10 @@ from ..utils.FileUtils import FileUtils
 from ..model.PsPointDetail import *
 from ..model.CaPastureMonitoring import *
 from ..model.PsPointDaatsValue import *
+from ..model.PsPointDetailPoints import *
+from ..model.CaPastureParcel import *
+from ..model.CaPUGBoundary import *
+from ..model.PsParcel import *
 from ..model.PsPointPastureValue import *
 from ..model.PsRecoveryClass import *
 from ..model.CaBuilding import *
@@ -121,7 +128,9 @@ class PrintPointDialog(QDialog, Ui_PrintPointDialog):
     def __point_detail_info(self):
 
         if self.point_detail_id:
+
             point_detail = self.session.query(PsPointDetail).filter(PsPointDetail.point_detail_id == self.point_detail_id).one()
+
             land_form_desc = point_detail.land_form_ref.description
 
             self.land_form_label.setText(land_form_desc)
@@ -577,11 +586,20 @@ class PrintPointDialog(QDialog, Ui_PrintPointDialog):
         point_daats_count = self.session.query(PsPointDaatsValue).\
             filter(PsPointDaatsValue.point_detail_id == self.point_detail_id).\
             filter(PsPointDaatsValue.monitoring_year == year).count()
-
         if point_daats_count == 1:
             point_daats = self.session.query(PsPointDaatsValue).\
                 filter(PsPointDaatsValue.point_detail_id == self.point_detail_id).\
                 filter(PsPointDaatsValue.monitoring_year == year).one()
+
+
+
+            self.calc_d1_edit.setText(str(round(point_daats.d1, 2)))
+            self.calc_d1_100ga_edit.setText(str(round(point_daats.d1_100ga, 2)))
+            self.calc_d2_edit.setText(str(round(point_daats.d2, 2)))
+            self.calc_d3_edit.setText(str(round(point_daats.d3, 2)))
+            self.calc_unelgee_edit.setText(str(round(point_daats.unelgee, 2)))
+            self.calc_duration_sbox.setValue(point_daats.duration)
+
 
             rc_count = self.session.query(PsRecoveryClass).filter(PsRecoveryClass.rc_code == point_daats.rc).count()
             rc_tooltip = ''
@@ -591,6 +609,7 @@ class PrintPointDialog(QDialog, Ui_PrintPointDialog):
                 self.rc_label.setToolTip(rc_tooltip)
 
             self.rc_label.setText(point_daats.rc)
+
 
             self.biomass_label.setText(str(round(point_daats.biomass, 2)))
 
@@ -603,8 +622,65 @@ class PrintPointDialog(QDialog, Ui_PrintPointDialog):
                 filter(PsPointPastureValue.point_detail_id == self.point_detail_id). \
                 filter(PsPointPastureValue.pasture_value == 1). \
                 filter(PsPointPastureValue.value_year == year).one()
+            if self.__load_pug(self.point_detail_id):
+                pug_boundary = self.__load_pug(self.point_detail_id)
+                self.rc_label_2.setText(pug_boundary.group_name)
 
+            if self.__load_parcel(self.point_detail_id):
+                parcel = self.__load_parcel(self.point_detail_id)
+                self.rc_label_3.setText(parcel.pasture_type)
             self.cover_label.setText(str(point_pasture_value.current_value))
+
+    def __load_pug(self, point_detail_id):
+
+        pug_boundary = None
+        point_id = None
+        point_detail_points = self.session.query(PsPointDetailPoints) \
+            .filter(PsPointDetailPoints.point_detail_id == point_detail_id).all()
+
+        for point_detail_point in point_detail_points:
+            point_id = point_detail_point.point_id
+
+        if not point_id:
+            return
+        point = self.session.query(CaPastureMonitoring).filter(CaPastureMonitoring.point_id == point_id).one()
+
+        pug_boundaries = self.session.query(CaPUGBoundary).filter(
+            point.geometry.ST_Within(CaPUGBoundary.geometry)).all()
+
+        for pug_bound in pug_boundaries:
+            pug_boundary = pug_bound
+
+        return pug_boundary
+    def __load_parcel(self, point_detail_id):
+
+        parcel = None
+        point_id = None
+        point_detail_points = self.session.query(PsPointDetailPoints) \
+            .filter(PsPointDetailPoints.point_detail_id == point_detail_id).all()
+
+        for point_detail_point in point_detail_points:
+            point_id = point_detail_point.point_id
+
+        if not point_id:
+            return
+        point = self.session.query(CaPastureMonitoring).filter(CaPastureMonitoring.point_id == point_id).one()
+
+        parcel_count = self.session.query(CaPastureParcel).filter(
+            point.geometry.ST_Within(CaPastureParcel.geometry)).count()
+
+        if parcel_count == 1:
+            parcel = self.session.query(CaPastureParcel).filter(
+                point.geometry.ST_Within(CaPastureParcel.geometry)).one()
+        else:
+            parcel_count = self.session.query(PsParcel).filter(
+                point.geometry.ST_Within(PsParcel.geometry)).count()
+
+            if parcel_count == 1:
+                parcel = self.session.query(PsParcel).filter(
+                    point.geometry.ST_Within(PsParcel.geometry)).one()
+
+        return parcel
 
     @pyqtSlot()
     def on_close_button_clicked(self):

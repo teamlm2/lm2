@@ -12272,32 +12272,32 @@
         <translation>Нэгж талбарын үнийн мэдээ цуглуулах</translation>
     </message>
     <message>
-        <location filename="LM2Plugin.py" line="859"/>
+        <location filename="LM2Plugin.py" line="874"/>
         <source>Building</source>
         <translation>Барилга</translation>
     </message>
     <message>
-        <location filename="LM2Plugin.py" line="871"/>
+        <location filename="LM2Plugin.py" line="886"/>
         <source>Admin Unit Level1</source>
         <translation>Аймаг, Нийслэлийн хил</translation>
     </message>
     <message>
-        <location filename="LM2Plugin.py" line="879"/>
+        <location filename="LM2Plugin.py" line="894"/>
         <source>Admin Unit Level2</source>
         <translation>Сум, Дүүргийн хил</translation>
     </message>
     <message>
-        <location filename="LM2Plugin.py" line="887"/>
+        <location filename="LM2Plugin.py" line="902"/>
         <source>Admin Unit Level3</source>
         <translation>Баг, Хорооны хил</translation>
     </message>
     <message>
-        <location filename="LM2Plugin.py" line="897"/>
+        <location filename="LM2Plugin.py" line="912"/>
         <source>Fee Zone</source>
         <translation>Төлбөрийн бүс</translation>
     </message>
     <message>
-        <location filename="LM2Plugin.py" line="906"/>
+        <location filename="LM2Plugin.py" line="921"/>
         <source>Tax Zone</source>
         <translation>Татварын бүс</translation>
     </message>
@@ -12307,7 +12307,7 @@
         <translation>Мэдээллийн сан нөөцлөх</translation>
     </message>
     <message>
-        <location filename="LM2Plugin.py" line="851"/>
+        <location filename="LM2Plugin.py" line="866"/>
         <source>Parcel</source>
         <translation>Нэгж талбар</translation>
     </message>
@@ -12377,7 +12377,7 @@
         <translation>Мэдээллийн сангийн холболт салсан байна!</translation>
     </message>
     <message>
-        <location filename="LM2Plugin.py" line="843"/>
+        <location filename="LM2Plugin.py" line="849"/>
         <source>Parcel Plan</source>
         <translation>Нэгж талбарын Төлөвлөгөө</translation>
     </message>
@@ -12400,6 +12400,11 @@
         <location filename="LM2Plugin.py" line="745"/>
         <source>Layer &lt;monitoring&gt; must be added to the table of contents first!</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="LM2Plugin.py" line="858"/>
+        <source>Parcel Sec</source>
+        <translation>Хамгаалалтын зурвас</translation>
     </message>
 </context>
 <context>
@@ -14390,42 +14395,42 @@
         <translation>Сервер шинэчлэх</translation>
     </message>
     <message>
-        <location filename="view/WebgisUtilityDialog.ui" line="113"/>
+        <location filename="view/WebgisUtilityDialog.ui" line="121"/>
         <source>Find Ownership</source>
         <translation>Хайх</translation>
     </message>
     <message>
-        <location filename="view/WebgisUtilityDialog.ui" line="250"/>
+        <location filename="view/WebgisUtilityDialog.ui" line="258"/>
         <source>Close</source>
         <translation>Хаах</translation>
     </message>
     <message>
-        <location filename="view/WebgisUtilityDialog.ui" line="276"/>
+        <location filename="view/WebgisUtilityDialog.ui" line="284"/>
         <source>Open WebGIS</source>
         <translation>Веб нээх</translation>
     </message>
     <message>
-        <location filename="view/WebgisUtilityDialog.ui" line="302"/>
+        <location filename="view/WebgisUtilityDialog.ui" line="310"/>
         <source>WebGIS Address</source>
         <translation>Веб серверийн хаяг</translation>
     </message>
     <message>
-        <location filename="view/WebgisUtilityDialog.ui" line="328"/>
+        <location filename="view/WebgisUtilityDialog.ui" line="336"/>
         <source>WebGIS Utility</source>
         <translation>Веб сервер</translation>
     </message>
     <message>
-        <location filename="view/WebgisUtilityDialog.ui" line="357"/>
+        <location filename="view/WebgisUtilityDialog.ui" line="365"/>
         <source>Connect to WebGIS</source>
         <translation>Веб серверт холбогдох</translation>
     </message>
     <message>
-        <location filename="view/WebgisUtilityDialog.ui" line="370"/>
+        <location filename="view/WebgisUtilityDialog.ui" line="378"/>
         <source>Find ownership progress:</source>
         <translation>Хайлтын явц:</translation>
     </message>
     <message>
-        <location filename="view/WebgisUtilityDialog.ui" line="126"/>
+        <location filename="view/WebgisUtilityDialog.ui" line="134"/>
         <source>Parcel information</source>
         <translation>Тухайн иргэний өмчийн газрын мэдээлэл</translation>
     </message>
@@ -14445,52 +14450,52 @@
         <translation>Регистрийн дугаар</translation>
     </message>
     <message>
-        <location filename="controller/WebgisUtilityDialog.py" line="374"/>
+        <location filename="controller/WebgisUtilityDialog.py" line="393"/>
         <source>Connection failed</source>
         <translation>Холболт алдаатай</translation>
     </message>
     <message>
-        <location filename="controller/WebgisUtilityDialog.py" line="374"/>
+        <location filename="controller/WebgisUtilityDialog.py" line="393"/>
         <source>Please check your VPN connection!!!</source>
         <translation>VPN холболтыг шалгана уу!!!</translation>
     </message>
     <message>
-        <location filename="controller/WebgisUtilityDialog.py" line="378"/>
+        <location filename="controller/WebgisUtilityDialog.py" line="397"/>
         <source>Connection</source>
         <translation>Холболт</translation>
     </message>
     <message>
-        <location filename="controller/WebgisUtilityDialog.py" line="378"/>
+        <location filename="controller/WebgisUtilityDialog.py" line="397"/>
         <source>Successfully connected</source>
         <translation>Холболт амжилттай</translation>
     </message>
     <message>
-        <location filename="controller/WebgisUtilityDialog.py" line="364"/>
+        <location filename="controller/WebgisUtilityDialog.py" line="383"/>
         <source>Owner record not found</source>
         <translation>Өмчлөгчийн мэдээлэл байхгүй байна</translation>
     </message>
     <message>
-        <location filename="controller/WebgisUtilityDialog.py" line="457"/>
+        <location filename="controller/WebgisUtilityDialog.py" line="476"/>
         <source>First letters of the person id should be capital letters and in mongolian.</source>
         <translation>Иргэний регистрийн дугаарын эхний 2 үсэг том, крилл үсгээр бичигдэнэ.</translation>
     </message>
     <message>
-        <location filename="controller/WebgisUtilityDialog.py" line="463"/>
+        <location filename="controller/WebgisUtilityDialog.py" line="482"/>
         <source>After the first two capital letters, the person id should contain only numbers.</source>
         <translation>Иргэний регистрийн  эхний 2 үсгээс хойш зөвхөн дугаар байна. </translation>
     </message>
     <message>
-        <location filename="controller/WebgisUtilityDialog.py" line="468"/>
+        <location filename="controller/WebgisUtilityDialog.py" line="487"/>
         <source>The person id shouldn&apos;t be longer than 10 characters.</source>
         <translation>Иргэний регистр 10 тэмдэгтээс илүүгүй байна.</translation>
     </message>
     <message>
-        <location filename="controller/WebgisUtilityDialog.py" line="593"/>
+        <location filename="controller/WebgisUtilityDialog.py" line="619"/>
         <source>Out error</source>
         <translation>Нээгдсэн байна</translation>
     </message>
     <message>
-        <location filename="controller/WebgisUtilityDialog.py" line="593"/>
+        <location filename="controller/WebgisUtilityDialog.py" line="619"/>
         <source>This file is already opened. Please close re-run</source>
         <translation>Энэ тайлан нээгдсэн байна. Хаагаад дахин ажиллуулна уу</translation>
     </message>
@@ -14500,117 +14505,117 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="view/WebgisUtilityDialog.ui" line="151"/>
+        <location filename="view/WebgisUtilityDialog.ui" line="159"/>
         <source>Parcel ID</source>
         <translation>Нэгж талбарын дугаар</translation>
     </message>
     <message>
-        <location filename="view/WebgisUtilityDialog.ui" line="156"/>
+        <location filename="view/WebgisUtilityDialog.ui" line="164"/>
         <source>name</source>
         <translation>Овог</translation>
     </message>
     <message>
-        <location filename="view/WebgisUtilityDialog.ui" line="161"/>
+        <location filename="view/WebgisUtilityDialog.ui" line="169"/>
         <source>first_name</source>
         <translation>Нэр</translation>
     </message>
     <message>
-        <location filename="view/WebgisUtilityDialog.ui" line="166"/>
+        <location filename="view/WebgisUtilityDialog.ui" line="174"/>
         <source>person_id</source>
         <translation>Регистер</translation>
     </message>
     <message>
-        <location filename="view/WebgisUtilityDialog.ui" line="171"/>
+        <location filename="view/WebgisUtilityDialog.ui" line="179"/>
         <source>aimag_name</source>
         <translation>Аймаг\Нийслэл</translation>
     </message>
     <message>
-        <location filename="view/WebgisUtilityDialog.ui" line="176"/>
+        <location filename="view/WebgisUtilityDialog.ui" line="184"/>
         <source>soum_name</source>
         <translation>Сум\дүүрэг</translation>
     </message>
     <message>
-        <location filename="view/WebgisUtilityDialog.ui" line="181"/>
+        <location filename="view/WebgisUtilityDialog.ui" line="189"/>
         <source>bag_name</source>
         <translation>Баг\хороо</translation>
     </message>
     <message>
-        <location filename="view/WebgisUtilityDialog.ui" line="186"/>
+        <location filename="view/WebgisUtilityDialog.ui" line="194"/>
         <source>gudamj_name</source>
         <translation>Гудамжны нэр</translation>
     </message>
     <message>
-        <location filename="view/WebgisUtilityDialog.ui" line="191"/>
+        <location filename="view/WebgisUtilityDialog.ui" line="199"/>
         <source>gudamj_dugaar</source>
         <translation>Гудамжны дугаар</translation>
     </message>
     <message>
-        <location filename="view/WebgisUtilityDialog.ui" line="196"/>
+        <location filename="view/WebgisUtilityDialog.ui" line="204"/>
         <source>bair_dugaar</source>
         <translation>Байрны дугаар</translation>
     </message>
     <message>
-        <location filename="view/WebgisUtilityDialog.ui" line="201"/>
+        <location filename="view/WebgisUtilityDialog.ui" line="209"/>
         <source>desion_date</source>
         <translation>Захирамжийн огноо</translation>
     </message>
     <message>
-        <location filename="view/WebgisUtilityDialog.ui" line="206"/>
+        <location filename="view/WebgisUtilityDialog.ui" line="214"/>
         <source>desion_number</source>
         <translation>Захирамжийн дугаар</translation>
     </message>
     <message>
-        <location filename="view/WebgisUtilityDialog.ui" line="211"/>
+        <location filename="view/WebgisUtilityDialog.ui" line="219"/>
         <source>area</source>
         <translation>Талбайн хэмжээ</translation>
     </message>
     <message>
-        <location filename="view/WebgisUtilityDialog.ui" line="216"/>
+        <location filename="view/WebgisUtilityDialog.ui" line="224"/>
         <source>Status</source>
         <translation>Үзүүлэлт</translation>
     </message>
     <message>
-        <location filename="view/WebgisUtilityDialog.ui" line="234"/>
+        <location filename="view/WebgisUtilityDialog.ui" line="242"/>
         <source>Detail Pring</source>
         <translation>Дэлгэрэнгүй мэдээлэл</translation>
     </message>
     <message>
-        <location filename="view/WebgisUtilityDialog.ui" line="386"/>
+        <location filename="view/WebgisUtilityDialog.ui" line="394"/>
         <source>LM</source>
         <translation>Газрын кадастрын мэдээллийн сан</translation>
     </message>
     <message>
-        <location filename="view/WebgisUtilityDialog.ui" line="402"/>
+        <location filename="view/WebgisUtilityDialog.ui" line="410"/>
         <source>LPIS</source>
         <translation>Газар өмчлөлийн мэдээллийн сан</translation>
     </message>
     <message>
-        <location filename="view/WebgisUtilityDialog.ui" line="418"/>
+        <location filename="view/WebgisUtilityDialog.ui" line="426"/>
         <source>Subject</source>
         <translation>Газрын өмчлөлийн Улсын бүртгэл</translation>
     </message>
     <message>
-        <location filename="view/WebgisUtilityDialog.ui" line="431"/>
+        <location filename="view/WebgisUtilityDialog.ui" line="439"/>
         <source>Information Detail</source>
         <translation>Хамтран өмчлөгчийн мэдээлэл</translation>
     </message>
     <message>
-        <location filename="view/WebgisUtilityDialog.ui" line="452"/>
+        <location filename="view/WebgisUtilityDialog.ui" line="460"/>
         <source>Person Info</source>
         <translation>Иргэний мэдээлэл</translation>
     </message>
     <message>
-        <location filename="view/WebgisUtilityDialog.ui" line="457"/>
+        <location filename="view/WebgisUtilityDialog.ui" line="465"/>
         <source>Who</source>
         <translation>Хэн</translation>
     </message>
     <message>
-        <location filename="view/WebgisUtilityDialog.ui" line="467"/>
+        <location filename="view/WebgisUtilityDialog.ui" line="475"/>
         <source>New Column</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="view/WebgisUtilityDialog.ui" line="485"/>
+        <location filename="view/WebgisUtilityDialog.ui" line="493"/>
         <source>Defination Print</source>
         <translation>Тодорхойлолт хэвлэх</translation>
     </message>
