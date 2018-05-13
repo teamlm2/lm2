@@ -120,48 +120,21 @@ class LayerUtils(object):
                 return vlayer
 
     @staticmethod
-    def load_layer_by_ca_sec_parcel(layer_name, id, restrictions=[]):
+    def load_layer_by_name_pasture_monitoring(layer_name, id):
 
-        restrictions = restrictions.split(",")
+        uri = QgsDataSourceURI()
+        user = QSettings().value(SettingsConstants.USER)
+        db = QSettings().value(SettingsConstants.DATABASE_NAME)
+        host = QSettings().value(SettingsConstants.HOST)
+        port = QSettings().value(SettingsConstants.PORT, "5432")
+        pwd = SessionHandler().current_password()
 
-        if len(restrictions) > 0:
-            for restriction in restrictions:
-                restriction = restriction.strip()
-                uri = QgsDataSourceURI()
-                user = QSettings().value(SettingsConstants.USER)
-                db = QSettings().value(SettingsConstants.DATABASE_NAME)
-                host = QSettings().value(SettingsConstants.HOST)
-                port = QSettings().value(SettingsConstants.PORT, "5432")
-                pwd = SessionHandler().current_password()
+        uri.setConnection(host, port, db, user, pwd)
+        uri.setDataSource("pasture", layer_name, "geometry", "", id)
 
-                uri.setConnection(host, port, db, user, pwd)
-                uri.setDataSource("data_landuse", layer_name, "geometry", "", id)
-
-                vlayer = QgsVectorLayer(uri.uri(), layer_name, "postgres")
-                QgsMapLayerRegistry.instance().addMapLayer(vlayer, False)
-                return vlayer
-
-    @staticmethod
-    def load_layer_by_name_pasture_monitoring(layer_name, id, restrictions=[]):
-
-        restrictions = restrictions.split(",")
-
-        if len(restrictions) > 0:
-            for restriction in restrictions:
-                restriction = restriction.strip()
-                uri = QgsDataSourceURI()
-                user = QSettings().value(SettingsConstants.USER)
-                db = QSettings().value(SettingsConstants.DATABASE_NAME)
-                host = QSettings().value(SettingsConstants.HOST)
-                port = QSettings().value(SettingsConstants.PORT, "5432")
-                pwd = SessionHandler().current_password()
-
-                uri.setConnection(host, port, db, user, pwd)
-                uri.setDataSource("pasture", layer_name, "geometry", "", id)
-
-                vlayer = QgsVectorLayer(uri.uri(), layer_name, "postgres")
-                QgsMapLayerRegistry.instance().addMapLayer(vlayer, False)
-                return vlayer
+        vlayer = QgsVectorLayer(uri.uri(), layer_name, "postgres")
+        QgsMapLayerRegistry.instance().addMapLayer(vlayer, False)
+        return vlayer
 
     @staticmethod
     def load_layer_by_name_set_zones(layer_name, id, restrictions=[]):

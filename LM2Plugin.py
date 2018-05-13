@@ -837,9 +837,9 @@ class LM2Plugin:
             if plan_layer is None:
                 plan_layer = LayerUtils.load_layer_by_name_report("ca_plan_parcel", "parcel_id", soum)
 
-            if sec_layer is None:
-                # sec_layer = LayerUtils.load_layer_by_name_set_zones("ca_sec_parcel", "parcel_id", "data_landuse")
-                sec_layer = LayerUtils.load_layer_by_ca_sec_parcel("ca_sec_parcel", "parcel_id", "data_landuse")
+            # if sec_layer is None:
+            #     # sec_layer = LayerUtils.load_layer_by_name_set_zones("ca_sec_parcel", "parcel_id", "data_landuse")
+            #     sec_layer = LayerUtils.load_layer_by_ca_sec_parcel("ca_sec_parcel", "parcel_id", "data_landuse")
 
 
             if plan_layer.name() == "ca_plan_parcel":
