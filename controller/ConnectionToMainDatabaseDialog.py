@@ -87,13 +87,6 @@ class ConnectionToMainDatabaseDialog(QDialog, Ui_ConnectionToMainDatabaseDialog)
                                      self.tr("input password!!!"))
             return
 
-        d_code = self.database_edit.text()[-4:]
-        x = self.user_name_edit.text().find(d_code)
-        # if x == -1:
-        #     PluginUtils.show_message(self, self.tr("User"),
-        #                              self.tr("Don't match database and username"))
-        #     return
-
         try:
             if not SessionHandler().create_session(user, password, host, port, database):
                 return
@@ -122,11 +115,11 @@ class ConnectionToMainDatabaseDialog(QDialog, Ui_ConnectionToMainDatabaseDialog)
             self.wnet_connect(host, username_d, password_d)
             # self.netcopy(host, source, dest_dir, username_d, password_d)
 
-        if host == 'localhost':
-            self.__vnp_connection()
-            self.__backup_schedule()
+        # if host == 'localhost':
+        #     self.__vnp_connection()
+        #     self.__backup_schedule()
 
-        self.__layers_permission(user, password, host, port, database)
+        # self.__layers_permission(user, password, host, port, database)
         self.reject()
 
     def __vnp_connection(self):

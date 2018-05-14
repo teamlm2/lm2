@@ -799,37 +799,37 @@ class PastureWidget(QDockWidget, Ui_PastureWidget, DatabaseHelper):
 
         monitoring_layer = LayerUtils.load_layer_by_name_pasture_monitoring("ca_pasture_monitoring", "point_id")
         natural_zone_layaer = LayerUtils.load_layer_by_name_pasture_monitoring("au_natural_zone", "code")
-        # vlayer = LayerUtils.load_layer_by_name_report("ca_pug_boundary", "code", restrictions)
-        # vlayer_eco = LayerUtils.load_layer_by_name_report("ca_pug_eco", "code", restrictions)
-        # vlayer_parcel = LayerUtils.load_layer_by_name_report("ca_pasture_parcel", "parcel_id", restrictions)
-        # vlayer_building = LayerUtils.load_layer_by_name_report("ca_pasture_building", "building_id", restrictions)
+        vlayer = LayerUtils.load_layer_by_name_report("ca_pug_boundary", "code", restrictions)
+        vlayer_eco = LayerUtils.load_layer_by_name_report("ca_pug_eco", "code", restrictions)
+        vlayer_parcel = LayerUtils.load_layer_by_name_report("ca_pasture_parcel", "parcel_id", restrictions)
+        vlayer_building = LayerUtils.load_layer_by_name_report("ca_pasture_building", "building_id", restrictions)
         # vlayer_monitoring_point = LayerUtils.load_layer_by_name_report("ca_pasture_monitoring", "point_id", restrictions)
 
         layers = self.plugin.iface.legendInterface().layers()
 
-        # for layer in layers:
-        #     if layer.name() == "PUGBuilding"+'_' + restrictions or layer.name() == u"БАХ байшин"+'_' + restrictions:
-        #         is_pug_building = True
-        # if not is_pug_building:
-        #     mygroup.addLayer(vlayer_building)
-        #
-        # for layer in layers:
-        #     if layer.name() == "PUGParcel"+'_' + restrictions or layer.name() == u"БАХ нэгж талбар"+'_' + restrictions:
-        #         is_pug_parcel = True
-        # if not is_pug_parcel:
-        #     mygroup.addLayer(vlayer_parcel)
-        #
-        # for layer in layers:
-        #     if layer.name() == "PUGBoundary"+'_' + restrictions or layer.name() == u"БАХ-ийн хил"+'_' + restrictions:
-        #         is_layer = True
-        # if not is_layer:
-        #     mygroup.addLayer(vlayer)
-        #
-        # for layer in layers:
-        #     if layer.name() == "PUGEcological"+'_' + restrictions or layer.name() == u"БАХ экологийн чадавхи"+'_' + restrictions:
-        #         is_eco_layer = True
-        # if not is_eco_layer:
-        #     mygroup.addLayer(vlayer_eco)
+        for layer in layers:
+            if layer.name() == "PUGBuilding"+'_' + restrictions or layer.name() == u"БАХ байшин"+'_' + restrictions:
+                is_pug_building = True
+        if not is_pug_building:
+            mygroup.addLayer(vlayer_building)
+
+        for layer in layers:
+            if layer.name() == "PUGParcel"+'_' + restrictions or layer.name() == u"БАХ нэгж талбар"+'_' + restrictions:
+                is_pug_parcel = True
+        if not is_pug_parcel:
+            mygroup.addLayer(vlayer_parcel)
+
+        for layer in layers:
+            if layer.name() == "PUGBoundary"+'_' + restrictions or layer.name() == u"БАХ-ийн хил"+'_' + restrictions:
+                is_layer = True
+        if not is_layer:
+            mygroup.addLayer(vlayer)
+
+        for layer in layers:
+            if layer.name() == "PUGEcological"+'_' + restrictions or layer.name() == u"БАХ экологийн чадавхи"+'_' + restrictions:
+                is_eco_layer = True
+        if not is_eco_layer:
+            mygroup.addLayer(vlayer_eco)
 
         for layer in layers:
             if layer.name() == "PastureMonitoringPoint" or layer.name() == u"Мониторингийн Цэг":
@@ -844,13 +844,13 @@ class PastureWidget(QDockWidget, Ui_PastureWidget, DatabaseHelper):
         if not is_natural_zone_layer:
             mygroup.addLayer(natural_zone_layaer)
 
-        # vlayer.setLayerName(QApplication.translate("Plugin", "PUGBoundary") + '_' + restrictions)
-        # vlayer.loadNamedStyle(str(os.path.dirname(os.path.realpath(__file__))[:-10]) + "template\style/pug_boundary.qml")
-        # vlayer_eco.setLayerName(QApplication.translate("Plugin", "PUGEcological") + '_' + restrictions)
-        # vlayer_eco.loadNamedStyle(str(os.path.dirname(os.path.realpath(__file__))[:-10]) + "template\style/pug_eco.qml")
-        # vlayer_parcel.setLayerName(QApplication.translate("Plugin", "PUGParcel") + '_' + restrictions)
-        # vlayer_parcel.loadNamedStyle(str(os.path.dirname(os.path.realpath(__file__))[:-10]) + "template\style/pug_parcel.qml")
-        # vlayer_building.setLayerName(QApplication.translate("Plugin", "PUGBuilding") + '_' + restrictions)
+        vlayer.setLayerName(QApplication.translate("Plugin", "PUGBoundary") + '_' + restrictions)
+        vlayer.loadNamedStyle(str(os.path.dirname(os.path.realpath(__file__))[:-10]) + "template\style/pug_boundary.qml")
+        vlayer_eco.setLayerName(QApplication.translate("Plugin", "PUGEcological") + '_' + restrictions)
+        vlayer_eco.loadNamedStyle(str(os.path.dirname(os.path.realpath(__file__))[:-10]) + "template\style/pug_eco.qml")
+        vlayer_parcel.setLayerName(QApplication.translate("Plugin", "PUGParcel") + '_' + restrictions)
+        vlayer_parcel.loadNamedStyle(str(os.path.dirname(os.path.realpath(__file__))[:-10]) + "template\style/pug_parcel.qml")
+        vlayer_building.setLayerName(QApplication.translate("Plugin", "PUGBuilding") + '_' + restrictions)
 
         monitoring_layer.setLayerName(QApplication.translate("Plugin", "PastureMonitoringPoint"))
         monitoring_layer.loadNamedStyle(
