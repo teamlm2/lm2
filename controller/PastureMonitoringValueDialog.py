@@ -2856,7 +2856,6 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
     @pyqtSlot()
     def on_print_button_clicked(self):
 
-        print 'aaa'
         selected_items = self.point_detail_twidget.selectedItems()
         if len(selected_items) == 0:
             return
@@ -3305,45 +3304,61 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
 
     def __load_d_data(self, point_detail_id, col, data_row, print_year, worksheet, format, format_null_data):
 
-        data_value_count = self.session.query(PsPointDaatsValue).filter(
-            PsPointDaatsValue.monitoring_year == print_year). \
-            filter(PsPointDaatsValue.point_detail_id == point_detail_id).count()
+        biomass_values = self.session.query(PsPointUrgatsValue).filter(PsPointUrgatsValue.value_year == print_year). \
+            filter(PsPointUrgatsValue.point_detail_id == point_detail_id).count()
+        if biomass_values == 1:
+            biomass_value = self.session.query(PsPointUrgatsValue).filter(PsPointUrgatsValue.value_year == print_year). \
+                filter(PsPointUrgatsValue.point_detail_id == point_detail_id).one()
+            biomass_t = unicode(biomass_value.biomass_type_ref.description)
 
-        if data_value_count == 1:
-            data_value = self.session.query(PsPointDaatsValue).filter(PsPointDaatsValue.monitoring_year == print_year). \
-                filter(PsPointDaatsValue.point_detail_id == point_detail_id).one()
-
-            worksheet.write(data_row, col, str(round(data_value.area_ga, 2)), format)
-            worksheet.write(data_row, col + 1, str(round(data_value.biomass, 2)), format)
-            worksheet.write(data_row, col + 2, str(''), format)
-            worksheet.write(data_row, col + 3, str(data_value.rc), format)
-            worksheet.write(data_row, col + 4, str(''), format)
-            worksheet.write(data_row, col + 5, str(data_value.duration), format)
-            worksheet.write(data_row, col + 6, str(round(data_value.d1, 2)), format)
-            worksheet.write(data_row, col + 7, str(round(data_value.d1_100ga, 2)), format)
-            worksheet.write(data_row, col + 8, str(round(data_value.d2, 2)), format)
-            worksheet.write(data_row, col + 9, str(round(data_value.d3, 2)), format)
-            worksheet.write(data_row, col + 10, str(round(data_value.unelgee, 2)), format)
+            worksheet.write(data_row, col, biomass_t, format)
+            worksheet.write(data_row, col + 1, str(round(biomass_value.m_1_value, 2)), format)
+            worksheet.write(data_row, col + 2, str(round(biomass_value.m_2_value, 2)), format)
+            worksheet.write(data_row, col + 3, str(round(biomass_value.m_3_value,2)), format)
+            worksheet.write(data_row, col + 4, str(round(biomass_value.biomass_kg_ga,2)), format)
         else:
             worksheet.write(data_row, col, '', format_null_data)
             worksheet.write(data_row, col + 1, '', format_null_data)
             worksheet.write(data_row, col + 2, '', format_null_data)
             worksheet.write(data_row, col + 3, '', format_null_data)
             worksheet.write(data_row, col + 4, '', format_null_data)
-            worksheet.write(data_row, col + 5, '', format_null_data)
+
+        data_value_count = self.session.query(PsPointDaatsValue).filter(PsPointDaatsValue.monitoring_year == print_year).\
+            filter(PsPointDaatsValue.point_detail_id == point_detail_id).count()
+
+        if data_value_count == 1:
+            data_value = self.session.query(PsPointDaatsValue).filter(PsPointDaatsValue.monitoring_year == print_year). \
+                filter(PsPointDaatsValue.point_detail_id == point_detail_id).one()
+
+            worksheet.write(data_row, col+5, str(round(data_value.area_ga, 2)), format)
+            worksheet.write(data_row, col + 6, str(''), format)
+            worksheet.write(data_row, col + 7, str(data_value.rc), format)
+            worksheet.write(data_row, col + 8, str(''), format)
+            worksheet.write(data_row, col + 9, str(data_value.duration), format)
+            worksheet.write(data_row, col + 10, str(round(data_value.d1, 2)), format)
+            worksheet.write(data_row, col + 11, str(round(data_value.d1_100ga, 2)), format)
+            worksheet.write(data_row, col + 12, str(round(data_value.d2, 2)), format)
+            worksheet.write(data_row, col + 13, str(round(data_value.d3, 2)), format)
+            worksheet.write(data_row, col + 14, str(round(data_value.unelgee, 2)), format)
+        else:
+            worksheet.write(data_row, col+5, '', format_null_data)
             worksheet.write(data_row, col + 6, '', format_null_data)
             worksheet.write(data_row, col + 7, '', format_null_data)
             worksheet.write(data_row, col + 8, '', format_null_data)
             worksheet.write(data_row, col + 9, '', format_null_data)
             worksheet.write(data_row, col + 10, '', format_null_data)
+            worksheet.write(data_row, col + 11, '', format_null_data)
+            worksheet.write(data_row, col + 12, '', format_null_data)
+            worksheet.write(data_row, col + 13, '', format_null_data)
+            worksheet.write(data_row, col + 14, '', format_null_data)
 
         photo_count = self.__photo_count(point_detail_id)
         if photo_count == 0:
-            worksheet.write(data_row, col + 11, str(self.__photo_count(point_detail_id)), format_null_data)
+            worksheet.write(data_row, col + 15, str(self.__photo_count(point_detail_id)), format_null_data)
         elif photo_count > 0 and photo_count < 10:
-            worksheet.write(data_row, col + 11, str(self.__photo_count(point_detail_id)), self.format_photo_yellow)
+            worksheet.write(data_row, col + 15, str(self.__photo_count(point_detail_id)), self.format_photo_yellow)
         else:
-            worksheet.write(data_row, col + 11, str(self.__photo_count(point_detail_id)), self.format_photo)
+            worksheet.write(data_row, col + 15, str(self.__photo_count(point_detail_id)), self.format_photo)
 
     def __load_zone_header(self, worksheet, pasture_plants, format, format_null_data):
 
@@ -3418,8 +3433,8 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
         row = 5
         row_0 = 3
         row_1 = 4
-        first_col = col + 1
-        last_col = col + 5
+        first_col = col+1
+        last_col = col+5
         for live_stock in live_stocks:
             col = col + 1
             last_col = col
@@ -3433,26 +3448,39 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
 
         col = col + 1
         first_col = col
-        worksheet.write(row, col, u'Бэлчээрийн талбай', format)
-        worksheet.write(row - 1, col, u'talbai', format)
+        last_col = col + 6
+        worksheet.write(row, col, u'Ургацын төрөл', format)
         col = col + 1
-        worksheet.write(row, col, u'Бэлчээрийн ургац кг/га', format)
-        worksheet.write(row - 1, col, u'urgats', format)
+        worksheet.write(row, col, u'Эхний ургацын утга', format)
+        col = col + 1
+        worksheet.write(row, col, u'2 дахь ургацын утга', format)
+        col = col + 1
+        worksheet.write(row, col, u'3 дахь ургацын утга', format)
+        col = col + 1
+        worksheet.write(row, col, u'Био масс кг/га', format)
+
+        last_col = col
+        worksheet.merge_range(row_0, first_col, row_1, last_col, u'Ургацын утга', format)
+
+        col = col + 1
+        first_col = col
+        worksheet.write(row, col, u'Бэлчээрийн талбай', format)
+        worksheet.write(row-1, col, u'talbai', format)
         col = col + 1
         worksheet.write(row, col, u'Төлөв байдлын код', format)
-        worksheet.write(row - 1, col, u'tb_code', format)
+        worksheet.write(row-1, col, u'tb_code', format)
         col = col + 1
         worksheet.write(row, col, u'Сэргэх чадварын ангилал', format)
-        worksheet.write(row - 1, col, u'RC', format)
+        worksheet.write(row-1, col, u'RC', format)
         col = col + 1
         worksheet.write(row, col, u'Хугацаа', format)
-        worksheet.write(row - 1, col, u'hugatsaa', format)
+        worksheet.write(row-1, col, u'hugatsaa', format)
         col = col + 1
         worksheet.write(row, col, u'Бэлчээрлэх хоног', format)
-        worksheet.write(row - 1, col, u'honog', format)
+        worksheet.write(row-1, col, u'honog', format)
         col = col + 1
         worksheet.write(row, col, u'1 га-д бэлчих ХТ D1', format)
-        worksheet.write(row - 1, col, u'd1', format)
+        worksheet.write(row-1, col, u'd1', format)
         col = col + 1
         worksheet.write(row, col, u'100 га-д бэлчих ХТ D1-100га', format)
         worksheet.write(row - 1, col, u'd1_1_100', format)
@@ -3472,7 +3500,7 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
         worksheet.write(row - 1, col, u'Зургын тоо', format)
 
         last_col = col
-        worksheet.merge_range(row_0, first_col, row_1 - 1, last_col, u'Бэлчээрийн даац, үнэлгээ', format)
+        worksheet.merge_range(row_0, first_col, row_1-1, last_col, u'Бэлчээрийн даац, үнэлгээ', format)
 
     @pyqtSlot(int)
     def on_input_area_chbox_stateChanged(self, state):
