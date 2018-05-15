@@ -1155,14 +1155,19 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
                 parcel_apps = self.session.query(CtApplicationParcelPasture). \
                     filter(CtApplicationParcelPasture.parcel == parcel.parcel_id).all()
                 days_sum = 0
-                for parcel_app in parcel_apps:
-                    app_parcels = self.session.query(CtApplicationParcelPasture). \
-                        filter(CtApplicationParcelPasture.application == parcel_app.application). \
-                        filter(CtApplicationParcelPasture.parcel == parcel.parcel_id).all()
-                    for app_parcel in app_parcels:
-                        if app_parcel.days:
-                            days_sum = days_sum + app_parcel.days
+                # for parcel_app in parcel_apps:
+                #     app_parcels = self.session.query(CtApplicationParcelPasture). \
+                #         filter(CtApplicationParcelPasture.application == parcel_app.application). \
+                #         filter(CtApplicationParcelPasture.parcel == parcel.parcel_id).all()
+                #     for app_parcel in app_parcels:
+                #         if app_parcel.days:
+                #             days_sum = days_sum + app_parcel.days
 
+                app_parcels = self.session.query(CtApplicationParcelPasture). \
+                    filter(CtApplicationParcelPasture.parcel == parcel.parcel_id).all()
+                for app_parcel in app_parcels:
+                    if app_parcel.days:
+                        days_sum = days_sum + app_parcel.days
                 self.duration_days_edit.setText(str(days_sum))
                 self.calc_duration_sbox.setValue(days_sum)
 
