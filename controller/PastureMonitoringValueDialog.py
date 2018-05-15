@@ -1152,8 +1152,8 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
             app_parcel_count = self.session.query(CtApplicationParcelPasture). \
                 filter(CtApplicationParcelPasture.parcel == parcel.parcel_id).count()
             if app_parcel_count > 0:
-                parcel_apps = self.session.query(CtApplicationParcelPasture). \
-                    filter(CtApplicationParcelPasture.parcel == parcel.parcel_id).all()
+                parcel_app = self.session.query(CtApplicationParcelPasture). \
+                    filter(CtApplicationParcelPasture.parcel == parcel.parcel_id).first()
                 days_sum = 0
                 # for parcel_app in parcel_apps:
                 #     app_parcels = self.session.query(CtApplicationParcelPasture). \
@@ -1164,6 +1164,7 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
                 #             days_sum = days_sum + app_parcel.days
 
                 app_parcels = self.session.query(CtApplicationParcelPasture). \
+                    filter(CtApplicationParcelPasture.application == parcel_app.application). \
                     filter(CtApplicationParcelPasture.parcel == parcel.parcel_id).all()
                 for app_parcel in app_parcels:
                     if app_parcel.days:
