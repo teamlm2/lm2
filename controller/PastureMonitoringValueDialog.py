@@ -2856,6 +2856,7 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
     @pyqtSlot()
     def on_print_button_clicked(self):
 
+        print 'aaa'
         selected_items = self.point_detail_twidget.selectedItems()
         if len(selected_items) == 0:
             return
