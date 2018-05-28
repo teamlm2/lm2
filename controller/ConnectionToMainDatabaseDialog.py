@@ -116,10 +116,10 @@ class ConnectionToMainDatabaseDialog(QDialog, Ui_ConnectionToMainDatabaseDialog)
             # self.netcopy(host, source, dest_dir, username_d, password_d)
 
         # if host == 'localhost':
-        #     self.__vnp_connection()
+        #     self.__vpn_connection()
         #     self.__backup_schedule()
 
-        # self.__layers_permission(user, password, host, port, database)
+        self.__layers_permission(user, password, host, port, database)
         self.reject()
 
     def __vnp_connection(self):

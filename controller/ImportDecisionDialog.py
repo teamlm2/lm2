@@ -709,7 +709,7 @@ class ImportDecisionDialog(QDialog, Ui_ImportDecisionDialog, DatabaseHelper):
 
             #check if decision_no already exists in case of a new import
             if not self.attribute_update:
-                count = self.session.query(CtDecision).filter(CtDecision.decision_no == decision_no).count()
+                count = self.session.query(CtDecision).filter(CtDecision.decision_no == decision_no).filter(CtDecision.decision_level == decision_level).count()
                 if count > 0:
                     PluginUtils.show_error(self, self.tr("Error in xls file"),
                                                 self.tr("The decision number {0} already exists in the database.")
@@ -1022,7 +1022,8 @@ class ImportDecisionDialog(QDialog, Ui_ImportDecisionDialog, DatabaseHelper):
                     .filter(SetRole.user_name == user.user_name) \
                     .filter(SetRole.is_active == True).one()
 
-                decision_count = self.session.query(CtDecision).filter(CtDecision.decision_no == self.notary_decision_edit.text()).count()
+                decision_count = self.session.query(CtDecision).filter(CtDecision.decision_no == self.notary_decision_edit.text()).\
+                    filter(CtDecision.decision_level == self.decision.decision_level).count()
                 if decision_count > 0:
                     return
                 self.decision = CtDecision()
