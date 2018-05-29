@@ -80,30 +80,30 @@ class PersonDialog(QDialog, Ui_PersonDialog, DatabaseHelper):
             bank_list = self.session.query(ClBank).all()
             persontype_list = self.session.query(ClPersonType).all()
             country_list = self.session.query(ClCountryList).all()
-            street_list = self.session.query(BsPerson.address_street_name).order_by(
-                BsPerson.address_street_name.desc()).all()
-            town_list = self.session.query(BsPerson.address_town_or_local_name).order_by(
-                BsPerson.address_town_or_local_name.desc()).all()
-            khaskhaa_list = self.session.query(BsPerson.address_khaskhaa).order_by(
-                BsPerson.address_khaskhaa.desc()).all()
+            # street_list = self.session.query(BsPerson.address_street_name).order_by(
+            #     BsPerson.address_street_name.desc()).all()
+            # town_list = self.session.query(BsPerson.address_town_or_local_name).order_by(
+            #     BsPerson.address_town_or_local_name.desc()).all()
+            # khaskhaa_list = self.session.query(BsPerson.address_khaskhaa).order_by(
+            #     BsPerson.address_khaskhaa.desc()).all()
 
         except SQLAlchemyError, e:
             PluginUtils.show_error(self, self.tr("Database Query Error"), self.tr("Could not execute: {0}").format(e.message))
             self.reject()
-
-        self.aimag_cbox.addItem("*", -1)
-        self.khoroolol_cbox.addItem("*", -1)
-        self.bank_cbox.addItem("*", -1)
-
+        #
+        # self.aimag_cbox.addItem("*", -1)
+        # self.khoroolol_cbox.addItem("*", -1)
+        # self.bank_cbox.addItem("*", -1)
+        #
         for auLevel1 in aimag_list:
             self.aimag_cbox.addItem(auLevel1.name, auLevel1.code)
-
+        #
         for bank in bank_list:
             self.bank_cbox.addItem(bank.description, bank.code)
-
+        #
         for khoroolol in khoroolol_list:
             self.khoroolol_cbox.addItem(khoroolol.name, khoroolol.fid)
-
+        #
         for personType in persontype_list:
             self.person_type_cbox.addItem(personType.description, personType.code)
         person_type = self.person_type_cbox.itemData(self.person_type_cbox.currentIndex())
@@ -113,54 +113,54 @@ class PersonDialog(QDialog, Ui_PersonDialog, DatabaseHelper):
                     self.country_cbox.addItem(countryList.description, countryList.code)
             else:
                 self.country_cbox.addItem(countryList.description, countryList.code)
-
+        #
         self.person_type_cbox.setCurrentIndex(0)
         working_aimag = DatabaseUtils.working_l1_code()
         working_soum = DatabaseUtils.working_l2_code()
         self.aimag_cbox.setCurrentIndex(self.aimag_cbox.findData(working_aimag))
         self.soum_cbox.setCurrentIndex(self.soum_cbox.findData(working_soum))
-
-        khaskhaa_slist = []
-        town_slist = []
-        street_slist = []
-
-        for street in street_list:
-            if street[0]:
-                street_slist.append(street[0])
-
-        for town in town_list:
-            if town[0]:
-                town_slist.append(town[0])
-
-        for khaskhaa in khaskhaa_list:
-            if khaskhaa[0]:
-                khaskhaa_slist.append(khaskhaa[0])
-
-        street_model = QStringListModel(street_slist)
-        self.streetProxyModel = QSortFilterProxyModel()
-        self.streetProxyModel.setSourceModel(street_model)
-        self.streetCompleter = QCompleter(self.streetProxyModel, self, activated=self.on_street_completer_activated)
-        self.streetCompleter.setCompletionMode(QCompleter.PopupCompletion)
-        self.street_name_edit.setCompleter(self.streetCompleter)
-
-        town_model = QStringListModel(town_slist)
-        self.townProxyModel = QSortFilterProxyModel()
-        self.townProxyModel.setSourceModel(town_model)
-        self.townCompleter = QCompleter(self.townProxyModel, self, activated=self.on_town_completer_activated)
-        self.townCompleter.setCompletionMode(QCompleter.PopupCompletion)
-        self.town_edit.setCompleter(self.townCompleter)
-
-        khaskhaa_model = QStringListModel(khaskhaa_slist)
-        self.khaskhaa_proxy_model = QSortFilterProxyModel()
-        self.khaskhaa_proxy_model.setSourceModel(khaskhaa_model)
-        self.khaskhaaCompleter = QCompleter(self.khaskhaa_proxy_model, self,
-                                            activated=self.on_khaskhaa_completer_activated)
-        self.khaskhaaCompleter.setCompletionMode(QCompleter.PopupCompletion)
-        self.khashaa_edit.setCompleter(self.khaskhaaCompleter)
-
-        self.street_name_edit.textEdited.connect(self.streetProxyModel.setFilterFixedString)
-        self.town_edit.textEdited.connect(self.townProxyModel.setFilterFixedString)
-        self.khashaa_edit.textEdited.connect(self.khaskhaa_proxy_model.setFilterFixedString)
+        #
+        # khaskhaa_slist = []
+        # town_slist = []
+        # street_slist = []
+        #
+        # for street in street_list:
+        #     if street[0]:
+        #         street_slist.append(street[0])
+        #
+        # for town in town_list:
+        #     if town[0]:
+        #         town_slist.append(town[0])
+        #
+        # for khaskhaa in khaskhaa_list:
+        #     if khaskhaa[0]:
+        #         khaskhaa_slist.append(khaskhaa[0])
+        #
+        # street_model = QStringListModel(street_slist)
+        # self.streetProxyModel = QSortFilterProxyModel()
+        # self.streetProxyModel.setSourceModel(street_model)
+        # self.streetCompleter = QCompleter(self.streetProxyModel, self, activated=self.on_street_completer_activated)
+        # self.streetCompleter.setCompletionMode(QCompleter.PopupCompletion)
+        # self.street_name_edit.setCompleter(self.streetCompleter)
+        #
+        # town_model = QStringListModel(town_slist)
+        # self.townProxyModel = QSortFilterProxyModel()
+        # self.townProxyModel.setSourceModel(town_model)
+        # self.townCompleter = QCompleter(self.townProxyModel, self, activated=self.on_town_completer_activated)
+        # self.townCompleter.setCompletionMode(QCompleter.PopupCompletion)
+        # self.town_edit.setCompleter(self.townCompleter)
+        #
+        # khaskhaa_model = QStringListModel(khaskhaa_slist)
+        # self.khaskhaa_proxy_model = QSortFilterProxyModel()
+        # self.khaskhaa_proxy_model.setSourceModel(khaskhaa_model)
+        # self.khaskhaaCompleter = QCompleter(self.khaskhaa_proxy_model, self,
+        #                                     activated=self.on_khaskhaa_completer_activated)
+        # self.khaskhaaCompleter.setCompletionMode(QCompleter.PopupCompletion)
+        # self.khashaa_edit.setCompleter(self.khaskhaaCompleter)
+        #
+        # self.street_name_edit.textEdited.connect(self.streetProxyModel.setFilterFixedString)
+        # self.town_edit.textEdited.connect(self.townProxyModel.setFilterFixedString)
+        # self.khashaa_edit.textEdited.connect(self.khaskhaa_proxy_model.setFilterFixedString)
 
     def __setup_permissions(self):
 

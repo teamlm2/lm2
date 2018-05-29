@@ -993,7 +993,12 @@ class LM2Plugin:
         self.about_action.setEnabled(True)
         self.__create_navigator()
         self.__create_pasture()
-        self.__create_parcel_info()
+        database = QSettings().value(SettingsConstants.DATABASE_NAME)
+        if database:
+            au1 = database.split('_')[1][:2]
+            if au1:
+                if au1 == '11' or au1 == '61':
+                    self.__create_parcel_info()
 
         if UserRight.cadastre_view in user_rights or UserRight.cadastre_update in user_rights:
             self.create_case_action.setEnabled(True)
