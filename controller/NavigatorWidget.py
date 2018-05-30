@@ -2434,7 +2434,6 @@ class NavigatorWidget(QDockWidget, Ui_NavigatorWidget, DatabaseHelper):
         DialogInspector().set_dialog_visible(True)
         dialog.exec_()
 
-
     @pyqtSlot()
     def on_person_edit_button_clicked(self):
 

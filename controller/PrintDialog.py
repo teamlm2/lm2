@@ -452,7 +452,7 @@ class PrintDialog(QDialog, Ui_PrintDialog):
         item = map_composition.getComposerItemById("area")
         parcel = self.session.query(CaParcel).filter(CaParcel.parcel_id == self.__parcel_no).one()
         item.setText(str(int(parcel.area_m2)))
-        # item.setText(str((int(self.__geometry.area()))))
+        # item.setText(str((round(self.__geometry.area(), 2))))
         item.adjustSizeToText()
 
         #print print date

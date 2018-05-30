@@ -122,7 +122,7 @@ class ConnectionToMainDatabaseDialog(QDialog, Ui_ConnectionToMainDatabaseDialog)
         self.__layers_permission(user, password, host, port, database)
         self.reject()
 
-    def __vnp_connection(self):
+    def __vpn_connection(self):
 
         vpn_path = r'D:\TM_LM2\dumps\schedule'
         if not os.path.exists(vpn_path):
