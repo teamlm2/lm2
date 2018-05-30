@@ -113,11 +113,11 @@ class ConnectionToMainDatabaseDialog(QDialog, Ui_ConnectionToMainDatabaseDialog)
             username_d = 'user'+ QSettings().value(SettingsConstants.DATABASE_NAME)[-4:]
             password_d = 'user'+ QSettings().value(SettingsConstants.DATABASE_NAME)[-4:]
             self.wnet_connect(host, username_d, password_d)
-            # self.netcopy(host, source, dest_dir, username_d, password_d)
+            self.netcopy(host, source, dest_dir, username_d, password_d)
 
-        # if host == 'localhost':
-        #     self.__vpn_connection()
-        #     self.__backup_schedule()
+        if host == 'localhost':
+            self.__vpn_connection()
+            self.__backup_schedule()
 
         self.__layers_permission(user, password, host, port, database)
         self.reject()
