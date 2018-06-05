@@ -1280,6 +1280,24 @@ class PrintDialog(QDialog, Ui_PrintDialog):
         else:
             return 0
 
+    def __cadastre_page_interval_settings(self, id):
+
+        soum = DatabaseUtils.working_l2_code()
+        count = self.session.query(SetCadastrePage.range_first_no,
+                                   SetCadastrePage.range_last_no,
+                                   SetCadastrePage.current_no) \
+            .filter(SetCadastrePage.id == id).count()
+        if count == 1:
+            first_no, last_no, current_no = self.session.query(SetCadastrePage.range_first_no,
+                                                               SetCadastrePage.range_last_no,
+                                                               SetCadastrePage.current_no) \
+                .filter(SetCadastrePage.id==id).one()
+
+            return {Constants.CADASTRE_PAGE_FIRST_NUMBER: first_no, Constants.CADASTRE_PAGE_LAST_NUMBER: last_no,
+                    Constants.CADASTRE_PAGE_CURRENT_NUMBER: current_no}
+        else:
+            return 0
+
     def __calculate_cadastre_page_no(self):
 
         cadastre_page_settings = self.__cadastre_page_settings()
@@ -1296,27 +1314,69 @@ class PrintDialog(QDialog, Ui_PrintDialog):
             self.error_label.setStyleSheet(Constants.ERROR_TWIDGET_STYLESHEET)
             return 0
 
+    def __calculate_interval_cadastre_page_no(self, cadastre_page_id):
+
+        cadastre_page_settings = self.__cadastre_page_interval_settings(cadastre_page_id)
+        if cadastre_page_settings == 0:
+            self.error_label.setText(self.tr("The cadastre page number is out of range. Change the Admin Settings."))
+            return
+        max_page_no = cadastre_page_settings[Constants.CADASTRE_PAGE_CURRENT_NUMBER] + 1
+
+        if cadastre_page_settings[Constants.CADASTRE_PAGE_FIRST_NUMBER] <= max_page_no \
+                <= cadastre_page_settings[Constants.CADASTRE_PAGE_LAST_NUMBER]:
+            return max_page_no
+        else:
+            self.error_label.setText(self.tr("The cadastre page number is out of range. Change the Admin Settings."))
+            self.error_label.setStyleSheet(Constants.ERROR_TWIDGET_STYLESHEET)
+            return 0
+
     @pyqtSlot(int)
     def on_cadastre_checkbox_stateChanged(self, state):
+
+        self.cadastre_page_interval_cbox.clear()
+        soum = DatabaseUtils.working_l2_code()
+        soum_filter = str(soum) + "-%"
+
+        set_cadastre_pages = self.session.query(SetCadastrePage.range_first_no,
+                                   SetCadastrePage.range_last_no,
+                                   SetCadastrePage.id,
+                                   SetCadastrePage.current_no) \
+            .filter(SetCadastrePage.id.like(soum_filter)) \
+            .order_by(SetCadastrePage.range_first_no.asc()).all()
+
+        for set_cadastre_page in set_cadastre_pages:
+            self.cadastre_page_interval_cbox.addItem(str(set_cadastre_page.range_first_no) + "-" + str(set_cadastre_page.range_last_no) + '/' + str(set_cadastre_page.current_no) + '/', set_cadastre_page.id)
 
         if self.__calculate_cadastre_page_no() == 0:
             self.error_label.setText(self.tr("The cadastre page number is out of range. Change the Admin Settings."))
             return
-        cadastre_page_number = self.__calculate_cadastre_page_no()
-        if cadastre_page_number == None:
-            cadastre_page_number = 0
-        if cadastre_page_number != -1:
-            self.cadastre_page_sbox.setValue(cadastre_page_number)
+        # cadastre_page_number = self.__calculate_cadastre_page_no()
+        # if cadastre_page_number == None:
+        #     cadastre_page_number = 0
+        # if cadastre_page_number != -1:
+        #     self.cadastre_page_sbox.setValue(cadastre_page_number)
 
         self.cpage_print_date.setDate(QDate().currentDate())
         if state == Qt.Checked:
+            self.cadastre_page_interval_cbox.setEnabled(True);
             self.cadastre_page_sbox.setEnabled(True)
             self.cpage_save_button.setEnabled(True)
             self.cpage_print_date.setEnabled(True)
         else:
+            self.cadastre_page_interval_cbox.setEnabled(False);
             self.cadastre_page_sbox.setEnabled(False)
             self.cpage_save_button.setEnabled(False)
             self.cpage_print_date.setEnabled(False)
+
+    @pyqtSlot(int)
+    def on_cadastre_page_interval_cbox_currentIndexChanged(self, index):
+
+        cadastre_page_id = self.cadastre_page_interval_cbox.itemData(index)
+        cadastre_page_number = self.__calculate_interval_cadastre_page_no(cadastre_page_id)
+        if cadastre_page_number == None:
+            cadastre_page_number = 0
+        if cadastre_page_number != -1:
+            self.cadastre_page_sbox.setValue(cadastre_page_number)
 
     @pyqtSlot()
     def on_cpage_save_button_clicked(self):

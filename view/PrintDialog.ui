@@ -344,7 +344,7 @@
      <x>15</x>
      <y>450</y>
      <width>616</width>
-     <height>136</height>
+     <height>176</height>
     </rect>
    </property>
    <property name="font">
@@ -434,7 +434,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>88</y>
+      <y>95</y>
       <width>136</width>
       <height>17</height>
      </rect>
@@ -449,8 +449,8 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>86</y>
+      <x>159</x>
+      <y>121</y>
       <width>106</width>
       <height>22</height>
      </rect>
@@ -465,8 +465,8 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>456</x>
-      <y>85</y>
+      <x>455</x>
+      <y>120</y>
       <width>151</width>
       <height>23</height>
      </rect>
@@ -481,8 +481,8 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>365</x>
-      <y>86</y>
+      <x>364</x>
+      <y>121</y>
       <width>81</width>
       <height>22</height>
      </rect>
@@ -491,8 +491,8 @@
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>275</x>
-      <y>90</y>
+      <x>274</x>
+      <y>125</y>
       <width>81</width>
       <height>13</height>
      </rect>
@@ -505,13 +505,23 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>115</y>
+      <y>155</y>
       <width>431</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string/>
+     <string>aaa</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="cadastre_page_interval_cbox">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>95</y>
+      <width>286</width>
+      <height>22</height>
+     </rect>
     </property>
    </widget>
   </widget>
@@ -519,8 +529,8 @@
    <property name="geometry">
     <rect>
      <x>15</x>
-     <y>595</y>
-     <width>156</width>
+     <y>630</y>
+     <width>120</width>
      <height>28</height>
     </rect>
    </property>
@@ -531,9 +541,9 @@
   <widget class="QPushButton" name="load_settings_button">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>595</y>
-     <width>156</width>
+     <x>145</x>
+     <y>630</y>
+     <width>120</width>
      <height>28</height>
     </rect>
    </property>
@@ -544,9 +554,9 @@
   <widget class="QPushButton" name="load_defaults_button">
    <property name="geometry">
     <rect>
-     <x>345</x>
-     <y>595</y>
-     <width>156</width>
+     <x>275</x>
+     <y>630</y>
+     <width>120</width>
      <height>28</height>
     </rect>
    </property>
@@ -787,6 +797,30 @@
     <string>Geo ID</string>
    </property>
   </widget>
+  <zorder>close_button</zorder>
+  <zorder>help_button</zorder>
+  <zorder>right_holder_twidget</zorder>
+  <zorder>print_button</zorder>
+  <zorder>file_name_edit</zorder>
+  <zorder>label</zorder>
+  <zorder>choose_file_button</zorder>
+  <zorder>dpi_edit</zorder>
+  <zorder>label_2</zorder>
+  <zorder>northArrowGBox</zorder>
+  <zorder>map_title_edit</zorder>
+  <zorder>label_3</zorder>
+  <zorder>groupBox_2</zorder>
+  <zorder>save_settings_button</zorder>
+  <zorder>load_settings_button</zorder>
+  <zorder>load_defaults_button</zorder>
+  <zorder>label_7</zorder>
+  <zorder>buffer_edit</zorder>
+  <zorder>groupBox</zorder>
+  <zorder>groupBox_3</zorder>
+  <zorder>old_parcel_id_chbox</zorder>
+  <zorder>cadastreid_chbox</zorder>
+  <zorder>geoid_chbox</zorder>
+  <zorder>error_label</zorder>
  </widget>
  <tabstops>
   <tabstop>right_holder_twidget</tabstop>
