@@ -1381,6 +1381,64 @@ class PrintDialog(QDialog, Ui_PrintDialog):
     @pyqtSlot()
     def on_cpage_save_button_clicked(self):
 
+        cadastre_page_id = self.cadastre_page_interval_cbox.itemData(self.cadastre_page_interval_cbox.currentIndex())
+        # self.__save_cadastre_page()
+        self.__save_interval_cadastre_page(cadastre_page_id);
+
+    def __save_interval_cadastre_page(self, cadastre_page_id):
+
+        if self.__cadastre_page_interval_settings(cadastre_page_id) == -1:
+            return
+
+        cadastre_page_settings = self.__cadastre_page_interval_settings(cadastre_page_id)
+        max_page_no = self.cadastre_page_sbox.value()
+
+        if not cadastre_page_settings[Constants.CADASTRE_PAGE_FIRST_NUMBER] <= max_page_no \
+                <= cadastre_page_settings[Constants.CADASTRE_PAGE_LAST_NUMBER]:
+            self.error_label.setText(self.tr("The certificate number is out of range. Change the Admin Settings."))
+            self.error_label.setStyleSheet(Constants.ERROR_TWIDGET_STYLESHEET)
+            return
+
+        selected_items = self.right_holder_twidget.selectedItems()
+        if len(selected_items) == 0:
+            PluginUtils.show_message(self, self.tr("Selection"), self.tr("No right holder information!!!"))
+            return
+
+        if self.cadastre_page_sbox.value() == 0:
+            PluginUtils.show_message(self, self.tr("Value"), self.tr("Please enter cadasre page number!!!"))
+            return
+
+        parcel_id = self.__parcel_no
+        current_row = self.right_holder_twidget.currentRow()
+        person_id = self.right_holder_twidget.item(current_row, 0).data(Qt.UserRole + 1)
+        cadastre_page_number = self.cadastre_page_sbox.value()
+
+        cadastre_page_count = self.session.query(CtCadastrePage) \
+            .filter(CtCadastrePage.cadastre_page_number == cadastre_page_number).count()
+
+        if cadastre_page_count > 0:
+            PluginUtils.show_message(self, self.tr("Value"), self.tr("This cadastre page already saved!"))
+            return
+
+        print_date_qt = PluginUtils.convert_qt_date_to_python(self.cpage_print_date.date())
+
+        cadastre_page = CtCadastrePage()
+        cadastre_page.print_date = print_date_qt
+        cadastre_page.person_id = person_id
+        cadastre_page.parcel_id = parcel_id
+        cadastre_page.cadastre_page_number = cadastre_page_number
+        self.session.add(cadastre_page)
+
+        set_cadastre_page = self.session.query(SetCadastrePage) \
+            .filter(SetCadastrePage.id == cadastre_page_id).one()
+
+        set_cadastre_page.current_no = cadastre_page_number
+
+        self.session.commit()
+        PluginUtils.show_message(self, self.tr("Success"), self.tr("Successfully save"))
+
+    def __save_cadastre_page(self):
+
         if self.__cadastre_page_settings() == -1:
             return
 
