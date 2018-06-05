@@ -47,7 +47,7 @@
   <widget class="QPushButton" name="help_button">
    <property name="geometry">
     <rect>
-     <x>445</x>
+     <x>455</x>
      <y>630</y>
      <width>28</width>
      <height>28</height>
@@ -433,9 +433,9 @@
    <widget class="QCheckBox" name="cadastre_checkbox">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>5</x>
       <y>95</y>
-      <width>136</width>
+      <width>171</width>
       <height>17</height>
      </rect>
     </property>
@@ -449,9 +449,9 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>159</x>
+      <x>179</x>
       <y>121</y>
-      <width>106</width>
+      <width>86</width>
       <height>22</height>
      </rect>
     </property>
@@ -465,11 +465,24 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>455</x>
+      <x>421</x>
       <y>120</y>
-      <width>151</width>
+      <width>186</width>
       <height>23</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton:pressed {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,   stop:0 rgba(60, 186, 250, 255), stop:1 rgba(98, 211, 162, 255))
+}
+QPushButton {
+     background-color: #60c465; border: 1px solid black;
+     border-radius: 5px;
+}
+
+QPushButton:disabled {
+    background-color: rgb(170, 170, 174)
+}</string>
     </property>
     <property name="text">
      <string>Save Cadastre Page</string>
@@ -481,9 +494,9 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>364</x>
+      <x>345</x>
       <y>121</y>
-      <width>81</width>
+      <width>71</width>
       <height>22</height>
      </rect>
     </property>
@@ -506,22 +519,35 @@
      <rect>
       <x>10</x>
       <y>155</y>
-      <width>431</width>
+      <width>596</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>aaa</string>
+     <string/>
     </property>
    </widget>
    <widget class="QComboBox" name="cadastre_page_interval_cbox">
     <property name="geometry">
      <rect>
-      <x>160</x>
+      <x>180</x>
       <y>95</y>
-      <width>286</width>
+      <width>236</width>
       <height>22</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>95</y>
+      <width>196</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>cadastre_page_selected</string>
     </property>
    </widget>
   </widget>
@@ -530,7 +556,7 @@
     <rect>
      <x>15</x>
      <y>630</y>
-     <width>120</width>
+     <width>146</width>
      <height>28</height>
     </rect>
    </property>
@@ -541,9 +567,9 @@
   <widget class="QPushButton" name="load_settings_button">
    <property name="geometry">
     <rect>
-     <x>145</x>
+     <x>165</x>
      <y>630</y>
-     <width>120</width>
+     <width>136</width>
      <height>28</height>
     </rect>
    </property>
@@ -554,9 +580,9 @@
   <widget class="QPushButton" name="load_defaults_button">
    <property name="geometry">
     <rect>
-     <x>275</x>
+     <x>305</x>
      <y>630</y>
-     <width>120</width>
+     <width>146</width>
      <height>28</height>
     </rect>
    </property>
@@ -776,7 +802,7 @@
     <rect>
      <x>33</x>
      <y>380</y>
-     <width>133</width>
+     <width>176</width>
      <height>17</height>
     </rect>
    </property>
@@ -797,30 +823,6 @@
     <string>Geo ID</string>
    </property>
   </widget>
-  <zorder>close_button</zorder>
-  <zorder>help_button</zorder>
-  <zorder>right_holder_twidget</zorder>
-  <zorder>print_button</zorder>
-  <zorder>file_name_edit</zorder>
-  <zorder>label</zorder>
-  <zorder>choose_file_button</zorder>
-  <zorder>dpi_edit</zorder>
-  <zorder>label_2</zorder>
-  <zorder>northArrowGBox</zorder>
-  <zorder>map_title_edit</zorder>
-  <zorder>label_3</zorder>
-  <zorder>groupBox_2</zorder>
-  <zorder>save_settings_button</zorder>
-  <zorder>load_settings_button</zorder>
-  <zorder>load_defaults_button</zorder>
-  <zorder>label_7</zorder>
-  <zorder>buffer_edit</zorder>
-  <zorder>groupBox</zorder>
-  <zorder>groupBox_3</zorder>
-  <zorder>old_parcel_id_chbox</zorder>
-  <zorder>cadastreid_chbox</zorder>
-  <zorder>geoid_chbox</zorder>
-  <zorder>error_label</zorder>
  </widget>
  <tabstops>
   <tabstop>right_holder_twidget</tabstop>

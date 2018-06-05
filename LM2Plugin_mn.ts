@@ -1904,12 +1904,12 @@
         <translation>Нууц үг</translation>
     </message>
     <message>
-        <location filename="controller/ConnectionToMainDatabaseDialog.py" line="245"/>
+        <location filename="controller/ConnectionToMainDatabaseDialog.py" line="238"/>
         <source>Query Error</source>
         <translation>(Query ) лавлагаа алдаатай байна</translation>
     </message>
     <message>
-        <location filename="controller/ConnectionToMainDatabaseDialog.py" line="245"/>
+        <location filename="controller/ConnectionToMainDatabaseDialog.py" line="238"/>
         <source>User name or password is not correct!!!</source>
         <translation>Хэрэглэгчийн нэр эсвэл нууц уг буруу байна!!!</translation>
     </message>
@@ -1924,17 +1924,17 @@
         <translation>Нууг үг оруулна уу!!!</translation>
     </message>
     <message>
-        <location filename="controller/ConnectionToMainDatabaseDialog.py" line="108"/>
+        <location filename="controller/ConnectionToMainDatabaseDialog.py" line="101"/>
         <source>You are not permitted use for this PC !!!</source>
         <translation>Та энэ компьютертэй ажиллах эрхэгүй байна МАК хаягаа зөв оруулна уу!!!</translation>
     </message>
     <message>
-        <location filename="controller/ConnectionToMainDatabaseDialog.py" line="113"/>
+        <location filename="controller/ConnectionToMainDatabaseDialog.py" line="106"/>
         <source>User Error</source>
         <translation>Хэрэглэгчийн алдаа</translation>
     </message>
     <message>
-        <location filename="controller/ConnectionToMainDatabaseDialog.py" line="113"/>
+        <location filename="controller/ConnectionToMainDatabaseDialog.py" line="106"/>
         <source>Your login has expired. Please extend it !!!</source>
         <translation>Таны эрхийн хугацаа дууссан байна. Эрхийн хугацаагаа сунгана уу!!!</translation>
     </message>
@@ -3980,12 +3980,12 @@
         <translation>Гүйцэтгэх</translation>
     </message>
     <message>
-        <location filename="controller/ImportDecisionDialog.py" line="1237"/>
+        <location filename="controller/ImportDecisionDialog.py" line="1238"/>
         <source>Approved</source>
         <translation>Захирамж гарсан</translation>
     </message>
     <message>
-        <location filename="controller/ImportDecisionDialog.py" line="1241"/>
+        <location filename="controller/ImportDecisionDialog.py" line="1242"/>
         <source>Refused</source>
         <translation>Захирамж гараагүй</translation>
     </message>
@@ -4060,7 +4060,7 @@
         <translation>Алдааны дэлгэрэнгүй</translation>
     </message>
     <message>
-        <location filename="controller/ImportDecisionDialog.py" line="1245"/>
+        <location filename="controller/ImportDecisionDialog.py" line="1246"/>
         <source>Skipped</source>
         <translation>Алгассан</translation>
     </message>
@@ -4090,12 +4090,12 @@
         <translation>Өөрчлөлт амжилттай хадгалагдлаа.</translation>
     </message>
     <message>
-        <location filename="controller/ImportDecisionDialog.py" line="1070"/>
+        <location filename="controller/ImportDecisionDialog.py" line="1071"/>
         <source>Query Error</source>
         <translation>(Query ) лавлагаа алдаатай байна</translation>
     </message>
     <message>
-        <location filename="controller/ImportDecisionDialog.py" line="1070"/>
+        <location filename="controller/ImportDecisionDialog.py" line="1071"/>
         <source>Error in line {0}: {1}</source>
         <translation>{0} мөрөн дэх алдаа: {1}</translation>
     </message>
@@ -4211,7 +4211,7 @@
         <translation>Өргөдөл холбох</translation>
     </message>
     <message>
-        <location filename="controller/ImportDecisionDialog.py" line="1449"/>
+        <location filename="controller/ImportDecisionDialog.py" line="1450"/>
         <source>Decision</source>
         <translation>Захирамж</translation>
     </message>
@@ -4221,7 +4221,7 @@
         <translation>Захирамжийн дугаар</translation>
     </message>
     <message>
-        <location filename="controller/ImportDecisionDialog.py" line="1461"/>
+        <location filename="controller/ImportDecisionDialog.py" line="1462"/>
         <source>Application Type</source>
         <translation>Өргөдлийн төрөл</translation>
     </message>
@@ -4296,63 +4296,63 @@
         <translation>Хашааны дугаар</translation>
     </message>
     <message>
-        <location filename="controller/ImportDecisionDialog.py" line="1581"/>
+        <location filename="controller/ImportDecisionDialog.py" line="1582"/>
         <source>Database Query Error</source>
         <translation>Алдаа</translation>
     </message>
     <message>
-        <location filename="controller/ImportDecisionDialog.py" line="1581"/>
+        <location filename="controller/ImportDecisionDialog.py" line="1582"/>
         <source>Could not execute: {0}</source>
         <translation>Гүйцэтгэл амжилтгүй: {0}</translation>
     </message>
     <message>
-        <location filename="controller/ImportDecisionDialog.py" line="1334"/>
+        <location filename="controller/ImportDecisionDialog.py" line="1335"/>
         <source>Sql Error</source>
         <translation>Sql алдаа</translation>
     </message>
     <message>
-        <location filename="controller/ImportDecisionDialog.py" line="1439"/>
+        <location filename="controller/ImportDecisionDialog.py" line="1440"/>
         <source>LM2</source>
         <comment>Sql Error</comment>
         <translation>ЛМ2</translation>
     </message>
     <message>
-        <location filename="controller/ImportDecisionDialog.py" line="1496"/>
+        <location filename="controller/ImportDecisionDialog.py" line="1497"/>
         <source>Selection</source>
         <translation>Сонголт</translation>
     </message>
     <message>
-        <location filename="controller/ImportDecisionDialog.py" line="1496"/>
+        <location filename="controller/ImportDecisionDialog.py" line="1497"/>
         <source>Only single selection allowed.</source>
         <translation>Зөвхөн нэгийг сонгох боломжтой.</translation>
     </message>
     <message>
-        <location filename="controller/ImportDecisionDialog.py" line="1449"/>
+        <location filename="controller/ImportDecisionDialog.py" line="1450"/>
         <source>You must select the decision.</source>
         <translation>Захимж сонгох ёстой.</translation>
     </message>
     <message>
-        <location filename="controller/ImportDecisionDialog.py" line="1461"/>
+        <location filename="controller/ImportDecisionDialog.py" line="1462"/>
         <source>This application type do not match.</source>
         <translation>Өргөдлийн төрөл таарахгүй байна.</translation>
     </message>
     <message>
-        <location filename="controller/ImportDecisionDialog.py" line="1490"/>
+        <location filename="controller/ImportDecisionDialog.py" line="1491"/>
         <source>Applciation</source>
         <translation>Өргөдөл</translation>
     </message>
     <message>
-        <location filename="controller/ImportDecisionDialog.py" line="1490"/>
+        <location filename="controller/ImportDecisionDialog.py" line="1491"/>
         <source>You must choose the application.</source>
         <translation>Өргөдөл оруулах ёстой.</translation>
     </message>
     <message>
-        <location filename="controller/ImportDecisionDialog.py" line="1586"/>
+        <location filename="controller/ImportDecisionDialog.py" line="1587"/>
         <source>msg</source>
         <translation>мессеж</translation>
     </message>
     <message>
-        <location filename="controller/ImportDecisionDialog.py" line="1586"/>
+        <location filename="controller/ImportDecisionDialog.py" line="1587"/>
         <source>successfully save</source>
         <translation>Амжилттай хадгалагдлаа</translation>
     </message>
@@ -6898,7 +6898,7 @@
         <translation>Үр дүн</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="13184"/>
+        <location filename="controller/NavigatorWidget.py" line="13183"/>
         <source>Delete</source>
         <translation>Устгах</translation>
     </message>
@@ -6908,7 +6908,7 @@
         <translation>Нэмэх</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="3414"/>
+        <location filename="controller/NavigatorWidget.py" line="3413"/>
         <source>Edit</source>
         <translation>Засварлах</translation>
     </message>
@@ -6983,7 +6983,7 @@
         <translation>Газар ашиглалтын төрөл</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="13219"/>
+        <location filename="controller/NavigatorWidget.py" line="13218"/>
         <source>LM2</source>
         <comment>Sql Error</comment>
         <translation>ЛМ2</translation>
@@ -7019,7 +7019,7 @@
         <translation>Нэгж талбар олдсонгүй. </translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="13185"/>
+        <location filename="controller/NavigatorWidget.py" line="13184"/>
         <source>Cancel</source>
         <translation>Цуцлах</translation>
     </message>
@@ -7059,7 +7059,7 @@
         <translation>Энэ өмчлөлийн бүртгэл нь холбоотой байна. Эхлээд холбоосыг салгаж дараа нь устгана уу.</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="2472"/>
+        <location filename="controller/NavigatorWidget.py" line="2471"/>
         <source>Select one item to start editing.</source>
         <translation>Эхлээд засварлах нэгж талбарыг сонгоно уу.</translation>
     </message>
@@ -7119,12 +7119,12 @@
         <translation>Ажиллаж буй Сум</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="13282"/>
+        <location filename="controller/NavigatorWidget.py" line="13281"/>
         <source>Results: </source>
         <translation>Үр дүн:</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="3556"/>
+        <location filename="controller/NavigatorWidget.py" line="3555"/>
         <source>Sql Error</source>
         <translation>Sql алдаа</translation>
     </message>
@@ -7149,7 +7149,7 @@
         <translation>Эхлээд хайх утгыг зааж өгнө үү.</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="3477"/>
+        <location filename="controller/NavigatorWidget.py" line="3476"/>
         <source>View</source>
         <translation>Харах</translation>
     </message>
@@ -7229,22 +7229,22 @@
         <translation>Сонгогдсон {0} бүртгэлийг устгах уу?</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="2577"/>
+        <location filename="controller/NavigatorWidget.py" line="2576"/>
         <source>Do you want to delete {0} selected maintenance cases and roll back the edits?</source>
         <translation>Сонгогдсон {0} кадастрын өөрчлөлт болон засварлалтыг устгах уу?</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="2579"/>
+        <location filename="controller/NavigatorWidget.py" line="2578"/>
         <source>Do you want to delete the maintenance case {0}</source>
         <translation>{0} кадастрын өөрчлөлтийг устгах уу</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="2648"/>
+        <location filename="controller/NavigatorWidget.py" line="2647"/>
         <source>Maintenance Case</source>
         <translation>Кадастрын өөрчлөлт</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="2648"/>
+        <location filename="controller/NavigatorWidget.py" line="2647"/>
         <source>The maintenance case is already finalized.</source>
         <translation>Тухайн кадастрын өөрчлөлт хийгдэж дууссан байна.</translation>
     </message>
@@ -7259,7 +7259,7 @@
         <translation>{0} дугаартай сонгогдсон иргэн, хуулийн этгээдийн мэдээллийг устгах уу?</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="13216"/>
+        <location filename="controller/NavigatorWidget.py" line="13215"/>
         <source>This application is still assigned. Please remove the assignment in order to remove the application.</source>
         <translation>Энэ өргөдөл холбоотой байна. Эхлээд холбоосыг салгаж дараа нь устгана уу.</translation>
     </message>
@@ -7284,12 +7284,12 @@
         <translation>Гэрээ нь холбоостой байна.</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="13354"/>
+        <location filename="controller/NavigatorWidget.py" line="13353"/>
         <source>Database Query Error</source>
         <translation>Мэдээллийн сангийн (Query) лавлагааны алдаа</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="13354"/>
+        <location filename="controller/NavigatorWidget.py" line="13353"/>
         <source>Could not execute: {0}</source>
         <translation>Гүйцэтгэл амжилтгүй: {0}</translation>
     </message>
@@ -7309,22 +7309,22 @@
         <translation>Өргөдлийн төрөл</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="2828"/>
+        <location filename="controller/NavigatorWidget.py" line="2827"/>
         <source>No parcel assigned.</source>
         <translation>Нэгж талбар холбогдоогүй байна.</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="13423"/>
+        <location filename="controller/NavigatorWidget.py" line="13422"/>
         <source>No parcel assigned</source>
         <translation>Нэгж талбар холбогдоогүй байна</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="3152"/>
+        <location filename="controller/NavigatorWidget.py" line="3151"/>
         <source>Do you want to load the layer ca_parcel from soum {0}?</source>
         <translation>{0} сумын ca_parcel давхаргыг оруулах уу?</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="3153"/>
+        <location filename="controller/NavigatorWidget.py" line="3152"/>
         <source>Load Layers</source>
         <translation>Давхарга оруулах</translation>
     </message>
@@ -7349,7 +7349,7 @@
         <translation>Зөвхөн нэгийг сонгох боломжтой.</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="2603"/>
+        <location filename="controller/NavigatorWidget.py" line="2602"/>
         <source>The maintenance case {0} is finalized and has parcels assigned.</source>
         <translation>{0} кадастрын өөрчлөлт дуусгавар болж нэг талбарууд холбогдлоо.</translation>
     </message>
@@ -7464,12 +7464,12 @@
         <translation>Хэвлэх</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="6769"/>
+        <location filename="controller/NavigatorWidget.py" line="6768"/>
         <source>Query Error</source>
         <translation>(Query ) лавлагаа алдаатай байна</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="11634"/>
+        <location filename="controller/NavigatorWidget.py" line="11633"/>
         <source>Error in line {0}: {1}</source>
         <translation>{0} мөрөн дэх алдаа: {1}</translation>
     </message>
@@ -7479,12 +7479,12 @@
         <translation>Давхарга харах</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="12974"/>
+        <location filename="controller/NavigatorWidget.py" line="12973"/>
         <source>Out error</source>
         <translation>Нээгдсэн байна</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="12974"/>
+        <location filename="controller/NavigatorWidget.py" line="12973"/>
         <source>This file is already opened. Please close re-run</source>
         <translation>Энэ тайлан нээгдсэн байна. Хаагаад дахин ажиллуулна уу</translation>
     </message>
@@ -7494,7 +7494,7 @@
         <translation>Хуулах</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="11634"/>
+        <location filename="controller/NavigatorWidget.py" line="11633"/>
         <source>File Error</source>
         <translation>Алдаатай файл</translation>
     </message>
@@ -7584,102 +7584,102 @@
         <translation>ГТ Тайлан</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="13073"/>
+        <location filename="controller/NavigatorWidget.py" line="13072"/>
         <source>Gt7 report layer</source>
         <translation>ГТ7 Тайлангын давхарга</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="13033"/>
+        <location filename="controller/NavigatorWidget.py" line="13032"/>
         <source>Gt1 report layer</source>
         <translation>ГТ1 Тайлангын давхарга</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="13041"/>
+        <location filename="controller/NavigatorWidget.py" line="13040"/>
         <source>Gt2 report layer</source>
         <translation>ГТ2 Тайлангын давхарга</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="13049"/>
+        <location filename="controller/NavigatorWidget.py" line="13048"/>
         <source>Gt3 report layer</source>
         <translation>ГТ3 Тайлангын давхарга</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="13057"/>
+        <location filename="controller/NavigatorWidget.py" line="13056"/>
         <source>Gt4 report layer</source>
         <translation>ГТ4 Тайлангын давхарга</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="13065"/>
+        <location filename="controller/NavigatorWidget.py" line="13064"/>
         <source>Gt6 report layer</source>
         <translation>ГТ6 Тайлангын давхарга</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="13081"/>
+        <location filename="controller/NavigatorWidget.py" line="13080"/>
         <source>Gt8 report layer</source>
         <translation>ГТ8 Тайлангын давхарга</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="13089"/>
+        <location filename="controller/NavigatorWidget.py" line="13088"/>
         <source>Gt9 report layer</source>
         <translation>ГТ9 Тайлангын давхарга</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="7672"/>
+        <location filename="controller/NavigatorWidget.py" line="7671"/>
         <source>Application Layer</source>
         <translation>Өргөдлийн жагсаалт</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="7680"/>
+        <location filename="controller/NavigatorWidget.py" line="7679"/>
         <source>Wait governor list</source>
         <translation>Захирамжийн төсөлд оруулах жагсаалт</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="7688"/>
+        <location filename="controller/NavigatorWidget.py" line="7687"/>
         <source>Governor decision list</source>
         <translation>Захирамжийн төсөлд оруулах жагсаалт</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="7696"/>
+        <location filename="controller/NavigatorWidget.py" line="7695"/>
         <source>Refused decision list</source>
         <translation>Захирамж гараагүй өргөдлийн жагсаалт</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="7704"/>
+        <location filename="controller/NavigatorWidget.py" line="7703"/>
         <source>Parcel end of this year list</source>
         <translation>Тухайн жил хүчингүй болох нэгж талбар</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="7712"/>
+        <location filename="controller/NavigatorWidget.py" line="7711"/>
         <source>Land users list</source>
         <translation>Газар ашиглагч</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="7720"/>
+        <location filename="controller/NavigatorWidget.py" line="7719"/>
         <source>Land possessors list</source>
         <translation>Газар эзэмшигч</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="7728"/>
+        <location filename="controller/NavigatorWidget.py" line="7727"/>
         <source>Land ownerships list</source>
         <translation>Газар өмчлөгч</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="7736"/>
+        <location filename="controller/NavigatorWidget.py" line="7735"/>
         <source>Land tax list</source>
         <translation>Газрын татвар ногдуулалт</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="7744"/>
+        <location filename="controller/NavigatorWidget.py" line="7743"/>
         <source>Land tax payment list</source>
         <translation>Газрын татвар төлөлт</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="7753"/>
+        <location filename="controller/NavigatorWidget.py" line="7752"/>
         <source>Land fee payment list</source>
         <translation>Газрын төлбөр төлөлт</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="7759"/>
+        <location filename="controller/NavigatorWidget.py" line="7758"/>
         <source>Land fee list</source>
         <translation>Газрын төлбөр ногдуулалт</translation>
     </message>
@@ -7739,42 +7739,42 @@
         <translation>Мэдээний хяналтын давхарга харах</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="13110"/>
+        <location filename="controller/NavigatorWidget.py" line="13109"/>
         <source>Buildings Overlapping Parcels</source>
         <translation>Нэгж талбарын хил дамнасан барилга</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="13118"/>
+        <location filename="controller/NavigatorWidget.py" line="13117"/>
         <source>Overlapping Buildings</source>
         <translation>Барилгын давхцал</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="13126"/>
+        <location filename="controller/NavigatorWidget.py" line="13125"/>
         <source>Overlapping Parcels</source>
         <translation>Нэгж талбарын давхцал</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="13134"/>
+        <location filename="controller/NavigatorWidget.py" line="13133"/>
         <source>Parcels Overlapping Buildings</source>
         <translation>Барилгын хил дамнасан нэгж талбар</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="13142"/>
+        <location filename="controller/NavigatorWidget.py" line="13141"/>
         <source>Parcels Overlapping Fee zones</source>
         <translation>Газрын төлбөрийн хил дамнасан нэгж талбар</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="13150"/>
+        <location filename="controller/NavigatorWidget.py" line="13149"/>
         <source>Parcels without Buildings</source>
         <translation>Нэгж талбаргүй барилга</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="13158"/>
+        <location filename="controller/NavigatorWidget.py" line="13157"/>
         <source>Incorrect Street names</source>
         <translation>Зөрчилтэй гудамжны нэр</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="13166"/>
+        <location filename="controller/NavigatorWidget.py" line="13165"/>
         <source>Incorrect Khashaa numbers</source>
         <translation>Зөрчилтэй хашааны дугаар</translation>
     </message>
@@ -7789,12 +7789,12 @@
         <translation>Гэрээний явц</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="13180"/>
+        <location filename="controller/NavigatorWidget.py" line="13179"/>
         <source>Do you want to delete {0} selected parcels?</source>
         <translation>{0} тэмдэглэгдсэн нэгж талбаруудыг устгахуу?</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="13182"/>
+        <location filename="controller/NavigatorWidget.py" line="13181"/>
         <source>Do you want to delete the parcel {0}</source>
         <translation>{0} нэгж талбарыг устгах уу</translation>
     </message>
@@ -7804,7 +7804,7 @@
         <translation>Сонгосон нэгж талбарыг устгах</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="13244"/>
+        <location filename="controller/NavigatorWidget.py" line="13243"/>
         <source>In active parcels</source>
         <translation>Идэвхгүй нэгж талбар харуулах</translation>
     </message>
@@ -7819,12 +7819,12 @@
         <translation>Хашааны дугаар</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="13328"/>
+        <location filename="controller/NavigatorWidget.py" line="13327"/>
         <source>Street name can only end with a number, if a - is in front. </source>
         <translation>Гудамжны нэрэнд тоон дугаар орвол дугаарын өмнө - тэмдэг байна.</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="13339"/>
+        <location filename="controller/NavigatorWidget.py" line="13338"/>
         <source>Street name can end with a number, if a - is in front. </source>
         <translation>Гудамжны нэрэнд тоон дугаар орвол дугаарын өмнө - тэмдэг байна.</translation>
     </message>
@@ -7869,17 +7869,17 @@
         <translation>Идэвхтэй гэрээг устгаж болохгүй!!!</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="9964"/>
+        <location filename="controller/NavigatorWidget.py" line="9963"/>
         <source>Connection Error</source>
         <translation>Холболтын алдаа</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="9964"/>
+        <location filename="controller/NavigatorWidget.py" line="9963"/>
         <source>Please connect to database!!!</source>
         <translation>Мэдээллийн сантай холбогдоно уу!!!</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="3244"/>
+        <location filename="controller/NavigatorWidget.py" line="3243"/>
         <source>view</source>
         <translation>харах</translation>
     </message>
@@ -7899,7 +7899,7 @@
         <translation>14.Барьцааны давхарага</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="7767"/>
+        <location filename="controller/NavigatorWidget.py" line="7766"/>
         <source>Mortgage</source>
         <translation>Барьцаа</translation>
     </message>
@@ -7909,7 +7909,7 @@
         <translation>15.Шүүхийн шийдвэр</translation>
     </message>
     <message>
-        <location filename="controller/NavigatorWidget.py" line="7775"/>
+        <location filename="controller/NavigatorWidget.py" line="7774"/>
         <source>Court</source>
         <translation></translation>
     </message>
@@ -10759,7 +10759,7 @@
         <translation>Нэмэх</translation>
     </message>
     <message>
-        <location filename="controller/PastureMonitoringValueDialog.py" line="2500"/>
+        <location filename="controller/PastureMonitoringValueDialog.py" line="2549"/>
         <source>Delete</source>
         <translation>Устгах</translation>
     </message>
@@ -11135,8 +11135,8 @@
     </message>
     <message>
         <location filename="view/PastureMonitoringValueDialog.ui" line="1904"/>
-        <source>All Point Information(Only working soum)</source>
-        <translation>Бүх цэгийн мэдээлэл(Ажиллаж буй сум)</translation>
+        <source>All Point Information(Only working aimag)</source>
+        <translation type="unfinished">Бүх цэгийн мэдээлэл(Ажиллаж буй сум)</translation>
     </message>
     <message>
         <location filename="view/PastureMonitoringValueDialog.ui" line="1940"/>
@@ -11204,188 +11204,188 @@
         <translation>Сонгосон жил</translation>
     </message>
     <message>
-        <location filename="controller/PastureMonitoringValueDialog.py" line="97"/>
+        <location filename="controller/PastureMonitoringValueDialog.py" line="98"/>
         <source>Pasture Monitoring Value</source>
         <translation>Бэлчээрийн мониторинг</translation>
     </message>
     <message>
-        <location filename="controller/PastureMonitoringValueDialog.py" line="271"/>
+        <location filename="controller/PastureMonitoringValueDialog.py" line="272"/>
         <source>Sql Error</source>
         <translation>Sql алдаа</translation>
     </message>
     <message>
-        <location filename="controller/PastureMonitoringValueDialog.py" line="3578"/>
+        <location filename="controller/PastureMonitoringValueDialog.py" line="3753"/>
         <source>Selection</source>
         <translation>Сонголт</translation>
     </message>
     <message>
-        <location filename="controller/PastureMonitoringValueDialog.py" line="3578"/>
+        <location filename="controller/PastureMonitoringValueDialog.py" line="3753"/>
         <source>Please choose point detail!!!</source>
         <translation>Цэгийн ерөнхий мэдээлэл сонгоно уу!!!</translation>
     </message>
     <message>
-        <location filename="controller/PastureMonitoringValueDialog.py" line="342"/>
+        <location filename="controller/PastureMonitoringValueDialog.py" line="345"/>
         <source>Point limited!!!</source>
         <translation>Цэгийн тоо хэтэрсэн!!!</translation>
     </message>
     <message>
-        <location filename="controller/PastureMonitoringValueDialog.py" line="2210"/>
+        <location filename="controller/PastureMonitoringValueDialog.py" line="2258"/>
         <source>Coordinate</source>
         <translation>Координат</translation>
     </message>
     <message>
-        <location filename="controller/PastureMonitoringValueDialog.py" line="2180"/>
+        <location filename="controller/PastureMonitoringValueDialog.py" line="2228"/>
         <source>X coordinate gradus!!!</source>
         <translation>Х координат градус оруулна уу!!!</translation>
     </message>
     <message>
-        <location filename="controller/PastureMonitoringValueDialog.py" line="2183"/>
+        <location filename="controller/PastureMonitoringValueDialog.py" line="2231"/>
         <source>X coordinate minute!!!</source>
         <translation>Х координат минут оруулна уу!!!</translation>
     </message>
     <message>
-        <location filename="controller/PastureMonitoringValueDialog.py" line="2186"/>
+        <location filename="controller/PastureMonitoringValueDialog.py" line="2234"/>
         <source>X coordinate second!!!</source>
         <translation>Х координат секунд оруулна уу!!!</translation>
     </message>
     <message>
-        <location filename="controller/PastureMonitoringValueDialog.py" line="2190"/>
+        <location filename="controller/PastureMonitoringValueDialog.py" line="2238"/>
         <source>Y coordinate gradus!!!</source>
         <translation>Y координат градус оруулна уу!!!</translation>
     </message>
     <message>
-        <location filename="controller/PastureMonitoringValueDialog.py" line="2193"/>
+        <location filename="controller/PastureMonitoringValueDialog.py" line="2241"/>
         <source>Y coordinate minute!!!</source>
         <translation>Y координат минут оруулна уу!!!</translation>
     </message>
     <message>
-        <location filename="controller/PastureMonitoringValueDialog.py" line="2196"/>
+        <location filename="controller/PastureMonitoringValueDialog.py" line="2244"/>
         <source>Y coordinate second!!!</source>
         <translation>Y координат секунд оруулна уу!!!</translation>
     </message>
     <message>
-        <location filename="controller/PastureMonitoringValueDialog.py" line="2210"/>
+        <location filename="controller/PastureMonitoringValueDialog.py" line="2258"/>
         <source>This point without working soum boundary!!!</source>
         <translation>Энэ цэг сумых хилийн гадна байна!!!</translation>
     </message>
     <message>
-        <location filename="controller/PastureMonitoringValueDialog.py" line="413"/>
+        <location filename="controller/PastureMonitoringValueDialog.py" line="416"/>
         <source>This point already registered coordinate!!!</source>
         <translation>Цэг бүртгэгдсэн байна!!!</translation>
     </message>
     <message>
-        <location filename="controller/PastureMonitoringValueDialog.py" line="421"/>
+        <location filename="controller/PastureMonitoringValueDialog.py" line="425"/>
         <source>This point id already registered!!!</source>
         <translation>Цэгийн дугаар бүртгэгдсэн байна!!!</translation>
     </message>
     <message>
-        <location filename="controller/PastureMonitoringValueDialog.py" line="2819"/>
+        <location filename="controller/PastureMonitoringValueDialog.py" line="2867"/>
         <source>Connection Error</source>
         <translation>Холболтын алдаа</translation>
     </message>
     <message>
-        <location filename="controller/PastureMonitoringValueDialog.py" line="2819"/>
+        <location filename="controller/PastureMonitoringValueDialog.py" line="2867"/>
         <source>Please connect to database!!!</source>
         <translation>Мэдээллийн сантай холбогдоно уу!!!</translation>
     </message>
     <message>
-        <location filename="controller/PastureMonitoringValueDialog.py" line="649"/>
+        <location filename="controller/PastureMonitoringValueDialog.py" line="654"/>
         <source>No point assigned!!!</source>
         <translation>Цэг холбогдоогүй байна!!!</translation>
     </message>
     <message>
-        <location filename="controller/PastureMonitoringValueDialog.py" line="820"/>
+        <location filename="controller/PastureMonitoringValueDialog.py" line="824"/>
         <source>LM2</source>
         <comment>Sql Error</comment>
         <translation>ЛМ2</translation>
     </message>
     <message>
-        <location filename="controller/PastureMonitoringValueDialog.py" line="984"/>
+        <location filename="controller/PastureMonitoringValueDialog.py" line="988"/>
         <source>Selection Error</source>
         <translation>Сонголтын алдаа</translation>
     </message>
     <message>
-        <location filename="controller/PastureMonitoringValueDialog.py" line="984"/>
+        <location filename="controller/PastureMonitoringValueDialog.py" line="988"/>
         <source>Group name null.</source>
         <translation>БАХ-ийн нэр бичээгүй байна.</translation>
     </message>
     <message>
-        <location filename="controller/PastureMonitoringValueDialog.py" line="1353"/>
+        <location filename="controller/PastureMonitoringValueDialog.py" line="1401"/>
         <source>Changes applied successfully.</source>
         <translation>Өөрчлөлт амжилттай хадгалагдлаа.</translation>
     </message>
     <message>
-        <location filename="controller/PastureMonitoringValueDialog.py" line="1869"/>
+        <location filename="controller/PastureMonitoringValueDialog.py" line="1917"/>
         <source>Please load live stock values!!!</source>
         <translation>Малын мэдээллийг дуудна уу!!!</translation>
     </message>
     <message>
-        <location filename="controller/PastureMonitoringValueDialog.py" line="1917"/>
+        <location filename="controller/PastureMonitoringValueDialog.py" line="1965"/>
         <source>Please load pasture plants values!!!</source>
         <translation>Ургамлын аж ахуйн бүлгийг дуудна уу!!!</translation>
     </message>
     <message>
-        <location filename="controller/PastureMonitoringValueDialog.py" line="2494"/>
+        <location filename="controller/PastureMonitoringValueDialog.py" line="2543"/>
         <source>Please choose bio mass!!!</source>
         <translation>Био масс сонгоно уу!!!</translation>
     </message>
     <message>
-        <location filename="controller/PastureMonitoringValueDialog.py" line="2370"/>
+        <location filename="controller/PastureMonitoringValueDialog.py" line="2419"/>
         <source>Do you want to delete the all information for point ?</source>
         <translation>Цэгийн мэдээллийг устгах уу?</translation>
     </message>
     <message>
-        <location filename="controller/PastureMonitoringValueDialog.py" line="2501"/>
+        <location filename="controller/PastureMonitoringValueDialog.py" line="2550"/>
         <source>Cancel</source>
         <translation>Цуцлах</translation>
     </message>
     <message>
-        <location filename="controller/PastureMonitoringValueDialog.py" line="2456"/>
+        <location filename="controller/PastureMonitoringValueDialog.py" line="2505"/>
         <source>Do you want to delete selected point ?</source>
         <translation>Сонгогдсон цэгийг устгах уу?</translation>
     </message>
     <message>
-        <location filename="controller/PastureMonitoringValueDialog.py" line="2498"/>
+        <location filename="controller/PastureMonitoringValueDialog.py" line="2547"/>
         <source>Do you want to delete bio mass for point ?</source>
         <translation>Цэгийн био массын мэдээллийг устгах уу?</translation>
     </message>
     <message>
-        <location filename="controller/PastureMonitoringValueDialog.py" line="2537"/>
+        <location filename="controller/PastureMonitoringValueDialog.py" line="2586"/>
         <source>Registered</source>
         <translation>Бүртгэгдсэн</translation>
     </message>
     <message>
-        <location filename="controller/PastureMonitoringValueDialog.py" line="2537"/>
+        <location filename="controller/PastureMonitoringValueDialog.py" line="2586"/>
         <source>This biomass already register.</source>
         <translation>Био масс бүртгэгдсэн байна.</translation>
     </message>
     <message>
-        <location filename="controller/PastureMonitoringValueDialog.py" line="2942"/>
+        <location filename="controller/PastureMonitoringValueDialog.py" line="3029"/>
         <source>Out error</source>
         <translation>Нээгдсэн байна</translation>
     </message>
     <message>
-        <location filename="controller/PastureMonitoringValueDialog.py" line="2942"/>
+        <location filename="controller/PastureMonitoringValueDialog.py" line="3029"/>
         <source>This file is already opened. Please close re-run</source>
         <translation>Энэ тайлан нээгдсэн байна. Хаагаад дахин ажиллуулна уу</translation>
     </message>
     <message>
-        <location filename="controller/PastureMonitoringValueDialog.py" line="3613"/>
+        <location filename="controller/PastureMonitoringValueDialog.py" line="3788"/>
         <source>Can&apos;t</source>
         <translation>Боломжгүй</translation>
     </message>
     <message>
-        <location filename="controller/PastureMonitoringValueDialog.py" line="3603"/>
+        <location filename="controller/PastureMonitoringValueDialog.py" line="3778"/>
         <source>Duration zero!!!</source>
         <translation>Хугацаа!!!</translation>
     </message>
     <message>
-        <location filename="controller/PastureMonitoringValueDialog.py" line="3608"/>
+        <location filename="controller/PastureMonitoringValueDialog.py" line="3783"/>
         <source>Bio mass value zero!!!</source>
         <translation>Био массын утга хоосон байна!!!</translation>
     </message>
     <message>
-        <location filename="controller/PastureMonitoringValueDialog.py" line="3613"/>
+        <location filename="controller/PastureMonitoringValueDialog.py" line="3788"/>
         <source>Can not calculate RC!!!</source>
         <translation>Сэргэх чадвахын ангилал тооцоологдох боломжгүй байна!!!</translation>
     </message>
@@ -12528,67 +12528,67 @@
         <translation>Албаны дарга</translation>
     </message>
     <message>
-        <location filename="view/PrintDialog.ui" line="528"/>
+        <location filename="view/PrintDialog.ui" line="564"/>
         <source>Save Plot Settings</source>
         <translation>Хэвлэх тохиргоог хадгалах</translation>
     </message>
     <message>
-        <location filename="view/PrintDialog.ui" line="541"/>
+        <location filename="view/PrintDialog.ui" line="577"/>
         <source>Load Plot Settings</source>
         <translation>Хэвлэх тохиргоог дуудах</translation>
     </message>
     <message>
-        <location filename="view/PrintDialog.ui" line="554"/>
+        <location filename="view/PrintDialog.ui" line="590"/>
         <source>Load Default Values</source>
         <translation>Өгөгдмөл утгыг ачааллах</translation>
     </message>
     <message>
-        <location filename="view/PrintDialog.ui" line="572"/>
+        <location filename="view/PrintDialog.ui" line="608"/>
         <source>Parcel Buffer [1 - 500 m]</source>
         <translation>Нэгж талбарт буфер [1-500м]</translation>
     </message>
     <message>
-        <location filename="view/PrintDialog.ui" line="668"/>
+        <location filename="view/PrintDialog.ui" line="704"/>
         <source>The initial buffer around the parcel based on which the appropriate map scale is calculated. The scale denominator is then rounded to be a multiple of 250.</source>
         <translation>The initial buffer around the parcel based on which the appropriate map scale is calculated. The scale denominator is then rounded to be a multiple of 250.</translation>
     </message>
     <message>
-        <location filename="view/PrintDialog.ui" line="609"/>
+        <location filename="view/PrintDialog.ui" line="645"/>
         <source>Grid</source>
         <translation>Солбилцлын тор</translation>
     </message>
     <message>
-        <location filename="view/PrintDialog.ui" line="689"/>
+        <location filename="view/PrintDialog.ui" line="725"/>
         <source>Distance [10 - 1000 m]</source>
         <translation>Зай [10-100м]</translation>
     </message>
     <message>
-        <location filename="view/PrintDialog.ui" line="710"/>
+        <location filename="view/PrintDialog.ui" line="746"/>
         <source>Offset X [0 - 50 m]</source>
         <translation>Зөрүү Х [0-50м]</translation>
     </message>
     <message>
-        <location filename="view/PrintDialog.ui" line="731"/>
+        <location filename="view/PrintDialog.ui" line="767"/>
         <source>Offset Y [0 - 50 m]</source>
         <translation>Зөрүү Ү [0-50м]</translation>
     </message>
     <message>
-        <location filename="view/PrintDialog.ui" line="748"/>
+        <location filename="view/PrintDialog.ui" line="784"/>
         <source>Parcel identifier in map</source>
         <translation>Нэгж талбарын мэдээлэл харах</translation>
     </message>
     <message>
-        <location filename="view/PrintDialog.ui" line="774"/>
+        <location filename="view/PrintDialog.ui" line="810"/>
         <source>Cadastre ID</source>
         <translation>Нэгж талбарын дугаар</translation>
     </message>
     <message>
-        <location filename="view/PrintDialog.ui" line="787"/>
+        <location filename="view/PrintDialog.ui" line="823"/>
         <source>Geo ID</source>
         <translation>Геокод</translation>
     </message>
     <message>
-        <location filename="view/PrintDialog.ui" line="761"/>
+        <location filename="view/PrintDialog.ui" line="797"/>
         <source>Old Parcel ID</source>
         <translation>Хуучин нэгж талбарын дугаар</translation>
     </message>
@@ -12643,59 +12643,64 @@
         <translation>Кадастрын зургийн үнэт цаас</translation>
     </message>
     <message>
-        <location filename="view/PrintDialog.ui" line="475"/>
+        <location filename="view/PrintDialog.ui" line="488"/>
         <source>Save Cadastre Page</source>
         <translation>Үнэт цаасны дугаарлалт хадгалах</translation>
     </message>
     <message>
-        <location filename="view/PrintDialog.ui" line="501"/>
+        <location filename="view/PrintDialog.ui" line="514"/>
         <source>Print Date</source>
         <translation>Хэвлэх огноо</translation>
     </message>
     <message>
-        <location filename="controller/PrintDialog.py" line="1308"/>
+        <location filename="controller/PrintDialog.py" line="1356"/>
         <source>The cadastre page number is out of range. Change the Admin Settings.</source>
         <translation>Үнэт цаасны дугаар бүртгэлд байхгүй байна. Удирдлагын үндсэн тохиргооны хэсэгт засна уу.</translation>
     </message>
     <message>
-        <location filename="controller/PrintDialog.py" line="1338"/>
+        <location filename="controller/PrintDialog.py" line="1456"/>
         <source>The certificate number is out of range. Change the Admin Settings.</source>
         <translation>Гэрчилгээний дугаар таарахгүй байна. Удирдлагын үндсэн цонхны  Гэрчилгээ хэсэгт өөрчлөлт хийнэ үү.</translation>
     </message>
     <message>
-        <location filename="controller/PrintDialog.py" line="1344"/>
+        <location filename="controller/PrintDialog.py" line="1462"/>
         <source>Selection</source>
         <translation>Сонголт</translation>
     </message>
     <message>
-        <location filename="controller/PrintDialog.py" line="1344"/>
+        <location filename="controller/PrintDialog.py" line="1462"/>
         <source>No right holder information!!!</source>
         <translation>Хуулийн этгээдийн мэдээлэл байхгүй байна!!!</translation>
     </message>
     <message>
-        <location filename="controller/PrintDialog.py" line="1360"/>
+        <location filename="controller/PrintDialog.py" line="1478"/>
         <source>Value</source>
         <translation>Утга</translation>
     </message>
     <message>
-        <location filename="controller/PrintDialog.py" line="1348"/>
+        <location filename="controller/PrintDialog.py" line="1466"/>
         <source>Please enter cadasre page number!!!</source>
         <translation>Үнэт цаасны дугаар оруулна уу!!!</translation>
     </message>
     <message>
-        <location filename="controller/PrintDialog.py" line="1360"/>
+        <location filename="controller/PrintDialog.py" line="1478"/>
         <source>This cadastre page already saved!</source>
         <translation>Үнэт цаас бүртгэгдсэн байна!</translation>
     </message>
     <message>
-        <location filename="controller/PrintDialog.py" line="1382"/>
+        <location filename="controller/PrintDialog.py" line="1500"/>
         <source>Success</source>
         <translation>Амжилттай</translation>
     </message>
     <message>
-        <location filename="controller/PrintDialog.py" line="1382"/>
+        <location filename="controller/PrintDialog.py" line="1500"/>
         <source>Successfully save</source>
         <translation>Амжилттай хадгалагдлаа</translation>
+    </message>
+    <message>
+        <location filename="view/PrintDialog.ui" line="550"/>
+        <source>cadastre_page_selected</source>
+        <translation>Үнэт цаасны дугаарлалтыг сонгоно уу</translation>
     </message>
 </context>
 <context>
