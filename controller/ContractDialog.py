@@ -2598,6 +2598,7 @@ class ContractDialog(QDialog, Ui_ContractDialog, DatabaseHelper):
                 item.setText(person_id)
                 item.adjustSizeToText()
 
+
             item = map_composition.getComposerItemById("company_name")
             name = person.name
             item.setText(name)
@@ -3538,56 +3539,56 @@ class ContractDialog(QDialog, Ui_ContractDialog, DatabaseHelper):
             PluginUtils.show_error(self, self.tr("contract error"), self.tr("must status 9"))
             return
         header = "no text"
-
-        path = FileUtils.map_file_path()
-        if person.type == 10 or person.type == 20:
-            template = path + "cert_person.qpt"
-        elif person.type == 30:
-            template = path + "cert_company.qpt"
-        elif person.type == 40:
-            template = path + "cert_state.qpt"
-        elif person.type == 50 or person.type == 60:
-            template = path + "cert_use.qpt"
-
-        templateDOM = QDomDocument()
-        templateDOM.setContent(QFile(template), False)
-
-        map_canvas = QgsMapCanvas()
-
-        map_composition = QgsComposition(map_canvas.mapRenderer())
-        map_composition.loadFromTemplate(templateDOM)
-
-        map_composition.setPrintResolution(300)
-
-        printer = QPrinter()
-        printer.setOutputFormat(QPrinter.PdfFormat)
-        printer.setOutputFileName(path+"certificate.pdf")
-        printer.setPaperSize(QSizeF(map_composition.paperWidth(), map_composition.paperHeight()), QPrinter.Millimeter)
-        printer.setFullPage(True)
-        printer.setColorMode(QPrinter.Color)
-        printer.setResolution(map_composition.printResolution())
-
-        pdfPainter = QPainter(printer)
-        paperRectMM = printer.pageRect(QPrinter.Millimeter)
-        paperRectPixel = printer.pageRect(QPrinter.DevicePixel)
-        map_composition.render(pdfPainter, paperRectPixel, paperRectMM)
-        pdfPainter.end()
-
-        self.__add_aimag_name_cert(map_composition)
-        self.__add_soum_name_cert(map_composition)
-        # self.__add_contract_no(map_composition)
-        self.__add_decision_cert(map_composition)
-        self.__add_parcel_cert(map_composition)
-        # self.__add_fee(map_composition)
-        # self.__add_contract_condition(map_composition)
-        # self.__add_person_signature(map_composition)
-        # # self.__add_app_status_date(map_composition)
-        self.__add_person_name_cert(map_composition)
-        self.__add_officer_cert(map_composition)
-        # self.__add_app_remarks(map_composition)
-        map_composition.exportAsPDF(path + "certificate.pdf")
-
         if self.pdf_checkbox.isChecked():
+            path = FileUtils.map_file_path()
+            if person.type == 10 or person.type == 20:
+                template = path + "cert_person.qpt"
+            elif person.type == 30:
+                template = path + "cert_company.qpt"
+            elif person.type == 40:
+                template = path + "cert_state.qpt"
+            elif person.type == 50 or person.type == 60:
+                template = path + "cert_use.qpt"
+
+            templateDOM = QDomDocument()
+            templateDOM.setContent(QFile(template), False)
+
+            map_canvas = QgsMapCanvas()
+
+            map_composition = QgsComposition(map_canvas.mapRenderer())
+            map_composition.loadFromTemplate(templateDOM)
+
+            map_composition.setPrintResolution(300)
+
+            printer = QPrinter()
+            printer.setOutputFormat(QPrinter.PdfFormat)
+            printer.setOutputFileName(path+"certificate.pdf")
+            printer.setPaperSize(QSizeF(map_composition.paperWidth(), map_composition.paperHeight()), QPrinter.Millimeter)
+            printer.setFullPage(True)
+            printer.setColorMode(QPrinter.Color)
+            printer.setResolution(map_composition.printResolution())
+
+            pdfPainter = QPainter(printer)
+            paperRectMM = printer.pageRect(QPrinter.Millimeter)
+            paperRectPixel = printer.pageRect(QPrinter.DevicePixel)
+            map_composition.render(pdfPainter, paperRectPixel, paperRectMM)
+            pdfPainter.end()
+
+            self.__add_aimag_name_cert(map_composition)
+            self.__add_soum_name_cert(map_composition)
+            # self.__add_contract_no(map_composition)
+            self.__add_decision_cert(map_composition)
+            self.__add_parcel_cert(map_composition)
+            # self.__add_fee(map_composition)
+            # self.__add_contract_condition(map_composition)
+            # self.__add_person_signature(map_composition)
+            # # self.__add_app_status_date(map_composition)
+            self.__add_person_name_cert(map_composition)
+            self.__add_officer_cert(map_composition)
+            # self.__add_app_remarks(map_composition)
+            map_composition.exportAsPDF(path + "certificate.pdf")
+
+
             QDesktopServices.openUrl(QUrl.fromLocalFile(path+"certificate.pdf"))
         else:
             self.__cert_docx_print(person)

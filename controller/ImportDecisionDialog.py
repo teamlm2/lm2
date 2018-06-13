@@ -1,6 +1,6 @@
 import os
 # coding=utf8
-
+import xlsxwriter
 __author__ = 'anna'
 
 from PyQt4.QtCore import *
@@ -40,7 +40,6 @@ from ..controller.NavigatorWidget import *
 from ..model.ApplicationSearchDecision import *
 from ..model import SettingsConstants
 from ..utils.FilePath import *
-import xlsxwriter
 import shutil
 
 class ImportDecisionDialog(QDialog, Ui_ImportDecisionDialog, DatabaseHelper):
@@ -709,7 +708,7 @@ class ImportDecisionDialog(QDialog, Ui_ImportDecisionDialog, DatabaseHelper):
 
             #check if decision_no already exists in case of a new import
             if not self.attribute_update:
-                count = self.session.query(CtDecision).filter(CtDecision.decision_no == decision_no).filter(CtDecision.decision_level == decision_level).count()
+                count = self.session.query(CtDecision).filter(CtDecision.decision_no == decision_no).count()
                 if count > 0:
                     PluginUtils.show_error(self, self.tr("Error in xls file"),
                                                 self.tr("The decision number {0} already exists in the database.")
@@ -1022,10 +1021,6 @@ class ImportDecisionDialog(QDialog, Ui_ImportDecisionDialog, DatabaseHelper):
                     .filter(SetRole.user_name == user.user_name) \
                     .filter(SetRole.is_active == True).one()
 
-                decision_count = self.session.query(CtDecision).filter(CtDecision.decision_no == self.notary_decision_edit.text()).\
-                    filter(CtDecision.decision_level == self.decision.decision_level).count()
-                if decision_count > 0:
-                    return
                 self.decision = CtDecision()
                 self.decision.decision_date = self.contract_date.date().toString(Constants.DATABASE_DATE_FORMAT)
                 self.decision.decision_no = self.notary_decision_edit.text()
