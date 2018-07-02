@@ -3695,7 +3695,11 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
         sheep_unit_food = None
         if not self.zone_id:
             return
-        duration = int(self.calc_duration_sbox.value())
+        duration = 120
+        if self.calc_duration_sbox.value():
+            duration = int(self.calc_duration_sbox.value())
+        else:
+            self.calc_duration_sbox.setValue(120)
         nz_sheep_food = self.session.query(PsNZSheepFood).filter(PsNZSheepFood.natural_zone == self.zone_id).one()
         sheep_unit_food = nz_sheep_food.current_value
 
@@ -3754,25 +3758,25 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
         #     is_valid = False
         #     return
 
-        if float(self.calc_area_sbox.value()) == 0:
-            PluginUtils.show_message(self, self.tr("Can't"), self.tr("Duration zero!!!"))
-            is_valid = False
-            return
-
-        if not self.calc_area_sbox.value():
-            PluginUtils.show_message(self, self.tr("Can't"), self.tr("Duration zero!!!"))
-            is_valid = False
-            return
-
-        if float(self.calc_duration_sbox.value()) == 0:
-            PluginUtils.show_message(self, self.tr("Can't"), self.tr("Duration zero!!!"))
-            is_valid = False
-            return
-
-        if not self.calc_duration_sbox.value():
-            PluginUtils.show_message(self, self.tr("Can't"), self.tr("Duration zero!!!"))
-            is_valid = False
-            return
+        # if float(self.calc_area_sbox.value()) == 0:
+        #     PluginUtils.show_message(self, self.tr("Can't"), self.tr("Duration zero!!!"))
+        #     is_valid = False
+        #     return
+        #
+        # if not self.calc_area_sbox.value():
+        #     PluginUtils.show_message(self, self.tr("Can't"), self.tr("Duration zero!!!"))
+        #     is_valid = False
+        #     return
+        #
+        # if float(self.calc_duration_sbox.value()) == 0:
+        #     PluginUtils.show_message(self, self.tr("Can't"), self.tr("Duration zero!!!"))
+        #     is_valid = False
+        #     return
+        #
+        # if not self.calc_duration_sbox.value():
+        #     PluginUtils.show_message(self, self.tr("Can't"), self.tr("Duration zero!!!"))
+        #     is_valid = False
+        #     return
 
         if self.__load_urgats() == 0:
             PluginUtils.show_message(self, self.tr("Can't"), self.tr("Bio mass value zero!!!"))
@@ -3840,21 +3844,25 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
         if not self.__calc_validate():
             return
 
-        area_ga = None
+
+        area_ga = 0
         biomass = None
         rc_code = None
         rc_precent = None
-        duration = None
+        duration = 0
         sheep_unit_plant = None
         sheep_unit = None
         monitoring_Date = None
+        if self.calc_area_sbox.value():
+            area_ga = float(self.area_ga_edit.text())
 
-        area_ga = float(self.area_ga_edit.text())
+        if self.calc_duration_sbox.value():
+            duration = int(self.duration_days_edit.text())
         biomass = self.__load_urgats()
         rc_id = self.__load_rc().id
         rc_code = self.__load_rc().rc_code
         rc_precent = self.__load_rc().rc_precent
-        duration = int(self.duration_days_edit.text())
+
         sheep_unit_plant = self.__load_sheep_unit_biomass()
         sheep_unit = self.__load_live_stock_convert()
         if area_ga > 0:
@@ -3873,19 +3881,22 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
 
         rc_precent = float(rc_precent) / 100
         biomass_present = float(biomass) * rc_precent
-        d1 = (float(biomass) / float(sheep_unit_plant)) * (rc_precent)
-        d1_100ga = d1 * 100
-        d2 = ((1 / d1))
-        d3 = float(area_ga * biomass_present) / float(sheep_unit_plant)
-        unelgee = d3 - float(sheep_unit)
+        if sheep_unit_plant == 0 or rc_precent == 0:
+            d1 = 0
+        else:
+            d1 = (float(biomass) / float(sheep_unit_plant)) * (rc_precent)
+            d1_100ga = d1 * 100
+            d2 = ((1 / d1))
+            d3 = float(area_ga * biomass_present) / float(sheep_unit_plant)
+            unelgee = d3 - float(sheep_unit)
 
-        self.biomass_present_edit.setText(str(biomass_present))
+            self.biomass_present_edit.setText(str(biomass_present))
 
-        self.calc_d1_edit.setText(str(round(d1, 2)))
-        self.calc_d1_100ga_edit.setText(str(round(d1_100ga, 2)))
-        self.calc_d2_edit.setText(str(round(d2, 2)))
-        self.calc_d3_edit.setText(str(round(d3, 2)))
-        self.calc_unelgee_edit.setText(str(round(unelgee, 2)))
+            self.calc_d1_edit.setText(str(round(d1, 2)))
+            self.calc_d1_100ga_edit.setText(str(round(d1_100ga, 2)))
+            self.calc_d2_edit.setText(str(round(d2, 2)))
+            self.calc_d3_edit.setText(str(round(d3, 2)))
+            self.calc_unelgee_edit.setText(str(round(unelgee, 2)))
 
     def __daats_value_save(self):
 

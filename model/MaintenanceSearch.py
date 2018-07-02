@@ -12,7 +12,8 @@ class MaintenanceSearch(Base):
 
     __tablename__ = 'maintenance_search'
 
-    id = Column(Integer, primary_key=True)
+    gid = Column(Integer, primary_key=True)
+    id = Column(Integer)
     completion_date = Column(Date)
 
     created_by = Column(String, ForeignKey('set_role.user_name'))

@@ -1777,7 +1777,7 @@ class ApplicationsDialog(QDialog, Ui_ApplicationsDialog, DatabaseHelper):
                         .filter(CtApplicationPersonRole.person == person.person_id) \
                         .filter(CtApplicationStatus.status >= 7) \
                         .filter(CtApplicationStatus.status != 8) \
-                        .filter(CtApplicationPersonRole.role == 30).group_by(CtApplicationPersonRole.application).count()
+                        .filter(or_(CtApplicationPersonRole.role == 30, CtApplicationPersonRole.role == 60)).group_by(CtApplicationPersonRole.application).count()
 
                     remaining_onwer_count = self.session.query(CtApplicationPersonRole.application) \
                         .join(CtApplicationStatus,

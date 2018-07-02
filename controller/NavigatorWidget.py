@@ -1111,7 +1111,7 @@ class NavigatorWidget(QDockWidget, Ui_NavigatorWidget, DatabaseHelper):
             else:
                 sql = sql + "UNION" + "\n"
 
-            select = "SELECT m_case.id, m_case.completion_date, m_case.created_by, m_case.surveyed_by_land_office, m_case.surveyed_by_surveyor, " \
+            select = "SELECT row_number() over() as gid, m_case.id, m_case.completion_date, m_case.created_by, m_case.surveyed_by_land_office, m_case.surveyed_by_surveyor, " \
                      "m_case.completed_by, parcel_case.parcel, building.building, application.app_no, '{0}' as soum, company.id as company, person.person_id, person.name, person.first_name " \
                      "FROM s{0}.ca_maintenance_case m_case " \
                      "left join s{0}.ca_parcel_maintenance_case parcel_case on parcel_case.maintenance = m_case.id " \
