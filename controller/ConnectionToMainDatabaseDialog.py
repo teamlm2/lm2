@@ -115,45 +115,45 @@ class ConnectionToMainDatabaseDialog(QDialog, Ui_ConnectionToMainDatabaseDialog)
             self.wnet_connect(host, username_d, password_d)
             self.netcopy(host, source, dest_dir, username_d, password_d)
 
-        if host == 'localhost':
-            self.__vpn_connection()
-            self.__backup_schedule()
+        # if host == 'localhost':
+        #     self.__vpn_connection()
+        #     self.__backup_schedule()
 
         self.__layers_permission(user, password, host, port, database)
         self.reject()
 
-    def __vpn_connection(self):
+    # def __vpn_connection(self):
+    #
+    #     vpn_path = r'D:\TM_LM2\dumps\schedule'
+    #     if not os.path.exists(vpn_path):
+    #         os.makedirs(vpn_path)
+    #
+    #     file_path = r'D:\TM_LM2\dumps\schedule/vpn.bat'
+    #     if not os.path.isfile("D:\TM_LM2\dumps\schedule/vpn.bat"):
+    #         file_path_parent = str(os.path.dirname(os.path.realpath(__file__))[:-10])+"template/vpn.bat"
+    #         shutil.copy2(file_path_parent, file_path)
+    #
+    #     user  = QSettings().value(SettingsConstants.USER)
+    #     line_title = 'rasdial VPN_Connection '
+    #     connection_line = line_title + 'dml'+ user[-6:] +' '+ user[4:-4]+'DmL'+user[-4:]
+    #
+    #     self.__replace_line_dump_name(file_path, 0, connection_line)
+    #     QDesktopServices.openUrl(QUrl.fromLocalFile(file_path))
 
-        vpn_path = r'D:\TM_LM2\dumps\schedule'
-        if not os.path.exists(vpn_path):
-            os.makedirs(vpn_path)
-
-        file_path = r'D:\TM_LM2\dumps\schedule/vpn.bat'
-        if not os.path.isfile("D:\TM_LM2\dumps\schedule/vpn.bat"):
-            file_path_parent = str(os.path.dirname(os.path.realpath(__file__))[:-10])+"template/vpn.bat"
-            shutil.copy2(file_path_parent, file_path)
-
-        user  = QSettings().value(SettingsConstants.USER)
-        line_title = 'rasdial VPN_Connection '
-        connection_line = line_title + 'dml'+ user[-6:] +' '+ user[4:-4]+'DmL'+user[-4:]
-
-        self.__replace_line_dump_name(file_path, 0, connection_line)
-        QDesktopServices.openUrl(QUrl.fromLocalFile(file_path))
-
-    def __backup_schedule(self):
-
-        vpn_path = r'D:\TM_LM2\dumps\schedule'
-        if not os.path.exists(vpn_path):
-            os.makedirs(vpn_path)
-
-        file_path = r'D:\TM_LM2\dumps\schedule/backup_soums_schedule.bat'
-        if not os.path.isfile("D:\TM_LM2\dumps\schedule/backup_soums_schedule.bat"):
-            file_path_parent = str(os.path.dirname(os.path.realpath(__file__))[:-10])+"template/backup_soums_schedule.bat"
-            shutil.copy2(file_path_parent, file_path)
-
-        database_name = 'SET database_name=' + self.database_edit.text()
-
-        self.__replace_line_dump_name(file_path, 7, database_name)
+    # def __backup_schedule(self):
+    #
+    #     vpn_path = r'D:\TM_LM2\dumps\schedule'
+    #     if not os.path.exists(vpn_path):
+    #         os.makedirs(vpn_path)
+    #
+    #     file_path = r'D:\TM_LM2\dumps\schedule/backup_soums_schedule.bat'
+    #     if not os.path.isfile("D:\TM_LM2\dumps\schedule/backup_soums_schedule.bat"):
+    #         file_path_parent = str(os.path.dirname(os.path.realpath(__file__))[:-10])+"template/backup_soums_schedule.bat"
+    #         shutil.copy2(file_path_parent, file_path)
+    #
+    #     database_name = 'SET database_name=' + self.database_edit.text()
+    #
+    #     self.__replace_line_dump_name(file_path, 7, database_name)
         # QDesktopServices.openUrl(QUrl.fromLocalFile(file_path))
 
     def __replace_line_dump_name(self, file_name, line_num, text):

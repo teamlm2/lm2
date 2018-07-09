@@ -298,8 +298,8 @@ class LandOfficeAdministrativeSettingsDialog(QDialog, Ui_LandOfficeAdministrativ
 
         for location in locations1:
             self.zone_location_cbox.addItem(location[0], location[1])
-        for location in locations2:
-            self.zone_location_cbox.addItem(location[0], location[1])
+        # for location in locations2:
+        #     self.zone_location_cbox.addItem(location[0], location[1])
         for location in locations3:
             self.zone_location_cbox.addItem(location[0], location[1])
         for location in locations4:
@@ -328,8 +328,8 @@ class LandOfficeAdministrativeSettingsDialog(QDialog, Ui_LandOfficeAdministrativ
 
         for location in locations1:
             self.zone_location_tax_cbox.addItem(location[0], location[1])
-        for location in locations2:
-            self.zone_location_tax_cbox.addItem(location[0], location[1])
+        # for location in locations2:
+        #     self.zone_location_tax_cbox.addItem(location[0], location[1])
         for location in locations3:
             self.zone_location_tax_cbox.addItem(location[0], location[1])
         for location in locations4:
