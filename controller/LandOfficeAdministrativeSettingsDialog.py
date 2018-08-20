@@ -322,7 +322,7 @@ class LandOfficeAdministrativeSettingsDialog(QDialog, Ui_LandOfficeAdministrativ
             filter(AuLevel2.code.in_(l2_codes)). \
             order_by(SetTaxAndPriceZone.location)
         locations4 = self.session.query(SetTaxAndPriceZone.location, SetTaxAndPriceZone.code).distinct(). \
-            filter(SetTaxAndPriceZone.geometry.ST_Overlaps(AuLevel2.geometry)). \
+            filter(SetTaxAndPriceZone.geometry.ST_Intersects(AuLevel2.geometry)). \
             filter(AuLevel2.code.in_(l2_codes)). \
             order_by(SetTaxAndPriceZone.location)
 
