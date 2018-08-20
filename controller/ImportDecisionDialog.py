@@ -1027,19 +1027,22 @@ class ImportDecisionDialog(QDialog, Ui_ImportDecisionDialog, DatabaseHelper):
                 self.decision.decision_level = 70
                 self.decision.imported_by = current_employee.user_name_real
 
-                decicion_app = CtDecisionApplication()
-                decicion_app.decision = self.notary_decision_edit.text()
-                decicion_app.decision_result = 10
-                decicion_app.application = self.application_cbox.currentText()
-                self.decision.results.append(decicion_app)
-                self.session.add(self.decision)
-                self.add_document_button.setEnabled(True)
-                self.load_document_button.setEnabled(True)
+                dec_app_count = self.session.query(CtDecisionApplication).filter(CtDecisionApplication.application == self.application_cbox.currentText()).count()
+                if dec_app_count == 0:
+                    decicion_app = CtDecisionApplication()
+                    decicion_app.decision = self.notary_decision_edit.text()
+                    decicion_app.decision_result = 10
+                    decicion_app.application = self.application_cbox.currentText()
+                    self.decision.results.append(decicion_app)
+                    self.session.add(self.decision)
+                    self.add_document_button.setEnabled(True)
+                    self.load_document_button.setEnabled(True)
 
                 user = DatabaseUtils.current_user()
                 current_employee = self.session.query(SetRole) \
                     .filter(SetRole.user_name == user.user_name) \
                     .filter(SetRole.is_active == True).one()
+
 
                 app_status = CtApplicationStatus()
                 app_status.next_officer_in_charge = current_employee.user_name_real

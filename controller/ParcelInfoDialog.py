@@ -37,6 +37,7 @@ from ..model import Constants
 from ..model.SetRightTypeApplicationType import *
 from ..model.LM2Exception import LM2Exception
 from ..model.ClPositionType import *
+from ..model.ClUbEditStatus import *
 from ..model.Enumerations import PersonType, UserRight
 from ..model.DatabaseHelper import *
 from ..utils.SessionHandler import SessionHandler
@@ -276,6 +277,7 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
             decision_levels = self.session.query(ClDecisionLevel).all()
             contract_statuses = self.session.query(ClContractStatus).all()
             right_types = self.session.query(ClRightType).all()
+            edit_statuses = self.session.query(ClUbEditStatus).all()
 
         except SQLAlchemyError, e:
             PluginUtils.show_error(self, self.tr("File Error"), self.tr("Error in line {0}: {1}").format(currentframe().f_lineno, e.message))
@@ -294,6 +296,10 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
 
         for item in landuse_types:
             self.parcel_landuse_cbox.addItem(str(item.code) + ": " + item.description, item.code)
+
+        self.edit_status_cbox.addItem("*", -1)
+        for item in edit_statuses:
+            self.edit_status_cbox.addItem(str(item.code) + ": " + item.description, item.code)
 
     def __setup_table_widget(self):
 
@@ -1849,6 +1855,14 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
             record_date = PluginUtils.convert_qt_date_to_python(self.own_date.date())
             subject.uhdate = record_date
             subject.uhid = self.record_cert_edit.text()
+
+        old_parcel_id = self.old_parcel_id_edit.text()
+        ub_parcel = self.session.query(CaUBParcel).filter(CaUBParcel.old_parcel_id == old_parcel_id).one()
+        edit_status = self.edit_status_cbox.itemData(self.edit_status_cbox.currentIndex())
+        if self.edit_status_cbox.currentIndex() == -1:
+            ub_parcel.edit_status = 30
+        else:
+            ub_parcel.edit_status = edit_status
 
     @pyqtSlot()
     def on_save_button_clicked(self):

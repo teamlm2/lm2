@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '.\ParcelinfoDialog.ui'
+# Form implementation generated from reading ui file '.\ParcelInfoDialog.ui'
 #
 # Created by: PyQt4 UI code generator 4.11.4
 #
@@ -98,9 +98,12 @@ class Ui_ParcelInfoDialog(object):
         self.zoriulalt_chbox = QtGui.QCheckBox(self.parcel_gbox)
         self.zoriulalt_chbox.setGeometry(QtCore.QRect(10, 96, 61, 17))
         self.zoriulalt_chbox.setObjectName(_fromUtf8("zoriulalt_chbox"))
+        self.edit_status_cbox = QtGui.QComboBox(self.parcel_gbox)
+        self.edit_status_cbox.setGeometry(QtCore.QRect(200, 160, 161, 22))
+        self.edit_status_cbox.setObjectName(_fromUtf8("edit_status_cbox"))
         self.neighbourhood_edit = QtGui.QLineEdit(self.parcel_person_tab)
         self.neighbourhood_edit.setEnabled(False)
-        self.neighbourhood_edit.setGeometry(QtCore.QRect(11, 160, 351, 20))
+        self.neighbourhood_edit.setGeometry(QtCore.QRect(11, 160, 181, 20))
         self.neighbourhood_edit.setObjectName(_fromUtf8("neighbourhood_edit"))
         self.neighbourhood_chbox = QtGui.QCheckBox(self.parcel_person_tab)
         self.neighbourhood_chbox.setGeometry(QtCore.QRect(11, 141, 361, 17))
@@ -212,6 +215,9 @@ class Ui_ParcelInfoDialog(object):
         self.label_36.setGeometry(QtCore.QRect(190, 121, 166, 16))
         self.label_36.setObjectName(_fromUtf8("label_36"))
         self.tabWidget_2.addTab(self.tab_9, _fromUtf8(""))
+        self.label_38 = QtGui.QLabel(self.parcel_person_tab)
+        self.label_38.setGeometry(QtCore.QRect(203, 143, 161, 16))
+        self.label_38.setObjectName(_fromUtf8("label_38"))
         self.parcel_tab_widget.addTab(self.parcel_person_tab, _fromUtf8(""))
         self.decision_contract_tab = QtGui.QWidget()
         self.decision_contract_tab.setObjectName(_fromUtf8("decision_contract_tab"))
@@ -1067,6 +1073,7 @@ class Ui_ParcelInfoDialog(object):
         self.label_35.setText(_translate("ParcelInfoDialog", "Building Number", None))
         self.label_36.setText(_translate("ParcelInfoDialog", "Apartment Number", None))
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.tab_9), _translate("ParcelInfoDialog", "Person Address", None))
+        self.label_38.setText(_translate("ParcelInfoDialog", "Edit Status", None))
         self.parcel_tab_widget.setTabText(self.parcel_tab_widget.indexOf(self.parcel_person_tab), _translate("ParcelInfoDialog", "Parcel & Person", None))
         self.groupBox.setTitle(_translate("ParcelInfoDialog", "Decision", None))
         self.decision_date_chbox.setText(_translate("ParcelInfoDialog", "Decision Date", None))

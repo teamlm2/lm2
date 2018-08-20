@@ -256,6 +256,16 @@
           <string>gaid</string>
          </property>
         </widget>
+        <widget class="QComboBox" name="edit_status_cbox">
+         <property name="geometry">
+          <rect>
+           <x>200</x>
+           <y>160</y>
+           <width>161</width>
+           <height>22</height>
+          </rect>
+         </property>
+        </widget>
        </widget>
        <widget class="QLineEdit" name="neighbourhood_edit">
         <property name="enabled">
@@ -265,7 +275,7 @@
          <rect>
           <x>11</x>
           <y>160</y>
-          <width>351</width>
+          <width>181</width>
           <height>20</height>
          </rect>
         </property>
@@ -670,6 +680,19 @@
           </property>
          </widget>
         </widget>
+       </widget>
+       <widget class="QLabel" name="label_38">
+        <property name="geometry">
+         <rect>
+          <x>203</x>
+          <y>143</y>
+          <width>161</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Edit Status</string>
+        </property>
        </widget>
       </widget>
       <widget class="QWidget" name="decision_contract_tab">
@@ -2602,7 +2625,7 @@ QPushButton:disabled {
        <string>Find</string>
       </property>
       <property name="icon">
-       <iconset resource="resources.qrc">
+       <iconset resource="C:/Users/B.Ankhbold/.qgis2/python/plugins/lm2/view/resources.qrc">
         <normaloff>:/plugins/lm2/zoom.png</normaloff>:/plugins/lm2/zoom.png</iconset>
       </property>
       <property name="autoDefault">
@@ -3027,7 +3050,7 @@ QPushButton:disabled {
   <tabstop>point_scale_sbox</tabstop>
  </tabstops>
  <resources>
-  <include location="resources.qrc"/>
+  <include location="C:/Users/B.Ankhbold/.qgis2/python/plugins/lm2/view/resources.qrc"/>
  </resources>
  <connections/>
 </ui>

@@ -4,7 +4,7 @@ from sqlalchemy import Column, String, Float, Date, ForeignKey, Integer, Table
 from sqlalchemy.orm import relationship
 from geoalchemy2 import Geometry
 from ClLanduseType import *
-
+from ClUbEditStatus import *
 
 class CaUBParcel(Base):
 
@@ -25,3 +25,6 @@ class CaUBParcel(Base):
     # foreign keys:
     landuse = Column(Integer, ForeignKey('cl_landuse_type.code'))
     landuse_ref = relationship("ClLanduseType")
+
+    edit_status = Column(Integer, ForeignKey('cl_ub_edit_status.code'))
+    edit_status_ref = relationship("ClUbEditStatus")

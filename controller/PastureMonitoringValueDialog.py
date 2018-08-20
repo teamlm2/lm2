@@ -3778,10 +3778,10 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
         #     is_valid = False
         #     return
 
-        if self.__load_urgats() == 0:
-            PluginUtils.show_message(self, self.tr("Can't"), self.tr("Bio mass value zero!!!"))
-            is_valid = False
-            return
+        # if self.__load_urgats() == 0:
+        #     PluginUtils.show_message(self, self.tr("Can't"), self.tr("Bio mass value zero!!!"))
+        #     is_valid = False
+        #     return
 
         if not self.__load_rc():
             PluginUtils.show_message(self, self.tr("Can't"), self.tr("Can not calculate RC!!!"))
@@ -3801,9 +3801,9 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
             is_valid = False
             return
 
-        if self.__load_urgats() == 0:
-            is_valid = False
-            return
+        # if self.__load_urgats() == 0:
+        #     is_valid = False
+        #     return
 
         if not self.__load_rc():
             is_valid = False
@@ -3881,12 +3881,16 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
 
         rc_precent = float(rc_precent) / 100
         biomass_present = float(biomass) * rc_precent
+        d2 = 0
         if sheep_unit_plant == 0 or rc_precent == 0:
             d1 = 0
         else:
             d1 = (float(biomass) / float(sheep_unit_plant)) * (rc_precent)
             d1_100ga = d1 * 100
-            d2 = ((1 / d1))
+            if d1 == 0:
+                d1 = 0
+            else:
+                d2 = ((1 / d1))
             d3 = float(area_ga * biomass_present) / float(sheep_unit_plant)
             unelgee = d3 - float(sheep_unit)
 
@@ -3912,12 +3916,15 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
         sheep_unit_plant = self.__load_sheep_unit_biomass()
         sheep_unit = self.__load_live_stock_convert()
         rc_precent_d = rc_precent
-
+        d2 = 0
         rc_precent = float(rc_precent) / 100
         biomass_present = float(biomass) * rc_precent
         d1 = (float(biomass) / float(sheep_unit_plant)) * (rc_precent)
         d1_100ga = d1 * 100
-        d2 = ((1 / d1))
+        if d1 == 0:
+            d1 = 0
+        else:
+            d2 = ((1 / d1))
         d3 = float(area_ga * biomass_present) / float(sheep_unit_plant)
         unelgee = d3 - float(sheep_unit)
 
@@ -3935,7 +3942,7 @@ class PastureMonitoringValueDialog(QDialog, Ui_PastureMonitoringValueDialog, Dat
         daats_count = self.session.query(PsPointDaatsValue). \
             filter(PsPointDaatsValue.point_detail_id == self.point_detail_id). \
             filter(PsPointDaatsValue.monitoring_year == self.print_year_sbox.value()).count()
-        print daats_count
+
         if daats_count == 0:
             daats = PsPointDaatsValue()
             daats.point_detail_id = self.point_detail_id
