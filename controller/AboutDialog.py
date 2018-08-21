@@ -15,7 +15,7 @@ class AboutDialog(QDialog, Ui_AboutDialog):
         self.setupUi(self)
         self.setWindowTitle(self.tr("About Landmanager II"))
         self.version_label.setText(Constants.VERSION)
-
+        print 'aa'
         session = SessionHandler().session_instance()
 
         sql = "select a.text, sum(a.count) from (select 'application', text, count(text) from logging.ct_application  group by text " \
