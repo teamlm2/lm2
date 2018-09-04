@@ -681,7 +681,8 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
             for parcel_subject in parcel_subjects:
                 if parcel_subject.pid:
                     parcel_id = parcel_subject.pid
-                self.parcel_id_edit.setText(parcel_id)
+                    ub_parcel = self.session.query(CaUBParcel).filter(CaUBParcel.old_parcel_id == parcel_subject.oldpid).one()
+                self.parcel_id_edit.setText(ub_parcel.parcel_id)
                 self.old_parcel_id_edit.setText(parcel_subject.oldpid)
                 if parcel_subject.gudamj:
                     street = parcel_subject.gudamj
