@@ -1102,37 +1102,38 @@ class NavigatorWidget(QDockWidget, Ui_NavigatorWidget, DatabaseHelper):
         au_level2_string = self.userSettings.restriction_au_level2
         au_level2_list = au_level2_string.split(",")
         sql = ""
+        current_soum = DatabaseUtils.working_l2_code()
 
-        for au_level2 in au_level2_list:
+        # for au_level2 in au_level2_list:
 
-            au_level2 = au_level2.strip()
-            if not sql:
-                sql = "Create temp view maintenance_search as" + "\n"
-            else:
-                sql = sql + "UNION" + "\n"
+        # au_level2 = au_level2.strip()
+        if not sql:
+            sql = "Create temp view maintenance_search as" + "\n"
+        else:
+            sql = sql + "UNION" + "\n"
 
-            select = "SELECT row_number() over() as gid, m_case.id, m_case.completion_date, m_case.created_by, m_case.surveyed_by_land_office, m_case.surveyed_by_surveyor, " \
-                     "m_case.completed_by, parcel_case.parcel, building.building, application.app_no, '{0}' as soum, company.id as company, person.person_id, person.name, person.first_name " \
-                     "FROM s{0}.ca_maintenance_case m_case " \
-                     "left join s{0}.ca_parcel_maintenance_case parcel_case on parcel_case.maintenance = m_case.id " \
-                     "left join s{0}.ca_building_maintenance_case building on building.maintenance = m_case.id " \
-                     "left join s{0}.ct_application application on application.maintenance_case = m_case.id " \
-                     "LEFT JOIN s{0}.ct_application_person_role app_pers on application.app_no = app_pers.application " \
-                     "LEFT JOIN base.bs_person person ON app_pers.person = person.person_id " \
-                     "left join settings.set_surveyor surveyor on m_case.surveyed_by_surveyor = surveyor.id " \
-                     "left join settings.set_survey_company company on surveyor.company = company.id".format(au_level2) + "\n"
+        select = "SELECT row_number() over() as gid, m_case.id, m_case.completion_date, m_case.created_by, m_case.surveyed_by_land_office, m_case.surveyed_by_surveyor, " \
+                 "m_case.completed_by, parcel_case.parcel, building.building, application.app_no, '{0}' as soum, company.id as company, person.person_id, person.name, person.first_name " \
+                 "FROM s{0}.ca_maintenance_case m_case " \
+                 "left join s{0}.ca_parcel_maintenance_case parcel_case on parcel_case.maintenance = m_case.id " \
+                 "left join s{0}.ca_building_maintenance_case building on building.maintenance = m_case.id " \
+                 "left join s{0}.ct_application application on application.maintenance_case = m_case.id " \
+                 "LEFT JOIN s{0}.ct_application_person_role app_pers on application.app_no = app_pers.application " \
+                 "LEFT JOIN base.bs_person person ON app_pers.person = person.person_id " \
+                 "left join settings.set_surveyor surveyor on m_case.surveyed_by_surveyor = surveyor.id " \
+                 "left join settings.set_survey_company company on surveyor.company = company.id".format(current_soum) + "\n"
 
-            sql = sql + select
+        sql = sql + select
 
         sql = "{0} order by id;".format(sql)
 
-        try:
-            self.session.execute(sql)
-            self.commit()
+        # try:
+        self.session.execute(sql)
+        self.commit()
 
-        except SQLAlchemyError, e:
-            PluginUtils.show_message(self, self.tr("LM2", "Sql Error"), e.message)
-            return
+        # except SQLAlchemyError, e:
+        # PluginUtils.show_message(self, self.tr("LM2", "Sql Error"), e.message)
+        # return
 
     def __selected_parcel_id(self):
 
@@ -7795,12 +7796,15 @@ class NavigatorWidget(QDockWidget, Ui_NavigatorWidget, DatabaseHelper):
     def on_case_results_twidget_itemClicked(self, item):
 
         id = item.data(Qt.UserRole)
-        try:
-            maintenance_result = self.session.query(MaintenanceSearch).filter(MaintenanceSearch.id == id).one()
+        print id
+        # try:
+        maintenance_results= self.session.query(MaintenanceSearch).filter(MaintenanceSearch.id == id).all()
+        for maintenance_result in maintenance_results:
+            print maintenance_result.soum
             self.case_no_edit.setText(str(maintenance_result.id))
             if maintenance_result.completion_date != None:
                 self.case_completion_date_edit.setDate(maintenance_result.completion_date)
-            self.case_parcel_no_edit.setText(maintenance_result.parcel)
+                self.case_parcel_no_edit.setText(maintenance_result.parcel)
             if maintenance_result.app_no != None:
                 self.case_app_no_edit.setText(maintenance_result.app_no)
 
@@ -7809,11 +7813,11 @@ class NavigatorWidget(QDockWidget, Ui_NavigatorWidget, DatabaseHelper):
             if maintenance_result.surveyed_by_land_office != None:
                 self.surveyed_by_land_officer_cbox.setCurrentIndex(self.surveyed_by_land_officer_cbox.findData(maintenance_result.surveyed_by_land_office))
             if maintenance_result.completed_by!= None:
-                self.finalized_by_cbox.setCurrentIndex(self.finalized_by_cbox.findData(maintenance_result.completed_by))
+             self.finalized_by_cbox.setCurrentIndex(self.finalized_by_cbox.findData(maintenance_result.completed_by))
 
-        except SQLAlchemyError, e:
-            PluginUtils.show_error(self, self.tr("File Error"), self.tr("Error in line {0}: {1}").format(currentframe().f_lineno, e.message))
-            return
+        # except SQLAlchemyError, e:
+        #     PluginUtils.show_error(self, self.tr("File Error"), self.tr("Error in line {0}: {1}").format(currentframe().f_lineno, e.message))
+        #     return
 
     @pyqtSlot(QTableWidgetItem)
     def on_contract_results_twidget_itemClicked(self, item):
