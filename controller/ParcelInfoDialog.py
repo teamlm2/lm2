@@ -617,7 +617,6 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
         selected_row = self.right_holder_twidget.currentRow()
         person_id  = self.right_holder_twidget.item(selected_row, 1).text()
         object_id = self.right_holder_twidget.item(selected_row, 1).data(Qt.UserRole+1)
-
         # person info
         person_id = '%'+person_id+'%'
         firstname = ''
@@ -628,9 +627,12 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
         person_type = 10
         person_register = ''
         try:
-            subject_persons = self.session.query(UbGisSubject.utas1, UbGisSubject.utas2,UbGisSubject.heid, UbGisSubject.register, UbGisSubject.ovogner, UbGisSubject.ovog, UbGisSubject.ner).\
-                filter(UbGisSubject.register.like(person_id)).group_by(UbGisSubject.utas1, UbGisSubject.utas2, UbGisSubject.heid, UbGisSubject.register, UbGisSubject.ovogner, UbGisSubject.ovog, UbGisSubject.ner).all()
+            # subject_persons = self.session.query(UbGisSubject.utas1, UbGisSubject.utas2,UbGisSubject.heid, UbGisSubject.register, UbGisSubject.ovogner, UbGisSubject.ovog, UbGisSubject.ner, UbGisSubject.is_finish).\
+            #     filter(UbGisSubject.register.like(person_id)).group_by(UbGisSubject.utas1, UbGisSubject.utas2, UbGisSubject.heid, UbGisSubject.register, UbGisSubject.ovogner, UbGisSubject.ovog, UbGisSubject.ner).all()
+            subject_persons = self.session.query(UbGisSubject).filter(UbGisSubject.objectid == object_id).all()
             for subject_person in subject_persons:
+                if subject_person.is_finish:
+                    self.edit_status_cbox.setEnabled(False)
                 heid = str(subject_person.heid)
                 if self.__is_number(heid):
                     if int(subject_person.heid) == 1:
@@ -679,10 +681,12 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
             zoriulalt = 1
             parcel_subjects = self.session.query(UbGisSubject).filter(UbGisSubject.objectid == object_id).all()
             for parcel_subject in parcel_subjects:
-                if parcel_subject.pid:
+                if parcel_subject.oldpid:
                     parcel_id = parcel_subject.pid
                     ub_parcel = self.session.query(CaUBParcel).filter(CaUBParcel.old_parcel_id == parcel_subject.oldpid).one()
-                self.parcel_id_edit.setText(ub_parcel.parcel_id)
+
+                    self.parcel_id_edit.setText(ub_parcel.parcel_id)
+                    self.edit_status_cbox.setCurrentIndex(self.edit_status_cbox.findData(ub_parcel.edit_status))
                 self.old_parcel_id_edit.setText(parcel_subject.oldpid)
                 if parcel_subject.gudamj:
                     street = parcel_subject.gudamj
@@ -705,6 +709,8 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
             decision_level = 10
             right_type = 1
 
+            app_type = None
+
             contract_no = ''
             certificate_no = ''
             create_date = None
@@ -722,7 +728,7 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
                 if subject.gaid:
                     right_type = self.__right_type(subject).code
                 decision_level = self.__decision_level(subject).code
-
+                app_type = subject.app_type
                 if right_type == 1 or right_type == 2:
                     if subject.gerid:
                         contract_no = subject.gerid
@@ -756,6 +762,9 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
                 self.decision_date.setDate(QDate(1900, 01, 01))
             self.decision_level_cbox.setCurrentIndex(self.decision_level_cbox.findData(decision_level))
             self.rigth_type_cbox.setCurrentIndex(self.rigth_type_cbox.findData(right_type))
+
+            if app_type:
+                self.application_type_cbox.setCurrentIndex(self.application_type_cbox.findData(app_type))
 
             # contract info qt
             self.contract_full_edit.setText(self.__generate_contract_number())
@@ -1817,6 +1826,7 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
         gaid = 3
         zovshbaig = u'ДЗД'
         right_type = self.rigth_type_cbox.itemData(self.rigth_type_cbox.currentIndex())
+        app_type = self.application_type_cbox.itemData(self.application_type_cbox.currentIndex())
         decision_level = self.decision_level_cbox.itemData(self.decision_level_cbox.currentIndex())
         if right_type == 1:
             gaid = 3
@@ -1841,6 +1851,7 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
         subject.zovshshiid = self.decision_no_edit.text()
         decision_date = PluginUtils.convert_qt_date_to_python(self.decision_date.date())
         subject.zovshdate = decision_date
+        subject.app_type = app_type
 
         # Contract
         if gaid == 2 or gaid == 3:
@@ -1860,10 +1871,14 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
         old_parcel_id = self.old_parcel_id_edit.text()
         ub_parcel = self.session.query(CaUBParcel).filter(CaUBParcel.old_parcel_id == old_parcel_id).one()
         edit_status = self.edit_status_cbox.itemData(self.edit_status_cbox.currentIndex())
+
         if self.edit_status_cbox.currentIndex() == -1:
             ub_parcel.edit_status = 30
         else:
             ub_parcel.edit_status = edit_status
+
+        subject.status_date = PluginUtils.convert_qt_date_to_python(QDate.currentDate())
+        subject.status_user = DatabaseUtils.current_user().user_name
 
     @pyqtSlot()
     def on_save_button_clicked(self):
@@ -1872,6 +1887,9 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
             self.error_label.setText(self.tr("Select one item to save."))
             return
 
+        if self.edit_status_cbox.itemData(self.edit_status_cbox.currentIndex()) == -1:
+            PluginUtils.show_message(self, self.tr("LM2", "Alert"), self.tr("Please select edit status!!!"))
+            return
         selected_row = self.right_holder_twidget.currentRow()
         object_id = self.right_holder_twidget.item(selected_row, 1).data(Qt.UserRole + 1)
         if object_id:
@@ -2427,6 +2445,10 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
     @pyqtSlot()
     def on_finish_button_clicked(self):
 
+        if len(self.right_holder_twidget.selectedItems()) == 0:
+            PluginUtils.show_error(self, self.tr("Alert"), self.tr("Select one item to finish."))
+            return
+
         validaty_result = self.__validaty_of_ubparcel()
 
         if not validaty_result[0]:
@@ -2450,6 +2472,14 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
             self.__save_status()
             self.__save_decision()
             self.__save_contract_owner()
+
+            selected_row = self.right_holder_twidget.currentRow()
+            objectid = self.right_holder_twidget.item(selected_row, 1).data(Qt.UserRole + 1)
+            subject = self.session.query(UbGisSubject).filter(UbGisSubject.objectid == objectid).one()
+            subject.is_finish = True
+            subject.finish_user = DatabaseUtils.current_user().user_name
+            subject.finish_date = PluginUtils.convert_qt_date_to_python(QDate.currentDate())
+
             # return
 
             self.session.commit()

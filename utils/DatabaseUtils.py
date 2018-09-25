@@ -141,12 +141,12 @@ class DatabaseUtils():
         session = SessionHandler().session_instance()
         class_instance = None
 
-        try:
-            class_instance = session.query(class_obj).filter(class_obj.code == code).one()
-        except exc.SQLAlchemyError, e:
-            session.rollback()
-            raise LM2Exception(QApplication.translate("LM2", "Database Query Error"),
-                               QApplication.translate("LM2", "Could not execute: {0}").format(e.message))
+        # try:
+        class_instance = session.query(class_obj).filter(class_obj.code == code).one()
+        # except exc.SQLAlchemyError, e:
+        #     session.rollback()
+        #     raise LM2Exception(QApplication.translate("LM2", "Database Query Error"),
+        #                        QApplication.translate("LM2", "Could not execute: {0}").format(e.message))
 
         return class_instance
 
@@ -284,7 +284,7 @@ class DatabaseUtils():
             if found_code:
                 schema_list.insert(0, "s" + first_code.strip())
 
-            session.execute("SET search_path to base, codelists, ub_data, admin_units, settings, pasture, public" + ", " + ", ".join(schema_list))
+            session.execute("SET search_path to base, codelists, ub_data, admin_units, settings, pasture, public, data_soums_union" + ", " + ", ".join(schema_list))
             session.commit()
 
         except DatabaseError, e:

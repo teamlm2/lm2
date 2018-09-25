@@ -60,6 +60,7 @@ from FinalizeCaseDialog import FinalizeCaseDialog
 from CreateCaseDialog import CreateCaseDialog
 from LandTaxPaymentsDialog import *
 from LandFeePaymentsDialog import *
+from ParcelInfoStatisticDialog import *
 from datetime import timedelta
 from xlsxwriter.utility import xl_rowcol_to_cell, xl_col_to_name
 import xlsxwriter
@@ -3763,6 +3764,13 @@ class NavigatorWidget(QDockWidget, Ui_NavigatorWidget, DatabaseHelper):
         elif code == '13':
             self.dlg = CadastrePageReportDialog()
             self.dlg.show()
+        elif code == '16':
+
+            self.current_dialog = ParcelInfoStatisticDialog(self.plugin, self.plugin.iface.mainWindow())
+            self.current_dialog.setModal(False)
+            self.current_dialog.rejected.connect(self.on_current_dialog_closed)
+            DialogInspector().set_dialog_visible(True)
+            self.current_dialog.show()
 
         self.progressBar.setVisible(False)
 

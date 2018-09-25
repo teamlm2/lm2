@@ -15,6 +15,10 @@ from ..model.AuLevel2 import *
 from ..model.LM2Exception import LM2Exception
 from ..model.DialogInspector import DialogInspector
 from ..model.ClPositionType import *
+from ..model.SdOrganization import *
+from ..model.SdDepartment import *
+from ..model.SdPosition import *
+from ..model.ClOrganizationType import *
 from ..model.ClGroupRole import *
 from ..model.SetPositionGroupRole import *
 from ..model.SetUserPosition import *
@@ -41,6 +45,7 @@ class UserRoleManagementDialog(QDialog, Ui_UserRoleManagementDialog):
 
         self.db_session = SessionHandler().session_instance()
         self.has_privilege = has_privilege
+        self.soums_list = []
         self.__username = user
         self.__privilage()
         self.__setup_combo_boxes()
@@ -213,19 +218,52 @@ class UserRoleManagementDialog(QDialog, Ui_UserRoleManagementDialog):
 
     def __setup_combo_boxes(self):
 
-        try:
-            positions = self.db_session.query(ClPositionType).all()
+        # try:
+        organization_types = self.db_session.query(ClOrganizationType).all()
 
-            for position in positions:
-                self.position_cbox.addItem(position.description, position.code)
+        for organization_type in organization_types:
+            self.organization_type_cbox.addItem(organization_type.description, organization_type.code)
 
-        except SQLAlchemyError, e:
-            PluginUtils.show_error(self, self.tr("Query Error"), self.tr("Error in line {0}: {1}").format(currentframe().f_lineno, e.message))
-            return
+        # except SQLAlchemyError, e:
+        #     PluginUtils.show_error(self, self.tr("Query Error"), self.tr("Error in line {0}: {1}").format(currentframe().f_lineno, e.message))
+        #     return
 
-    # def set_username(self, username):
-    #
-    #     self.__username = username
+    @pyqtSlot(int)
+    def on_organization_type_cbox_currentIndexChanged(self, index):
+
+        self.organization_cbox.clear()
+        organization_type = self.organization_type_cbox.itemData(index)
+
+        organizations = self.db_session.query(SdOrganization).filter(SdOrganization.type == organization_type).all()
+
+        for organization in organizations:
+            self.organization_cbox.addItem(organization.land_office_name, organization.id)
+
+    @pyqtSlot(int)
+    def on_organization_cbox_currentIndexChanged(self, index):
+
+        self.position_cbox.clear()
+        self.department_cbox.clear()
+
+        organization = self.organization_cbox.itemData(index)
+        positions = self.db_session.query(SdPosition).filter(SdPosition.organization == organization).all()
+
+        for position in positions:
+            self.position_cbox.addItem(position.name, position.position_id)
+
+        departments = self.db_session.query(SdDepartment). \
+            filter(SdDepartment.organization == organization). \
+            filter(SdDepartment.au2.in_(self.soums_list)).all()
+
+        for department in departments:
+            self.department_cbox.addItem(department.name, department.department_id)
+
+    @pyqtSlot(int)
+    def on_department_cbox_currentIndexChanged(self, index):
+
+        department = self.department_cbox.itemData(index)
+
+        positions = self.db_session.query(SdPosition).filter(SdPosition.department == department).all()
 
     def __populate_user_role_lwidget(self):
 
@@ -298,6 +336,20 @@ class UserRoleManagementDialog(QDialog, Ui_UserRoleManagementDialog):
             # self.__populate_soums(au_level1_code)
         except DatabaseError, e:
             PluginUtils.show_error(self, self.tr("Database Query Error"), self.tr("Could not execute: {0}").format(e.message))
+
+    @pyqtSlot()
+    def on_soum_lwidget_itemSelectionChanged(self):
+
+        try:
+            if self.soum_lwidget.currentItem() is None:
+                return
+            # if self.soum_lwidget.count() > 1:
+            #     return
+
+            # self.__populate_soums(au_level1_code)
+        except DatabaseError, e:
+            PluginUtils.show_error(self, self.tr("Database Query Error"),
+                                   self.tr("Could not execute: {0}").format(e.message))
 
     def __populate_soums(self, au_level1_code):
 
@@ -416,7 +468,16 @@ class UserRoleManagementDialog(QDialog, Ui_UserRoleManagementDialog):
         self.firstname_edit.setText(user.first_name)
         self.email_edit.setText(user.email)
         self.position_cbox.setCurrentIndex(self.position_cbox.findData(user.position))
-        # self.position_edit.setText(user.position)
+
+        self.organization_cbox.setCurrentIndex(self.organization_cbox.findData(user.organization))
+
+        organization_code = self.organization_cbox.itemData(self.organization_cbox.currentIndex())
+        organization_count = self.db_session.query(SdOrganization).filter(SdOrganization.id == user.organization).count()
+        print organization_count
+        if organization_count == 1:
+            organization = self.db_session.query(SdOrganization).filter(SdOrganization.id == user.organization).one()
+            self.organization_type_cbox.setCurrentIndex(self.organization_type_cbox.findData(organization.type))
+
         self.phone_edit.setText(user.phone)
         self.mac_address_edit.setText(user.mac_addresses)
         self.password_edit.setText(self.PW_PLACEHOLDER)
@@ -478,8 +539,21 @@ class UserRoleManagementDialog(QDialog, Ui_UserRoleManagementDialog):
                         item = QListWidgetItem(soum.name+'_'+soum.code)
                         item.setData(Qt.UserRole, soum.code)
                         self.soum_lwidget.addItem(item)
+
+                        self.soums_list.append(soum.code)
+                        self.department_cbox.clear()
+                        organization = self.organization_cbox.itemData(self.organization_cbox.currentIndex())
+
+                        departments = self.db_session.query(SdDepartment). \
+                            filter(SdDepartment.organization == organization). \
+                            filter(SdDepartment.au2.in_(self.soums_list)).all()
+
+                        for department in departments:
+                            self.department_cbox.addItem(department.name, department.department_id)
+
         except NoResultFound:
             pass
+        self.department_cbox.setCurrentIndex(self.department_cbox.findData(user.department))
 
     def reject(self):
 
@@ -515,8 +589,9 @@ class UserRoleManagementDialog(QDialog, Ui_UserRoleManagementDialog):
         first_name = self.firstname_edit.text().strip()
         user_register = self.register_edit.text().strip()
         phone = self.phone_edit.text().strip()
-        # position = self.position_edit.text().strip()
         position = self.position_cbox.itemData(self.position_cbox.currentIndex())
+        organization = self.organization_cbox.itemData(self.organization_cbox.currentIndex())
+        department = self.department_cbox.itemData(self.department_cbox.currentIndex())
         mac_addresses = self.mac_address_edit.text().strip()
         password = self.password_edit.text().strip()
         email = ''
@@ -691,7 +766,8 @@ class UserRoleManagementDialog(QDialog, Ui_UserRoleManagementDialog):
 
                 role = SetRole(user_name=user_name, surname=surname, first_name=first_name, phone=phone, user_register=user_register,
                                mac_addresses=mac_addresses, position=position, restriction_au_level1=restriction_au_level1, user_name_real = user_name_real,
-                               employee_type = employee_type, restriction_au_level2=restriction_au_level2, pa_from=pa_from, pa_till=pa_till, is_active=is_active_user, email=email)
+                               employee_type = employee_type, restriction_au_level2=restriction_au_level2, pa_from=pa_from, pa_till=pa_till,
+                               is_active=is_active_user, email=email, department=department, organization=organization)
                 self.db_session.add(role)
             else:
                 active_role_count = self.db_session.query(SetRole).filter(SetRole.user_name == user_name).filter(
@@ -700,8 +776,6 @@ class UserRoleManagementDialog(QDialog, Ui_UserRoleManagementDialog):
                     role = self.db_session.query(SetRole).filter(SetRole.user_name == user_name).filter(SetRole.is_active == True).one()
                 else:
                     role = self.db_session.query(SetRole).filter(SetRole.user_name == user_name).filter(SetRole.user_name_real == self.username_real_lbl.text()).one()
-                    # for role in roles:
-                    #     print role.user_name_real
 
                 role.surname = surname
                 role.first_name = first_name
@@ -714,6 +788,8 @@ class UserRoleManagementDialog(QDialog, Ui_UserRoleManagementDialog):
                 role.restriction_au_level1 = restriction_au_level1
                 role.restriction_au_level2 = restriction_au_level2
                 role.email = email
+                role.organization = organization
+                role.department = department
 
             self.db_session.commit()
             self.__populate_user_role_lwidget()
@@ -909,6 +985,7 @@ class UserRoleManagementDialog(QDialog, Ui_UserRoleManagementDialog):
                     item = QListWidgetItem(au_level2_name + '_' + au_level2_code)
                     item.setData(Qt.UserRole, au_level2_code)
                     self.soum_lwidget.addItem(item)
+                    self.soums_list.append(au_level2_code)
         else:
             if len(self.soum_lwidget.findItems(au_level2_name +'_'+ au_level2_code, Qt.MatchExactly)) == 0:
                 if len(self.soum_lwidget.findItems("*", Qt.MatchExactly)) == 0:
@@ -917,6 +994,17 @@ class UserRoleManagementDialog(QDialog, Ui_UserRoleManagementDialog):
                     item = QListWidgetItem(au_level2_name +'_'+ au_level2_code)
                     item.setData(Qt.UserRole, au_level2_code)
                     self.soum_lwidget.addItem(item)
+                    self.soums_list.append(au_level2_code)
+
+        self.department_cbox.clear()
+        organization = self.organization_cbox.itemData(self.organization_cbox.currentIndex())
+
+        departments = self.db_session.query(SdDepartment).\
+            filter(SdDepartment.organization == organization).\
+            filter(SdDepartment.au2.in_(self.soums_list)).all()
+
+        for department in departments:
+            self.department_cbox.addItem(department.name, department.department_id)
 
     @pyqtSlot()
     def on_up_soum_button_clicked(self):

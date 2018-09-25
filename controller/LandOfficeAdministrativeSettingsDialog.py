@@ -322,7 +322,7 @@ class LandOfficeAdministrativeSettingsDialog(QDialog, Ui_LandOfficeAdministrativ
             filter(AuLevel2.code.in_(l2_codes)). \
             order_by(SetTaxAndPriceZone.location)
         locations4 = self.session.query(SetTaxAndPriceZone.location, SetTaxAndPriceZone.code).distinct(). \
-            filter(SetTaxAndPriceZone.geometry.ST_Intersects(AuLevel2.geometry)). \
+            filter(SetTaxAndPriceZone.geometry.ST_Overlaps(AuLevel2.geometry)). \
             filter(AuLevel2.code.in_(l2_codes)). \
             order_by(SetTaxAndPriceZone.location)
 
@@ -1640,7 +1640,7 @@ class LandOfficeAdministrativeSettingsDialog(QDialog, Ui_LandOfficeAdministrativ
         soum_code = DatabaseUtils.working_l2_code()
         schema_string = 's' + soum_code
         session.execute(
-            "SET search_path to base, codelists, admin_units, settings, pasture, public" + ", " + schema_string)
+            "SET search_path to base, codelists, admin_units, settings, pasture, public, data_soums_union, sdplatform"+ ", " + schema_string)
 
         for i in range(self.doc_twidget.rowCount()):
 
@@ -1700,7 +1700,7 @@ class LandOfficeAdministrativeSettingsDialog(QDialog, Ui_LandOfficeAdministrativ
         soum_code = DatabaseUtils.working_l2_code()
         schema_string = 's' + soum_code
         session.execute(
-            "SET search_path to base, codelists, admin_units, settings, pasture, public" + ", " + schema_string)
+            "SET search_path to base, codelists, admin_units, settings, pasture, public, data_soums_union, sdplatform"+ ", " + schema_string)
 
         count = self.session.query(codelist_class).filter(codelist_class.code == code).count()
         if count > 0:
@@ -1738,7 +1738,7 @@ class LandOfficeAdministrativeSettingsDialog(QDialog, Ui_LandOfficeAdministrativ
         soum_code = DatabaseUtils.working_l2_code()
         schema_string = 's' + soum_code
         session.execute(
-            "SET search_path to base, codelists, admin_units, settings, pasture, public" + ", " + schema_string)
+            "SET search_path to base, codelists, admin_units, settings, pasture, public, data_soums_union, sdplatform"+ ", " + schema_string)
 
         try:
             sql = text("UPDATE settings.set_logging SET log_enabled = :logLevel;")
@@ -1753,7 +1753,7 @@ class LandOfficeAdministrativeSettingsDialog(QDialog, Ui_LandOfficeAdministrativ
         soum_code = DatabaseUtils.working_l2_code()
         schema_string = 's' + soum_code
         session.execute(
-            "SET search_path to base, codelists, admin_units, settings, pasture, public" + ", " + schema_string)
+            "SET search_path to base, codelists, admin_units, settings, pasture, public, data_soums_union, sdplatform"+ ", " + schema_string)
 
         try:
             sql = text(
@@ -1770,7 +1770,7 @@ class LandOfficeAdministrativeSettingsDialog(QDialog, Ui_LandOfficeAdministrativ
         soum_code = DatabaseUtils.working_l2_code()
         schema_string = 's' + soum_code
         session.execute(
-            "SET search_path to base, codelists, admin_units, settings, pasture, public" + ", " + schema_string)
+            "SET search_path to base, codelists, admin_units, settings, pasture, public, data_soums_union, sdplatform"+ ", " + schema_string)
 
         try:
             certificate_set = self.session.query(SetCertificate).get(certificate_type)
@@ -1788,7 +1788,7 @@ class LandOfficeAdministrativeSettingsDialog(QDialog, Ui_LandOfficeAdministrativ
         soum_code = DatabaseUtils.working_l2_code()
         schema_string = 's' + soum_code
         session.execute(
-            "SET search_path to base, codelists, admin_units, settings, pasture, public" + ", " + schema_string)
+            "SET search_path to base, codelists, admin_units, settings, pasture, public, data_soums_union, sdplatform"+ ", " + schema_string)
 
         for key_name, value in report_settings.iteritems():
             try:
@@ -1987,7 +1987,7 @@ class LandOfficeAdministrativeSettingsDialog(QDialog, Ui_LandOfficeAdministrativ
         soum_code = DatabaseUtils.working_l2_code()
         schema_string = 's' + soum_code
         self.session.execute(
-            "SET search_path to base, codelists, admin_units, settings, pasture, public" + ", " + schema_string)
+            "SET search_path to base, codelists, admin_units, settings, pasture, public, data_soums_union, sdplatform"+ ", " + schema_string)
 
     @pyqtSlot(int)
     def on_zone_location_cbox_currentIndexChanged(self, idx):
@@ -2002,7 +2002,7 @@ class LandOfficeAdministrativeSettingsDialog(QDialog, Ui_LandOfficeAdministrativ
         schema_string = 's'+ soum_code
 
         self.session.execute(
-            "SET search_path to base, codelists, admin_units, settings, pasture, public" + ", " + schema_string)
+            "SET search_path to base, codelists, admin_units, settings, pasture, public, data_soums_union, sdplatform"+ ", " + schema_string)
 
         location = self.zone_location_cbox.currentText()
 
@@ -2073,7 +2073,7 @@ class LandOfficeAdministrativeSettingsDialog(QDialog, Ui_LandOfficeAdministrativ
         schema_string = 's' + soum_code
 
         self.session.execute(
-            "SET search_path to base, codelists, admin_units, settings, pasture, public" + ", " + schema_string)
+            "SET search_path to base, codelists, admin_units, settings, pasture, public, data_soums_union, sdplatform"+ ", " + schema_string)
 
         location = self.zone_location_tax_cbox.currentText()
 
@@ -2378,7 +2378,7 @@ class LandOfficeAdministrativeSettingsDialog(QDialog, Ui_LandOfficeAdministrativ
             soum_code = DatabaseUtils.working_l2_code()
             schema_string = 's' + soum_code
             session.execute(
-                "SET search_path to base, codelists, admin_units, settings, pasture, public" + ", " + schema_string)
+                "SET search_path to base, codelists, admin_units, settings, pasture, public, data_soums_union, sdplatform"+ ", " + schema_string)
             fee = self.session.query(SetBaseFee).filter(SetBaseFee.id == fee_id).one()
             session.delete(fee)
 
@@ -2397,7 +2397,7 @@ class LandOfficeAdministrativeSettingsDialog(QDialog, Ui_LandOfficeAdministrativ
             soum_code = DatabaseUtils.working_l2_code()
             schema_string = 's' + soum_code
             session.execute(
-                "SET search_path to base, codelists, admin_units, settings, pasture, public" + ", " + schema_string)
+                "SET search_path to base, codelists, admin_units, settings, pasture, public, data_soums_union, sdplatform"+ ", " + schema_string)
             tax = self.session.query(SetBaseTaxAndPrice).filter(SetBaseTaxAndPrice.id == tax_id).one()
             session.delete(tax)
 
@@ -2531,7 +2531,7 @@ class LandOfficeAdministrativeSettingsDialog(QDialog, Ui_LandOfficeAdministrativ
             soum_code = DatabaseUtils.working_l2_code()
             schema_string = 's' + soum_code
             session.execute(
-                "SET search_path to base, codelists, admin_units, settings, pasture, public" + ", " + schema_string)
+                "SET search_path to base, codelists, admin_units, settings, pasture, public, data_soums_union, sdplatform"+ ", " + schema_string)
             from_zone = self.session.query(SetFeeZone).filter(SetFeeZone.zone_id == from_zone_fid).one()
             fee_count = len(from_zone.fees)
 
@@ -2591,7 +2591,7 @@ class LandOfficeAdministrativeSettingsDialog(QDialog, Ui_LandOfficeAdministrativ
             soum_code = DatabaseUtils.working_l2_code()
             schema_string = 's' + soum_code
             session.execute(
-                "SET search_path to base, codelists, admin_units, settings, pasture, public" + ", " + schema_string)
+                "SET search_path to base, codelists, admin_units, settings, pasture, public, data_soums_union, sdplatform"+ ", " + schema_string)
             from_zone = self.session.query(SetTaxAndPriceZone).filter(SetTaxAndPriceZone.zone_id == from_zone_fid).one()
             tax_count = len(from_zone.taxes)
 
@@ -2663,7 +2663,7 @@ class LandOfficeAdministrativeSettingsDialog(QDialog, Ui_LandOfficeAdministrativ
         soum_code = DatabaseUtils.working_l2_code()
         schema_string = 's' + soum_code
         session.execute(
-            "SET search_path to base, codelists, admin_units, settings, pasture, public" + ", " + schema_string)
+            "SET search_path to base, codelists, admin_units, settings, pasture, public, data_soums_union, sdplatform"+ ", " + schema_string)
 
         try:
             QApplication.setOverrideCursor(QCursor(Qt.WaitCursor))
@@ -2674,67 +2674,67 @@ class LandOfficeAdministrativeSettingsDialog(QDialog, Ui_LandOfficeAdministrativ
 
             # Loop over restriction array
             l2_units = DatabaseUtils.l2_restriction_array()
-            for l2_unit in l2_units:
 
-                session.execute("SET search_path to s{0}, base, codelists, admin_units, settings, public".format(l2_unit))
-                # Get active contracts only
-                contracts = self.session.query(CtContract).\
-                    filter(update_date < func.coalesce(CtContract.cancellation_date, CtContract.contract_end)).all()
 
-                for contract in contracts:
-                    application_role = contract.application_roles.\
-                        filter(CtContractApplicationRole.role == Constants.APPLICATION_ROLE_CREATES).one()
-                    application = application_role.application_ref
-                    parcel_id = application.parcel
-                    if len(parcel_id) == 0:
-                        # TODO: log something
-                        # should never happen
-                        continue
+            session.execute("SET search_path to data_soums_union, sdplatform, base, codelists, admin_units, settings, public".format(l2_unit))
+            # Get active contracts only
+            contracts = self.session.query(CtContract).\
+                filter(update_date < func.coalesce(CtContract.cancellation_date, CtContract.contract_end)).all()
 
-                    count = self.session.query(SetBaseFee).filter(SetFeeZone.geometry.ST_Contains(CaParcel.geometry)).\
-                        filter(CaParcel.parcel_id == parcel_id).\
-                        filter(SetBaseFee.fee_zone == SetFeeZone.zone_id).\
-                        filter(SetBaseFee.landuse == CaParcel.landuse).\
-                        count()
+            for contract in contracts:
+                application_role = contract.application_roles.\
+                    filter(CtContractApplicationRole.role == Constants.APPLICATION_ROLE_CREATES).one()
+                application = application_role.application_ref
+                parcel_id = application.parcel
+                if len(parcel_id) == 0:
+                    # TODO: log something
+                    # should never happen
+                    continue
 
-                    if count == 0:
-                        # TODO: log something
-                        # can happen
-                        continue
+                count = self.session.query(SetBaseFee).filter(SetFeeZone.geometry.ST_Contains(CaParcel.geometry)).\
+                    filter(CaParcel.parcel_id == parcel_id).\
+                    filter(SetBaseFee.fee_zone == SetFeeZone.zone_id).\
+                    filter(SetBaseFee.landuse == CaParcel.landuse).\
+                    count()
 
-                    base_fee = self.session.query(SetBaseFee).filter(SetFeeZone.geometry.ST_Contains(CaParcel.geometry)).\
-                        filter(CaParcel.parcel_id == parcel_id).\
-                        filter(SetBaseFee.fee_zone == SetFeeZone.zone_id).\
-                        filter(SetBaseFee.landuse == CaParcel.landuse).\
-                        one()
+                if count == 0:
+                    # TODO: log something
+                    # can happen
+                    continue
 
-                    new_base_fee_per_m2 = base_fee.base_fee_per_m2
-                    new_subsidized_area = base_fee.subsidized_area
-                    new_subsidized_fee_rate = base_fee.subsidized_fee_rate
+                base_fee = self.session.query(SetBaseFee).filter(SetFeeZone.geometry.ST_Contains(CaParcel.geometry)).\
+                    filter(CaParcel.parcel_id == parcel_id).\
+                    filter(SetBaseFee.fee_zone == SetFeeZone.zone_id).\
+                    filter(SetBaseFee.landuse == CaParcel.landuse).\
+                    one()
 
-                    # Get latest archived fee
-                    latest_archived_fee = contract.archived_fees.order_by(CtArchivedFee.valid_till.desc()).first()
-                    if latest_archived_fee is None:
-                        valid_from = date(2010, 1, 1)
-                    else:
-                        valid_from = latest_archived_fee.valid_till
+                new_base_fee_per_m2 = base_fee.base_fee_per_m2
+                new_subsidized_area = base_fee.subsidized_area
+                new_subsidized_fee_rate = base_fee.subsidized_fee_rate
 
-                    count = 0
-                    for fee in contract.fees:
+                # Get latest archived fee
+                latest_archived_fee = contract.archived_fees.order_by(CtArchivedFee.valid_till.desc()).first()
+                if latest_archived_fee is None:
+                    valid_from = date(2010, 1, 1)
+                else:
+                    valid_from = latest_archived_fee.valid_till
 
-                        if fee.base_fee_per_m2 != new_base_fee_per_m2 or\
-                                fee.subsidized_area != new_subsidized_area or\
-                                fee.subsidized_fee_rate != new_subsidized_fee_rate:
+                count = 0
+                for fee in contract.fees:
 
-                            self.__archive_fee(contract, fee, valid_from, update_date)
-                            self.__update_fee(fee, new_base_fee_per_m2, new_subsidized_area, new_subsidized_fee_rate)
+                    if fee.base_fee_per_m2 != new_base_fee_per_m2 or\
+                            fee.subsidized_area != new_subsidized_area or\
+                            fee.subsidized_fee_rate != new_subsidized_fee_rate:
 
-                            if count == 0:
-                                count += 1
+                        self.__archive_fee(contract, fee, valid_from, update_date)
+                        self.__update_fee(fee, new_base_fee_per_m2, new_subsidized_area, new_subsidized_fee_rate)
 
-                    update_count += count
+                        if count == 0:
+                            count += 1
 
-                session.flush()
+                update_count += count
+
+            session.flush()
 
             QApplication.restoreOverrideCursor()
             PluginUtils.show_message(self, self.tr("Update Contracts"),
@@ -2798,7 +2798,7 @@ class LandOfficeAdministrativeSettingsDialog(QDialog, Ui_LandOfficeAdministrativ
         soum_code = DatabaseUtils.working_l2_code()
         schema_string = 's' + soum_code
         session.execute(
-            "SET search_path to base, codelists, admin_units, settings, pasture, public" + ", " + schema_string)
+            "SET search_path to base, codelists, admin_units, settings, pasture, public, data_soums_union, sdplatform"+ ", " + schema_string)
 
         try:
             QApplication.setOverrideCursor(QCursor(Qt.WaitCursor))
@@ -2809,77 +2809,76 @@ class LandOfficeAdministrativeSettingsDialog(QDialog, Ui_LandOfficeAdministrativ
 
             # Loop over restriction array
             l2_units = DatabaseUtils.l2_restriction_array()
-            for l2_unit in l2_units:
 
-                session.execute("SET search_path to s{0}, base, codelists, admin_units, settings, public".format(l2_unit))
-                # Get active records only
-                records = self.session.query(CtOwnershipRecord).\
-                    filter(or_(CtOwnershipRecord.cancellation_date.is_(None), update_date < CtOwnershipRecord.cancellation_date)).all()
+            session.execute("SET search_path to data_soums_union, sdplatform, base, codelists, admin_units, settings, public".format(l2_unit))
+            # Get active records only
+            records = self.session.query(CtOwnershipRecord).\
+                filter(or_(CtOwnershipRecord.cancellation_date.is_(None), update_date < CtOwnershipRecord.cancellation_date)).all()
 
-                for record in records:
-                    count = record.application_roles.\
-                        filter(CtContractApplicationRole.role == Constants.APPLICATION_ROLE_CREATES).count()
-                    if count == 0:
-                        # TODO: log something
-                        # should never happen
-                        continue
-                    application_role = record.application_roles.\
-                        filter(CtContractApplicationRole.role == Constants.APPLICATION_ROLE_CREATES).one()
-                    application = application_role.application_ref
-                    parcel_id = application.parcel
-                    if len(parcel_id) == 0:
-                        # TODO: log something
-                        # should never happen
-                        continue
+            for record in records:
+                count = record.application_roles.\
+                    filter(CtContractApplicationRole.role == Constants.APPLICATION_ROLE_CREATES).count()
+                if count == 0:
+                    # TODO: log something
+                    # should never happen
+                    continue
+                application_role = record.application_roles.\
+                    filter(CtContractApplicationRole.role == Constants.APPLICATION_ROLE_CREATES).one()
+                application = application_role.application_ref
+                parcel_id = application.parcel
+                if len(parcel_id) == 0:
+                    # TODO: log something
+                    # should never happen
+                    continue
 
-                    count = self.session.query(SetBaseTaxAndPrice).filter(SetTaxAndPriceZone.geometry.ST_Contains(CaParcel.geometry)).\
-                        filter(CaParcel.parcel_id == parcel_id).\
-                        filter(SetBaseTaxAndPrice.tax_zone == SetTaxAndPriceZone.zone_id).\
-                        filter(SetBaseTaxAndPrice.landuse == CaParcel.landuse).\
-                        count()
+                count = self.session.query(SetBaseTaxAndPrice).filter(SetTaxAndPriceZone.geometry.ST_Contains(CaParcel.geometry)).\
+                    filter(CaParcel.parcel_id == parcel_id).\
+                    filter(SetBaseTaxAndPrice.tax_zone == SetTaxAndPriceZone.zone_id).\
+                    filter(SetBaseTaxAndPrice.landuse == CaParcel.landuse).\
+                    count()
 
-                    if count == 0:
-                        # TODO: log something
-                        # can happen
-                        continue
+                if count == 0:
+                    # TODO: log something
+                    # can happen
+                    continue
 
-                    base_tax_and_price = self.session.query(SetBaseTaxAndPrice).filter(SetTaxAndPriceZone.geometry.ST_Contains(CaParcel.geometry)).\
-                        filter(CaParcel.parcel_id == parcel_id).\
-                        filter(SetBaseTaxAndPrice.tax_zone == SetTaxAndPriceZone.zone_id).\
-                        filter(SetBaseTaxAndPrice.landuse == CaParcel.landuse).\
-                        one()
+                base_tax_and_price = self.session.query(SetBaseTaxAndPrice).filter(SetTaxAndPriceZone.geometry.ST_Contains(CaParcel.geometry)).\
+                    filter(CaParcel.parcel_id == parcel_id).\
+                    filter(SetBaseTaxAndPrice.tax_zone == SetTaxAndPriceZone.zone_id).\
+                    filter(SetBaseTaxAndPrice.landuse == CaParcel.landuse).\
+                    one()
 
-                    new_base_value_per_m2 = base_tax_and_price.base_value_per_m2
-                    new_base_tax_rate = base_tax_and_price.base_tax_rate
-                    new_subsidized_area = base_tax_and_price.subsidized_area
-                    new_subsidized_tax_rate = base_tax_and_price.subsidized_tax_rate
+                new_base_value_per_m2 = base_tax_and_price.base_value_per_m2
+                new_base_tax_rate = base_tax_and_price.base_tax_rate
+                new_subsidized_area = base_tax_and_price.subsidized_area
+                new_subsidized_tax_rate = base_tax_and_price.subsidized_tax_rate
 
-                    # Get latest archived tax
-                    latest_archived_tax = record.archived_taxes.\
-                        order_by(CtArchivedTaxAndPrice.valid_till.desc()).first()
-                    if latest_archived_tax is None:
-                        valid_from = date(2010, 1, 1)
-                    else:
-                        valid_from = latest_archived_tax.valid_till
+                # Get latest archived tax
+                latest_archived_tax = record.archived_taxes.\
+                    order_by(CtArchivedTaxAndPrice.valid_till.desc()).first()
+                if latest_archived_tax is None:
+                    valid_from = date(2010, 1, 1)
+                else:
+                    valid_from = latest_archived_tax.valid_till
 
-                    count = 0
-                    for tax in record.taxes:
+                count = 0
+                for tax in record.taxes:
 
-                        if tax.base_value_per_m2 != new_base_value_per_m2 or\
-                                tax.base_tax_rate != new_base_tax_rate or\
-                                tax.subsidized_area != new_subsidized_area or\
-                                tax.subsidized_tax_rate != new_subsidized_tax_rate:
+                    if tax.base_value_per_m2 != new_base_value_per_m2 or\
+                            tax.base_tax_rate != new_base_tax_rate or\
+                            tax.subsidized_area != new_subsidized_area or\
+                            tax.subsidized_tax_rate != new_subsidized_tax_rate:
 
-                            self.__archive_tax(record, tax, valid_from, update_date)
-                            self.__update_tax(tax, new_base_value_per_m2, new_base_tax_rate, new_subsidized_area,
-                                              new_subsidized_tax_rate)
+                        self.__archive_tax(record, tax, valid_from, update_date)
+                        self.__update_tax(tax, new_base_value_per_m2, new_base_tax_rate, new_subsidized_area,
+                                          new_subsidized_tax_rate)
 
-                            if count == 0:
-                                count += 1
+                        if count == 0:
+                            count += 1
 
-                    update_count += count
+                update_count += count
 
-                session.flush()
+            session.flush()
 
             QApplication.restoreOverrideCursor()
             PluginUtils.show_message(self, self.tr("Update Ownership Records"),
@@ -3025,7 +3024,7 @@ class LandOfficeAdministrativeSettingsDialog(QDialog, Ui_LandOfficeAdministrativ
             soum_code = DatabaseUtils.working_l2_code()
             schema_string = 's' + soum_code
             session.execute(
-                "SET search_path to base, codelists, admin_units, settings, pasture, public" + ", " + schema_string)
+                "SET search_path to base, codelists, admin_units, settings, pasture, public, data_soums_union, sdplatform"+ ", " + schema_string)
             company = self.session.query(SetSurveyCompany).filter(SetSurveyCompany.id == company_id).one()
             session.delete(company)
 

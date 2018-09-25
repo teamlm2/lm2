@@ -1,7 +1,7 @@
 __author__ = 'B.Ankhbold'
 
 from sqlalchemy.orm import relationship
-from sqlalchemy import Column, Numeric, Integer, Sequence, ForeignKey, Float
+from sqlalchemy import Column, Numeric, Integer, Sequence, ForeignKey, Float, Boolean
 from CtArchivedFee import *
 from CtArchivedTaxAndPrice import *
 
@@ -38,3 +38,9 @@ class UbGisSubject(Base):
     gerid = Column(String)
     gerdate = Column(Date)
     gazobject = Column(String)
+    app_type = Column(Integer)
+    status_date = Column(Date)
+    status_user = Column(String)
+    is_finish = Column(Boolean)
+    finish_user = Column(String)
+    finish_date = Column(Date)

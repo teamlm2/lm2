@@ -26,8 +26,8 @@ class SetRole(Base):
     is_active = Column(Boolean)
     email = Column(String)
     # foreign keys:
-    position = Column(Integer, ForeignKey('cl_position_type.code'))
-    position_ref = relationship("ClPositionType")
+    position = Column(Integer, ForeignKey('hr_position.position_id'))
+    position_ref = relationship("SdPosition")
 
     employee_type = Column(Integer, ForeignKey('cl_employee_type.code'))
     employee_type_ref = relationship("ClEmployeeType")
@@ -41,10 +41,16 @@ class SetRole(Base):
     working_au_level2 = Column(String, ForeignKey('au_level2.code'))
     working_au_level2_ref = relationship("AuLevel2")
 
+    organization = Column(Integer, ForeignKey('sd_organization.id'))
+    organization_ref = relationship("SdOrganization")
+
+    department = Column(Integer, ForeignKey('hr_department.department_id'))
+    department_ref = relationship("SdDepartment")
+
     def __init__(self, user_name=None, surname=None, first_name=None, position=None, employee_type=None,
                  cancel_reason=None, phone=None, mac_addresses=None, user_name_real=None,
                  restriction_au_level1=None, restriction_au_level2=None, restriction_au_level3=None, pa_from=None,
-                 pa_till=None, is_active=None, user_register=None, email=None, working_au_level2 = None):
+                 pa_till=None, is_active=None, user_register=None, email=None, working_au_level2 = None, organization = None, department = None):
 
         self.user_name = user_name
         self.user_name_real = user_name_real
@@ -64,3 +70,5 @@ class SetRole(Base):
         self.is_active = is_active
         self.email = email
         self.working_au_level2 = working_au_level2
+        self.organization = organization
+        self.department = department
