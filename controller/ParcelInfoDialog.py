@@ -638,8 +638,8 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
             #     filter(UbGisSubject.register.like(person_id)).group_by(UbGisSubject.utas1, UbGisSubject.utas2, UbGisSubject.heid, UbGisSubject.register, UbGisSubject.ovogner, UbGisSubject.ovog, UbGisSubject.ner).all()
             subject_persons = self.session.query(UbGisSubject).filter(UbGisSubject.objectid == object_id).all()
             for subject_person in subject_persons:
-                if subject_person.is_finish:
-                    self.edit_status_cbox.setEnabled(False)
+                # if subject_person.is_finish:
+                #     self.edit_status_cbox.setEnabled(False)
                 heid = str(subject_person.heid)
                 if self.__is_number(heid):
                     if int(subject_person.heid) == 1:
