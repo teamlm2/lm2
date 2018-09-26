@@ -704,6 +704,7 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
                     zoriulalt = parcel_subject.zoriulalt
                 landuse_type = self.__landuse_type(parcel_subject).code
 
+            print khashaa
             self.zoriulalt_edit.setText(zoriulalt)
             self.streetname_edit.setText(street)
             self.khashaa_edit.setText(khashaa)
@@ -772,6 +773,8 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
 
             if app_type:
                 self.application_type_cbox.setCurrentIndex(self.application_type_cbox.findData(app_type))
+            else:
+                self.application_type_cbox.setCurrentIndex(0)
 
             # contract info qt
             self.contract_full_edit.setText(self.__generate_contract_number())
