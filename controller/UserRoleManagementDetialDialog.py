@@ -74,7 +74,7 @@ class UserRoleManagementDetialDialog(QDialog, Ui_UserRoleManagementDetialDialog)
             self.firstname_edit.setText(employee.first_name)
             self.register_edit.setText(employee.user_register)
             self.phone_edit.setText(employee.phone)
-            self.position_edit.setText(employee.position_ref.description)
+            self.position_edit.setText(employee.position_ref.name)
 
             if employee.employee_type:
                 # employee_type = self.session.query(ClEmployeeType).filter(ClEmployeeType.code == employee.employee_type).one()

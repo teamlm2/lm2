@@ -1931,7 +1931,8 @@ class ContractDialog(QDialog, Ui_ContractDialog, DatabaseHelper):
         dec_day = decision_date[-2:]
         o_firstname = officer.first_name
         o_surname = officer.surname
-        o_position = officer.position_ref.description
+
+        o_position = officer.position_ref.name
         company_name = ''
         person_surname = ''
         person_firstname = ''

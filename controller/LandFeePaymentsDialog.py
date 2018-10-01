@@ -1498,7 +1498,7 @@ class LandFeePaymentsDialog(QDialog, Ui_LandFeePaymentsDialog, DatabaseHelper):
         print_officers = self.session.query(SetRole) \
             .filter(SetRole.user_name == user_name) \
             .filter(SetRole.is_active == True).one()
-        position = print_officers.position_ref.description
+        position = print_officers.position_ref.name
 
         p = document.add_paragraph()
         p.alignment = WD_ALIGN_PARAGRAPH.LEFT

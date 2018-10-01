@@ -942,7 +942,7 @@ class SentToGovernorPastureDialog(QDialog, Ui_SentToGovernorPastureDialog, Datab
                                    self.tr("Error in line {0}: {1}").format(currentframe().f_lineno, e.message))
             return
 
-        sum_officer = user.position_ref.description
+        sum_officer = user.position_ref.name
         o_surname = user.surname
         o_firstname = user.first_name
         context = {

@@ -557,7 +557,7 @@ class WebgisUtilityDialog(QDialog, Ui_WebgisUtilityDialog):
             .filter(SetRole.user_name == user.user_name) \
             .filter(SetRole.is_active == True).one()
         role_position_code = officers.position
-        role_position_desc = officers.position_ref.description
+        role_position_desc = officers.position_ref.name
         working_aimag = officers.working_au_level1_ref.name
         working_soum = officers.working_au_level2_ref.name
         header_text = ''
