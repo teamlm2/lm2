@@ -1882,13 +1882,17 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
         ub_parcel = self.session.query(CaUBParcel).filter(CaUBParcel.old_parcel_id == old_parcel_id).one()
         edit_status = self.edit_status_cbox.itemData(self.edit_status_cbox.currentIndex())
 
+        print ub_parcel.edit_status
+        if ub_parcel.edit_status != 10:
+            subject.status_date = PluginUtils.convert_qt_date_to_python(QDate.currentDate())
+            subject.status_user = DatabaseUtils.current_user().user_name
+
         if self.edit_status_cbox.currentIndex() == -1:
             ub_parcel.edit_status = 30
         else:
             ub_parcel.edit_status = edit_status
 
-        subject.status_date = PluginUtils.convert_qt_date_to_python(QDate.currentDate())
-        subject.status_user = DatabaseUtils.current_user().user_name
+
 
     @pyqtSlot()
     def on_save_button_clicked(self):
