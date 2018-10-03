@@ -1892,8 +1892,6 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
         else:
             ub_parcel.edit_status = edit_status
 
-
-
     @pyqtSlot()
     def on_save_button_clicked(self):
 
