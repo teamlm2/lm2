@@ -211,8 +211,6 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
             .filter(SetRole.user_name == QSettings().value(SettingsConstants.USER)) \
             .filter(SetRole.is_active == True).one()
 
-        print officer.position
-        print 'aaaaaa'
         self.finish_button.setVisible(False)
         if officer.position == 1:
             self.finish_button.setVisible(True)
@@ -704,7 +702,6 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
                     zoriulalt = parcel_subject.zoriulalt
                 landuse_type = self.__landuse_type(parcel_subject).code
 
-            print khashaa
             self.zoriulalt_edit.setText(zoriulalt)
             self.streetname_edit.setText(street)
             self.khashaa_edit.setText(khashaa)
@@ -1882,7 +1879,6 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
         ub_parcel = self.session.query(CaUBParcel).filter(CaUBParcel.old_parcel_id == old_parcel_id).one()
         edit_status = self.edit_status_cbox.itemData(self.edit_status_cbox.currentIndex())
 
-        print ub_parcel.edit_status
         if ub_parcel.edit_status != 10:
             subject.status_date = PluginUtils.convert_qt_date_to_python(QDate.currentDate())
             subject.status_user = DatabaseUtils.current_user().user_name
@@ -2024,9 +2020,7 @@ class ParcelInfoDialog(QDockWidget, Ui_ParcelInfoDialog, DatabaseHelper):
                 else:
                     self.error_label.setText(self.tr("Street name can end with a number, if a - is in front. "))
                     return False
-            # print name[i - 1]
-            # if not name[i-1].isdigit() and name[i-1] != "-":
-            #     return  True
+
         return True
 
     @pyqtSlot(str)
